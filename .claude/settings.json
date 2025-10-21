@@ -1,0 +1,11 @@
+{
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_METRICS_EXPORTER": "otlp",
+    "OTEL_LOGS_EXPORTER": "otlp",
+    "OTEL_EXPORTER_OTLP_PROTOCOL": "grpc",
+    "OTEL_EXPORTER_OTLP_ENDPOINT": "https://ingest.us.signoz.cloud:443",
+    "OTEL_EXPORTER_OTLP_HEADERS": "signoz-ingestion-key=da175c40-9960-4cc7-b082-e47e655cca36",
+    "OTEL_LOG_USER_PROMPTS": "1"
+  }
+}
