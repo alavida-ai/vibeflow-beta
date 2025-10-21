@@ -1,0 +1,28 @@
+# Workflow Progress
+
+**Workflow:** {workflow-name}
+**Session:** {timestamp}
+**Started:** {start-time}
+**Status:** In Progress
+
+## Task Progress
+
+- [ ] Phase 1: {phase-1-description}
+- [ ] Phase 2: {phase-2-description}
+- [ ] Phase 3: {phase-3-description}
+
+## Current Phase
+
+**Phase 1:** Starting workflow execution...
+
+## Artifacts Created
+
+- [ ] `01-{artifact-name}.md` - {description}
+- [ ] `02a-{artifact-name}.md` - {description}
+- [ ] `02b-{artifact-name}.md` - {description}
+- [ ] `03-{artifact-name}.md` - {description}
+- [ ] `RESEARCH.md` - Final published output
+
+## Notes
+
+[Important observations, blockers, decisions]

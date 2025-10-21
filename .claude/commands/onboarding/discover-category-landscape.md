@@ -1,3 +1,7 @@
+---
+argument-hint: if no planning or input necessary say yolo to directly implement
+---
+
 # Discover Category Landscape
 
 You are conducting **competitive and market research** to map the category landscape, identify strategic white space, and validate positioning hypotheses from the brand discovery interview.
