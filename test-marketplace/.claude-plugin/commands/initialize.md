@@ -44,3 +44,52 @@ Each index.md file should include:
 3. **Clear structure** following the 3-level hierarchy rule (no deeper than /strategy/{domain}/extensions/)
 
 Create all folders and files, then confirm completion with a summary of what was created.
+
+And create a .mcp.json at the root:
+`{
+  "mcpServers": {
+    "firecrawl": {
+      "type": "http",
+      "url": "https://mcp.firecrawl.dev/YOUR_KEY_HERE/v2/mcp"
+    },
+    "replicate": {
+      "command": "npx",
+      "args": ["-y", "replicate-mcp"],
+      "env": {
+        "REPLICATE_API_TOKEN": "YOUR_REPLICATE_API_TOKEN"
+      }
+    },
+    "twitter-scraper": {
+      "type": "http",
+      "url": "https://test-server.vibeflow.workers.dev/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_BEARER_TOKEN"
+      }
+    },
+    "dataforseo": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@smithery/cli@latest",
+        "run",
+        "@moaiandin/mcp-dataforseo",
+        "--key",
+        "YOUR_DATAFORSEO_KEY",
+        "--profile",
+        "YOUR_PROFILE_ID"
+      ]
+    },
+    "perplexity": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@perplexity-ai/mcp-server"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY"
+      }
+    }
+  }
+}
+`
