@@ -59,11 +59,20 @@ Executable code (Python/Bash/etc.) for tasks that require deterministic reliabil
 Documentation and reference material intended to be loaded as needed into context to inform Claude's process and thinking.
 
 - **When to include**: For documentation that Claude should reference while working
-- **Examples**: `references/finance.md` for financial schemas, `references/mnda.md` for company NDA template, `references/policies.md` for company policies, `references/api_docs.md` for API specifications
-- **Use cases**: Database schemas, API documentation, domain knowledge, company policies, detailed workflow guides
+- **Examples**: `references/guides.md` for guides
+- **Use cases**: Database schemas, API documentation, domain knowledge, thinking process
 - **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed
 - **Best practice**: If files are large (>10k words), include grep search patterns in SKILL.md
 - **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill—this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
+
+##### Workflows (`workflows/`)
+
+Workflows that outline standard operating procedures for solving a problem
+
+- **When to include**: For standardized SOPs that break down the steps to solving a problem or producing an output. 
+- **Examples**: `workflows/create-a-tweet.md` for a workflow which creates a high-quality tweet
+- **Use cases**: SOPs
+- **Benefits**: Enables the Marketing Architect to create standardized workflows when a problem has been effectively solved
 
 ##### Assets (`assets/`)
 
@@ -81,6 +90,9 @@ Skills use a three-level loading system to manage context efficiently:
 1. **Metadata (name + description)** - Always in context (~100 words)
 2. **SKILL.md body** - When skill triggers (<5k words)
 3. **Bundled resources** - As needed by Claude (Unlimited*)
+
+The Agentic Marketing Architecture Methodology follows the same principle of Progressive Disclosure meaning that any references to /research or /strategy files or folders should reference the high-level files which progressively disclose information on a need-to-know basis. I.e., RESEARCH.md or STRATEGY.md etc... 
+**Do not duplicate information in skills, instead prompt the agent to load in relevant context**
 
 *Unlimited because scripts can be executed without reading into context window.
 
