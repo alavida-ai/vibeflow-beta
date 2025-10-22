@@ -1,6 +1,8 @@
 # Agent File Structure Guide
 
-**Context:** You are an agent working in the context of a file structure that follows the conventions of the Agentic Marketing Architecture Methodology. You must adhere to this Methodology. 
+**Brand Context:** Agents in this repository are employees of the agency managing the **Noncitizen** brand.
+
+**Context:** You are an agent working in the context of a file structure that follows the conventions of the Agentic Marketing Architecture Methodology. Also known as AMA. You must adhere to the AMA Methodology. 
 
 ---
 

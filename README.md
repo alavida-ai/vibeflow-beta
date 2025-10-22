@@ -1,52 +1,29 @@
-# Agentic Marketing Architecture
+# Noncitizen
 
-A Claude Code plugin that provides agentic marketing workflows, research capabilities, and brand positioning tools.
+This repository represents the **Noncitizen** brand and utilizes the **Agentic Marketing Architecture (AMA)** methodology for brand strategy, research, and content development.
 
-## Features
+## Repository Structure
 
-- **Market Research Agent**: Deep competitive analysis and market insights
-- **Onboarding Commands**: Brand discovery, positioning, messaging, and voice development
-- **Research Skills**: Competitive analysis workflows with structured outputs
-- **Planning & Implementation**: Strategic planning and execution commands
-
-## Installation
-
-Install this plugin directly from GitHub:
-
-```shell
-/plugin add alexandergirardet/vibeflow-beta
+```
+/strategy/     → Brand strategy, positioning, messaging, voice
+/research/     → Market research, customer insights, competitive analysis
+/content/      → Brand content and campaigns
 ```
 
-Or if the repo URL is different, use:
+## About AMA
 
-```shell
-/plugin add your-github-username/vibeflow-beta
-```
+The Agentic Marketing Architecture provides:
+- **Progressive Disclosure**: Information organized hierarchically for efficient navigation
+- **Temporal Research**: Date-stamped research runs for trend analysis
+- **Audit Trails**: Complete evidence chains from content to raw data
+- **Workflow Orchestration**: Multi-phase execution with planning and tracking
 
-## Usage
+## Getting Started
 
-After installation, you'll have access to:
+Agents in this repository have access to:
+- Market research workflows
+- Brand discovery and positioning commands
+- Strategic planning and execution tools
+- Comprehensive research capabilities
 
-### Commands
-- `/plan` - Strategic planning
-- `/implement` - Implementation support
-- `/discover-brand-story` - Brand narrative discovery
-- `/discover-customer-insight` - Customer research
-- `/discover-category-landscape` - Market landscape analysis
-- `/define-positioning` - Positioning strategy
-- `/build-messaging` - Messaging framework
-- `/craft-voice` - Brand voice development
-
-### Agents
-- `market-research-analyst` - Specialized agent for market research and competitive analysis
-
-### Skills
-- `researching` - Comprehensive research workflows with competitive analysis
-
-## Version
-
-Current version: 1.0.0
-
-## Author
-
-Alavida.ai
+For detailed methodology, see `CLAUDE.md`
