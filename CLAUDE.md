@@ -42,7 +42,7 @@
 │   ├── /{domain}/                    ← Research domain (e.g., category-landscape)
 │   │   ├── RESEARCH.md               ← Progressive disclosure guide
 │   │   ├── /data/                    ← Input materials
-│   │   ├── /execution/               ← Temporal research runs
+│   │   ├── /               ← Temporal research runs
 │   │   │   └── /{YYYY-MM-DD}/        ← Date-stamped execution
 │   │   │       ├── PLAN.md
 │   │   │       ├── TODO.md
@@ -147,7 +147,7 @@ strategy/
 **Example footnote format:**
 ```markdown
 [^productivity-paradox]: Customer research (William),
-`/research/discover-customer-insight/execution/2025-10-15/insights.md:42`
+`/research/discover-customer-insight/2025-10-15/insights.md:42`
 ```
 
 ---
@@ -167,7 +167,7 @@ research/
 │   │   ├── surveys/
 │   │   └── datasets/
 │   │
-│   ├── /execution/                    ← Temporal research runs
+│   ├── /                    ← Temporal research runs
 │   │   ├── /2025-10-20/               ← First research run
 │   │   │   ├── PLAN.md
 │   │   │   ├── TODO.md
@@ -236,15 +236,15 @@ research/
 ### Date-Stamped Directories
 
 **Use YYYY-MM-DD format for temporal executions:**
-- `/execution/2025-10-20/`
-- `/execution/2025-11-15/`
-- `/execution/2025-12-10/`
+- `/2025-10-20/`
+- `/2025-11-15/`
+- `/2025-12-10/`
 
 **❌ Avoid:**
-- `/execution/first-run/` (not temporal)
-- `/execution/latest/` (gets overwritten)
-- `/execution/v1/` (not clear when it happened)
-- `/execution/10-20-2025/` (wrong date format)
+- `/first-run/` (not temporal)
+- `/latest/` (gets overwritten)
+- `/v1/` (not clear when it happened)
+- `/10-20-2025/` (wrong date format)
 
 ---
 
@@ -410,11 +410,11 @@ Backed by research in: [Research domain paths]
 
 ### Date-Stamped Executions
 
-**Format:** `/research/{domain}/execution/{YYYY-MM-DD}/`
+**Format:** `/research/{domain}/{YYYY-MM-DD}/`
 
 **Example:**
 ```
-/research/competitor-analysis/execution/
+/research/competitor-analysis/
 ├── /2025-10-01/  ← Q4 start
 ├── /2025-11-01/  ← Month 2
 ├── /2025-12-01/  ← Month 3
@@ -445,7 +445,7 @@ Backed by research in: [Research domain paths]
 
 **Example:**
 ```
-/research/customer-insight/execution/2025-10-20/
+/research/customer-insight/2025-10-20/
 ├── PLAN.md
 ├── TODO.md
 ├── interview-analysis.md
@@ -484,7 +484,7 @@ suggesting onboarding improvements are working.
 ```
 /research/{domain}/
 ├── /data/       ← INPUT: Raw materials
-├── /execution/  ← PROCESS: Research runs
+├── /  ← PROCESS: Research runs
 └── /exports/    ← OUTPUT: Deliverables
 ```
 
@@ -519,7 +519,7 @@ suggesting onboarding improvements are working.
     └── support-tickets-oct-2025.json
 ```
 
-### 2. /execution/ (Process)
+### 2. / (Process)
 
 **Purpose:** Date-stamped research runs where work happens
 
@@ -530,7 +530,7 @@ suggesting onboarding improvements are working.
 - Analysis files
 - Findings documents
 
-**Naming:** `/execution/{YYYY-MM-DD}/`
+**Naming:** `/{YYYY-MM-DD}/`
 
 **Characteristics:**
 - Temporal (each run is date-stamped)
@@ -540,7 +540,7 @@ suggesting onboarding improvements are working.
 
 **Example structure:**
 ```
-/research/customer-insight/execution/
+/research/customer-insight/
 ├── /2025-10-20/
 │   ├── PLAN.md
 │   ├── TODO.md
@@ -584,7 +584,7 @@ suggesting onboarding improvements are working.
 ```
 /data/ (Input)
     ↓ analyzed by
-/execution/{date}/ (Process)
+/{date}/ (Process)
     ↓ produces
 /exports/ (Output)
     ↓ informs
@@ -617,7 +617,7 @@ Our customers struggle with productivity tools that add
 complexity instead of reducing it.[^productivity-paradox]
 
 [^productivity-paradox]: Customer research,
-`/research/customer-insight/execution/2025-10-21/findings.md:42`
+`/research/customer-insight/2025-10-21/findings.md:42`
 ```
 
 **Footnote format:**
@@ -638,7 +638,7 @@ my life MORE complicated."
 
 **2. Research Finding:**
 ```
-/research/customer-insight/execution/2025-10-21/findings.md:42
+/research/customer-insight/2025-10-21/findings.md:42
 
 Pattern identified: 8 out of 10 customers described existing
 tools as "adding complexity" rather than reducing it.
@@ -652,7 +652,7 @@ Our customers are drowning in complex tools that promise
 simplicity but deliver confusion.[^productivity-paradox]
 
 [^productivity-paradox]: Customer research,
-`/research/customer-insight/execution/2025-10-21/findings.md:42`
+`/research/customer-insight/2025-10-21/findings.md:42`
 ```
 
 **4. Content Output:**
@@ -705,9 +705,9 @@ setup, just the simplicity you actually need."
 ```
 /research/category-landscape/RESEARCH.md
 /research/category-landscape/data/reports/industry-report-2025.pdf
-/research/category-landscape/execution/2025-10-20/PLAN.md
-/research/category-landscape/execution/2025-10-20/TODO.md
-/research/category-landscape/execution/2025-10-20/findings.md
+/research/category-landscape/2025-10-20/PLAN.md
+/research/category-landscape/2025-10-20/TODO.md
+/research/category-landscape/2025-10-20/findings.md
 /research/category-landscape/exports/landscape-report-2025-10-20.pdf
 ```
 
@@ -728,8 +728,8 @@ setup, just the simplicity you actually need."
 
 **Correct placement:**
 ```
-/research/competitor-analysis/execution/2025-10-21/PLAN.md
-/research/competitor-analysis/execution/2025-10-21/TODO.md
+/research/competitor-analysis/2025-10-21/PLAN.md
+/research/competitor-analysis/2025-10-21/TODO.md
 ```
 
 ### References Between Files
@@ -741,14 +741,14 @@ In /strategy/messaging/value-propositions.md:
 See customer research[^customer-insight]
 
 [^customer-insight]:
-`/research/customer-insight/execution/2025-10-15/findings.md:42`
+`/research/2025-10-15/customer-insight.md`
 ```
 
 **From RESEARCH.md to execution:**
 ```markdown
 In /research/category-landscape/RESEARCH.md:
 
-Latest research: See `/execution/2025-10-25/findings.md`
+Latest research: See `/research/{domain}/2025-10-25/findings.md`
 ```
 
 **From STRATEGY.md to specific files:**
@@ -770,7 +770,6 @@ For messaging pillars: See `/messaging/pillars.md`
 | `/.claude/` | System configuration | Owned by infra/architects |
 | `/strategy/` | Brand bible | Polished, timeless, footnoted |
 | `/research/` | Research domains | Temporal, raw, date-stamped |
-| `/docs/` | System documentation | Architecture reference |
 
 ### Naming Rules
 
@@ -779,25 +778,25 @@ For messaging pillars: See `/messaging/pillars.md`
 | Regular files | kebab-case | `brand-narrative.md`, `value-props.md` |
 | Entry points | UPPERCASE.md | `STRATEGY.md`, `RESEARCH.md`, `SKILL.md` |
 | Work tracking | UPPERCASE.md | `PLAN.md`, `TODO.md` |
-| Temporal dirs | YYYY-MM-DD | `/execution/2025-10-20/` |
+| Temporal dirs | YYYY-MM-DD | `/2025-10-20/` |
 
 ### Entry Point Files
 
 | File | Location | Purpose |
 |------|----------|---------|
 | `STRATEGY.md` | `/strategy/STRATEGY.md` | Navigate brand strategy |
-| `RESEARCH.md` | `/research/{domain}/RESEARCH.md` | Navigate research domain |
+| `RESEARCH.md` | `/research/{domain}/{date}/RESEARCH.md` | Navigate research domain |
 | `SKILL.md` | `.claude/skills/{skill}/SKILL.md` | Define skill capabilities |
-| `PLAN.md` | `/execution/{date}/PLAN.md` | Document approach |
-| `TODO.md` | `/execution/{date}/TODO.md` | Track progress |
+| `PLAN.md` | `/research/{date}/PLAN.md` | Document approach |
+| `TODO.md` | `research/{date}/TODO.md` | Track progress |
 
 ### Three-Folder Pattern
 
 | Folder | Purpose | Contents |
 |--------|---------|----------|
 | `/data/` | Input | Raw materials, transcripts, datasets |
-| `/execution/` | Process | Date-stamped research runs |
-| `/exports/` | Output | Polished deliverables, reports |
+| `/exports/` | Chat exports
+| `/artifacts/` | Artifacts created by the system
 
 ### Common Patterns
 
@@ -806,13 +805,13 @@ For messaging pillars: See `/messaging/pillars.md`
 /research/{domain-name}/
 ├── RESEARCH.md
 ├── /data/
-├── /execution/
+├── /
 └── /exports/
 ```
 
 **Temporal execution:**
 ```bash
-/research/{domain}/execution/{YYYY-MM-DD}/
+/research/{domain}/{YYYY-MM-DD}/
 ├── PLAN.md
 ├── TODO.md
 └── [analysis files]
@@ -830,147 +829,3 @@ For messaging pillars: See `/messaging/pillars.md`
 ├── SKILL.md
 └── [supporting files]
 ```
-
----
-
-## Glossary
-
-### Architectural Terms
-
-**Agentic Marketing Architecture**
-A practice of building and owning marketing AI infrastructure, using layered agents, structured context, and version-controlled workflows instead of renting SaaS tools.
-
-**Context Architecture**
-The structured organization of brand, strategy, and research files that agents reference to maintain consistency. The finite resource that separates brand-consistent outputs from AI slop.
-
-**Information Hierarchy**
-The structured relationship between files and directories, flowing from raw data → research → strategy → content, with clear dependencies and references.
-
-**Marketing Architect**
-Human role that designs, builds, and operates the marketing system. Not a "tool user" but a systems designer who owns infrastructure.
-
-**Operations Manager**
-Primary AI agent that orchestrates work, ensures compliance, delegates to sub-agents, and makes work visible through PLAN.md and TODO.md.
-
-**Progressive Disclosure**
-Pattern where information is organized hierarchically so agents load only what's needed, using entry point files (UPPERCASE.md) to guide navigation.
-
-**Sub-agent**
-Specialized AI agent that handles specific domains (Brand Analyst, Content Writer, Campaign Strategist), working below the Operations Manager in the org chart.
-
-**Temporal Execution**
-Pattern where work is date-stamped (YYYY-MM-DD) to preserve historical context, enable comparison over time, and prevent overwriting previous insights.
-
-### Structural Terms
-
-**Audit Trail**
-Chain of references from content → strategy → research → data, enabling verification of claims and creating accountability for assertions.
-
-**Entry Point File**
-UPPERCASE.md file that serves as table of contents for a directory or domain (STRATEGY.md, RESEARCH.md, SKILL.md), guiding agents to relevant files.
-
-**Execution Run**
-Date-stamped instance of research work within a domain, containing PLAN.md, TODO.md, and analysis files. Located in `/research/{domain}/execution/{YYYY-MM-DD}/`.
-
-**Research Domain**
-Organized area of investigation (e.g., category-landscape, competitor-analysis) following the three-folder pattern: data/execution/exports.
-
-**Three-Folder Pattern**
-Structural pattern for research domains: /data/ (input materials), /execution/ (date-stamped research runs), /exports/ (deliverables).
-
-**Work Visibility Files**
-PLAN.md (approach before execution) and TODO.md (progress during execution) that make work transparent and trackable.
-
-### File Types
-
-**Brand Bible**
-The `/strategy/` directory containing polished, client-ready brand strategy files (narrative, positioning, messaging, voice) that agents reference for consistency.
-
-**Footnote Reference**
-Markdown footnote in strategy files linking claims to research evidence, format: `[^name]: Description, \`/path/to/file.md:line\``
-
-**PLAN.md**
-Planning document created before complex work begins, outlining objective, approach, resources (skills/agents/files/tools), and estimated effort.
-
-**RESEARCH.md**
-Entry point file for a research domain, providing overview, navigation to execution runs, data sources, exports, and strategy connections.
-
-**SKILL.md**
-Entry point file for a skill directory, defining purpose, usage, prerequisites, process, and outputs of the capability.
-
-**STRATEGY.md**
-Entry point file for the strategy directory, providing quick navigation to brand voice, messaging, narrative, positioning, and audience files.
-
-**TODO.md**
-Progress tracking document created during execution, showing completed tasks, work in progress, pending items, progress percentage, and blockers.
-
-### Pattern Terms
-
-**Date-Stamped Directory**
-Directory named with YYYY-MM-DD format, used for temporal executions: `/execution/2025-10-20/`
-
-**Domain Command**
-Reusable workflow trigger stored in `.claude/commands/{domain}/`, defining predefined steps for recurring tasks.
-
-**Kebab-Case**
-Naming convention using lowercase letters with hyphens: `brand-narrative.md`, `value-propositions.md`
-
-**Marketing Debt**
-Accumulated technical debt from orphaned files, inconsistent outputs, lost research, and poor organization. Prevented by structured file architecture.
-
-**One-Way Dependency**
-Architectural principle where layers reference "down" the hierarchy (agents reference skills, strategy references research) but not up, preventing circular dependencies.
-
-**Skill**
-Reusable capability that agents can invoke to perform specialized work (Conducting Market Research, Writing Brand-Consistent Content).
-
-**Temporal Pattern**
-Organizing work by date to preserve historical context and enable comparison over time. Used in research executions: `/execution/{YYYY-MM-DD}/`
-
-### Workflow Terms
-
-**Implementation**
-Execution phase after plan approval, where TODO.md tracks progress and work is systematically completed.
-
-**Plan/Implement Pattern**
-Workflow where Operations Manager creates PLAN.md before starting work, gets approval, then creates TODO.md during implementation for visibility.
-
-**Research Workflow**
-Systematic approach to conducting temporal research: define domain → add data → run dated execution → export deliverables → reference in strategy.
-
-**Strategy-Research Connection**
-Relationship where strategy files contain footnotes referencing research files, creating audit trail and ensuring claims are evidence-based.
-
----
-
-## Notes for Agents
-
-**When navigating the file structure:**
-1. Always start with entry point files (STRATEGY.md, RESEARCH.md)
-2. Load specific files based on task requirements
-3. Use progressive disclosure to manage context efficiently
-4. Reference temporal executions by date for historical context
-
-**When creating new files:**
-1. Use kebab-case for regular files
-2. Use UPPERCASE.md for entry points only
-3. Place files in appropriate directories per this guide
-4. Follow the three-folder pattern for research domains
-
-**When referencing files:**
-1. Use audit trail pattern (footnotes with file paths)
-2. Include line numbers when referencing specific content
-3. Maintain clear chain from data → research → strategy
-4. Create verifiable, defensible claims
-
-**When organizing research:**
-1. Always date-stamp execution runs (YYYY-MM-DD)
-2. Never overwrite previous executions
-3. Keep data/execution/exports folders separate
-4. Create RESEARCH.md for each domain
-
-**This guide is authoritative for file structure decisions.** When in doubt about placement, naming, or organization, consult this document.
-
----
-
-*Last updated: 2025-10-22*
