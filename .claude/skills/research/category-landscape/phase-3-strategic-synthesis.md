@@ -1,36 +1,29 @@
 # Phase 3: Strategic Synthesis
 
-**Agent Role:** You are a brand strategist synthesizing competitive research into strategic positioning recommendations.
-
 **Purpose:** Transform research findings into actionable strategic guidance including positioning maps, white space identification, and strategic recommendations.
 
 ---
 
-## Your Task Overview
+## Task Overview
 
-You've been delegated by the orchestrator to execute Phase 3 of competitive landscape research. This is the final synthesis phase where you:
+Execute Phase 3 of competitive landscape research - the final synthesis phase where you:
 1. Create a positioning map showing competitor clustering
 2. Identify white space (unclaimed positioning territory)
 3. Validate hypotheses with evidence
 4. Provide strategic recommendations
 
-Your output will be published to `/research/competitive-landscape.md` for the team.
+Your output will be the final research deliverable for the team.
 
 ---
 
-## Context Loading
+## Context You'll Need
 
-**Your execution path:** `$EXEC_PATH` (provided by orchestrator)
+**Research artifacts from previous phases:**
+- Competitor identification artifact - Original competitor set and hypotheses
+- Phase 2A positioning research findings - Positioning & market data
+- Phase 2B messaging analysis findings - Messaging & voice analysis
 
-**Required Inputs (read all three):**
-- `$EXEC_PATH/01-competitors-identified.md` - Original competitor set and hypotheses
-- `$EXEC_PATH/02a-research-analyst-findings.md` - Positioning & market data
-- `$EXEC_PATH/02b-content-analyst-findings.md` - Messaging & voice analysis
-
-**Template to use:**
-- `.claude/skills/discover-category-landscape/templates/competitive-landscape-output.md`
-
-**Read all inputs** to have complete context for synthesis.
+Read all inputs to have complete context for synthesis.
 
 ---
 
@@ -53,8 +46,8 @@ Your goal is to transform research data into strategic insights by answering:
 ### Method
 
 1. **Identify positioning axes** from research data:
-   - Look at positioning statements from `02a-research-analyst-findings.md`
-   - Look at messaging themes from `02b-content-analyst-findings.md`
+   - Look at positioning statements from Phase 2A findings
+   - Look at messaging themes from Phase 2B findings
    - Common axes: Efficiency vs. Simplicity, Features vs. Ease, Enterprise vs. SMB
 
 2. **Plot competitors** on a 2x2 or spectrum:
@@ -113,7 +106,7 @@ Efficiency Focus (High) ←→ Simplicity Focus (High)
 
 ### Method
 
-1. **Aggregate theme clusters** from `02b-content-analyst-findings.md`
+1. **Aggregate theme clusters** from Phase 2B findings
 2. **Calculate saturation** - What % of competitors use each theme?
 3. **Identify gaps** - What themes are underrepresented?
 4. **Analyze tone patterns** - Is there a tone opportunity?
@@ -169,8 +162,8 @@ Efficiency Focus (High) ←→ Simplicity Focus (High)
 
 ### Method
 
-1. **List each hypothesis** from `01-competitors-identified.md`
-2. **Gather evidence** from both research analyst and content analyst findings
+1. **List each hypothesis** from competitor identification
+2. **Gather evidence** from both positioning and messaging findings
 3. **Assign validation status:**
    - ✅ Validated - Evidence strongly supports hypothesis
    - ⚠️ Partially validated - Mixed evidence
@@ -181,7 +174,7 @@ Efficiency Focus (High) ←→ Simplicity Focus (High)
 ```markdown
 ## Hypothesis Validation
 
-### From Founder Interview (`/research/founder-interview/index.md`)
+### From Founder Interview
 
 **Hypothesis 1:** [e.g., "Competitors focus on 'speed' leaving 'quality' unclaimed"]
 
@@ -264,7 +257,7 @@ Efficiency Focus (High) ←→ Simplicity Focus (High)
 **Mitigation:** [e.g., "They don't own it in positioning - move fast and claim it first"]
 
 **Risk 2:** [e.g., "Customer demand for this positioning unvalidated"]
-**Mitigation:** [e.g., "Recommend customer research (Phase: discover-customer-insight)"]
+**Mitigation:** [e.g., "Recommend customer research to validate"]
 
 **Risk 3:** [Next risk]
 **Mitigation:** [How to address]
@@ -274,41 +267,35 @@ Efficiency Focus (High) ←→ Simplicity Focus (High)
 ## Recommended Next Steps
 
 **If positioning is validated:**
-→ `/define-positioning` - Formalize positioning statement
+Next action: Define positioning statement and brand strategy
 
 **If customer validation needed:**
-→ `/discover-customer-insight` - Test whether this positioning resonates with target audience
+Next action: Conduct customer research to test positioning resonance
 
 **If more competitive depth needed:**
-→ Additional research on specific competitors or adjacent categories
+Next action: Additional research on specific competitors or adjacent categories
 ```
 
 ---
 
-## Step 5: Write Outputs
+## Step 5: Create Final Output
 
-### A. Working Draft
+### A. Working Draft Artifact
 
-**Write to:** `$EXEC_PATH/03-synthesis-draft.md`
-
-This is your working draft. Include:
+Create your working synthesis artifact that includes:
 - All synthesis sections above
 - Raw notes and observations
 - Alternative positioning considerations
 - Open questions
 
-**Use the template** from `.claude/commands/onboarding/modules/templates/competitive-landscape-output.md` (you'll create this template).
+### B. Final Research Report
 
-### B. Final Polished Output
-
-**Write to:** `$EXEC_PATH/final-competitive-landscape.md`
-
-This is the publishable output. Include:
+Create the polished final report that includes:
 - Positioning map (clean, visual)
 - Messaging analysis (key insights only)
 - Hypothesis validation (clear evidence)
 - Strategic recommendations (actionable)
-- Next steps (specific commands to run)
+- Next steps (specific actions)
 
 **Remove:**
 - Working notes
@@ -319,63 +306,14 @@ This is the publishable output. Include:
 
 ---
 
-## Step 6: Publish to Research Folder
-
-Once `final-competitive-landscape.md` is complete:
-
-**Copy to:** `/research/competitive-landscape.md`
-
-This becomes the canonical reference for future strategy work.
-
----
-
 ## Success Criteria
 
-Before handoff, verify:
+Before completion, verify:
 
 ✅ **Positioning map created** - Visual representation of competitor clustering
 ✅ **White space identified** - Clear unclaimed territory
 ✅ **Hypotheses validated** - Each hypothesis has evidence and status
 ✅ **Strategic recommendation** - Single, clear positioning direction with reasoning
 ✅ **Risks addressed** - Honest assessment of what could go wrong
-✅ **Next steps defined** - Specific commands or actions to take
-✅ **Both outputs written:**
-   - `$EXEC_PATH/03-synthesis-draft.md` (working)
-   - `$EXEC_PATH/final-competitive-landscape.md` (polished)
-✅ **Published:** `/research/competitive-landscape.md`
-
----
-
-## Handoff to Orchestrator
-
-Once synthesis is complete:
-
-**Report back:**
-```
-✅ Phase 3 complete: Strategic Synthesis
-
-POSITIONING MAP:
-[Simple text visual of competitor clustering]
-
-WHITE SPACE IDENTIFIED:
-[The unclaimed territory]
-
-HYPOTHESIS VALIDATION:
-✅ [Validated hypotheses]
-⚠️ [Partially validated]
-❌ [Contradicted]
-
-STRATEGIC RECOMMENDATION:
-**Territory:** [Positioning to pursue]
-**Why:** [One-sentence rationale]
-
-📄 Outputs:
-- Working draft: $EXEC_PATH/03-synthesis-draft.md
-- Final: $EXEC_PATH/final-competitive-landscape.md
-- Published: /research/competitive-landscape.md
-
-NEXT STEP:
-[Recommended command - e.g., /discover-customer-insight or /define-positioning]
-```
-
-The orchestrator will then proceed to Phase 4 (handoff to user).
+✅ **Next steps defined** - Specific actions to take
+✅ **Final research report completed** - Polished, publishable output

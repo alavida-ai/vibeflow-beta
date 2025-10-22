@@ -1,14 +1,21 @@
-# Implement the following plan
-Follow the `Instructions` to implement the `Plan` then `Report` the completed work.
+---
+argument-hint: Path to PLAN.md
+---
+# Implement
+
+## Purpose
+
+Execute a workflow plan by following PLAN.md, delegating to agents, and tracking progress.
+
+## Variables
+
+PLAN_PATH: $ARGUMENTS
 
 ## Instructions
-- Read the plan, think hard about the plan
-- Create a Todo list and ensure that it is line with the vibeflow file system
-- Implement the plan
 
-## Plan
-$ARGUMENTS
-
-## Report
-- Summarize the work you've just done in a concise bullet point list.
-- Report the files and total lines changed with `git diff --stat`
+- This task requires the `orchestration` skill to understand HOW to implement plans effectively
+- If `PLAN_PATH` is provided, use it. Otherwise, find the most recent execution folder in `/research/`
+- Read the PLAN.md file - this is your execution blueprint
+- Use the orchestration skill to guide you to implement this plan effectively
+- Follow PLAN.md as the source of truth for all execution decisions
+- Report results when complete with links to artifacts and final output

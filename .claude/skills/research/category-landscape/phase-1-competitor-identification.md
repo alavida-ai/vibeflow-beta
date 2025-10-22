@@ -1,28 +1,23 @@
 # Phase 1: Competitor Identification
 
-**Agent Role:** You are a competitive research specialist identifying and validating competitors for landscape analysis.
-
 **Purpose:** Identify 5-10 direct and indirect competitors with validated URLs and map them to positioning hypotheses.
 
 ---
 
-## Your Task Overview
+## Task Overview
 
-You've been delegated by the orchestrator to execute Phase 1 of competitive landscape research. Your output will feed into Phase 2 (parallel research execution).
+Execute Phase 1 of competitive landscape research to identify the competitive set. Your output will feed into Phase 2 (parallel research execution).
 
 ---
 
-## Context Loading
+## Context You'll Need
 
-**Your execution path:** `$EXEC_PATH` (provided by orchestrator)
+**Session metadata containing:**
+- Category/space to analyze
+- Initial competitor list (if provided by user)
+- Hypotheses from founder interview
 
-**Required Input:**
-- `$EXEC_PATH/00-session-metadata.md` - Contains:
-  - Category/space to analyze
-  - Initial competitor list (if provided by user)
-  - Hypotheses from founder interview
-
-**Read this file first** to understand what you're researching.
+Read the session context first to understand what you're researching.
 
 ---
 
@@ -30,7 +25,7 @@ You've been delegated by the orchestrator to execute Phase 1 of competitive land
 
 ### Step 1: Determine if Competitor Research Needed
 
-**If `00-session-metadata.md` contains a complete competitor list (5+ competitors with URLs):**
+**If session metadata contains a complete competitor list (5+ competitors with URLs):**
 - ✅ Skip to Step 3 (validation)
 
 **If competitor list is incomplete or missing:**
@@ -53,7 +48,7 @@ To map your competitive landscape, I need to know:
 
 **If user requests research:**
 
-Use `mcp__perplexity__perplexity_search` to:
+Use **Perplexity research** to:
 - Identify top 10 players in the category
 - Find their websites
 - Categorize by market segment (enterprise, SMB, consumer, etc.)
@@ -101,11 +96,9 @@ Use `mcp__perplexity__perplexity_search` to:
 
 ---
 
-## Output Format
+## Output Deliverable
 
-**Write to:** `$EXEC_PATH/01-competitors-identified.md`
-
-**Template:**
+Create a competitor identification artifact with this structure:
 
 ```markdown
 ---
@@ -150,7 +143,7 @@ category: [category/space]
 
 ## Hypotheses to Validate
 
-**From founder interview (`/research/founder-interview/index.md`):**
+**From founder interview:**
 
 1. **Hypothesis:** [e.g., "Competitors focus on 'speed' leaving 'quality' unclaimed"]
    - **Competitors to test:** [Which competitors we'll analyze for this]
@@ -197,14 +190,14 @@ Before proceeding to Phase 2, verify:
 ✅ **Category clearly defined** (not too broad, not too narrow)
 ✅ **Hypotheses contextualized** - Each competitor maps to at least one hypothesis
 ✅ **Research scope defined** - Clear on what pages/data to extract
-✅ **Output written** to `$EXEC_PATH/01-competitors-identified.md`
+✅ **Output documented** - Complete competitor identification artifact
 
 ---
 
 ## Troubleshooting
 
 **Issue:** User doesn't know their competitors
-- **Solution:** Research the category yourself using Perplexity tools
+- **Solution:** Research the category yourself using Perplexity research
 - **Query:** "Top companies in [category] 2025"
 
 **Issue:** Too many competitors (15+)
@@ -214,28 +207,3 @@ Before proceeding to Phase 2, verify:
 **Issue:** Competitor websites are inaccessible (paywalls, etc.)
 - **Solution:** Use alternative sources (G2, Capterra, product reviews)
 - **Fallback:** Use Perplexity to scrape public info about their positioning
-
----
-
-## Handoff to Orchestrator
-
-Once `01-competitors-identified.md` is written:
-
-**Report back:**
-```
-✅ Phase 1 complete: Competitors Identified
-
-COMPETITOR SET:
-- [#] direct competitors
-- [#] indirect competitors
-
-HYPOTHESES MAPPED:
-- [Hypothesis 1] → [Competitors]
-- [Hypothesis 2] → [Competitors]
-
-📄 Output: $EXEC_PATH/01-competitors-identified.md
-
-READY FOR: Phase 2 (Research Execution)
-```
-
-The orchestrator will then proceed to Phase 2.

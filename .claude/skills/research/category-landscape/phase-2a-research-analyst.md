@@ -1,30 +1,25 @@
-# Phase 2A: Research Analyst - Competitive Positioning Analysis
+# Phase 2A: Competitive Positioning Research
 
-**Agent Role:** You are a competitive research analyst extracting positioning statements, market data, and keyword intelligence.
-
-**Purpose:** Analyze competitor positioning, keyword strategies, and market trends to identify white space opportunities.
+**Purpose:** Analyze competitor positioning statements, keyword strategies, and market trends to identify white space opportunities.
 
 ---
 
-## Your Task Overview
+## Task Overview
 
-You've been delegated by the orchestrator to execute Phase 2A (research stream) of competitive landscape research. You will work **in parallel** with a content-analyst agent who is analyzing messaging and tone.
+Extract and analyze how competitors position themselves in the market through their explicit positioning claims, keyword targeting, and value propositions. This research stream runs in parallel with messaging analysis to provide comprehensive competitive intelligence.
 
-Your focus: **Positioning statements, keyword data, market intelligence**
+**Your focus:** Positioning statements, keyword data, market intelligence
 
 ---
 
-## Context Loading
+## Context You'll Need
 
-**Your execution path:** `$EXEC_PATH` (provided by orchestrator)
+**Competitor identification artifact containing:**
+- Competitor list with URLs
+- Hypotheses to validate
+- Research scope
 
-**Required Input:**
-- `$EXEC_PATH/01-competitors-identified.md` - Contains:
-  - Competitor list with URLs
-  - Hypotheses to validate
-  - Research scope
-
-**Read this file first** to understand what needs to be researched.
+Read this context first to understand what needs to be researched.
 
 ---
 
@@ -39,7 +34,7 @@ Your focus: **Positioning statements, keyword data, market intelligence**
 - About page (mission, positioning statements)
 - Pricing page (value props, tiers)
 
-**Tool:** `mcp__firecrawl__firecrawl_scrape`
+**Tool:** Use **Firecrawl scraping**
 
 **Extract:**
 - Primary headline/tagline
@@ -69,8 +64,8 @@ Value props:
 - Search volume and traffic estimates
 
 **Tools:**
-- `mcp__dataforseo__datalabs_google_ranked_keywords` - What they rank for
-- `mcp__dataforseo__datalabs_google_keywords_ideas` - Keyword clustering
+- Use **DataForSEO ranked keywords** - What they rank for
+- Use **DataForSEO keyword ideas** - Keyword clustering
 
 **Extract:**
 - Top 10 keywords (by volume)
@@ -99,7 +94,7 @@ Keyword themes:
 - What are customers asking for?
 - How is the market evolving?
 
-**Tool:** `mcp__perplexity__perplexity_research`
+**Tool:** Use **Perplexity search**
 
 **Query examples:**
 - "What are the latest trends in [category] as of 2025?"
@@ -113,11 +108,9 @@ Keyword themes:
 
 ---
 
-## Output Format
+## Output Deliverable
 
-**Write to:** `$EXEC_PATH/02a-research-analyst-findings.md`
-
-**Use this template:**
+Create a research analyst findings artifact with this structure:
 
 ```markdown
 ---
@@ -184,7 +177,7 @@ competitors_analyzed: [number]
 
 ## Hypothesis Validation: Positioning Territory
 
-**Hypothesis 1:** [From 01-competitors-identified.md]
+**Hypothesis 1:** [From competitor identification]
 **Evidence:**
 - [Competitor X] claims [territory]: "[quote]"
 - [Competitor Y] also uses similar language: "[quote]"
@@ -231,7 +224,7 @@ Before completing your task, verify:
 ✅ **Evidence-based** - Quotes and citations from actual competitor sites
 ✅ **Keyword data collected** - Top keywords and themes identified
 ✅ **Hypotheses tested** - Each hypothesis has validation status
-✅ **Output written** to `$EXEC_PATH/02a-research-analyst-findings.md`
+✅ **Output documented** - Complete research analyst findings artifact
 
 ---
 
@@ -243,31 +236,8 @@ Before completing your task, verify:
 
 **Issue:** Limited keyword data available
 - **Solution:** Use broader category keywords instead of competitor-specific
-- **Tool:** `mcp__dataforseo__datalabs_google_keywords_ideas`
+- **Tool:** DataForSEO keyword ideas
 
 **Issue:** Competitor has no clear positioning statement
 - **Solution:** Synthesize from homepage hero, about page, and value props
 - **Look for:** Repeated phrases, taglines, meta descriptions
-
----
-
-## Handoff to Orchestrator
-
-Once `02a-research-analyst-findings.md` is written, report back:
-
-```
-✅ Phase 2A complete: Research Analyst Findings
-
-COMPETITORS ANALYZED: [#]
-HYPOTHESES TESTED: [#]
-OUTPUT: $EXEC_PATH/02a-research-analyst-findings.md
-
-KEY FINDINGS:
-- Positioning clusters: [Brief summary]
-- White space identified: [Brief summary]
-- Top keyword themes: [List]
-
-READY FOR: Phase 3 (Strategic Synthesis)
-```
-
-The orchestrator will wait for both you and the content-analyst to complete before proceeding to Phase 3.

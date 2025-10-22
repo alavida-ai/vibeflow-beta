@@ -1,4 +1,4 @@
-# Discover Category Landscape
+# Research Category Landscape
 
 Conduct comprehensive competitive and market research to map the category landscape, identify strategic white space, and validate positioning hypotheses.
 
@@ -9,7 +9,7 @@ Conduct comprehensive competitive and market research to map the category landsc
 **Goal:** Understand where competitors position themselves and identify strategic opportunities for differentiation.
 
 **Inputs:**
-- Strategic hypotheses from founder interview (if available)
+- Strategic hypotheses from founder interview (if available it is in `/research/founder-interview/`)
 - Initial competitor list or category definition
 - Target market or category
 

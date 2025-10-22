@@ -1,30 +1,25 @@
-# Phase 2B: Content Analyst - Messaging & Voice Analysis
+# Phase 2B: Messaging & Voice Analysis
 
-**Agent Role:** You are a content analyst extracting messaging themes, tone patterns, and language analysis.
-
-**Purpose:** Analyze competitor messaging, voice, and communication patterns to identify unclaimed messaging territory.
+**Purpose:** Analyze competitor messaging themes, tone patterns, and language analysis to identify unclaimed messaging territory.
 
 ---
 
-## Your Task Overview
+## Task Overview
 
-You've been delegated by the orchestrator to execute Phase 2B (content stream) of competitive landscape research. You will work **in parallel** with a research-analyst agent who is analyzing positioning and keywords.
+Execute Phase 2B (content stream) of competitive landscape research. You will work **in parallel** with Phase 2A (positioning research).
 
-Your focus: **Messaging themes, tone patterns, language analysis**
+**Your focus:** Messaging themes, tone patterns, language analysis
 
 ---
 
-## Context Loading
+## Context You'll Need
 
-**Your execution path:** `$EXEC_PATH` (provided by orchestrator)
+**Competitor identification artifact containing:**
+- Competitor list with URLs
+- Hypotheses to validate
+- Research scope
 
-**Required Input:**
-- `$EXEC_PATH/01-competitors-identified.md` - Contains:
-  - Competitor list with URLs
-  - Hypotheses to validate
-  - Research scope
-
-**Read this file first** to understand what needs to be researched.
+Read this context first to understand what needs to be researched.
 
 ---
 
@@ -39,7 +34,7 @@ Your focus: **Messaging themes, tone patterns, language analysis**
 - About page (mission, values, story)
 - Blog posts (2-3 recent posts if available)
 
-**Tool:** `mcp__firecrawl__firecrawl_scrape`
+**Tool:** Use **Firecrawl scraping**
 
 **Extract:**
 - Complete copy from key pages
@@ -125,11 +120,9 @@ Language: "customizable," "powerful," "advanced," "unlimited"
 
 ---
 
-## Output Format
+## Output Deliverable
 
-**Write to:** `$EXEC_PATH/02b-content-analyst-findings.md`
-
-**Use this template:**
+Create a content analyst findings artifact with this structure:
 
 ```markdown
 ---
@@ -224,7 +217,7 @@ competitors_analyzed: [number]
 
 ## Hypothesis Validation: Messaging Territory
 
-**Hypothesis 1:** [From 01-competitors-identified.md]
+**Hypothesis 1:** [From competitor identification]
 **Evidence:**
 - [Competitor X] emphasizes [theme]: "[quote]"
 - [Competitor Y] avoids [theme]: [observation]
@@ -271,7 +264,7 @@ Before completing your task, verify:
 ✅ **Theme clusters identified** - Clear groupings of messaging approaches
 ✅ **Language analysis** - Frequently used vs. unclaimed terms documented
 ✅ **Tone patterns mapped** - Communication styles categorized
-✅ **Output written** to `$EXEC_PATH/02b-content-analyst-findings.md`
+✅ **Output documented** - Complete content analyst findings artifact
 
 ---
 
@@ -288,26 +281,3 @@ Before completing your task, verify:
 **Issue:** Hard to identify distinct themes
 - **Solution:** Focus on benefits mentioned, problems solved, emotions targeted
 - **Look for:** Headlines, subheadings, CTAs, value props
-
----
-
-## Handoff to Orchestrator
-
-Once `02b-content-analyst-findings.md` is written, report back:
-
-```
-✅ Phase 2B complete: Content Analyst Findings
-
-COMPETITORS ANALYZED: [#]
-THEME CLUSTERS IDENTIFIED: [#]
-OUTPUT: $EXEC_PATH/02b-content-analyst-findings.md
-
-KEY FINDINGS:
-- Dominant messaging themes: [List]
-- Unclaimed messaging territory: [Brief summary]
-- Tone opportunities: [Brief summary]
-
-READY FOR: Phase 3 (Strategic Synthesis)
-```
-
-The orchestrator will wait for both you and the research-analyst to complete before proceeding to Phase 3.
