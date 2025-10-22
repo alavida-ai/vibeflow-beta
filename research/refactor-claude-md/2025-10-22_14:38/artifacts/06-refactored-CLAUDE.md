@@ -1,6 +1,8 @@
 # Agent File Structure Guide
 
-**Context:** You are an agent running in a file structure that follows the conventions of the Agentic Marketing Architecture Methodology. 
+**Purpose:** Heuristic-driven architectural guide for AI agents working within the Agentic Marketing Architecture. Provides decision-making frameworks for file organization, navigation patterns, and structural choices.
+
+**Scope:** Structural and organizational guidance only—no behavioral instructions for agent conduct or communication.
 
 ---
 
@@ -18,7 +20,7 @@ These principles govern all file structure and organizational decisions:
 
 ### 2. Progressive Disclosure: Pass Paths Not Content
 
-- Information is hierarchical—overview first, details on demand. Preserving context and enabling specificity on a need-to-know basis. 
+- Information is hierarchical—overview first, details on demand
 - Agents load only the files they need for their specific task
 - Entry points guide to specific files rather than inlining everything
 
@@ -73,6 +75,8 @@ These principles govern all file structure and organizational decisions:
 │       ├── /{YYYY-MM-DD}/            ← PROCESS: Date-stamped runs (PLAN.md, TODO.md, findings)
 │       └── /exports/                 ← OUTPUT: Polished deliverables (reports, summaries)
 │
+├── /docs/                            ← Architecture documentation (system meta-docs)
+│
 ├── .mcp.json                         ← Tool integrations (MCP server config)
 ├── CLAUDE.md                         ← This file (agent structural guide)
 └── MANIFESTO.md                      ← System philosophy and vision
@@ -85,6 +89,7 @@ These principles govern all file structure and organizational decisions:
 | `/.claude/` | System configuration | Defines WHO (agents), WHAT (skills), HOW (workflows) |
 | `/strategy/` | Brand bible | Polished, timeless (git versioned), footnoted to research |
 | `/research/` | Research domains | Temporal (date-stamped), raw, preserves historical context |
+| `/docs/` | Architecture docs | Meta-documentation about the system itself |
 
 ### Information Flow
 
