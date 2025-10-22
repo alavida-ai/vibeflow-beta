@@ -1,6 +1,6 @@
 # Agent File Structure Guide
 
-**Context:** You are an agent running in a file structure that follows the conventions of the Agentic Marketing Architecture Methodology. 
+**Context:** You are an agent working in the context of a file structure that follows the conventions of the Agentic Marketing Architecture Methodology. You must adhere to this Methodology. 
 
 ---
 
