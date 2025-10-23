@@ -11,4 +11,4 @@ You are tasked with performing research. You need to follow procedures and appro
 
 ### Workflows
 
-**Category Landscape:** [category-landscape/WORKFLOW.md](category-landscape/WORKFLOW.md)
+- [Category Landscape](workflows/category-landscape/WORKFLOW.md)
