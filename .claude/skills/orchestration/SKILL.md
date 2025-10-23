@@ -1,6 +1,6 @@
 ---
 name: orchestration
-description: Provides the "how-to" for workflow execution orchestration. Defines methods for planning multi-phase workflows, implementing them through agent delegation, managing artifacts, and tracking progress. Pure concepts - no command triggers.
+description: Provides the "how-to" for workflow / task execution orchestration. Defines methods for planning multi-phase task/workflows, implementing them through agent delegation, managing artifacts, and tracking progress.
 ---
 
 # Workflow Orchestration
@@ -12,7 +12,7 @@ Knowledge base for orchestrating multi-phase workflow executions with standardiz
 This skill embodies five key orchestration principles:
 
 1. **[Planning](references/planning.md)** - HOW to create execution plans with phase breakdown and artifact definition
-2. **[Implementation](references/implementation.md)** - HOW to execute plans through agent delegation
+2. **[Implementation](references/implementation.md)** - HOW to execute plans through agent delegation, progress tracking and artifact management
 3. **[Delegation](references/delegation.md)** - HOW to maintain focused context through strategic agent handoffs
 4. **[Artifacts](references/artifacts.md)** - HOW to standardize outputs that flow between phases
 5. **[Progress Tracking](references/progress-tracking.md)** - HOW to maintain execution state and resumability
@@ -29,10 +29,10 @@ A core architectural principle that emerges from delegation: **pass file paths, 
 
 ## Standard Execution Folder
 
-All workflows follow this structure:
+All task/workflow executions follow this structure:
 
 ```
-/research/{workflow-name}/{YYYY-MM-DD_HH:MM}/
+/research/{task/workflow-name}/{YYYY-MM-DD_HH:MM}/
 ├── data/              # Input files (optional)
 ├── artifacts/         # Phase outputs
 │   ├── 01-*.md
