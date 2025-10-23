@@ -11,4 +11,4 @@ You are tasked with performing research. You need to follow procedures and appro
 
 ### Workflows
 
-**Competitive analysis:** [discover-competitive-analysis/WORKFLOW.md](discover-competitive-analysis/WORKFLOW.md)
+**Category Landscape:** [category-landscape/WORKFLOW.md](category-landscape/WORKFLOW.md)
