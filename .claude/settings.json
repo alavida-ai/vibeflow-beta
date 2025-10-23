@@ -1,6 +1,17 @@
 {
     "permissions": {
-        "allow": []
+        "allow": [
+            "Write",
+            "Edit",
+            "Bash(mkdir:*)",
+            "Bash(rm:*)",
+            "Bash(rmdir:*)",
+            "Bash(git:*)",
+            "Bash(npm:*)",
+            "Bash(node:*)",
+            "Bash(python:*)",
+            "NotebookEdit"
+        ]
     },
     "enableAllProjectMcpServers": true,
     "enabledMcpjsonServers": [
@@ -8,7 +19,8 @@
         "replicate",
         "twitter-scraper",
         "dataforseo",
-        "perplexity"
+        "perplexity",
+        "MarketingArchitectureDocs"
     ],
     "outputStyle": "operations-manager"
 }
