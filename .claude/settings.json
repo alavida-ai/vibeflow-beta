@@ -1,0 +1,14 @@
+{
+    "permissions": {
+        "allow": []
+    },
+    "enableAllProjectMcpServers": true,
+    "enabledMcpjsonServers": [
+        "firecrawl",
+        "replicate",
+        "twitter-scraper",
+        "dataforseo",
+        "perplexity"
+    ],
+    "outputStyle": "operations-manager"
+}
