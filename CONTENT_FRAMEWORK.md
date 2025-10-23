@@ -292,27 +292,17 @@ You define your rules in simple markdown:
 
 `.claude/skills/synthising-strategy/SKILL.md`
 ```markdown
-## Research → Strategy Mapping
+# Guide on updating strategy documents with new research
 
-### Competitor Analysis
-Updates: /strategy/positioning/differentiation.md
-Method: Find gaps and unclaimed value props
-Threshold: 3+ new insights triggers update
+## Tone of voice
+Update the tone of voice to reflect the latest versions of the following research documents. Only make changes if the research documents below are newer than our tone-of-voice.md
+- research/competitor-analysis.md
+- research/analyse-customer-sentiment.md
 
-### Customer Insights
-Updates: /strategy/voice/vocabulary.md
-Method: Extract repeated language patterns
-Threshold: 5+ instances of same phrase
+## Target Personas
+...
 
-## Content Requirements
-
-### Blog Posts
-Needs: [positioning, messaging, voice]
-Depth: Include research citations
-
-### Social Posts
-Needs: [voice, one messaging pillar]
-Depth: Strategy only, no research
+### 
 ```
 
 ---
@@ -321,7 +311,7 @@ Depth: Strategy only, no research
 
 ### For You (Marketing Architect)
 - **Your methodology, systematized** - Not forced into our framework
-- **Your expertise, preserved** - In configuration, not code
+- **Your expertise, preserved** - In prompts, not code
 - **Your flexibility, maintained** - Change strategy without breaking system
 
 ### For Your Team
@@ -338,23 +328,16 @@ Depth: Strategy only, no research
 
 ## Implementation Path
 
-### Phase 1: Setup (Week 1)
-1. Define your research domains
+### Phase 1: Setup
+1. Define your research domains (or use our pre built onboarding documents)
 2. Create initial strategy structure
 3. Configure synthesis rules
 4. Test with one research → strategy cycle
 
-### Phase 2: Refinement (Week 2-3)
+### Phase 2: Refinement (re-run research ad-hoc or periodically)
 1. Run full research sprint
 2. Execute strategy synthesis
 3. Create content with new system
-4. Adjust configuration based on learnings
-
-### Phase 3: Operationalization (Week 4+)
-1. Establish rhythm (research → strategy → content)
-2. Train team on commands
-3. Refine based on usage
-4. Scale up content production
 
 ---
 
@@ -363,7 +346,7 @@ Depth: Strategy only, no research
 1. **Research Domains**: What research do you typically conduct?
 2. **Strategy Documents**: How do you organize brand strategy?
 3. **Synthesis Logic**: How does research become strategy decisions?
-4. **Content Types**: What content do you produce and what strategy does each need?
+4. **Content Types**: What content do you produce and what strategic documentation does each need?
 5. **Update Cadence**: How often should strategy be refreshed?
 
 ---
@@ -374,6 +357,7 @@ Depth: Strategy only, no research
 2. **Map your methodology** - How would your approach fit?
 3. **Identify customizations** - What's unique about your process?
 4. **Provide feedback** - What's missing or needs adjustment?
+4. **Concerns** - What processes that you carry out could break this flow?
 
 ---
 
@@ -385,13 +369,13 @@ The AMA Content Framework provides the **pipes** (information flow) while you pr
 - Research → Strategy → Content flow
 - Temporal and versioned patterns
 - Citations and traceability
-- Progressive disclosure
+- Agentic best practices when executing your marketing workflows (progressive disclosure, subagent delegation)
 
 **You define:**
-- What research to conduct
+- What research to conduct (via skill workflows)
 - What strategy documents to maintain
 - How research becomes strategy
-- What strategy each content needs
+- What strategic documents each content creation requires
 
 Together, we create a system that's both **rigorous** (no quality compromises) and **flexible** (your methodology, your way).
 
