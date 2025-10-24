@@ -28,12 +28,19 @@ The AMA Content Framework is an opinionated protocol for how marketing intellige
 ┌──────────────────────────────────────────────────────────────┐
 │ STRATEGY LAYER (Versioned Snapshot)                          │
 │ /strategy/                                                   │
-│   ├── brand-fundamentals.md    (mission, values, purpose)    │
-│   ├── positioning.md           (market position)             │
-│   ├── messaging-pillars.md     (key themes, value props)     │
-│   ├── tone-of-voice.md         (how we communicate)          │
-│   └── audience-personas.md     (who we serve)                │
-│       └── [all with citations to research]                   │
+│   ├── STRATEGY.md              (root overview)               │
+│   ├── /brand-fundamentals/     (folder defines purpose)      │
+│   │   └── STRATEGY.md          (mission, values, purpose)    │
+│   ├── /positioning/                                          │
+│   │   └── STRATEGY.md          (market position)             │
+│   ├── /voice/                                                │
+│   │   ├── STRATEGY.md          (universal principles)        │
+│   │   └── /twitter/            (platform extension)          │
+│   │       └── EXTENSION.md     (extends parent, not replace) │
+│   └── /audience/                                             │
+│       ├── STRATEGY.md          (overview of personas)        │
+│       └── /technical-buyer/                                  │
+│           └── STRATEGY.md      (specific persona)            │
 └────────────────┬─────────────────────────────────────────────┘
                  │ References for every piece via
                  │ /create-content command (for example)
@@ -80,9 +87,9 @@ Research → Strategy → Content
 
 **Strategy = Versioned (Current Snapshot)**
 ```
-/strategy/positioning.md (current truth)
-/strategy/messaging.md (current truth)
-/strategy/tone-of-voice.md (current truth)
+/strategy/positioning/STRATEGY.md (current truth)
+/strategy/voice/STRATEGY.md (base voice)
+/strategy/voice/twitter/EXTENSION.md (twitter additions)
 ```
 - Only current state matters
 - Git preserves history
@@ -95,7 +102,7 @@ Every claim has an evidence chain:
 ```
 Content: "We make marketing 10x faster"
     ↓ uses strategy docs as context
-Strategy: /strategy/positioning.md
+Strategy: /strategy/positioning/STRATEGY.md
     "10x productivity improvement"[^1]
     ↓ cites
 Research: /research/customers/2024-01-15/
@@ -121,6 +128,30 @@ Creating a blog post:
 Creating a campaign:
   Level 1-4: Full stack including all research
 ```
+
+---
+
+## Strategy Layer: Extension Pattern
+
+### Next.js-Inspired File Structure
+
+Each strategy domain has a **STRATEGY.md** as its main content. Extensions live in subfolders with **EXTENSION.md** files that extend (not replace) the parent:
+
+```
+/strategy/voice/
+├── STRATEGY.md                 # Base voice principles
+└── /twitter/
+    └── EXTENSION.md            # Twitter-specific additions
+
+When creating Twitter content:
+Load: /strategy/voice/STRATEGY.md + /strategy/voice/twitter/EXTENSION.md
+```
+
+**Key Rules:**
+- Only 2 file types in `/strategy/`: STRATEGY.md and EXTENSION.md
+- Folder names define what things are (like Next.js pages)
+- Extensions are additive only (like Next.js layouts)
+- EXTENSION.md only contains what's different/additional
 
 ---
 
@@ -244,12 +275,14 @@ Examples:
 
 ### 2. Your Strategy Documents
 ```yaml
-Examples:
-  - /strategy/brand-foundations/
-  - /strategy/positioning/
-  - /strategy/messaging/
-  - /strategy/tone-of-voice/
-  - Whatever framework you prefer
+Examples (Next.js-style structure):
+  - /strategy/brand-fundamentals/STRATEGY.md
+  - /strategy/positioning/STRATEGY.md
+  - /strategy/voice/STRATEGY.md
+  - /strategy/voice/twitter/EXTENSION.md
+  - /strategy/audience/STRATEGY.md
+  - /strategy/audience/technical-buyer/STRATEGY.md
+  - Whatever framework you prefer (folder = what it is)
 ```
 
 ### 3. Your Synthesis Logic
@@ -336,19 +369,25 @@ Your Decisions:
 
 You define your rules in simple markdown:
 
-`.claude/skills/synthising-strategy/SKILL.md`
+`.claude/skills/synthesizing-strategy/SKILL.md`
 ```markdown
 # Guide on updating strategy documents with new research
 
-## Tone of voice
-Update the tone of voice to reflect the latest versions of the following research documents. Only make changes if the research documents below are newer than our tone-of-voice.md
-- research/competitor-analysis.md
-- research/analyse-customer-sentiment.md
+## Voice Strategy
+Update /strategy/voice/STRATEGY.md to reflect the latest versions of:
+- /research/competitor-analysis/RESEARCH.md
+- /research/customer-insights/RESEARCH.md
 
-## Target Personas
-...
+Only make changes if research is newer than strategy.
 
-### 
+## Positioning Strategy
+Update /strategy/positioning/STRATEGY.md based on:
+- /research/competitor-analysis/RESEARCH.md
+- /research/market-trends/RESEARCH.md
+
+## Extensions
+Platform-specific voice extensions (/strategy/voice/twitter/EXTENSION.md)
+should only contain what's DIFFERENT from base voice, not duplicate it.
 ```
 
 ---

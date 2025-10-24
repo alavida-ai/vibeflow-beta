@@ -11,10 +11,10 @@ These principles govern all file structure and organizational decisions:
 ### 1. Organize by Concern, Navigate by Entry Point, Reference by Path
 
 - Directory structure reflects logical separation (strategy vs research vs configuration)
-- UPPERCASE.md files serve as navigation tables of contents
+- UPPERCASE.md files serve as main content documents (STRATEGY.md, RESEARCH.md) and extensions (EXTENSION.md)
 - Files are referenced by path, not duplicated across locations
 
-**Example:** `/strategy/` (concern) → `STRATEGY.md` (entry point) → `/messaging/pillars.md` (reference)
+**Example:** `/strategy/voice/` (concern) → `STRATEGY.md` (main content) → `/twitter/EXTENSION.md` (extension)
 
 ### 2. Progressive Disclosure: Pass Paths Not Content
 
@@ -26,7 +26,7 @@ These principles govern all file structure and organizational decisions:
 
 ### 3. Temporal Elements Get Date-Stamped, Timeless Elements Use Version Control
 
-- Research is time-stamped (`/2025-10-20/`) because markets and insights evolve
+- Research is time-stamped (`/YYYY-MM-DD@HH:mm/`) because markets and insights evolve
 - Strategy is versioned through git because it's polished, not experimental
 - Temporal folders preserve historical context for comparison
 
@@ -34,8 +34,7 @@ These principles govern all file structure and organizational decisions:
 
 ### 4. Input → Process → Output (Three-Folder Pattern)
 
-- Research domains follow clear information flow
-- `/data/` contains raw inputs, `/{YYYY-MM-DD}/` is where analysis happens, `/exports/` holds deliverables
+- Research domains follow clear information flow: `/data/` (input) → `/{YYYY-MM-DD@HH:mm}/` (execution) → `/exports/` (output)
 
 **Result:** Clear data provenance, separation of stages, agents know where to look
 
@@ -43,9 +42,10 @@ These principles govern all file structure and organizational decisions:
 
 - Strategy claims link back to research findings via footnotes
 - Research findings reference raw data sources
-- Complete chain: Content → Strategy → Research → Raw Data
+- Content generation loads strategy into execution context (PLAN.md/TODO.md) to ensure on-brand outputs
+- Complete chain: Content (uses Strategy as context) → Strategy (cites Research) → Research (analyzed from Data)
 
-**Result:** Defensible strategy, research utilization, transparency
+**Result:** Defensible strategy, traceable content, research utilization, transparency
 
 ---
 
@@ -60,18 +60,34 @@ These principles govern all file structure and organizational decisions:
 │   └── commands/                     ← Workflow triggers (/onboarding, /campaigns)
 │
 ├── /strategy/                        ← Brand bible (polished, client-ready, footnoted to research)
-│   ├── STRATEGY.md                   ← Entry point (progressive disclosure)
-│   ├── /core/                        ← narrative.md, positioning.md
-│   ├── /messaging/                   ← pillars.md, value-propositions.md
-│   ├── /voice/                       ← tone-guidelines.md, vocabulary.md
-│   └── /audience/                    ← personas/ (agency-owner.md, in-house-marketer.md)
+│   ├── STRATEGY.md                   ← Main strategy overview
+│   ├── /brand-fundamentals/          ← STRATEGY.md (mission, values, purpose)
+│   ├── /positioning/                 ← STRATEGY.md (market position, differentiation)
+│   ├── /messaging/                   ← STRATEGY.md + optional extension folders
+│   │   └── /{audience}/              ← EXTENSION.md (extends parent)
+│   ├── /voice/                       ← STRATEGY.md + optional extension folders
+│   │   └── /{platform}/              ← EXTENSION.md (extends parent)
+│   └── /audience/                    ← STRATEGY.md + optional persona subfolders
+│       └── /{persona-name}/          ← EXTENSION.md (specific persona)
 │
 ├── /research/                        ← Research domains (temporal, date-stamped, raw findings)
 │   └── /{domain}/                    ← e.g., category-landscape, customer-insight
-│       ├── RESEARCH.md               ← Entry point (guides to latest run, data, exports)
-│       ├── /data/                    ← INPUT: Raw materials (transcripts, surveys, reports)
-│       ├── /{YYYY-MM-DD}/            ← PROCESS: Date-stamped runs (PLAN.md, TODO.md, findings)
-│       └── /exports/                 ← OUTPUT: Polished deliverables (reports, summaries)
+│       ├── RESEARCH.md               ← Index: accumulated knowledge (MA approved)
+│       ├── CHANGELOG.md              ← Tracks evolution of findings
+│       ├── /{YYYY-MM-DD@HH:mm}/      ← Execution folders
+│       │   ├── PLAN.md               ← Approach for this execution
+│       │   ├── TODO.md               ← Progress tracking
+│       │   ├── RESEARCH.md           ← Execution findings (high-level)
+│       │   └── /artifacts/           ← Detailed evidence and analysis
+│       └── /data/                    ← Raw materials (transcripts, surveys, reports)
+│
+├── /content/                         ← Content creation (temporal, strategy-guided outputs)
+│   └── /{type}/                      ← e.g., blog-posts, tweets, linkedin-posts
+│       └── /{YYYY-MM-DD@HH:mm-content-slug-title}/      ← Execution folders
+│           ├── PLAN.md               ← Content brief (strategy files used as context)
+│           ├── TODO.md               ← Creation tracking
+│           ├── /artifacts/           ← Subtasks/subagent outputs (research, keywords)
+│           └── CONTENT.md            ← Final content to review/publish
 │
 ├── .mcp.json                         ← Tool integrations (MCP server config)
 ├── CLAUDE.md                         ← This file (agent structural guide)
@@ -85,33 +101,51 @@ These principles govern all file structure and organizational decisions:
 | `/.claude/` | System configuration | Defines WHO (agents), WHAT (skills), HOW (workflows) |
 | `/strategy/` | Brand bible | Polished, timeless (git versioned), footnoted to research |
 | `/research/` | Research domains | Temporal (date-stamped), raw, preserves historical context |
+| `/content/` | Content creation | Temporal (date-stamped), strategy-guided, final outputs |
 
-### Information Flow
+### Information Flow (Content Framework)
 
 ```
-/research/{domain}/data/           ← Raw materials (interviews, surveys)
-         ↓ analyzed in
-/research/{domain}/{YYYY-MM-DD}/   ← Research execution (findings, analysis)
-         ↓ produces
-/research/{domain}/exports/        ← Deliverable reports
-         ↓ informs (via footnotes)
-/strategy/                         ← Brand strategy claims
-         ↓ guides
-Content output                     ← Blog posts, campaigns, messaging
+/research/{domain}/{YYYY-MM-DD@HH:mm}/   ← Research executions (temporal)
+         ↓ synthesizes into
+/research/{domain}/RESEARCH.md           ← Index (accumulated knowledge, MA approved)
+         ↓ informs periodically
+/strategy/{domain}/STRATEGY.md           ← Strategy documents (current truth)
+         ↓ guides every
+/content/{type}/{YYYY-MM-DD@HH:mm}/      ← Content creation (strategy as context)
 ```
+
+**Key Rules:**
+- Research → Strategy → Content (never skip layers)
+- Strategy synthesis reads from index RESEARCH.md (not executions)
+- Content references strategy (not research directly)
+- Extensions extend (not replace) parent STRATEGY.md (e.g., /voice/twitter/EXTENSION.md)
 
 ---
 
 ## Progressive Disclosure Pattern
 
-**Concept:** Information is hierarchical—agents load exactly what they need, when needed.
+**Concept:** Information is hierarchical. Agents load exactly what they need, when needed.
 
 ### The Pattern
 
-1. **Entry point** (UPPERCASE.md) provides overview + navigation
-2. **Agent reads entry point** to understand what's available
-3. **Agent loads specific files** based on task needs
+1. **Load base document** (`STRATEGY.md`) for core principles
+2. **Check for extensions** in subfolders if platform-specific
+3. **Extension extends base** (additive, not replacement)
 4. **Reference by path**, don't duplicate content
+
+### Extension Pattern (Like Next.js Layouts)
+
+```
+Parent STRATEGY.md + Child EXTENSION.md = Complete Context
+
+Example:
+/strategy/voice/STRATEGY.md            # Base voice (like layout.tsx)
++ /strategy/voice/twitter/EXTENSION.md # Twitter additions (like page.tsx)
+= Complete Twitter voice guide
+
+Note: EXTENSION.md only contains what's ADDITIONAL for that context
+```
 
 ### Entry Point Files
 
@@ -123,40 +157,6 @@ Content output                     ← Blog posts, campaigns, messaging
 | `PLAN.md` | Execution folders | Document workflow approach |
 | `TODO.md` | Execution folders | Track workflow progress |
 
-**STRATEGY.md structure:**
-```markdown
-# Brand Strategy
-
-## Overview
-[1-2 paragraphs: what this strategy covers]
-
-## Quick Navigation
-**Need brand voice?** → `/voice/tone-guidelines.md`
-**Need messaging themes?** → `/messaging/pillars.md`
-
-## Related Research
-[Links to research domains that inform this strategy]
-```
-
-**RESEARCH.md structure:**
-```markdown
-# Research: [Domain Name]
-
-## Latest Findings
-**Most recent run:** `/research/{domain}/{YYYY-MM-DD}/`
-**Key insights:** [3-5 bullet points]
-
-## Research Runs
-- `/{YYYY-MM-DD}/` - [Description]
-
-## Data & Deliverables
-**Raw data:** `/research/{domain}/data/`
-**Reports:** `/research/{domain}/exports/`
-```
-
-For PLAN.md and TODO.md formats, see the orchestration skill.
-
----
 
 ## Temporal Research & Three-Folder Patterns
 
@@ -164,7 +164,7 @@ For PLAN.md and TODO.md formats, see the orchestration skill.
 
 Research is date-stamped to enable historical comparison and trend analysis.
 
-**Format:** `/research/{domain}/{YYYY-MM-DD}/`
+**Format:** `/research/{domain}/{YYYY-MM-DD@HH:mm}/`
 
 **Why:** Research evolves—markets shift, competitors pivot, customer needs change. Date-stamped executions preserve this evolution.
 
@@ -177,7 +177,40 @@ Research is date-stamped to enable historical comparison and trend analysis.
 **Each execution contains:**
 - `PLAN.md` - Research approach and objectives
 - `TODO.md` - Progress tracking
-- Analysis files (findings, notes, insights)
+- `RESEARCH.md` - Execution findings (high-level)
+- `/artifacts/` - Detailed evidence and analysis
+
+### Index Pattern: Accumulated Knowledge
+
+Each research domain maintains an **index RESEARCH.md** at the domain level that represents accumulated knowledge, separate from individual execution findings:
+
+```
+/research/{domain}/
+├── RESEARCH.md               ← INDEX: Accumulated knowledge (MA approved)
+├── CHANGELOG.md              ← Tracks evolution of findings
+├── /{YYYY-MM-DD@HH:mm}/      ← Execution 1
+│   ├── PLAN.md
+│   ├── TODO.md
+│   ├── RESEARCH.md           ← Execution findings
+│   └── /artifacts/
+└── /{YYYY-MM-DD@HH:mm}/      ← Execution 2
+    ├── PLAN.md
+    ├── TODO.md
+    ├── RESEARCH.md           ← Execution findings
+    └── /artifacts/
+```
+
+**How it works:**
+1. New research execution generates findings in timestamped folder
+2. AI compares new findings with existing index (contradictions, additions, validations)
+3. Marketing Architect approves updates to index
+4. CHANGELOG.md tracks all changes for audit trail
+
+**Why this matters:**
+- Knowledge accumulates (not replaced)
+- Strategy synthesis reads from clean, validated index
+- Full history preserved in execution folders
+- Contradictions handled gracefully with MA oversight
 
 ### Three-Folder Pattern
 
@@ -185,14 +218,15 @@ Research domains follow Input → Process → Output structure:
 
 ```
 /research/{domain}/
-├── /data/           ← INPUT: Raw materials (static, organized by type)
-├── /{YYYY-MM-DD}/   ← PROCESS: Date-stamped execution (PLAN.md, findings, notes)
-└── /exports/        ← OUTPUT: Polished deliverables (reports, summaries)
+├── RESEARCH.md              ← INDEX: Current accumulated knowledge
+├── CHANGELOG.md             ← Evolution tracking
+├── /data/                   ← INPUT: Raw materials (static, organized by type)
+└── /{YYYY-MM-DD@HH:mm}/     ← PROCESS: Date-stamped execution (PLAN.md, findings, artifacts)
 ```
 
 **Information flow:**
 ```
-/data/ → /{YYYY-MM-DD}/ → /exports/ → /strategy/
+/data/ → /{YYYY-MM-DD@HH:mm}/ → (updates) → RESEARCH.md (index) → /exports/ → /strategy/
 ```
 
 For detailed workflow execution guidance, see the **orchestration skill** at `.claude/skills/orchestration/`.
@@ -323,32 +357,48 @@ What do I need?
 
 ### File Naming Rules
 
-**Regular files:** kebab-case (`brand-narrative.md`, `customer-insight.md`)
+**File Types by Directory:**
 
-**Entry points & workflow:** UPPERCASE.md (`STRATEGY.md`, `RESEARCH.md`, `PLAN.md`, `TODO.md`)
+Within `/strategy/` folders (only 2 types):
+- `STRATEGY.md` - Main content (folder name defines what it is)
+- `EXTENSION.md` - Extends parent STRATEGY.md (additive only)
 
-**Date-stamped directories:** YYYY-MM-DD (`/2025-10-20/`) for research executions
+Within `/research/` folders:
+- `RESEARCH.md` - Research findings (index or execution)
+- `CHANGELOG.md` - Evolution tracking (at domain level)
+- `PLAN.md` - Execution approach (in dated folders)
+- `TODO.md` - Progress tracking (in dated folders)
+
+**Folder names:** kebab-case
+- Strategy domains: `brand-fundamentals`, `positioning`, `voice`
+- Research domains: `competitor-analysis`, `customer-insights`
+- Extensions: `twitter`, `linkedin`, `technical-audience`
+
+**Date-stamped directories:** YYYY-MM-DD (`/2024-02-20/`) for executions
 
 **Avoid:**
-- Spaces: `Brand Narrative.md`
-- Underscores: `brand_narrative.md`
-- camelCase: `brandNarrative.md`
+- Spaces: `Brand Narrative`
+- Underscores: `brand_narrative`
+- camelCase: `brandNarrative`
+- index.md (use STRATEGY.md or RESEARCH.md instead)
 
 ### Path Examples
 
-**Strategy:**
+**Strategy with Extensions:**
 ```
-/strategy/STRATEGY.md
-/strategy/core/narrative.md
-/strategy/messaging/pillars.md
+/strategy/STRATEGY.md                          # Main overview
+/strategy/voice/STRATEGY.md                    # Main voice doc
+/strategy/voice/twitter/EXTENSION.md           # Twitter-specific
+/strategy/messaging/STRATEGY.md                # Main messaging
+/strategy/messaging/technical-audience/EXTENSION.md  # Tech audience variant
 ```
 
-**Research:**
+**Research with Index:**
 ```
-/research/category-landscape/RESEARCH.md
-/research/category-landscape/data/surveys/q4-2025.csv
-/research/category-landscape/2025-10-20/findings.md
-/research/category-landscape/exports/final-report.pdf
+/research/competitor-analysis/RESEARCH.md      # Index (accumulated)
+/research/competitor-analysis/CHANGELOG.md     # Evolution tracking
+/research/competitor-analysis/2024-02-20/RESEARCH.md  # Execution findings
+/research/competitor-analysis/2024-02-20/artifacts/   # Detailed evidence
 ```
 
 **Configuration:**
@@ -367,12 +417,13 @@ What do I need?
 | `/.claude/` | System configuration | Defines agents, skills, workflows |
 | `/strategy/` | Brand bible | Polished, timeless, footnoted |
 | `/research/` | Research domains | Temporal, date-stamped, raw |
+<ADD FOR CONTENT>
 
 **Entry Point Files:**
 
 | File | Location | Purpose |
 |------|----------|---------|
-| `STRATEGY.md` | `/strategy/` | Navigate brand strategy |
+| `STRATEGY.md` | `/strategy/` | Navigate brand strategy | <ADD NOTE ON OPTIONAL EXTENSIONS>
 | `RESEARCH.md` | `/research/{domain}/` | Navigate research domain |
 | `SKILL.md` | `.claude/skills/{skill}/` | Define skill capabilities |
 
@@ -409,21 +460,4 @@ What do I need?
 
 These principles enable agents to make structural decisions without exhaustive rules:
 
-**Where does a file belong?**
-- Polished and client-ready? → `/strategy/`
-- Research or investigation? → `/research/{domain}/`
-- Defines system behavior? → `/.claude/`
-
-**Does it need a date?**
-- Changes over time (research, market data)? → Date-stamp it
-- Polished deliverable (strategy, docs)? → Version control
-
-**How to structure information?**
-- Referenced frequently? → Create entry point (UPPERCASE.md)
-- Flows through stages? → Use three-folder pattern
-- Claims verifiable? → Add footnotes to research
-
-**What context to load?**
-- Start with entry point (UPPERCASE.md)
-- Load only files needed for current task
-- Reference other files by path (don't duplicate)
+<ADD HERE>
