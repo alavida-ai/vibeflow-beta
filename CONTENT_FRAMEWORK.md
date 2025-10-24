@@ -11,36 +11,42 @@ The AMA Content Framework is an opinionated protocol for how marketing intellige
 ## The Three-Layer Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│ RESEARCH LAYER (Temporal Executions)                    │
-│ /research/{domain}/{YYYY-MM-DD}/                        │
-│   ├── PLAN.md         (approach)                        │
-│   ├── TODO.md         (progress tracking)               │
-│   └── artifacts/      (subtasks/subagent findings)      │
-│   RESARCH.md          (research output e.g. comp analysis) │
-└────────────────┬────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│ RESEARCH LAYER (Temporal Executions + Accumulated Index)     │
+│ /research/{domain}/                                          │
+│   ├── RESEARCH.md     (index: accumulated knowledge, MA approved) │
+│   ├── CHANGELOG.md    (tracks evolution of findings)         │
+│   └── /{YYYY-MM-DD}/  (execution folders)                    │
+│       ├── PLAN.md     (approach)                             │
+│       ├── TODO.md     (progress tracking)                    │
+│       ├── RESEARCH.md (execution findings, high-level)       │
+│       └── artifacts/  (detailed findings, evidence)          │
+└────────────────┬─────────────────────────────────────────────┘
                  │ Synthesizes periodically via
                  │ /update-strategy command (for example)
                  ↓
-┌─────────────────────────────────────────────────────────┐
-│ STRATEGY LAYER (Versioned Snapshot)                     │
-│ /strategy/                                              │
-│   └── {your-documents}  (current brand truth)           │
-│       └── [with citations to research]   
-*** add examples here to make it real (like brand-fundamentals.md, tone-of-voice.md etc)
-               │
-└────────────────┬────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│ STRATEGY LAYER (Versioned Snapshot)                          │
+│ /strategy/                                                   │
+│   ├── brand-fundamentals.md    (mission, values, purpose)    │
+│   ├── positioning.md           (market position)             │
+│   ├── messaging-pillars.md     (key themes, value props)     │
+│   ├── tone-of-voice.md         (how we communicate)          │
+│   └── audience-personas.md     (who we serve)                │
+│       └── [all with citations to research]                   │
+└────────────────┬─────────────────────────────────────────────┘
                  │ References for every piece via
                  │ /create-content command (for example)
                  ↓
-┌─────────────────────────────────────────────────────────┐
-│ CONTENT LAYER (Temporal Executions)                     │
-│ /content/{type}/{YYYY-MM-DD}/                           │
-│   ├── PLAN.md         (content brief)                   │
-│   ├── TODO.md         (creation tracking)               │
-│   └── artifacts/      (subtasks/subagent output e.g. topic research, keyword research)   
- CONTENT.md (final content file read to review and publish) *** fix the box
-└─────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────┐
+│ CONTENT LAYER (Temporal Executions)                          │
+│ /content/{type}/{YYYY-MM-DD}/                                │
+│   ├── PLAN.md         (content brief)                        │
+│   ├── TODO.md         (creation tracking)                    │
+│   ├── artifacts/      (subtasks/subagent outputs)            │
+│   │   └── (e.g. topic research, keyword research)            │
+│   └── CONTENT.md      (final content to review/publish)      │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -118,13 +124,53 @@ Creating a campaign:
 
 ---
 
+## Research Layer: Index Pattern
+
+### The Accumulative Knowledge System
+
+Each research domain maintains an **index RESEARCH.md** that represents the current accumulated knowledge, separate from individual execution findings:
+
+```
+/research/competitor-analysis/
+├── RESEARCH.md         # Index: Current truth (MA approved)
+├── CHANGELOG.md        # What changed when
+├── /2024-01-15/       # Execution 1
+│   ├── RESEARCH.md    # Findings from this run
+│   └── artifacts/     # Detailed evidence
+└── /2024-02-20/       # Execution 2
+    ├── RESEARCH.md    # Findings from this run
+    └── artifacts/     # Detailed evidence
+```
+
+### How Index Updates Work
+
+1. **New research execution** generates findings in timestamped folder
+2. **AI compares** new findings with existing index:
+   - What contradicts? (flags for overwrite)
+   - What's new? (flags for addition)
+   - What's validated? (remains unchanged)
+3. **Marketing Architect approves** updates to index
+4. **CHANGELOG.md tracks** all changes for audit trail
+
+### Why This Matters
+
+- **Knowledge accumulates** rather than being replaced
+- **Contradictions handled gracefully** with MA oversight
+- **Strategy synthesis** reads from clean, validated index
+- **Full history preserved** in execution folders
+
+---
+
 ## How It Works: Commands
 
 ### Research Execution
 ```bash
 /comp-analysis "AI marketing agencies"
 ```
-Creates timestamped research execution with findings and evidence.
+1. Creates timestamped execution folder with findings
+2. Compares with existing index RESEARCH.md (if exists)
+3. Proposes updates for MA approval
+4. Updates index and CHANGELOG upon approval
 
 ### Strategy Synthesis (Periodic)
 ```bash
@@ -135,7 +181,7 @@ or more specifically:
 /update-tone-of-voice
 ```
 
-Reviews new research, updates strategy documents with citations, preserves audit trail.
+Reads from index RESEARCH.md files (not individual executions), synthesizes validated findings into strategy documents with citations, preserves audit trail.
 
 ### Content Creation
 ```bash
@@ -163,8 +209,8 @@ Every document includes smart metadata that enables automation:
 last_updated: 2024-02-15
 last_synthesis: 2024-02-15
 research_sources:
-  - /research/competitor-analysis/2024-01-15/
-  - /research/discover-target-audience/2024-02-12/
+  - /research/competitor-analysis/RESEARCH.md  # Index, not execution
+  - /research/discover-target-audience/RESEARCH.md
 content_types: [blog, thought_leadership]
 ---
 
@@ -172,7 +218,7 @@ content_types: [blog, thought_leadership]
 
 We own the SMB segment[^1]...
 
-[^1]: Competitor analysis, `/research/competitors/2024-01-15/:42`
+[^1]: Competitor analysis, `/research/competitor-analysis/RESEARCH.md:42`
 ```
 
 ### What Frontmatter Enables
