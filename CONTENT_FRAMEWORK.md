@@ -16,7 +16,7 @@ The AMA Content Framework is an opinionated protocol for how marketing intellige
 │ /research/{domain}/                                          │
 │   ├── RESEARCH.md     (index: accumulated knowledge, MA approved) │
 │   ├── CHANGELOG.md    (tracks evolution of findings)         │
-│   └── /{YYYY-MM-DD}/  (execution folders)                    │
+│   └── /{YYYY-MM-DD@HH:mm}/  (execution folders)              │
 │       ├── PLAN.md     (approach)                             │
 │       ├── TODO.md     (progress tracking)                    │
 │       ├── RESEARCH.md (execution findings, high-level)       │
@@ -28,7 +28,6 @@ The AMA Content Framework is an opinionated protocol for how marketing intellige
 ┌──────────────────────────────────────────────────────────────┐
 │ STRATEGY LAYER (Versioned Snapshot)                          │
 │ /strategy/                                                   │
-│   ├── STRATEGY.md              (root overview)               │
 │   ├── /brand-fundamentals/     (folder defines purpose)      │
 │   │   └── STRATEGY.md          (mission, values, purpose)    │
 │   ├── /positioning/                                          │
@@ -47,7 +46,7 @@ The AMA Content Framework is an opinionated protocol for how marketing intellige
                  ↓
 ┌──────────────────────────────────────────────────────────────┐
 │ CONTENT LAYER (Temporal Executions)                          │
-│ /content/{type}/{YYYY-MM-DD}/                                │
+│ /content/{type}/{YYYY-MM-DD@HH:mm-content-slug-title}/       │
 │   ├── PLAN.md         (content brief)                        │
 │   ├── TODO.md         (creation tracking)                    │
 │   ├── artifacts/      (subtasks/subagent outputs)            │

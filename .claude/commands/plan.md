@@ -1,5 +1,5 @@
 ---
-argument-hint: Task description or path to task file
+argument-hint: Task description or path to task description file
 ---
 # Plan
 

@@ -14,7 +14,7 @@ PLAN_PATH: $ARGUMENTS
 ## Instructions
 
 - This task requires the `orchestration` skill to understand HOW to implement plans effectively
-- If `PLAN_PATH` is provided, use it. Otherwise, find the most recent execution folder in `/research/`
+- If `PLAN_PATH` is provided not provided then ask the user for a plan file to implement.
 - Read the PLAN.md file - this is your execution blueprint
 - Use the orchestration skill to guide you to implement this plan effectively
 - Follow PLAN.md as the source of truth for all execution decisions
