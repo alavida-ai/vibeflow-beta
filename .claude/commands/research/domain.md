@@ -11,6 +11,7 @@ Create a plan to carry out a discovery research for the user's brand
 RESEARCH_DOMAIN: $1
 ADDITIONAL_INFO: $2 (optional)
 TASK_DESCRIPTION
+BASE_DIR: `/research/`
 
 
 ## Instructions
@@ -18,4 +19,5 @@ TASK_DESCRIPTION
 - This tasks requires the `researching` skill to reference the `RESEARCH_DOMAIN` workflow
 - You need to provide the necessary information to execute the planning of this tasks effectively
 - You will do this be referencing the WORFKLOW under the `RESEARCH_DOMAIN` in addition to any information provided by the user in `USER_INFO` to create `TASK_DESCRIPTION`
+- Include the `BASE_DIR` in the `TASK_DESCRIPTION`, make it clear that the plan should be created within the `BASE_DIR` and subfolder for the `RESEARCH_DOMAIN`
 - Use the tool SlashCommand(`/plan "[TASK_DESCRIPTION]"`) to execute the planning of the task

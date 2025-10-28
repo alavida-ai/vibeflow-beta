@@ -26,7 +26,7 @@ Build marketing systems you own—not rent tools you'll outgrow. When you own yo
 [100% of competitors operate SaaS subscription models](/research/category-landscape/RESEARCH.md) with pricing that scales up as you succeed. [0% mention infrastructure ownership or vendor independence](/research/category-landscape/RESEARCH.md). This creates massive white space—while competitors say "subscribe" and "pay as you go," we say "build" and "own."
 
 **Connection to Value Props:**
-This theme directly operationalizes our [primary value proposition](/strategy/messaging/2025-10-28_11:02/artifacts/01-value-propositions.md): "Build marketing systems you own—not rent tools you'll outgrow." It addresses the foundational philosophical difference between Alavida and every competitor, articulating why ownership matters strategically and emotionally.
+This theme directly operationalizes our [primary value proposition](/strategy/messaging/2025-10-28@11:02/artifacts/01-value-propositions.md): "Build marketing systems you own—not rent tools you'll outgrow." It addresses the foundational philosophical difference between Alavida and every competitor, articulating why ownership matters strategically and emotionally.
 
 ---
 
@@ -51,7 +51,7 @@ Every hour invested in building systems returns exponentially. Every subscriptio
 [85% of competitors promise speed through "easy buttons"](/research/category-landscape/RESEARCH.md) ("in seconds," "with a single prompt," "no coding required"). We deliver speed through systematic capability that compounds over time rather than plateauing. [0% of competitors use "capability building" or "systems thinking" language](/research/category-landscape/RESEARCH.md).
 
 **Connection to Value Props:**
-This theme supports [secondary value proposition #1](/strategy/messaging/2025-10-28_11:02/artifacts/01-value-propositions.md): "Compress weeks of strategic work into hours without sacrificing quality." It addresses the functional job customers hire us for while emphasizing that efficiency comes from owned systems, not rented convenience.
+This theme supports [secondary value proposition #1](/strategy/messaging/2025-10-28@11:02/artifacts/01-value-propositions.md): "Compress weeks of strategic work into hours without sacrificing quality." It addresses the functional job customers hire us for while emphasizing that efficiency comes from owned systems, not rented convenience.
 
 ---
 
@@ -76,7 +76,7 @@ The best marketing isn't automated—it's architected. AI is your co-pilot, prov
 While competitors claim augmentation, their language leans replacement: ["Hire AI agents," "AI workforce," "digital employees"](/research/category-landscape/RESEARCH.md). [0% position on "AI makes YOU better" vs "AI does it for you"](/research/category-landscape/RESEARCH.md). We authentically own human-loop philosophy as positioning, not feature.
 
 **Connection to Value Props:**
-This theme operationalizes [secondary value proposition #2](/strategy/messaging/2025-10-28_11:02/artifacts/01-value-propositions.md): "Build verified outputs you can defend to clients—not hallucinations that risk your reputation." It addresses trust issues and quality concerns while positioning human expertise as competitive advantage.
+This theme operationalizes [secondary value proposition #2](/strategy/messaging/2025-10-28@11:02/artifacts/01-value-propositions.md): "Build verified outputs you can defend to clients—not hallucinations that risk your reputation." It addresses trust issues and quality concerns while positioning human expertise as competitive advantage.
 
 ---
 
@@ -89,7 +89,7 @@ Stop orchestrating between disconnected tools. Start designing integrated workfl
 1. [Tool fragmentation creates orchestration overhead](/research/customer-insights/RESEARCH.md)—even with AI, marketers spend hours copy-pasting between platforms, manually triggering workflows, and fighting context loss. Integrated environments eliminate busywork.
 2. [Compress weeks of strategic work into hours](/research/customer-insights/RESEARCH.md) by running sophisticated workflows (brand fundamentals, competitive analysis, multi-model research) systematically. Templates + multi-model orchestration + version control = systematic leverage.
 3. The vibeflow framework provides proven workflow templates for brand strategy, audience research, competitive analysis, and content creation—giving you the architecture without starting from scratch.
-4. [Your workflows improve with every use](/strategy/messaging/2025-10-28_11:02/artifacts/01-value-propositions.md)—unlike SaaS tools where you're limited by vendor roadmaps, your owned workflows evolve based on your learnings and become increasingly tailored to your business.
+4. [Your workflows improve with every use](/strategy/messaging/2025-10-28@11:02/artifacts/01-value-propositions.md)—unlike SaaS tools where you're limited by vendor roadmaps, your owned workflows evolve based on your learnings and become increasingly tailored to your business.
 
 **Customer Language Foundation:**
 - ["Copy-pasting between interfaces," "manual orchestration"](/research/customer-insights/RESEARCH.md)
@@ -100,7 +100,7 @@ Stop orchestrating between disconnected tools. Start designing integrated workfl
 [60% of competitors position on "1000+ integrations" or "unified platform"](/research/category-landscape/RESEARCH.md), treating integration as feature collection. [0% position on systematic workflow design](/research/category-landscape/RESEARCH.md) or owned infrastructure. We differentiate by offering methodology (workflow architecture) not connectivity (tool aggregation).
 
 **Connection to Value Props:**
-This theme directly supports [secondary value proposition #1](/strategy/messaging/2025-10-28_11:02/artifacts/01-value-propositions.md): "Compress weeks of strategic work into hours without sacrificing quality." It demonstrates how systematic workflows deliver efficiency through design, not automation.
+This theme directly supports [secondary value proposition #1](/strategy/messaging/2025-10-28@11:02/artifacts/01-value-propositions.md): "Compress weeks of strategic work into hours without sacrificing quality." It demonstrates how systematic workflows deliver efficiency through design, not automation.
 
 ---
 
@@ -125,7 +125,7 @@ In an age when everyone has access to the same AI models, competitive advantage 
 [100% of competitors position on ease/accessibility](/research/category-landscape/RESEARCH.md) ("accessible to every marketer," "no technical background required"). [0% use "architect," "engineer," or builder identity](/research/category-landscape/RESEARCH.md). We differentiate by celebrating complexity as competitive advantage, not apologizing for it.
 
 **Connection to Value Props:**
-This theme operationalizes [secondary value proposition #3](/strategy/messaging/2025-10-28_11:02/artifacts/01-value-propositions.md): "Develop competitive moat through proprietary workflows competitors can't replicate." It addresses the identity transformation aspiration and long-term strategic positioning.
+This theme operationalizes [secondary value proposition #3](/strategy/messaging/2025-10-28@11:02/artifacts/01-value-propositions.md): "Develop competitive moat through proprietary workflows competitors can't replicate." It addresses the identity transformation aspiration and long-term strategic positioning.
 
 ---
 
