@@ -1,6 +1,6 @@
 # Planning
 
-Planning is the process of creating a structured execution plan that breaks down a workflow into discrete phases with clear inputs, outputs, and delegation boundaries.
+Planning is the process of creating a structured execution plan that breaks down a task into discrete phases with clear inputs, outputs, and delegation boundaries.
 
 ## Purpose
 
@@ -116,12 +116,12 @@ python .claude/skills/orchestration/scripts/create_execution_folder.py <workflow
 
 This creates:
 ```
-/research/{workflow-name}/{YYYY-MM-DD_HH:MM}/
+/{base-dir}/{workflow-name}/{YYYY-MM-DD@HH:MM}/
 ├── data/       # For input files (if needed)
 └── artifacts/  # Will be populated during implementation
 ```
 
-**Note:** Only create `data/` subdirectory if the workflow requires external data or context files.
+**Note:** Only create `data/` subdirectory if the workflow requires user input, external data or context files.
 
 ### Step 2: Load Context
 
@@ -198,7 +198,8 @@ Refine until the plan is clear and executable.
 - Optional: WORKFLOW.md template
 
 ### Outputs
-- Execution folder: `/research/{workflow-name}/{YYYY-MM-DD_HH:MM}/`
+- Execution folder: `/{base-dir}/{workflow-name}/{YYYY-MM-DD@HH:MM}/`
+- base-dir is one of the marketing pillars (research, strategy, content)
 - PLAN.md with phase breakdown
 - Expected artifact definitions
 

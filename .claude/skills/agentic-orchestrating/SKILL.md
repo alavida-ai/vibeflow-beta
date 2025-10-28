@@ -21,18 +21,12 @@ This skill embodies five key orchestration principles:
 
 A core architectural principle that emerges from delegation: **pass file paths, not content**. This enables agents to load context when needed, maintaining high signal-to-noise ratio. Instead of inlining everything upfront, each agent reads only the files it needs for its specific task.
 
-## Orchestration Philosophy
-
-**Skills provide the "HOW"** - This skill contains pure knowledge about workflow orchestration concepts. It does not define when or why these concepts are triggered.
-
-**Commands provide the "DO"** - External commands invoke this skill to execute planning or implementation tasks.
-
 ## Standard Execution Folder
 
 All task/workflow executions follow this structure:
 
 ```
-/research/{task/workflow-name}/{YYYY-MM-DD_HH:MM}/
+/{base-dir}/{task/workflow-name}/{YYYY-MM-DD_HH:MM}/
 ├── data/              # Input files (optional)
 ├── artifacts/         # Phase outputs
 │   ├── 01-*.md
@@ -41,8 +35,11 @@ All task/workflow executions follow this structure:
 │   └── 03-*.md
 ├── PLAN.md           # Initial plan
 ├── TODO.md           # Progress tracking
-└── RESEARCH.md       # Final output
+└── RESEARCH.md/STRATEGY.md/CONTENT.md       # Final output
 ```
+
+Where `base-dir` is either `research`, `strategy` or `content`.
+
 
 See [Artifacts](references/artifacts.md) for naming conventions and [Progress Tracking](references/progress-tracking.md) for folder structure details.
 

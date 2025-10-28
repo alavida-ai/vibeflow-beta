@@ -7,15 +7,16 @@
 
 ## Task Progress
 
-- [ ] **Phase 1:** {phase-1-description} → `artifacts/01-{artifact-name}.md`
+- [ ] **Phase 1:** {phase-1-description} → [01-{artifact-name}.md](artifacts/01-{artifact-name}.md)
 
-- [ ] **Phase 2a:** {phase-2a-description} → `artifacts/02a-{artifact-name}.md`
+- [ ] **Phase 2a:** {phase-2a-description} → [02a-{artifact-name}.md](artifacts/02a-{artifact-name}.md)
 
-- [ ] **Phase 2b:** {phase-2b-description} → `artifacts/02b-{artifact-name}.md`
+- [ ] **Phase 2b:** {phase-2b-description} → [02b-{artifact-name}.md](artifacts/02b-{artifact-name}.md)
+
 
 - [ ] **Phase 3:** {phase-3-description}
-  - `artifacts/03-{artifact-name}.md`
-  - `RESEARCH.md` (final output)
+  - [03-{artifact-name}.md](artifacts/03-{artifact-name}.md)
+  - [`RESEARCH.md`](RESEARCH.md) (final output, but could also be `CONTENT.md` or `STRATEGY.md`)
 
 ## Current Phase
 

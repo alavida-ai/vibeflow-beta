@@ -3,10 +3,10 @@
 Create timestamped execution folder for workflow orchestration.
 
 Usage:
-    python create_execution_folder.py <workflow-name> [--base-dir /path/to/research]
+    python create_execution_folder.py <workflow-name> [--base-dir /path/to/base-dir]
 
 Creates folder structure:
-    /research/{workflow-name}/{YYYY-MM-DD_HH:MM}/
+    /{base-dir}/{workflow-name}/{YYYY-MM-DD@HH:MM}/
         ├── data/
         └── artifacts/
 
@@ -19,19 +19,19 @@ from datetime import datetime
 from pathlib import Path
 
 
-def create_execution_folder(workflow_name: str, base_dir: str = "research") -> str:
+def create_execution_folder(workflow_name: str, base_dir: str) -> str:
     """
     Create timestamped execution folder with required subdirectories.
 
     Args:
         workflow_name: Kebab-case workflow name (e.g., "discover-category-landscape")
-        base_dir: Base research directory (default: "research")
+        base_dir: Base directory (e.g., "research", "content", "strategy")
 
     Returns:
         Absolute path to created execution folder
     """
-    # Generate timestamp in format: YYYY-MM-DD_HH:MM
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M")
+    # Generate timestamp in format: YYYY-MM-DD@HH:MM
+    timestamp = datetime.now().strftime("%Y-%m-%d@HH:MM")
 
     # Construct paths
     workflow_dir = Path(base_dir) / workflow_name
@@ -51,12 +51,13 @@ def main():
     )
     parser.add_argument(
         "workflow_name",
+        required=True,
         help="Workflow name in kebab-case (e.g., discover-category-landscape)"
     )
     parser.add_argument(
         "--base-dir",
-        default="research",
-        help="Base directory for research folders (default: research)"
+        required=True,
+        help="Base directory (e.g., research, content, strategy)"
     )
 
     args = parser.parse_args()

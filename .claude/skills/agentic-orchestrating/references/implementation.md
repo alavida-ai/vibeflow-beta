@@ -35,7 +35,7 @@ It specifies for each phase:
 
 ### Step 3: Create TODO.md
 
-Use `assets/TODO_template.md` to initialize progress tracking with all phases from PLAN.md.
+Use [TODO.md template](/.claude/skills/agentic-orchestrating/assets/TODO_template.md) to initialize progress tracking with all phases from PLAN.md.
 
 See [Progress Tracking](progress-tracking.md) for details.
 

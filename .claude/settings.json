@@ -10,7 +10,8 @@
             "Bash(npm:*)",
             "Bash(node:*)",
             "Bash(python:*)",
-            "NotebookEdit"
+            "NotebookEdit",
+            "Read(*)"
         ]
     },
     "enableAllProjectMcpServers": true,

@@ -16,7 +16,7 @@ Enable:
 All workflow executions follow this structure:
 
 ```
-/research/{workflow-name}/{YYYY-MM-DD_HH:MM}/
+/{base-dir}/{workflow-name}/{YYYY-MM-DD@HH:MM}/
 ├── data/              # Input files (optional)
 ├── artifacts/         # Phase outputs
 │   ├── 01-*.md
@@ -30,17 +30,16 @@ All workflow executions follow this structure:
 
 ### Folder Components
 
-**Root:** `/research/`
+**Root:** `/research/`, `/content/`, `/strategy/`
 - Base directory for all workflow executions
 
 **Workflow Directory:** `{workflow-name}/`
 - Named after the workflow (kebab-case)
-- Examples: `discover-category-landscape/`, `founder-interview/`
 - Contains all execution runs for this workflow
 
-**Execution Directory:** `{YYYY-MM-DD_HH:MM}/`
+**Execution Directory:** `{YYYY-MM-DD@HH:MM}/`
 - Timestamped folder for each execution
-- Format: `YYYY-MM-DD_HH:MM` (e.g., `2025-10-22_14:30`)
+- Format: `YYYY-MM-DD@HH:MM` (e.g., `2025-10-22@14:30`)
 - Unique per execution (minute-level granularity)
 - Human-readable
 
@@ -68,7 +67,7 @@ All workflow executions follow this structure:
 - Shows current state
 - Created during implementation
 
-**`RESEARCH.md`:**
+**<OUTPUT.md>(RSEARCH/CONTENT/STRATEGY):**
 - Final consolidated output
 - Synthesizes all phase findings
 - Created at end of implementation
@@ -225,7 +224,7 @@ python .claude/skills/orchestration/scripts/create_execution_folder.py <workflow
 
 This creates:
 ```
-/research/{workflow-name}/{YYYY-MM-DD_HH:MM}/
+/research/{workflow-name}/{YYYY-MM-DD@HH:MM}/
 ├── data/       # If needed
 └── artifacts/  # Always created
 ```

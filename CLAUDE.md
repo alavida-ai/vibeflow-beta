@@ -328,5 +328,6 @@ These principles enable agents to make structural decisions without exhaustive r
 
 **When to use markdown references:**
 - Always use `[descriptive text](/path/to/file.md)` format for linking
+- Always make the path to file relative to this project root NEVER THE COMPLETE FILE PATH as this is a nightmare for collaboration
 - Never use footnotes format `[^ref]`
 - References enable both human navigation and AI progressive disclosure

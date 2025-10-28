@@ -37,7 +37,7 @@ If prerequisites fail, prompt user to run missing research workflows first.
 **Purpose:** Transform research findings into prescriptive audience strategy.
 
 **Delegation:**
-- **Agent:** general-purpose
+- **Agent:** strategist-agent
 - **Instructions:** [phase-1-synthesis.md](phase-1-synthesis.md)
 - **Context needed:** Two research files by path
 
