@@ -31,7 +31,7 @@ def create_execution_folder(workflow_name: str, base_dir: str) -> str:
         Absolute path to created execution folder
     """
     # Generate timestamp in format: YYYY-MM-DD@HH:MM
-    timestamp = datetime.now().strftime("%Y-%m-%d@HH:MM")
+    timestamp = datetime.now().strftime("%Y-%m-%d@%H:%M")
 
     # Construct paths
     workflow_dir = Path(base_dir) / workflow_name
@@ -51,7 +51,6 @@ def main():
     )
     parser.add_argument(
         "workflow_name",
-        required=True,
         help="Workflow name in kebab-case (e.g., discover-category-landscape)"
     )
     parser.add_argument(

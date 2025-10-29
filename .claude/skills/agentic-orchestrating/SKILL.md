@@ -9,13 +9,14 @@ Knowledge base for orchestrating multi-phase workflow executions with standardiz
 
 ## Core Concepts
 
-This skill embodies five key orchestration principles:
+This skill embodies six key orchestration principles:
 
 1. **[Planning](references/planning.md)** - HOW to create execution plans with phase breakdown and artifact definition
 2. **[Implementation](references/implementation.md)** - HOW to execute plans through agent delegation, progress tracking and artifact management
-3. **[Delegation](references/delegation.md)** - HOW to maintain focused context through strategic agent handoffs
-4. **[Artifacts](references/artifacts.md)** - HOW to standardize outputs that flow between phases
-5. **[Progress Tracking](references/progress-tracking.md)** - HOW to maintain execution state and resumability
+3. **[Resuming](references/resuming.md)** - HOW to restart workflows from specific phases with selective regeneration
+4. **[Delegation](references/delegation.md)** - HOW to maintain focused context through strategic agent handoffs
+5. **[Artifacts](references/artifacts.md)** - HOW to standardize outputs that flow between phases
+6. **[Progress Tracking](references/progress-tracking.md)** - HOW to maintain execution state and resumability
 
 ### Progressive Disclosure
 
@@ -43,7 +44,7 @@ Where `base-dir` is either `research`, `strategy` or `content`.
 
 See [Artifacts](references/artifacts.md) for naming conventions and [Progress Tracking](references/progress-tracking.md) for folder structure details.
 
-## Two-Phase Orchestration
+## Orchestration Workflows
 
 ### Planning Phase
 **Purpose:** Create a structured execution plan
@@ -60,17 +61,34 @@ See [Artifacts](references/artifacts.md) for naming conventions and [Progress Tr
 - Expected artifact definitions
 
 ### Implementation Phase
-**Purpose:** Execute the plan through agent delegation
+**Purpose:** Execute the plan through [agent delegation](references/delegation.md)
 
 **Inputs:**
 - PLAN.md from execution folder
 - data/ (optional, created in planning phase)
+
 **Process:** See [Implementation](references/implementation.md)
 
 **Outputs:**
 - Phase artifacts in execution folder
 - Updated TODO.md tracking progress
 - Final RESEARCH.md with synthesized findings
+
+### Resumption Phase
+**Purpose:** Restart execution from specific phase with selective regeneration
+
+**Inputs:**
+- Existing execution folder with PLAN.md and TODO.md
+- User specification of resume point
+- Existing artifacts/ (some preserved, some regenerated)
+
+**Process:** See [Resuming](references/resuming.md)
+
+**Outputs:**
+- Updated TODO.md with resumption log
+- Regenerated artifacts from resume point forward
+- Preserved artifacts from before resume point
+- Updated final output
 
 ## Tools and Resources
 

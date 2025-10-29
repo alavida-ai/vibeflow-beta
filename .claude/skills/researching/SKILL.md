@@ -11,7 +11,7 @@ You are tasked with performing research. You need to follow procedures and appro
 
 ### Workflows
 
-- [Founder Interview](workflows/founder-interview/WORKFLOW.md)
+- [Founder Interview](workflows/brand-story-interview/WORKFLOW.md)
 - [Category Landscape](workflows/category-landscape/WORKFLOW.md)
 - [Customer Insights](workflows/customer-insights/WORKFLOW.md)
 - [Voice Benchmarking](workflows/voice-benchmarking/WORKFLOW.md)
