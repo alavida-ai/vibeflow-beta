@@ -9,13 +9,7 @@
             "Bash",
             "NotebookEdit",
             "SlashCommand",
-            "Skill",
-            "mcp__dataforseo__*",
-            "mcp__firecrawl__*",
-            "mcp__perplexity__*",
-            "mcp__MarketingArchitectureDocs__*",
-            "mcp__x-scraper__*",
-            "mcp__notion__*"
+            "Skill"
         ],
         "deny": [
             "Bash(rm:*)",
