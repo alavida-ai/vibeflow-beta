@@ -56,9 +56,22 @@ For each phase in PLAN.md:
 
 See [Delegation](delegation.md) for delegation patterns.
 
-**Sequential phases:** Execute one at a time, waiting for completion before starting next.
+#### Execution Modes
 
-**Parallel phases:** Launch all in a single message with multiple Task calls, wait for ALL to complete.
+**Sequential phases:** Execute one at a time, waiting for completion before starting next.
+- Used when phases have dependencies (Phase 2 needs Phase 1's output)
+- Example: `### 1. Research` → `### 2. Analysis` (Analysis needs research results)
+
+**Parallel phases:** Launch all at once multiple Task calls, wait for ALL to complete.
+- Identified by letter suffixes in PLAN.md (e.g., `### 2a.`, `### 2b.`, `### 2c.`)
+- Used when phases have no dependencies and can run concurrently
+- Example: `### 2a. Market Analysis` + `### 2b. Content Analysis` (both use same input, different outputs)
+- **Critical:** Must launch ALL parallel phases in at once
+- Wait for ALL parallel phases to complete before proceeding to next sequential phase
+
+**How to identify in PLAN.md:**
+- Sequential: Different numbers (`### 1.`, `### 2.`, `### 3.`)
+- Parallel: Same number with letters (`### 2a.`, `### 2b.`, `### 2c.`)
 
 ### Step 5: Finalize TODO.md
 

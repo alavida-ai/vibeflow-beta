@@ -1,36 +1,43 @@
 {
-    "mcpServers": {
-        "firecrawl": {
-            "type": "http",
-            "url": "<FIRECRAWL_URL>"
-        },
-        "dataforseo": {
-            "type": "stdio",
-            "command": "npx",
-            "args": [
-                "@smithery/cli@latest",
-                "run",
-                "@moaiandin/mcp-dataforseo",
-                "--key",
-                "<DATAFORSEO_API_KEY>",
-                "--profile",
-                "<DATAFORSEO_PROFILE>"
-            ]
-        },
-        "perplexity": {
-            "type": "stdio",
-            "command": "npx",
-            "args": [
-                "-y",
-                "@perplexity-ai/mcp-server"
-            ],
-            "env": {
-                "PERPLEXITY_API_KEY": "<PERPLEXITY_API_KEY>"
-            }
-        },
-        "MarketingArchitectureDocs": {
-            "type": "http",
-            "url": "https://marketingarchitect.ai/mcp"
-        }
+  "mcpServers": {
+    "firecrawl": {
+      "type": "http",
+      "url": "<FIRECRAWL_URL>"
+    },
+    "dataforseo": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "dataforseo-mcp-server"
+      ],
+      "env": {
+        "DATAFORSEO_USERNAME": "<DATAFORSEO_USERNAME>",
+        "DATAFORSEO_PASSWORD": "<DATAFORSEO_PASSWORD>"
+      }
+    },
+    "perplexity": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "perplexity-mcp"
+      ],
+      "env": {
+        "PERPLEXITY_API_KEY": "<PERPLEXITY_API_KEY>",
+        "PERPLEXITY_TIMEOUT_MS": "600000"
+      }
+    },
+    "MarketingArchitectureDocs": {
+      "type": "http",
+      "url": "https://marketingarchitect.ai/mcp"
+    },
+    "Notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "x-scraper": {
+      "type": "http",
+      "url": "https://x-scraper.staging.alavida.ai/mcp"
     }
+  }
 }
