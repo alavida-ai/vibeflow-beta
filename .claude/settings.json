@@ -3,34 +3,33 @@
         "allow": [
             "Write",
             "Edit",
-            "Bash(mkdir:*)",
-            "Bash(git:*)",
-            "Bash(npm:*)",
-            "Bash(node:*)",
-            "Bash(python:*)",
-            "Bash(npx:*)",
-            "Bash(cat:*)",
-            "Bash(ls:*)",
-            "Bash(cd:*)",
-            "Bash(pwd:*)",
-            "Bash(echo:*)",
-            "Bash(grep:*)",
-            "Bash(find:*)",
-            "Bash(cp:*)",
-            "Bash(mv:*)",
+            "Read",
+            "Grep",
+            "Glob",
+            "Bash",
             "NotebookEdit",
-            "Read(*)",
-            "SlashCommand(*)",
-            "Skill(*)"
+            "SlashCommand",
+            "Skill",
+            "mcp__dataforseo__*",
+            "mcp__firecrawl__*",
+            "mcp__perplexity__*",
+            "mcp__MarketingArchitectureDocs__*",
+            "mcp__x-scraper__*",
+            "mcp__notion__*"
+        ],
+        "deny": [
+            "Bash(rm:*)",
+            "Bash(rmdir:*)",
+            "Bash(rm -rf:*)",
+            "Bash(rm -r:*)",
+            "Bash(sudo rm:*)",
+            "Bash(dd:*)",
+            "Bash(mkfs:*)",
+            "Bash(format:*)",
+            "Bash(>:*)",
+            "Bash(shred:*)"
         ]
     },
     "enableAllProjectMcpServers": true,
-    "enabledMcpjsonServers": [
-        "firecrawl",
-        "replicate",
-        "dataforseo",
-        "perplexity",
-        "MarketingArchitectureDocs"
-    ],
     "outputStyle": "marketing-operations-manager"
 }
