@@ -121,6 +121,29 @@ These principles govern the organization and flow of marketing/brand work:
 
 **Result:** Efficient token usage, scalability, clear information architecture
 
+#### Extension Pattern: Platform/Audience-Specific Additions
+
+Extensions allow platform or audience-specific details to extend base strategy documents without duplication:
+
+```
+Parent STRATEGY.md + Child EXTENSION.md = Complete Context
+
+Example:
+/brand/strategy/voice/STRATEGY.md            # Base voice (like layout.tsx)
++ /brand/strategy/voice/twitter/EXTENSION.md # Twitter additions (like page.tsx)
+= Complete Twitter voice guide
+
+Note: EXTENSION.md only contains what's ADDITIONAL for that context
+```
+
+**Key principles:**
+- Extensions are **additive only** - they extend, not replace
+- Base STRATEGY.md contains universal principles
+- EXTENSION.md contains platform/audience-specific details
+- Pattern inspired by Next.js layouts (composition over duplication)
+
+**Result:** No duplication, clear separation of universal vs specific, maintainable at scale
+
 #### Temporal Execution Pattern with CHANGELOG Tracking
 
 **All three base directories use temporal executions** with date-stamped folders:
@@ -134,17 +157,65 @@ These principles govern the organization and flow of marketing/brand work:
 - CHANGELOG.md tracks evolution of index over time
 - Marketing Architect approves updates from execution to index
 
-**Result:** Iteration history preserved, approved state clear, evolution tracked
+**Research Three-Folder Structure (Input → Process → Output):**
+
+Research domains specifically follow this pattern:
+
+```
+/brand/research/{domain}/
+├── RESEARCH.md              ← INDEX: Current accumulated knowledge
+├── CHANGELOG.md             ← Evolution tracking
+├── /data/                   ← INPUT: Raw materials (static, organized by type)
+└── /{YYYY-MM-DD@HH:mm}/     ← PROCESS: Date-stamped execution (PLAN.md, findings, artifacts)
+```
+
+Information flow: `/data/` → `/{YYYY-MM-DD@HH:mm}/` → (updates) → `RESEARCH.md` (index) → `/brand/strategy/`
+
+**Result:** Iteration history preserved, approved state clear, evolution tracked, clear separation of input/process/output
 
 #### Verifiable Audit Trails: Every Claim Has Evidence
 
+Create verifiable chains of evidence from content → strategy → research → data:
+
+```
+Content (Output)
+    ↓ generated with
+Strategy (Brand guidelines)
+    ↓ references
+Research (Insights)
+    ↓ analyzed from
+Raw Data (Source material)
+```
+
+**The audit trail:**
 - **Strategy → Research** - Strategy claims link to research findings via `[text](/path/to/file.md)`
 - **Research → Data** - Research findings reference raw data sources
 - **Content → Strategy** - Content loads strategy as context in PLAN.md/TODO.md
 - **Complete chain** - Content (uses Strategy) → Strategy (cites Research) → Research (analyzes Data)
 - **Human + AI navigation** - Markdown references work for both people and agents
 
-**Result:** Defensible strategy, traceable content, transparent reasoning
+**Markdown Reference Format (REQUIRED):**
+
+```markdown
+[descriptive text](/path/to/file.md)
+```
+
+**Why this format:**
+- Human-navigable (clickable in editors)
+- Enables progressive disclosure for AI agents
+- Consistent across all documents
+
+**Important - Use Relative Paths:**
+- ✅ Always use relative paths from workspace root: `/brand/research/domain/RESEARCH.md`
+- ❌ Never use absolute file system paths: `/Users/name/project/brand/research/...`
+- Relative paths enable seamless collaboration when Marketing Architects clone the repository
+
+**Example:**
+```markdown
+Our customers are drowning in [complex tools that overwhelm them](/brand/research/customer-insights/RESEARCH.md).
+```
+
+**Result:** Defensible strategy, traceable content, transparent reasoning, verifiable claims
 
 ---
 
@@ -236,31 +307,7 @@ These principles govern the organization and flow of marketing/brand work:
 
 ---
 
-## Progressive Disclosure Pattern
-
-**Concept:** Information is hierarchical. Agents load exactly what they need, when needed.
-
-### The Pattern
-
-1. **Load base document** (`STRATEGY.md`) for core principles
-2. **Check for extensions** in subfolders if platform-specific
-3. **Extension extends base** (additive, not replacement)
-4. **Reference by path with markdown refernces**, don't duplicate content
-
-### Extension Pattern (Like Next.js Layouts)
-
-```
-Parent STRATEGY.md + Child EXTENSION.md = Complete Context
-
-Example:
-/brand/strategy/voice/STRATEGY.md            # Base voice (like layout.tsx)
-+ /brand/strategy/voice/twitter/EXTENSION.md # Twitter additions (like page.tsx)
-= Complete Twitter voice guide
-
-Note: EXTENSION.md only contains what's ADDITIONAL for that context
-```
-
-### Entry Point Files
+## Entry Point Files
 
 | File | Location | Purpose |
 |------|----------|---------|
@@ -333,64 +380,7 @@ All three base directories in the **Marketing Framework** use temporal execution
 - Full history preserved in execution folders
 - Contradictions and improvements handled gracefully with MA oversight
 
-### Three-Folder Pattern
-
-Research domains follow Input → Process → Output structure:
-
-```
-/brand/research/{domain}/
-├── RESEARCH.md              ← INDEX: Current accumulated knowledge
-├── CHANGELOG.md             ← Evolution tracking
-├── /data/                   ← INPUT: Raw materials (static, organized by type)
-└── /{YYYY-MM-DD@HH:mm}/     ← PROCESS: Date-stamped execution (PLAN.md, findings, artifacts)
-```
-
-**Information flow:**
-```
-/data/ → /{YYYY-MM-DD@HH:mm}/ → (updates) → RESEARCH.md (index) → /brand/strategy/
-```
-
-For detailed workflow execution guidance, see the **agentic-orchestrating skill** at `.claude/skills/agentic-orchestrating/`.
-
----
-
-## Audit Trail Pattern
-
-**Concept:** Create verifiable chains of evidence from content → strategy → research → data.
-
-### The Chain
-
-```
-Content (Output)
-    ↓ generated with
-Strategy (Brand guidelines)
-    ↓ references
-Research (Insights)
-    ↓ analyzed from
-Raw Data (Source material)
-```
-
-### Markdown Reference Format (REQUIRED)
-
-**Standard format:**
-```markdown
-[descriptive text](/path/to/file.md)
-```
-
-**Why this format:**
-- Human-navigable (clickable in editors)
-- Enables progressive disclosure for AI agents
-- Consistent across all documents
-
-**Important Note:**
-- Always use relative paths from the workspace root (e.g., `/brand/research/domain/RESEARCH.md`)
-- Never use absolute file system paths (e.g., `/Users/name/project/brand/research/...`)
-- Relative paths enable seamless collaboration when Marketing Architects clone the repository
-
-**Example:**
-```markdown
-Our customers are drowning in [complex tools that overwhelm them](/brand/research/customer-insights/RESEARCH.md).
-```
+**Note:** For detailed workflow execution guidance, see the **agentic-orchestrating skill** at `.claude/skills/agentic-orchestrating/`.
 
 ---
 
@@ -424,7 +414,7 @@ Our customers are drowning in [complex tools that overwhelm them](/brand/researc
 
 ### File Naming Rules
 
-**Execution Folder Structure:**
+#### Execution Folder Structure
 
 All three base directories use temporal execution folders with consistent internal structure:
 
@@ -436,7 +426,13 @@ All three base directories use temporal execution folders with consistent intern
 └── /artifacts/       ← Supporting materials from subtasks/subagents
 ```
 
-**File Types by Base Directory:**
+**Avoid:**
+- Spaces: `Brand Narrative`
+- Underscores: `brand_narrative`
+- camelCase: `brandNarrative`
+- index.md (use STRATEGY.md / RESEARCH.md / CONTENT.md etc instead)
+
+#### File Types by Base Directory
 
 **Within `/brand/research/` domains:**
 - Domain root level:
@@ -460,7 +456,7 @@ All three base directories use temporal execution folders with consistent intern
   - `PLAN.md`, `TODO.md`, `CONTENT.md`, `/artifacts/`
   - Note: Content has no index file (each piece is standalone)
 
-**Date-stamped directories (two formats):**
+#### Date-stamped directories (two formats)
 
 **Standard format:** `YYYY-MM-DD@HH:mm` (e.g., `/2024-02-20@18:43/`)
 - Used by: Research domains (except adhoc), Strategy domains
@@ -469,9 +465,3 @@ All three base directories use temporal execution folders with consistent intern
 **With-slug format:** `YYYY-MM-DD@HH:mm-descriptive-slug` (e.g., `/2024-02-20@18:43-top-10-ai-tools/`)
 - Used by: Content domains, Research/adhoc domain
 - Slug provides human-readable context for standalone/published work
-
-**Avoid:**
-- Spaces: `Brand Narrative`
-- Underscores: `brand_narrative`
-- camelCase: `brandNarrative`
-- index.md (use STRATEGY.md / RESEARCH.md / CONTENT.md etc instead)
