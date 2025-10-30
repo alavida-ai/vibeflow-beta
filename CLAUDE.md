@@ -72,8 +72,9 @@ These principles govern how agents coordinate, execute workflows, and manage wor
 - **Track progress transparently** - TODO.md updates show work in progress
 - **Mark completion immediately** - Tasks marked done as soon as finished
 - **One task in-progress** - Focus on current work, complete before moving forward
+- **Timestamped execution folders** - All workflows executed within date-stamped folders for iteration tracking
 
-**Result:** Visible work, manageable complexity, clear progress tracking
+**Result:** Visible work, manageable complexity, clear progress tracking, complete execution history
 
 #### Progressive Disclosure: Load What's Needed, When Needed
 
@@ -153,29 +154,16 @@ Note: EXTENSION.md only contains what's ADDITIONAL for that context
 
 **Execution → Index workflow:**
 - Executions are temporal, iterative development work
-- Index files are located at the domain level (RESEARCH.md, STRATEGY.md) and represent current approved state
+- Index files are located at the domain level and represent current approved state
+  - `/brand/research/{domain}/RESEARCH.md` = index file for domain
+  - `/brand/research/{domain}/{YYYY-MM-DD@HH:mm}/RESEARCH.md` NOT index file for domain
 - CHANGELOG.md tracks evolution of index over time
 - Marketing Architect approves updates from execution to index
 
-**Research Three-Folder Structure (Input → Process → Output):**
-
-Research domains specifically follow this pattern:
-
-```
-/brand/research/{domain}/
-├── RESEARCH.md              ← INDEX: Current accumulated knowledge
-├── CHANGELOG.md             ← Evolution tracking
-├── /data/                   ← INPUT: Raw materials (static, organized by type)
-└── /{YYYY-MM-DD@HH:mm}/     ← PROCESS: Date-stamped execution (PLAN.md, findings, artifacts)
-```
-
-Information flow: `/data/` → `/{YYYY-MM-DD@HH:mm}/` → (updates) → `RESEARCH.md` (index) → `/brand/strategy/`
-
-**Result:** Iteration history preserved, approved state clear, evolution tracked, clear separation of input/process/output
 
 #### Verifiable Audit Trails: Every Claim Has Evidence
 
-Create verifiable chains of evidence from content → strategy → research → data:
+Markdown references allow for verifiable chains of evidence from content → strategy → research → data:
 
 ```
 Content (Output)
@@ -206,8 +194,8 @@ Raw Data (Source material)
 - Consistent across all documents
 
 **Important - Use Relative Paths:**
-- ✅ Always use relative paths from workspace root: `/brand/research/domain/RESEARCH.md`
-- ❌ Never use absolute file system paths: `/Users/name/project/brand/research/...`
+- ✅ Always use relative paths from workspace root: `/brand/research/{domain}/RESEARCH.md`
+- ❌ Never use absolute file system paths: `/Users/name/project/brand/research/{domain}/RESEARCH.md`
 - Relative paths enable seamless collaboration when Marketing Architects clone the repository
 
 **Example:**
@@ -255,7 +243,7 @@ Our customers are drowning in [complex tools that overwhelm them](/brand/researc
 │   │       ├── /{YYYY-MM-DD@HH:mm}/  ← Execution folders (iterative development)
 │   │       │   ├── PLAN.md
 │   │       │   ├── TODO.md
-│   │       │   ├── STRATEGY.md
+│   │       │   ├── STRATEGY.md       ← Strategy synthesized in this execution
 │   │       │   └── /artifacts/
 │   │       └── /{extension}/         ← Optional: platform/audience-specific extensions
 │   │           └── EXTENSION.md      ← Extends parent STRATEGY.md (additive only)
@@ -384,6 +372,33 @@ All three base directories in the **Marketing Framework** use temporal execution
 
 ---
 
+## Naming Conventions & Quick Reference
+
+### File Naming Rules
+
+#### Date-stamped Directories
+
+**Standard format:** `YYYY-MM-DD@HH:mm` (e.g., `/2024-02-20@18:43/`)
+- Used by: Research domains (except adhoc), Strategy domains
+- Clean timestamps for domain-indexed work
+
+**With-slug format:** `YYYY-MM-DD@HH:mm-descriptive-slug` (e.g., `/2024-02-20@18:43-top-10-ai-tools/`)
+- Used by: Content domains, Research/adhoc domain
+- Slug provides human-readable context for standalone/published work
+
+#### Naming Conventions to Avoid
+
+**Do not use:**
+- Spaces: `Brand Narrative`
+- Underscores: `brand_narrative`
+- camelCase: `brandNarrative`
+- Generic names: `index.md` (use STRATEGY.md / RESEARCH.md / CONTENT.md etc instead)
+
+**Instead use:**
+- Kebab-case for folders/slugs: `brand-narrative`
+- UPPERCASE.md for entry files: `STRATEGY.md`, `RESEARCH.md`, `CONTENT.md`
+
+
 ## Navigation Heuristics
 
 **Need current approved strategy?**
@@ -407,61 +422,3 @@ All three base directories in the **Marketing Framework** use temporal execution
 
 **Building new strategy?**
 → Read research index → Create strategy execution → Iterate → Approve to index
-
----
-
-## Naming Conventions & Quick Reference
-
-### File Naming Rules
-
-#### Execution Folder Structure
-
-All three base directories use temporal execution folders with consistent internal structure:
-
-```
-/{base-dir}/{domain}/{YYYY-MM-DD@HH:mm}/  or  /{YYYY-MM-DD@HH:mm-slug}/
-├── PLAN.md           ← Execution approach and objectives
-├── TODO.md           ← Progress tracking during execution
-├── {TYPE}.md         ← Execution output (RESEARCH.md, STRATEGY.md, or CONTENT.md)
-└── /artifacts/       ← Supporting materials from subtasks/subagents
-```
-
-**Avoid:**
-- Spaces: `Brand Narrative`
-- Underscores: `brand_narrative`
-- camelCase: `brandNarrative`
-- index.md (use STRATEGY.md / RESEARCH.md / CONTENT.md etc instead)
-
-#### File Types by Base Directory
-
-**Within `/brand/research/` domains:**
-- Domain root level:
-  - `RESEARCH.md` - Index (accumulated knowledge, MA approved)
-  - `CHANGELOG.md` - Evolution tracking
-  - `/data/` - Raw materials (transcripts, surveys, reports)
-- Execution folders (`/{YYYY-MM-DD@HH:mm}/`):
-  - `PLAN.md`, `TODO.md`, `RESEARCH.md`, `/artifacts/`
-- Special: `/adhoc/` uses with-slug format (`/{YYYY-MM-DD@HH:mm-slug}/`)
-
-**Within `/brand/strategy/` domains:**
-- Domain root level:
-  - `STRATEGY.md` - Index (current approved strategy, MA approved)
-  - `CHANGELOG.md` - Evolution tracking
-  - Optional: Extension subfolders with `EXTENSION.md`
-- Execution folders (`/{YYYY-MM-DD@HH:mm}/`):
-  - `PLAN.md`, `TODO.md`, `STRATEGY.md`, `/artifacts/`
-
-**Within `/brand/content/` domains:**
-- Execution folders only (`/{YYYY-MM-DD@HH:mm-slug}/`):
-  - `PLAN.md`, `TODO.md`, `CONTENT.md`, `/artifacts/`
-  - Note: Content has no index file (each piece is standalone)
-
-#### Date-stamped directories (two formats)
-
-**Standard format:** `YYYY-MM-DD@HH:mm` (e.g., `/2024-02-20@18:43/`)
-- Used by: Research domains (except adhoc), Strategy domains
-- Clean timestamps for domain-indexed work
-
-**With-slug format:** `YYYY-MM-DD@HH:mm-descriptive-slug` (e.g., `/2024-02-20@18:43-top-10-ai-tools/`)
-- Used by: Content domains, Research/adhoc domain
-- Slug provides human-readable context for standalone/published work
