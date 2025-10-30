@@ -28,7 +28,6 @@
     "enabledMcpjsonServers": [
         "firecrawl",
         "replicate",
-        "twitter-scraper",
         "dataforseo",
         "perplexity",
         "MarketingArchitectureDocs"
