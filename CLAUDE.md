@@ -10,24 +10,25 @@ The Agentic Marketing Architecture consists of **two distinct frameworks**:
 
 ### 1. Agentic Framework (System Configuration)
 Located in `/.claude/`, this framework defines the agent orchestration system:
-- **Output Styles** - Primary agent definitions (Operations Manager, etc.)
-- **Sub-agents** - Specialist agents (Brand Analyst, Content Writer, etc.)
-- **Skills** - Reusable workflows
+- **Output Styles** - Primary agent definitions (Marketing Operations Manager, etc.)
+- **Sub-agents** - Specialist agents (Analyst, Strategist, etc.)
+- **Skills** - Reusable marketing workflows, and agentic-orchestration for agentic best pratices
 - **Commands** - Workflow triggers (`/plan`, `/implement`, etc.)
 
 **Purpose:** Defines WHO (agents), WHAT (skills), and HOW (workflows) the system operates.
 
 ### 2. Marketing Framework (Content Architecture)
-Located in `/research/`, `/strategy/`, and `/content/`, this is our **opinionated marketing framework** with three core base directories:
+Located in `/brand/`, this is our **opinionated marketing framework** with three core base directories organized within a single brand folder (similar to an `src/` folder in development projects):
 
 #### The Three-Layer Framework
 
 ```
-/research/     ← Pure, unopinionated factual gathering
-     ↓ synthesizes into
-/strategy/     ← Strategic synthesis of research into actionable insights (the farmland)
-     ↓ guides creation of
-/content/      ← System-generated outputs (the produce grown on that farmland)
+/brand/
+├── /research/     ← Pure, unopinionated factual gathering
+│        ↓ synthesizes into
+├── /strategy/     ← Strategic synthesis of research into actionable insights (the farmland)
+│        ↓ guides creation of
+└── /content/      ← System-generated outputs (the produce grown on that farmland)
 ```
 
 **Key Characteristics:**
@@ -50,48 +51,100 @@ Within each base directory, **domains** organize specific areas of work:
 
 ## Core Principles
 
-These principles govern all file structure and organizational decisions:
+The AMA methodology is built on principles that govern both frameworks:
 
-### 1. Organize by Concern, Navigate by Entry Point, Reference by Path
+---
 
-- Directory structure reflects logical separation (strategy vs research vs content vs .claude (this is the config folder))
-- UPPERCASE.md files serve as main content documents (STRATEGY.md, RESEARCH.md, CONTENT.md etc) and extensions (EXTENSION.md)
-- Files are referenced by path, not duplicated across locations
+### 1. Agentic Framework Principles
 
-**Example:** `/strategy/voice/` (concern) → `STRATEGY.md` (main content) → `/twitter/EXTENSION.md` (extension)
+These principles govern how agents coordinate, execute workflows, and manage work visibility:
 
-### 2. Progressive Disclosure: Pass Paths Not Content
+#### Agent Coordination & Delegation
+- **Clear separation of concerns** - Operations Manager orchestrates, sub-agents specialize
+- **Progressive task breakdown** - Complex work decomposed into manageable steps
+- **Context-aware delegation** - Right work to right specialist based on domain expertise
+- **Stateless execution** - Each agent works independently with clear inputs/outputs
 
-- Information is hierarchical. highlevel first, details on demand. Preserving context and enabling specificity on a need-to-know basis. 
-- Agents load only the files they need for their specific task
-- Entry points guide to specific files rather than inlining everything
+**Result:** Efficient orchestration, appropriate specialization, scalable coordination
+
+#### Workflow Execution (PLAN.md/TODO.md Pattern)
+- **Plan before execution** - Complex work requires explicit PLAN.md for approval
+- **Track progress transparently** - TODO.md updates show work in progress
+- **Mark completion immediately** - Tasks marked done as soon as finished
+- **One task in-progress** - Focus on current work, complete before moving forward
+
+**Result:** Visible work, manageable complexity, clear progress tracking
+
+#### Progressive Disclosure: Load What's Needed, When Needed
+
+Agents load exactly what they need for their task, avoiding context overflow:
+
+**The Pattern:**
+1. **Load base document** first (e.g., `STRATEGY.md` for core principles)
+2. **Check for extensions** in subfolders if platform/audience-specific details needed
+3. **Follow references** to load related files only when required
+4. **Pass paths, not content** - Provide file references for agents to load progressively
+
+**Example workflow:**
+- Agent needs Twitter content → Loads `/brand/strategy/voice/STRATEGY.md` (base)
+- Checks for Twitter-specific → Loads `/brand/strategy/voice/twitter/EXTENSION.md` (platform details)
+- Needs brand themes → Loads `/brand/strategy/messaging/STRATEGY.md` (additional context)
+- Total: 3 files instead of entire strategy directory
+
+**Result:** Efficient token usage, focused context, scalable to large knowledge bases
+
+**Full documentation:** See [agentic-orchestrating skill](.claude/skills/agentic-orchestrating/SKILL.md) for comprehensive guidance.
+
+---
+
+### 2. Marketing Framework Principles
+
+These principles govern the organization and flow of marketing/brand work:
+
+#### Organize by Concern, Navigate by Entry Point, Reference by Path
+
+- **Logical separation** - `/brand/` contains three distinct layers: research, strategy, content
+- **Entry point files** - UPPERCASE.md files (RESEARCH.md, STRATEGY.md, CONTENT.md) serve as indexes
+- **Reference by path** - Files linked via markdown references, not duplicated
+- **Domain organization** - Work organized into configurable domains within each base directory
+
+**Example:** `/brand/strategy/voice/` (concern) → `STRATEGY.md` (index) → `/twitter/EXTENSION.md` (extension)
+
+**Result:** Clear organization, easy navigation, no duplication
+
+#### Progressive Disclosure: Pass Paths Not Content
+
+- **Hierarchical information** - High-level first, details on demand
+- **Load what's needed** - Agents read only files required for their specific task
+- **Path-based references** - Guide to specific files rather than inlining everything
+- **Extension pattern** - Platform-specific details extend base strategy (additive only)
 
 **Result:** Efficient token usage, scalability, clear information architecture
 
-### 3. Temporal Execution Pattern with CHANGELOG Tracking
+#### Temporal Execution Pattern with CHANGELOG Tracking
 
 **All three base directories use temporal executions** with date-stamped folders:
 
 - **Standard format:** `/YYYY-MM-DD@HH:mm/` (research domains, strategy domains)
 - **With-slug format:** `/YYYY-MM-DD@HH:mm-descriptive-slug/` (content domains, research/adhoc)
 
-**CHANGELOG.md files** at domain root track evolution of index files (RESEARCH.md, STRATEGY.md):
-- Record what changed and why
-- Link to execution folders that prompted updates
-- Create audit trail for approved changes
-- Enable understanding of strategic evolution over time
+**Execution → Index workflow:**
+- Executions are temporal, iterative development work
+- Index files are located at the domain level (RESEARCH.md, STRATEGY.md) and represent current approved state
+- CHANGELOG.md tracks evolution of index over time
+- Marketing Architect approves updates from execution to index
 
-**Result:** Temporal executions provide iteration history, CHANGELOG.md provides curated narrative of approved changes, git versioning preserves everything
+**Result:** Iteration history preserved, approved state clear, evolution tracked
 
-### 4. Verifiable Audit Trails: Every Claim Has Evidence
+#### Verifiable Audit Trails: Every Claim Has Evidence
 
-- Strategy claims link back to research findings via markdown references `[descriptive text](/path/to/file.md)`
-- Research findings reference raw data sources using same format
-- Content generation loads strategy into execution context (PLAN.md/TODO.md) to ensure on-brand outputs
-- Complete chain: Content (uses Strategy as context) → Strategy (synthezied from and cites Research) → Research (analyzed from Data)
-- Markdown references enable human navigation AND progressive disclosure for AI agents
+- **Strategy → Research** - Strategy claims link to research findings via `[text](/path/to/file.md)`
+- **Research → Data** - Research findings reference raw data sources
+- **Content → Strategy** - Content loads strategy as context in PLAN.md/TODO.md
+- **Complete chain** - Content (uses Strategy) → Strategy (cites Research) → Research (analyzes Data)
+- **Human + AI navigation** - Markdown references work for both people and agents
 
-**Result:** Defensible strategy, traceable content, research utilization, transparency
+**Result:** Defensible strategy, traceable content, transparent reasoning
 
 ---
 
@@ -99,48 +152,50 @@ These principles govern all file structure and organizational decisions:
 
 ```
 /workspace-root/
-├── .claude/                          ← System behavior & capabilities
+├── .claude/                          ← Agentic Framework: System behavior & capabilities
 │   ├── output-styles/                ← Primary agent definitions
 │   ├── agents/                       ← Sub-agent specialists
-│   ├── skills/                       ← Reusable workflows (see orchestration skill)
+│   ├── skills/                       ← Reusable workflows (see agentic-orchestrating skill)
 │   └── commands/                     ← Workflow triggers (/plan, /implement)
 │
-├── /strategy/                        ← Strategic synthesis (iterative, research-backed)
-│   └── /{domain}/                    ← e.g., positioning, voice, messaging, audience
-│       ├── STRATEGY.md               ← Index: current approved strategy (MA approved)
-│       ├── CHANGELOG.md              ← Tracks evolution of strategy
-│       ├── /{YYYY-MM-DD@HH:mm}/      ← Execution folders (iterative development)
-│       │   ├── PLAN.md               ← Approach for this execution
-│       │   ├── TODO.md               ← Progress tracking
-│       │   ├── STRATEGY.md           ← Execution strategy (draft/iteration)
-│       │   └── /artifacts/           ← Supporting materials and analysis
-│       └── /{extension}/             ← Optional: platform/audience-specific extensions
-│           └── EXTENSION.md          ← Extends parent STRATEGY.md (additive only)
-│
-├── /research/                        ← Research domains (temporal, date-stamped, raw findings)
-│   ├── /{domain}/                    ← e.g., category-landscape, customer-insight
-│   │   ├── RESEARCH.md               ← Index: accumulated knowledge (MA approved)
-│   │   ├── CHANGELOG.md              ← Tracks evolution of findings
-│   │   ├── /{YYYY-MM-DD@HH:mm}/      ← Standard execution folders
-│   │   │   ├── PLAN.md               ← Approach for this execution
-│   │   │   ├── TODO.md               ← Progress tracking
-│   │   │   ├── RESEARCH.md           ← Execution findings (high-level)
-│   │   │   └── /artifacts/           ← Detailed evidence and analysis
-│   │   └── /data/                    ← Raw materials (transcripts, surveys, reports)
-│   └── /adhoc/                       ← Special domain: research that doesn't fit other domains
-│       └── /{YYYY-MM-DD@HH:mm-slug}/ ← With-slug execution folders
-│           ├── PLAN.md
-│           ├── TODO.md
-│           ├── RESEARCH.md           ← Standalone findings (not indexed)
-│           └── /artifacts/
-│
-├── /content/                         ← Content creation (temporal, strategy-guided outputs)
-│   └── /{type}/                      ← e.g., blog-posts, tweets, linkedin-posts
-│       └── /{YYYY-MM-DD@HH:mm-content-slug-title}/      ← Execution folders
-│           ├── PLAN.md               ← Content brief (strategy files used as context)
-│           ├── TODO.md               ← Creation tracking
-│           ├── /artifacts/           ← Subtasks/subagent outputs (research, keywords)
-│           └── CONTENT.md            ← Final content to review/publish
+├── /brand/                           ← Marketing Framework: All brand/marketing work (like src/)
+│   │
+│   ├── /research/                    ← Input: Unopinionated factual gathering
+│   │   ├── /{domain}/                ← e.g., category-landscape, customer-insight
+│   │   │   ├── RESEARCH.md           ← Index: accumulated knowledge (MA approved)
+│   │   │   ├── CHANGELOG.md          ← Tracks evolution of findings
+│   │   │   ├── /{YYYY-MM-DD@HH:mm}/  ← Standard execution folders
+│   │   │   │   ├── PLAN.md
+│   │   │   │   ├── TODO.md
+│   │   │   │   ├── RESEARCH.md
+│   │   │   │   └── /artifacts/
+│   │   │   └── /data/                ← Raw materials (transcripts, surveys, reports)
+│   │   └── /adhoc/                   ← Special: standalone research
+│   │       └── /{YYYY-MM-DD@HH:mm-slug}/
+│   │           ├── PLAN.md
+│   │           ├── TODO.md
+│   │           ├── RESEARCH.md
+│   │           └── /artifacts/
+│   │
+│   ├── /strategy/                    ← Processing: Strategic synthesis
+│   │   └── /{domain}/                ← e.g., positioning, voice, messaging, audience
+│   │       ├── STRATEGY.md           ← Index: current approved strategy (MA approved)
+│   │       ├── CHANGELOG.md          ← Tracks evolution of strategy
+│   │       ├── /{YYYY-MM-DD@HH:mm}/  ← Execution folders (iterative development)
+│   │       │   ├── PLAN.md
+│   │       │   ├── TODO.md
+│   │       │   ├── STRATEGY.md
+│   │       │   └── /artifacts/
+│   │       └── /{extension}/         ← Optional: platform/audience-specific extensions
+│   │           └── EXTENSION.md      ← Extends parent STRATEGY.md (additive only)
+│   │
+│   └── /content/                     ← Output: Final deliverables
+│       └── /{type}/                  ← e.g., blog-posts, twitter-posts, linkedin-posts
+│           └── /{YYYY-MM-DD@HH:mm-slug}/
+│               ├── PLAN.md
+│               ├── TODO.md
+│               ├── CONTENT.md
+│               └── /artifacts/
 │
 ├── .mcp.json                         ← Tool integrations (MCP server config)
 ├── CLAUDE.md                         ← This file (agent structural guide)
@@ -152,22 +207,23 @@ These principles govern all file structure and organizational decisions:
 | Directory | Purpose | Key Trait |
 |-----------|---------|-----------|
 | `/.claude/` | Agentic Framework | Defines WHO (agents), WHAT (skills), HOW (workflows) |
-| `/research/` | Marketing Framework: Input | Temporal (date-stamped), unopinionated factual gathering, preserves historical context |
-| `/strategy/` | Marketing Framework: Processing | Temporal (date-stamped), iterative refinement, synthesizes research, references research |
-| `/content/` | Marketing Framework: Output | Temporal (date-stamped) with slug, strategy-guided, final deliverables |
+| `/brand/` | Marketing Framework Container | Like `src/` for development - contains all brand/marketing work |
+| `/brand/research/` | Marketing Framework: Input | Temporal (date-stamped), unopinionated factual gathering, preserves historical context |
+| `/brand/strategy/` | Marketing Framework: Processing | Temporal (date-stamped), iterative refinement, synthesizes research, references research |
+| `/brand/content/` | Marketing Framework: Output | Temporal (date-stamped) with slug, strategy-guided, final deliverables |
 
 ### Information Flow (Marketing Framework)
 
 ```
-/research/{domain}/{YYYY-MM-DD@HH:mm}/          ← Research executions (temporal)
+/brand/research/{domain}/{YYYY-MM-DD@HH:mm}/          ← Research executions (temporal)
          ↓ updates
-/research/{domain}/RESEARCH.md                  ← Research index (accumulated knowledge, MA approved)
+/brand/research/{domain}/RESEARCH.md                  ← Research index (accumulated knowledge, MA approved)
          ↓ synthesizes into (via execution)
-/strategy/{domain}/{YYYY-MM-DD@HH:mm}/          ← Strategy executions (iterative development)
+/brand/strategy/{domain}/{YYYY-MM-DD@HH:mm}/          ← Strategy executions (iterative development)
          ↓ updates
-/strategy/{domain}/STRATEGY.md                  ← Strategy index (current approved strategy, MA approved)
+/brand/strategy/{domain}/STRATEGY.md                  ← Strategy index (current approved strategy, MA approved)
          ↓ guides every
-/content/{type}/{YYYY-MM-DD@HH:mm-content-slug-title}/      ← Content creation (strategy as context)
+/brand/content/{type}/{YYYY-MM-DD@HH:mm-slug}/        ← Content creation (strategy as context)
 ```
 
 **Key Rules:**
@@ -176,7 +232,7 @@ These principles govern all file structure and organizational decisions:
 - Strategy synthesis reads from research index RESEARCH.md (not research executions)
 - Strategy development happens in executions, approved versions become the index
 - Content generated from strategy index (not strategy executions or research directly)
-- Extensions extend (not replace) parent STRATEGY.md (e.g., `/strategy/voice/twitter/EXTENSION.md`)
+- Extensions extend (not replace) parent STRATEGY.md (e.g., `/brand/strategy/voice/twitter/EXTENSION.md`)
 
 ---
 
@@ -197,8 +253,8 @@ These principles govern all file structure and organizational decisions:
 Parent STRATEGY.md + Child EXTENSION.md = Complete Context
 
 Example:
-/strategy/voice/STRATEGY.md            # Base voice (like layout.tsx)
-+ /strategy/voice/twitter/EXTENSION.md # Twitter additions (like page.tsx)
+/brand/strategy/voice/STRATEGY.md            # Base voice (like layout.tsx)
++ /brand/strategy/voice/twitter/EXTENSION.md # Twitter additions (like page.tsx)
 = Complete Twitter voice guide
 
 Note: EXTENSION.md only contains what's ADDITIONAL for that context
@@ -208,9 +264,9 @@ Note: EXTENSION.md only contains what's ADDITIONAL for that context
 
 | File | Location | Purpose |
 |------|----------|---------|
-| `STRATEGY.md` | `/strategy/{domain}/STRATEGY.md` | Index: current approved strategy |
-| `RESEARCH.md` | `/research/{domain}/RESEARCH.md` | Index: accumulated research knowledge |
-| `CONTENT.md` | `/content/{type}/{timestamp-slug}/CONTENT.md` | Final content to review/publish |
+| `STRATEGY.md` | `/brand/strategy/{domain}/STRATEGY.md` | Index: current approved strategy |
+| `RESEARCH.md` | `/brand/research/{domain}/RESEARCH.md` | Index: accumulated research knowledge |
+| `CONTENT.md` | `/brand/content/{type}/{timestamp-slug}/CONTENT.md` | Final content to review/publish |
 | `SKILL.md` | `.claude/skills/{skill}/SKILL.md` | Define skill capabilities |
 | `PLAN.md` | Execution folders | Document workflow approach |
 | `TODO.md` | Execution folders | Track workflow progress |
@@ -282,7 +338,7 @@ All three base directories in the **Marketing Framework** use temporal execution
 Research domains follow Input → Process → Output structure:
 
 ```
-/research/{domain}/
+/brand/research/{domain}/
 ├── RESEARCH.md              ← INDEX: Current accumulated knowledge
 ├── CHANGELOG.md             ← Evolution tracking
 ├── /data/                   ← INPUT: Raw materials (static, organized by type)
@@ -291,10 +347,10 @@ Research domains follow Input → Process → Output structure:
 
 **Information flow:**
 ```
-/data/ → /{YYYY-MM-DD@HH:mm}/ → (updates) → RESEARCH.md (index) → /exports/ → /strategy/
+/data/ → /{YYYY-MM-DD@HH:mm}/ → (updates) → RESEARCH.md (index) → /brand/strategy/
 ```
 
-For detailed workflow execution guidance, see the **orchestration skill** at `.claude/skills/orchestration/`.
+For detailed workflow execution guidance, see the **agentic-orchestrating skill** at `.claude/skills/agentic-orchestrating/`.
 
 ---
 
@@ -327,13 +383,13 @@ Raw Data (Source material)
 - Consistent across all documents
 
 **Important Note:**
-- Always use relative paths from the workspace root (e.g., `/research/domain/RESEARCH.md`)
-- Never use absolute file system paths (e.g., `/Users/name/project/research/...`)
+- Always use relative paths from the workspace root (e.g., `/brand/research/domain/RESEARCH.md`)
+- Never use absolute file system paths (e.g., `/Users/name/project/brand/research/...`)
 - Relative paths enable seamless collaboration when Marketing Architects clone the repository
 
 **Example:**
 ```markdown
-Our customers are drowning in [complex tools that overwhelm them](/research/customer-insights/RESEARCH.md).
+Our customers are drowning in [complex tools that overwhelm them](/brand/research/customer-insights/RESEARCH.md).
 ```
 
 ---
@@ -341,20 +397,20 @@ Our customers are drowning in [complex tools that overwhelm them](/research/cust
 ## Navigation Heuristics
 
 **Need current approved strategy?**
-→ Start: `/strategy/{domain}/STRATEGY.md` (index with current approved strategy)
+→ Start: `/brand/strategy/{domain}/STRATEGY.md` (index with current approved strategy)
 → Optional: Read extension if available from reference in `STRATEGY.md`, e.g., "View specific guidelines for: [twitter](twitter/EXTENSION.md)"
 
 **Need strategy development context?**
-→ Look in: `/strategy/{domain}/{YYYY-MM-DD@HH:mm}/` (execution folders show iteration history)
+→ Look in: `/brand/strategy/{domain}/{YYYY-MM-DD@HH:mm}/` (execution folders show iteration history)
 
 **Need research findings?**
-→ Start: `/research/{domain}/RESEARCH.md` (index with accumulated knowledge)
+→ Start: `/brand/research/{domain}/RESEARCH.md` (index with accumulated knowledge)
 
 **Need research execution context?**
-→ Look in: `/research/{domain}/{YYYY-MM-DD@HH:mm}/` (execution folders preserve historical findings)
+→ Look in: `/brand/research/{domain}/{YYYY-MM-DD@HH:mm}/` (execution folders preserve historical findings)
 
 **Need adhoc research?**
-→ Look in: `/research/adhoc/{YYYY-MM-DD@HH:mm-slug}/` (standalone research not tied to domains)
+→ Look in: `/brand/research/adhoc/{YYYY-MM-DD@HH:mm-slug}/` (standalone research not tied to domains)
 
 **Need evidence for a claim?**
 → Follow markdown reference links: Strategy Index → Research Index → Raw data
@@ -382,7 +438,7 @@ All three base directories use temporal execution folders with consistent intern
 
 **File Types by Base Directory:**
 
-**Within `/research/` domains:**
+**Within `/brand/research/` domains:**
 - Domain root level:
   - `RESEARCH.md` - Index (accumulated knowledge, MA approved)
   - `CHANGELOG.md` - Evolution tracking
@@ -391,7 +447,7 @@ All three base directories use temporal execution folders with consistent intern
   - `PLAN.md`, `TODO.md`, `RESEARCH.md`, `/artifacts/`
 - Special: `/adhoc/` uses with-slug format (`/{YYYY-MM-DD@HH:mm-slug}/`)
 
-**Within `/strategy/` domains:**
+**Within `/brand/strategy/` domains:**
 - Domain root level:
   - `STRATEGY.md` - Index (current approved strategy, MA approved)
   - `CHANGELOG.md` - Evolution tracking
@@ -399,7 +455,7 @@ All three base directories use temporal execution folders with consistent intern
 - Execution folders (`/{YYYY-MM-DD@HH:mm}/`):
   - `PLAN.md`, `TODO.md`, `STRATEGY.md`, `/artifacts/`
 
-**Within `/content/` domains:**
+**Within `/brand/content/` domains:**
 - Execution folders only (`/{YYYY-MM-DD@HH:mm-slug}/`):
   - `PLAN.md`, `TODO.md`, `CONTENT.md`, `/artifacts/`
   - Note: Content has no index file (each piece is standalone)

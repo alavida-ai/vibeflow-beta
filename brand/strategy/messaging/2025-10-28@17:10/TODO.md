@@ -14,7 +14,7 @@
 - [x] **Phase 2:** Strategic Condensation - Create condensed version of messaging strategy → [02-condensed-messaging.md](artifacts/02-condensed-messaging.md) ✓
 
 - [x] **Phase 3:** Validation & Quality Check - Validate condensed version maintains all strategic guidance ✓
-  - [03-validation-report.md](artifacts/03-validation-report.md) ✓
+  - [03-validation-report.md](/brand/strategy/messaging/2025-10-28@17:10/artifacts/03-validation-report.md) ✓
   - [STRATEGY.md](STRATEGY.md) ✓
 
 ## Current Phase
