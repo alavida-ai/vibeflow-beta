@@ -50,6 +50,15 @@ def create_execution_folder(base_dir: str, domain: str, slug: str = None) -> str
     # Normalize base_dir to ensure it starts with brand/
     base_path = Path(base_dir)
 
+    # Validate that path starts with 'brand/' (core AMA principle)
+    path_parts = base_path.parts
+    if not path_parts or path_parts[0] != "brand":
+        raise ValueError(
+            f"base-dir must start with 'brand/' (got: {base_dir}).\n"
+            "All execution work MUST be within /brand/ directory.\n"
+            "Valid examples: brand/research, brand/strategy, brand/content"
+        )
+
     # Determine which base directory type we're in
     if "content" in str(base_path):
         base_type = "content"
