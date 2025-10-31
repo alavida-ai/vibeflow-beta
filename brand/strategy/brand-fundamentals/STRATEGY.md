@@ -9,7 +9,7 @@ validated: true
 
 ## Executive Summary
 
-Vibeflow exists to transform marketers from obsolete tacticians into Marketing Architects—designers and owners of the agentic AI systems that will define competitive advantage in the AI age. While the industry races toward "easy buttons" that create dependency, we build frameworks that create capability. Where competitors optimize for convenience and subscription lock-in, we empower ownership and architectural mastery.
+Our mission is to transform marketers from obsolete tacticians into Marketing Architects—designers and owners of the agentic AI systems that will define competitive advantage in the AI age. While the industry races toward "easy buttons" that create dependency, we build frameworks that create capability. Where competitors optimize for convenience and subscription lock-in, we empower ownership and architectural mastery.
 
 Our strategic positioning occupies three territories of massive competitive white space: capability over convenience (vs. 85% of competitors who lead with "ease"), ownership over subscription (vs. 100% who use rental models), and augmentation over replacement (vs. competitors who position AI as workforce replacement). We explicitly serve the ambitious 5-10% of marketers who value deferred gains over quick wins—people who see learning as competitive advantage, not burden.
 
@@ -21,7 +21,7 @@ This isn't just about better tools or smarter workflows. Our existential purpose
 
 ### Mission
 
-**Empower marketers to become architects of agentic AI systems—so they can own their strategic advantage and win in the AI age.**
+**Transform marketers into Marketing Architects of agentic AI systems—so they own their strategic advantage and win in the AI age.**
 
 We exist to transform marketers from tool users into system designers. Where the industry builds "easy buttons" that create dependency, we build frameworks that create capability. We don't automate marketers out of existence—we architect them into irreplaceability.
 
@@ -99,6 +99,12 @@ This pillar emerges from [the founding belief that empowerment over ease is the 
 **What We Believe:**
 
 When marketing is your strategic advantage, letting a vendor own your infrastructure is existential risk. [SaaS creates vendor lock-in and strategic vulnerability](/research/brand-story-interview/RESEARCH.md)—you don't control your data, your processes, or your pricing. Infrastructure independence equals business independence.
+
+**The New Definition of Infrastructure**
+
+[Infrastructure in the AI age isn't servers and databases](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md)—it's the systematic orchestration of AI capabilities through natural language architecture. Your prompts, sub-agents, and workflow designs ARE your infrastructure. English is the new programming language, and your system prompts are your codebase.
+
+This redefining makes ownership tangible: You version-control your prompts, iterate on your agents, and continuously improve your workflows. These assets belong to you permanently, improving with every use, creating competitive advantage through proprietary capabilities.
 
 **Strategic Foundation:**
 
@@ -227,7 +233,29 @@ These five pillars form a reinforcing strategic system:
 
 ---
 
+### Component Registry & Network Effects
+
+While our current moats are strong, the component registry will create exponential ecosystem value once launched. [The registry enables community-contributed workflows, sub-agents, and skills](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md)—creating network effects where more users generate more components, which attract more users in a reinforcing flywheel.
+
+**Network Effects Flywheel:**
+- More framework adopters → more component contributions
+- More components → more framework value
+- More value → more adopters
+- Exponential ecosystem growth
+
+**Strategic Importance:**
+- First-mover advantage on marketing component marketplace
+- Increases switching costs (community knowledge locked in registry)
+- Creates compounding value that competitors can't replicate overnight
+- Positions us as category hub (where Marketing Architects congregate)
+
+This moat doesn't exist until the registry launches, but it's strategically critical to our long-term defensibility.
+
+---
+
 ## Customer Transformation
+
+The transformation we enable isn't incremental improvement—it's an identity shift. [From tool user to Marketing Architect, from copywriter to system designer](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md), from vendor-dependent to infrastructure-independent. This is the core value proposition: who you become, not what you get.
 
 ### Before: The Obsolete Tactician
 
@@ -280,6 +308,16 @@ We enable transformation through [empowerment as a constant journey of evolving 
 - **Creating Ownership:** We enable marketers to [own their stack rather than rent vendor platforms](/research/brand-story-interview/RESEARCH.md), directly addressing pain that [100% of competitors perpetuate through subscription models](/research/category-landscape/RESEARCH.md).
 - **Positioning Humans as Irreplaceable:** While [competitors position AI as workforce replacement](/research/category-landscape/RESEARCH.md), we position [AI as a tool to enhance the human marketer](/research/brand-story-interview/RESEARCH.md).
 
+### The Aha Moment
+
+[Transformation happens when customers realize the system thinks strategically for them](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md). They create short prompts, and the agentic system builds on top—ensuring strategic optimization, leveraging pre-existing skills and workflows, maintaining brand alignment automatically. This is when they understand they're not using a tool—they're designing infrastructure.
+
+**What triggers it:**
+- Realizing the system maintains strategic alignment without micromanagement
+- Understanding orchestration handles complexity they used to manage manually
+- Seeing brand voice maintained automatically across outputs
+- Recognizing they've built infrastructure, not just used automation
+
 ### After: The Marketing Architect
 
 **New Capabilities:**
@@ -299,6 +337,9 @@ Confidence, agency, competitiveness:
 - **From dependency to control:** You control your infrastructure and your destiny
 - **From overwhelm to mastery:** You're [running toward mastery of agentic marketing systems](/research/brand-story-interview/RESEARCH.md)
 - **From reactive to strategic:** You're [staying ahead of the curve by mastering new AI-age skills](/research/brand-story-interview/RESEARCH.md)
+
+**Measuring Success:**
+[Success is measured by time spent working ON the system versus IN it](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md). If every day the system gets a little better—skills refined, workflows optimized, capabilities expanded—transformation is happening. The infrastructure you build compounds, unlike tools you rent which extract value without building capability.
 
 ---
 
