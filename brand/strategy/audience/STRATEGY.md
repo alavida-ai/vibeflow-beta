@@ -27,7 +27,7 @@ Our primary audience is the ambitious minority of marketing practitioners who se
 **Psychographics:**
 - **Values:** [Infrastructure ownership over convenience](/research/customer-insights/RESEARCH.md), quality over speed, long-term thinking over quick fixes, intellectual rigor over patronizing simplicity
 - **Worldview:** Marketing is strategic infrastructure, not tactical execution—when distribution is your competitive advantage, [letting a vendor own your infrastructure is existential risk](/research/brand-story-interview/RESEARCH.md)
-- **Identity:** They see themselves as builders and architects, not just users—[willing to "grind" on foundational work](/research/customer-insights/RESEARCH.md) because they understand infrastructure compounds
+- **Identity:** They see themselves as builders and architects, not just users—[willing to "grind" on foundational work](/research/customer-insights/RESEARCH.md) because they understand infrastructure compounds. "Cracked marketers" who embrace technical sophistication as competitive advantage
 - **Relationship with AI:** Sophisticated power-users experiencing [the Productivity Paradox](/research/customer-insights/RESEARCH.md)—already 10-20x more productive but still overwhelmed by manual orchestration
 
 ### Why They Matter
