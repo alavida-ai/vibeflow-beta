@@ -10,9 +10,9 @@ The Agentic Marketing Architecture consists of **two distinct frameworks**:
 
 ### 1. Agentic Framework (System Configuration)
 Located in `/.claude/`, this framework defines the agent orchestration system:
-- **Output Styles** - Primary agent definitions (Marketing Operations Manager, etc.)
+- **Hooks** - SessionStart hook defines Operations Manager identity (replaces deprecated output styles)
 - **Sub-agents** - Specialist agents (Analyst, Strategist, etc.)
-- **Skills** - Reusable marketing workflows, and agentic-orchestration for agentic best pratices
+- **Skills** - Reusable marketing workflows, and agentic-orchestration for agentic best practices
 - **Commands** - Workflow triggers (`/plan`, `/implement`, etc.)
 
 **Purpose:** Defines WHO (agents), WHAT (skills), and HOW (workflows) the system operates.
