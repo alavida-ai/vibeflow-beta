@@ -25,5 +25,16 @@
         ]
     },
     "enableAllProjectMcpServers": true,
-    "outputStyle": "marketing-operations-manager"
+    "hooks": {
+        "SessionStart": [
+            {
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/SessionStart.sh"
+                    }
+                ]
+            }
+        ]
+    }
 }
