@@ -5,6 +5,7 @@ on:
     types: [ready_for_review]
     paths:
       - 'brand/strategy/**/STRATEGY.md' # Only trigger on STRATEGY.md files
+  workflow_dispatch: # Allow manual triggering of the workflow
 
 permissions:
   contents: write
