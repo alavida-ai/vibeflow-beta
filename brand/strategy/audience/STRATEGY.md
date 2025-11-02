@@ -382,6 +382,8 @@ Where to reach our audience and how they use each channel.
 
 ### Secondary Channels
 
+Wow
+
 **Email/Newsletter:**
 - Long-form educational content
 - Product updates with technical depth
