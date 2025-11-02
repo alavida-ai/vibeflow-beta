@@ -1,5 +1,5 @@
 ---
-name: analyst-agent
+name: analyst
 description: Use this agent when you need to conduct market research, analyze qualitative data from external sources, validate brand positioning claims, investigate competitor strategies, or extract verifiable insights from web-based research. This agent should be deployed proactively when strategic decisions require evidence-based validation.
 model: sonnet
 color: purple

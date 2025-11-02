@@ -1,5 +1,5 @@
 ---
-name: strategy-synthesis
+name: synthesizing-strategy
 description: Transforms raw research findings into opinionated, actionable brand strategy documents. A strategist's perspective on synthesizing insights into strategic guidance.
 ---
 
