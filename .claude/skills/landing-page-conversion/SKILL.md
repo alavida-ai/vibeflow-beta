@@ -51,10 +51,10 @@ Apply these **9 non-negotiable requirements** (universal consensus from all sour
 
 ## Resources
 
-**`references/landing-page-guide.md`** Load this when needing detailed best practices, specific examples, or quantitative benchmarks.
-**`workflows/generate-landing-page-copy.md`** Load this when needing to generate a brand aligned landing page from scratch
-**`workflows/analyze-landing-page.md`** Load this when analysing a landing page, and scoring on several metrics
+**[Landing Page Guide](references/landing-page-guide.md)** - Load this when needing detailed best practices, specific examples, or quantitative benchmarks.
+
+**[Generate Landing Page Copy](workflows/generate-landing-page-copy.md)** - Load this when needing to generate a brand aligned landing page from scratch.
 
 ---
 
-**For complete research details and case studies:** See `/brand/research/landing-page-best-practices/2025-10-31@15:57/RESEARCH.md`
+**For complete research details and case studies:** See [Landing Page Best Practices Research](/brand/research/landing-page-best-practices/2025-10-31@15:57/RESEARCH.md)

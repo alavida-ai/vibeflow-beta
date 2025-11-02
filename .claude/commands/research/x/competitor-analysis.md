@@ -1,7 +1,7 @@
 ---
 argument-hint: [username-to-analysis] [optional - background task]
 ---
-# Strategy Synthesis
+# Competitior Analysis
 
 ## Purpose
 
