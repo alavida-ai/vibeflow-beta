@@ -14,28 +14,55 @@ strategy_context:
 
 ### Primary Value Proposition
 
-**Build marketing systems you own—not rent tools you'll outgrow.**
+**Become a Marketing Architect who designs systems competitors can't replicate.**
 
-This operationalizes our [Marketing Architecture positioning](/strategy/positioning/STRATEGY.md)—the only unclaimed territory where [0% of competitors use ownership terminology](/research/category-landscape/RESEARCH.md) and [100% operate SaaS subscription models](/research/category-landscape/RESEARCH.md).
+This operationalizes our Marketing Architecture positioning—the transformation from tool user to system designer. While [competitors position on features and automation](/research/category-landscape/RESEARCH.md), we position on identity transformation and competitive advantage through proprietary capabilities.
 
 **Why this matters:**
-- Customers experience [subscription fatigue and control loss](/research/customer-insights/RESEARCH.md)—William uses crypto cards to prevent auto-renewals and suffers "subscription debt"
-- He chose Alavida because ["he is really bought into the vision, of owning your own AI system"](/research/customer-insights/RESEARCH.md)
-- Structurally defensible: [competitors' SaaS models prevent ownership positioning](/research/category-landscape/RESEARCH.md)
+- [Identity transformation is the core job-to-be-done](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md)—customers are buying who they become, not what they get
+- ["The shift of 'Marketing Architect' symbolizes who the marketer can become when you adopt the framework"](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md)
+- The aha moment: [realizing the system thinks strategically, maintains brand alignment, and improves with every use](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md)
+- Structurally defensible: Competitors sell tools; we enable transformation
 
-### Secondary Value Propositions
+---
+
+### Secondary Value Proposition: Own Your Marketing Infrastructure
+
+**Own your marketing infrastructure—where prompts, agents, and workflows are your codebase.**
+
+English is the new programming language. Your system prompts, sub-agents, and workflow designs are your infrastructure—version-controlled, continuously improving, and permanently yours. This is [what infrastructure means in the AI age](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): not servers and databases, but the systematic orchestration of AI capabilities through natural language architecture.
+
+**Why this matters:**
+- Makes "ownership" tangible and defensible
+- [Redefines infrastructure for AI age](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): "If English is the new most powerful programming language then your system prompts etc... is your infrastructure"
+- Differentiates from [100% of competitors who operate SaaS subscription models](/research/category-landscape/RESEARCH.md)
+- The deeper you invest in building your systems, the more valuable they become
+
+**Framework vs. Platform:**
+- **Framework (Open/Free):** Agentic Marketing Architecture—methodology, repository structure, best practices
+- **Platform (Usage-Based):** Optional MCP tools that enhance framework capabilities (X-scraper, future additions)
+- You can adopt the framework without the platform; platform enhances but doesn't create lock-in
+
+### Additional Value Propositions
 
 **1. Compress weeks of strategic work into hours without sacrificing quality**
 
 Run sophisticated workflows—brand fundamentals, competitive analysis, multi-model research—in the time competitors spend setting up SaaS trials. This is the [functional job customers hire us for](/research/customer-insights/RESEARCH.md). Differentiates from [85% of competitors who promise speed through "easy buttons"](/research/category-landscape/RESEARCH.md)—we deliver systematic capability that compounds, not automated simplicity that plateaus.
 
+The transformation: [From working IN the business to working ON it](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md). You're not getting faster at tasks—you're designing systems that eliminate entire categories of work.
+
 **2. Build verified outputs you can defend to clients—not hallucinations that risk your reputation**
 
 Generate strategically crafted content with built-in citations and verification layers. Addresses [hallucination trauma](/research/customer-insights/RESEARCH.md): customers demand citations prophylactically after professional embarrassment. No competitor positions as "anti-AI-slop champion"—we make verification structural through Firecrawl + Perplexity integration.
 
-**3. Develop competitive moat through proprietary workflows competitors can't replicate**
+Your outputs aren't generic AI slop. They're strategically architected, with [the human "vibe" and judgment that creates differentiation](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md).
+
+**3. Develop competitive moat through proprietary workflows—and leverage community components**
 
 Your workflows become strategic assets that improve with every use. Transforms customers from "Overwhelmed marketer" to ["Marketing Architect who builds systems"](/research/customer-insights/RESEARCH.md). William valued that [complexity creates competitive advantage](/strategy/positioning/STRATEGY.md). Starkly differentiates from [100% of competitors who position on ease/accessibility](/research/category-landscape/RESEARCH.md).
+
+**Coming Soon: Component Registry**
+[Network effects through community-contributed workflows](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md)—share and discover sub-agents, skills, and system patterns. More users → more components → more value → exponential ecosystem growth.
 
 ---
 
@@ -109,7 +136,7 @@ Strategic differentiation validated by [category landscape research](/research/c
 
 **Elevator Pitch:**
 
-Alavida is a Marketing Architecture platform that enables marketing strategists and agency owners to build and own their AI infrastructure—not rent tools they'll outgrow. Through Claude Code and the vibeflow framework, you design systematic workflows that become strategic assets, creating competitive advantage through competency rather than convenience.
+The platform enables marketing strategists and agency owners to become Marketing Architects—designers of systematic AI workflows that competitors can't replicate. Through the Agentic Marketing Architecture framework (open/free) and optional MCP tools (usage-based), you build infrastructure you own: prompts, agents, and workflows that improve with every use, creating competitive advantage through proprietary capabilities rather than rented convenience.
 
 **Why:** Operationalizes [Marketing Architecture positioning](/strategy/positioning/STRATEGY.md), expresses transformation from ["working IN the business" to working ON it](/research/customer-insights/RESEARCH.md), differentiates from [85% promising "easy buttons"](/research/category-landscape/RESEARCH.md) by positioning on competency—signaling we serve [ambitious 5-10% of marketing strategists](/strategy/positioning/STRATEGY.md).
 
@@ -117,12 +144,22 @@ Alavida is a Marketing Architecture platform that enables marketing strategists 
 
 ## Proof Points & Evidence
 
-### "Build marketing systems you own—not rent tools you'll outgrow"
+### "Become a Marketing Architect who designs systems competitors can't replicate"
 
 **Proof:**
-- William uses crypto cards to prevent auto-renewals: ["subscriptions get out of hand... I spend maybe like a couple of times a year trying to get refunds"](/research/customer-insights/RESEARCH.md)
-- ["He is really bought into the vision, of owning your own AI system... He really values owning his infrastructure"](/research/customer-insights/RESEARCH.md)
-- [100% of competitors operate SaaS models; 0% mention infrastructure ownership](/research/category-landscape/RESEARCH.md)
+- [Identity transformation is validated by customer success](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): "The shift of 'Marketing Architect' symbolizes who the marketer can become"
+- [The aha moment](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): "When the user realizes that they can create short prompts, and the agentic system can build on top of the prompt, ensure it's strategically optimized... This is when the clients usually go 'ahh shit.'"
+- Customer transformation: from copywriter → system designer, from working IN the system → working ON the system
+- [0% of competitors position on architect/builder identity](/research/category-landscape/RESEARCH.md)
+
+### "Own your marketing infrastructure—where prompts, agents, and workflows are your codebase"
+
+**Proof:**
+- [Revolutionary framing](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): "Your infrastructure is now the prompts, sub-agents, workflows, skills in English you create. If English is the new most powerful programming language then your system prompts etc... is your infrastructure"
+- Framework is Git-based, version-controlled, locally owned
+- [Framework adoption is free](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): "The Alavida account is not needed to use the framework it's a GitHub repo"
+- [Platform tools are usage-based (no subscriptions)](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): "No free tier, pay for what you use. Per API call... Pre-paid credits"
+- [100% of competitors operate subscription models; 0% mention infrastructure ownership](/research/category-landscape/RESEARCH.md)
 
 ### "Compress weeks of strategic work into hours without sacrificing quality"
 
@@ -138,12 +175,14 @@ Alavida is a Marketing Architecture platform that enables marketing strategists 
 - Professional risk: Customers experience [embarrassment from AI errors and now demand citations prophylactically](/research/customer-insights/RESEARCH.md)
 - Competitive gap: [No platform positions as "anti-AI-slop champion"](/research/category-landscape/RESEARCH.md)
 
-### "Develop competitive moat through proprietary workflows competitors can't replicate"
+### "Develop competitive moat through proprietary workflows—and leverage community components"
 
 **Proof:**
 - [Commoditization fear: customers fear being outcompeted by others who adapt faster](/research/customer-insights/RESEARCH.md)
 - ["He felt that diving into the IDE, and handling the complexity of Claude Code gave him the competitive advantage he was looking for"](/strategy/positioning/STRATEGY.md)
 - Identity transformation: from ["Overwhelmed marketer" to "Marketing Architect who builds systems"](/research/customer-insights/RESEARCH.md)
+- [Component registry enables network effects](/brand/research/product-interview/2025-10-31@17:01/RESEARCH.md): "With our own framework and platform we will also develop a component registry... This gives network effects"
+- First-mover advantage on marketing component marketplace
 
 ---
 
