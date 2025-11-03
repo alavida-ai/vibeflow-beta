@@ -29,7 +29,10 @@ Quality content requires staged thinking:
 ### 3. **Channel Optimization**
 Content adapts to channel conventions while maintaining brand consistency. Platform-specific strategy extensions guide these adaptations.
 
-### 4. **Progressive Disclosure**
+### 4. **Visual Consistency (Design System)**
+Visual content loads design system docs for brand-consistent styling. Components and tokens ensure visual quality at scale.
+
+### 5. **Progressive Disclosure**
 Load only the strategy documents needed for each phase. Don't burden agents with unnecessary context.
 
 ---
@@ -92,8 +95,11 @@ Different content phases load different strategy combinations:
 - Voice (base voice)
 - Voice/{channel} Extension (channel-specific)
 - Messaging (selected theme)
+- **Design System (if visual content):**
+  - `/brand/strategy/design/DESIGN.md` - Token reference
+  - `/brand/strategy/design/components/README.md` - Component API
 
-**Purpose:** Write on-brand content in the right voice
+**Purpose:** Write on-brand content in the right voice with visual consistency
 
 ---
 
@@ -166,6 +172,7 @@ All content must:
 - ✅ Resonate with audience (addresses their needs)
 - ✅ Support messaging strategy (communicates key themes)
 - ✅ Uphold brand values (passes integrity check)
+- ✅ Maintain visual consistency (uses design system for visual content)
 
 ---
 
@@ -183,9 +190,70 @@ Each agent gets exactly what it needs, when it needs it.
 
 ---
 
+## Visual Content Generation
+
+### When to Load Design System
+
+Visual content (presentations, social graphics, web pages, MDX posts) should load design system docs during the **drafting phase**.
+
+### Design System Files
+
+**Core documentation:**
+- `/brand/strategy/design/DESIGN.md` - Complete technical reference for tokens and usage
+- `/brand/strategy/design/components/README.md` - Component API and examples
+
+**When to load:**
+- Creating MDX content with embedded components
+- Generating React/JSX components
+- Writing HTML with inline styles
+- Creating presentations or visual layouts
+
+### Visual Content Output Formats
+
+**MDX (Preferred for content):**
+```mdx
+<Card glow={true}>
+  <StatCard label="SESSIONS" value="24,891" indicator="pink" />
+  <NeonButton variant="primary">Get Started</NeonButton>
+</Card>
+```
+
+**React/TSX (For app components):**
+```tsx
+import { Card, StatCard } from '@design/components';
+
+export function Dashboard() {
+  return (
+    <Card glow={true}>
+      <StatCard label="SESSIONS" value="24,891" indicator="pink" />
+    </Card>
+  );
+}
+```
+
+**HTML with Design Tokens (For standalone pages):**
+```html
+<div style="background: var(--color-neon-pink); padding: var(--spacing-lg);">
+  Brand-styled content
+</div>
+```
+
+### Visual Quality Checklist
+
+Before finalizing visual content, verify:
+- ✅ Uses design tokens (not hardcoded colors/spacing)
+- ✅ References brand colors (neon-pink, neon-cyan)
+- ✅ Uses brand typography (Press Start 2P for headers, Inter for body)
+- ✅ Applies correct spacing scale (--spacing-*)
+- ✅ Includes neon glow effects where appropriate
+- ✅ Maintains Neonwave '94 aesthetic
+
+---
+
 ## Notes
 
 - Content executions are **temporal** (date-stamped) because content is output
 - Strategy is **timeless** (git versioned) because strategy is guidance
 - Content references strategy via markdown links for audit trail
 - Multiple content pieces can be created simultaneously in separate execution folders
+- **Visual content** should reference design system docs for brand consistency

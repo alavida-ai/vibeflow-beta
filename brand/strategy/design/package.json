@@ -1,0 +1,23 @@
+{
+  "name": "@vibeflow/design",
+  "version": "1.0.0",
+  "description": "Vibeflow Design System - Design tokens and Tailwind v4 integration",
+  "main": "./build/tokens.css",
+  "scripts": {
+    "tokens:build": "style-dictionary build --config tokens/config.json",
+    "tokens:watch": "style-dictionary build --config tokens/config.json --watch",
+    "tokens:fetch": "echo 'TODO: Configure Figma MCP token fetch'"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "style-dictionary": "^4.0.0"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system",
+    "tailwind",
+    "style-dictionary"
+  ],
+  "author": "Vibeflow",
+  "license": "MIT"
+}

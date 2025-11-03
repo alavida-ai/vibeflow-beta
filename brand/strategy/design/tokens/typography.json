@@ -1,0 +1,44 @@
+{
+  "font": {
+    "family": {
+      "display": { "value": "'Press Start 2P', monospace" },
+      "sans": { "value": "Inter, system-ui, sans-serif" },
+      "mono": { "value": "JetBrains Mono, monospace" }
+    },
+    "size": {
+      "2xs": { "value": "0.625rem" },
+      "xs": { "value": "0.75rem" },
+      "sm": { "value": "0.875rem" },
+      "base": { "value": "1rem" },
+      "lg": { "value": "1.125rem" },
+      "xl": { "value": "1.25rem" },
+      "2xl": { "value": "1.5rem" },
+      "3xl": { "value": "1.875rem" },
+      "4xl": { "value": "2.25rem" },
+      "5xl": { "value": "3rem" },
+      "6xl": { "value": "3.75rem" }
+    },
+    "weight": {
+      "normal": { "value": "400" },
+      "medium": { "value": "500" },
+      "semibold": { "value": "600" },
+      "bold": { "value": "700" }
+    },
+    "lineHeight": {
+      "tight": { "value": "1.25" },
+      "snug": { "value": "1.375" },
+      "normal": { "value": "1.5" },
+      "relaxed": { "value": "1.75" }
+    },
+    "letterSpacing": {
+      "tighter": { "value": "-0.05em" },
+      "tight": { "value": "-0.025em" },
+      "normal": { "value": "0" },
+      "wide": { "value": "0.025em" },
+      "wider": { "value": "0.05em" },
+      "widest": { "value": "0.1em" },
+      "retro": { "value": "0.2em" },
+      "retro-wide": { "value": "0.3em" }
+    }
+  }
+}

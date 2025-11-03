@@ -1,0 +1,85 @@
+# Design System in MDX
+
+This page demonstrates using **Neonwave '94 design system components** directly in MDX content. Perfect for content generation workflows where AI agents create branded MDX.
+
+---
+
+## Component Examples
+
+### Cards and Stats
+
+<Card glow={true}>
+  <SectionHeader>PERFORMANCE METRICS</SectionHeader>
+
+  <div className="mt-[--spacing-xl] grid grid-cols-1 md:grid-cols-2 gap-[--spacing-lg]">
+    <StatCard
+      label="SESSIONS"
+      value="24,891"
+      subtitle="+12.4% WoW"
+      indicator="pink"
+    />
+    <StatCard
+      label="CONVERSIONS"
+      value="1,847"
+      subtitle="+8.2% WoW"
+      indicator="cyan"
+    />
+  </div>
+</Card>
+
+### Buttons
+
+You can use branded buttons inline with content:
+
+<div className="flex gap-[--spacing-md] my-[--spacing-lg]">
+  <NeonButton variant="primary" size="md">
+    GET STARTED
+  </NeonButton>
+  <NeonButton variant="secondary" size="md">
+    LEARN MORE
+  </NeonButton>
+</div>
+
+### Data Visualization
+
+<Card>
+  <SectionHeader>WEEKLY TRENDS</SectionHeader>
+  <BarChart data={[46, 135, 203, 232, 215, 157]} maxHeight={200} />
+</Card>
+
+---
+
+## Why This Works
+
+All components come from the design system at `/brand/strategy/design/`:
+
+- **Design tokens** ensure brand consistency (colors, spacing, typography)
+- **Components** are imported automatically via `mdx-components.tsx`
+- **No manual imports needed** in MDX files
+
+This enables AI agents to generate on-brand content by:
+
+1. Loading design system docs: `/brand/strategy/design/DESIGN.md`
+2. Loading component API: `/brand/strategy/design/components/README.md`
+3. Generating MDX with these components
+
+Result: **Brand-consistent content at scale** without manual styling.
+
+---
+
+<Card glow={true}>
+  <div style={{ textAlign: 'center' }}>
+    <h3 className="font-[--font-family-display] text-[--font-size-lg]" style={{ color: 'var(--color-neon-pink)', letterSpacing: 'var(--font-letter-spacing-retro)' }}>
+      OWN YOUR DESIGN SYSTEM
+    </h3>
+    <p style={{ color: 'var(--color-text-tertiary)', marginTop: 'var(--spacing-md)' }}>
+      Not rented from SaaS tools.
+    </p>
+  </div>
+</Card>
+
+---
+
+**Navigate to:** `/design-test` for TSX component test | `/mdx-test` for MDX test
+
+_Powered by Vibeflow Marketing Architecture_

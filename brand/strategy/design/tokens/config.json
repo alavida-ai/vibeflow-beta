@@ -1,0 +1,25 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "tailwind-v4": {
+      "transformGroup": "css",
+      "buildPath": "build/",
+      "files": [{
+        "destination": "tokens.css",
+        "format": "css/variables",
+        "options": {
+          "selector": "@theme",
+          "outputReferences": true
+        }
+      }]
+    },
+    "json": {
+      "transformGroup": "js",
+      "buildPath": "build/",
+      "files": [{
+        "destination": "tokens.json",
+        "format": "json/flat"
+      }]
+    }
+  }
+}
