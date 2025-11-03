@@ -67,7 +67,7 @@ See [Artifacts](references/artifacts.md) for naming conventions and [Progress Tr
 - PLAN.md from execution folder
 - data/ (optional, created in planning phase)
 
-**Process:** See [Implementation](references/implementation.md)
+**Purpose:** Execute the plan through [agent delegation](references/delegation.md) and [progress tracking](references/progress-tracking.md)
 
 **Outputs:**
 - Phase artifacts in execution folder
