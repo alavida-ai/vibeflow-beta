@@ -1,0 +1,6 @@
+# Optional Dependencies for Cloud Upload Utility
+# Install with: pip install -r requirements-upload-optional.txt
+
+python-magic>=0.4.27       # Enhanced file type detection (requires libmagic)
+tqdm>=4.66.0               # Progress bars for batch uploads
+python-dotenv>=1.0.0       # Environment variable management

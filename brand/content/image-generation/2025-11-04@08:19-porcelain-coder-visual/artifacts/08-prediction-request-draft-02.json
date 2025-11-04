@@ -1,0 +1,30 @@
+{
+  "prediction_id": "hfrc14002srma0ct9yv8nv3qqr",
+  "model": "google/nano-banana",
+  "model_version": "hidden",
+  "status": "succeeded",
+  "created_at": "2025-11-04T16:31:58.998Z",
+  "started_at": "2025-11-04T16:31:59.002575614Z",
+  "completed_at": "2025-11-04T16:32:08.69477271Z",
+  "generation_time_seconds": 9.21,
+  "total_time_seconds": 9.697,
+  "input": {
+    "aspect_ratio": "1:1",
+    "output_format": "png",
+    "prompt": "A porcelain ceramic figure of a man wearing a vintage baseball cap, seated at a desk with a retro computer setup, coding intently on a mechanical keyboard. The man has a smooth porcelain-white texture with subtle glaze. The desk features a CRT monitor with authentic yellow-green phosphor glow and distinctive bright #F7ED4A highlights illuminating the visible code text, wooden surface, mechanical keyboard, and vintage accessories. The desk includes humanizing playful touches: a small potted succulent plant in a geometric patterned pot, and a coffee mug with a gentle smile illustration. The overall mood balances focused professional work with warmth and approachability, making coding look enjoyable and human-centered. Warm ambient lighting from above creates soft shadows on the porcelain figure, with yellow-green monitor glow adding secondary illumination. 3D render style, photorealistic ceramic material texture, editorial product photography aesthetic, warm inviting color grading with yellow-green tones, rich depth of field."
+  },
+  "output_url": "https://replicate.delivery/xezq/OsbiPPYeXcQCL6rKkI7MbrsTa2OrmgDEoebggiV2XsRIy9lVA/tmpwc8abrhb.png",
+  "output_file": "artifacts/09-generated-draft-02.png",
+  "file_size_mb": 1.6,
+  "validation": {
+    "file_exists": true,
+    "valid_format": "png",
+    "size_valid": true
+  },
+  "changes_from_draft_01": {
+    "added_yellow_monitor_glow": "CRT monitor now features yellow-green phosphor with #F7ED4A highlights",
+    "added_playful_elements": "Succulent plant and smiling mug added to desk",
+    "enhanced_emotional_tone": "Scene now emphasizes warmth, approachability alongside professionalism",
+    "maintained_request_fulfillment": "All core elements unchanged - figure, cap, retro setup, coding activity"
+  }
+}

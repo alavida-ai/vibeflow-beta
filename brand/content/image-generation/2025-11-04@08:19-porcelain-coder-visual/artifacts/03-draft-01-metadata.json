@@ -1,0 +1,23 @@
+{
+  "draft_number": 1,
+  "prediction_id": "8e03x978khrma0ct9yrr3z4dp8",
+  "model": "google/nano-banana",
+  "status": "succeeded",
+  "created_at": "2025-11-04T16:27:30.844Z",
+  "started_at": "2025-11-04T16:27:30.84800086Z",
+  "completed_at": "2025-11-04T16:27:39.465763619Z",
+  "generation_time_seconds": 8.617762757,
+  "total_time_seconds": 8.621763619,
+  "input": {
+    "aspect_ratio": "1:1",
+    "output_format": "png",
+    "prompt": "A porcelain ceramic figure of a man wearing a vintage baseball cap, seated at a desk with a retro computer setup, coding intently on a mechanical keyboard. The man has a smooth porcelain-white texture with subtle glaze. The desk features a CRT monitor with warm glow, wooden surface, and vintage accessories. Warm ambient lighting from above creates soft shadows on the porcelain figure. 3D render style, photorealistic ceramic material texture, editorial product photography aesthetic, warm color grading, rich depth of field."
+  },
+  "output_file": "artifacts/03-generated-draft-01.png",
+  "file_size_mb": 1.5,
+  "validation": {
+    "file_exists": true,
+    "valid_format": "png",
+    "size_valid": true
+  }
+}
