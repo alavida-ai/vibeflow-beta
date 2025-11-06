@@ -26,6 +26,8 @@ This is a **wrapper command** that constructs a task description for `/plan`. Fo
    ```
    SlashCommand(`/plan "[TASK_DESCRIPTION]"`)
    ```
+   
+3. All substasks require the analyst agent not the general purpose agent
 
 **Example TASK_DESCRIPTION format:**
 "Create a research plan for [RESEARCH_DOMAIN] using the researching skill and the [RESEARCH_DOMAIN] workflow. The execution folder (where the PLAN.md will be created) should be created in /research/[RESEARCH_DOMAIN]/. [ADDITIONAL_INFO if provided]"

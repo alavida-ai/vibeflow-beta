@@ -27,6 +27,8 @@ This is a **wrapper command** that constructs a task description for `/plan`. Fo
    SlashCommand(`/plan "[TASK_DESCRIPTION]"`)
    ```
 
+3. All substasks require the analyst agent not the general purpose agent
+
 **Example TASK_DESCRIPTION format:**
 "Create an ad-hoc research plan using the researching skill. Task: [USER_TASK]. The execution folder (where the PLAN.md will be created) should be created in /research/adhoc/. This is custom research that doesn't follow a predefined workflow."
 
