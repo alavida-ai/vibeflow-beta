@@ -50,15 +50,37 @@ jobs:
             echo "$changed"
           fi
 
-      - name: Run Claude Code to update CHANGELOG
+      - name: Update CHANGELOG files
         if: steps.detect.outputs.has_changes == 'true'
         id: update
-        uses: anthropics/claude-code-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          prompt: "/update-changelog"
-          claude_args: '--output-format stream-json --permission-mode bypassPermissions'
+        run: |
+          #!/bin/bash
+          base_sha="${{ github.event.pull_request.base.sha }}"
+          head_sha="${{ github.event.pull_request.head.sha }}"
+
+          # Get changed STRATEGY.md files
+          changed_files=$(git diff --name-only $base_sha $head_sha -- brand/strategy/ | grep 'STRATEGY\.md$' || true)
+
+          for file in $changed_files; do
+            # Get the domain directory (e.g., brand/strategy/voice/STRATEGY.md -> voice)
+            domain=$(echo "$file" | cut -d'/' -f3)
+            changelog_file="brand/strategy/$domain/CHANGELOG.md"
+
+            # Get the commit message for context
+            commit_msg=$(git log -1 --pretty=%B $head_sha)
+
+            # Append entry to CHANGELOG if it exists
+            if [ -f "$changelog_file" ]; then
+              cat >> "$changelog_file" << EOF
+
+## $(date +%Y-%m-%d)
+
+- Updated via PR #${{ github.event.pull_request.number }}: ${{ github.event.pull_request.title }}
+
+EOF
+              echo "Updated $changelog_file"
+            fi
+          done
 
       - name: Check for CHANGELOG changes
         if: steps.detect.outputs.has_changes == 'true'
