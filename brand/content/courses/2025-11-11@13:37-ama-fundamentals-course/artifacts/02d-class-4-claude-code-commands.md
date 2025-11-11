@@ -136,25 +136,53 @@ When you execute the command the AI:
 
 ---
 
-## Why This Is Transformative for Marketing Architects
+## Why Commands Matter for Marketing Architects
 
-Commands solve 4 critical problems in marketing operations:
+Commands are the **quick, ergonomic interface** to your marketing workflows. Instead of typing paragraphs of boilerplate every time, you type a slash command.
 
-### 1. Institutional Knowledge Becomes Executable Code
+**The core benefit: Speed without sacrificing quality.**
 
-**Before commands:**
-- Best practices live in people's heads
-- New team members ask "How do we usually do this?"
-- Quality varies by who's executing
-- Process improvements don't propagate
+### 1. No More Prompt Boilerplate
 
-**With commands:**
-- Your marketing workflows are documented as code
-- Anyone can execute them consistently
-- Improvements to commands = improvements for everyone
-- New team members browse `/.claude/commands/` to learn workflows
+**Without a command**, every time you want to extract customer insights:
 
-**Example:**
+```
+"Read the interview transcript at /brand/research/customer-insights/data/interview-nov-8.md
+and extract key insights across these categories: pain points, desired outcomes, emotional
+states, and jobs to be done. For each insight, quote specific evidence with context, rate
+emotional intensity, and note implications for positioning. Format the output following our
+research template with proper markdown references..."
+```
+
+**With a command**, you type:
+
+```
+/research:extract-quotes /brand/research/customer-insights/data/interview-nov-8.md
+```
+
+**Same result. Zero boilerplate.**
+
+The command file contains your perfected workflow. You just trigger it.
+
+### 2. Repeatable Execution Across Your Team
+
+**Scenario:** Your team creates customer insight research every week.
+
+**Without a command:**
+- Sarah uses one extraction framework
+- Marcus uses a different one
+- New hire asks "What's the process?"
+- Results are inconsistent, hard to compare
+- No shared mental model
+
+**With a command (`/research:extract-insights`):**
+- Everyone uses the same extraction framework
+- Results are comparable across time
+- Process improves in one place (the command file)
+- New hires run `/research:extract-insights` and get it right first time
+- The command references your research methodology from files
+
+**Example command library:**
 ```
 /.claude/commands/
 ├── research/
@@ -168,29 +196,9 @@ Commands solve 4 critical problems in marketing operations:
     └── alignment-check.md          # Content aligns with positioning
 ```
 
-**Your marketing playbook is now executable code in Git.**
+**Your team's marketing playbook is now executable code.**
 
-### 2. Team Consistency at Scale
-
-**Scenario:** Your team creates customer insight research every week.
-
-**Without a command:**
-- Sarah uses one extraction framework
-- Marcus uses a different one
-- New hire asks "What's the process?"
-- Results are inconsistent, hard to compare
-- No shared mental model
-
-**With a command (`/research extract-insights`):**
-- Everyone uses the same extraction framework
-- Results are comparable across time
-- Process improves in one place (the command file)
-- New hires run `/research extract-insights` and get it right first time
-- The command references your research methodology from files
-
-**Command file becomes the single source of truth.**
-
-### 4. Workflows Evolve Through Version Control
+### 3. Process Evolution in Version Control
 
 Commands are files. Files go in Git. Git tracks evolution.
 
@@ -208,33 +216,20 @@ git checkout HEAD~1 /.claude/commands/content/twitter-thread.md
 
 **Why this matters:** Your marketing processes aren't static. They improve. Commands let you track that improvement over time and rollback when experiments fail.
 
-### 5. Commands Orchestrate the AMA Workflow
+### The Power Multiplier (Preview)
 
-Commands don't just execute tasks—they **enforce AMA structure**.
+Simple commands like `/format-tweet` execute direct instructions. But commands can also be **entry points to complex workflows**.
 
-**Example: Content creation command**
+Later in this course (Classes 7-9), you'll learn about **skills** and **orchestration patterns**. When you combine commands with these concepts, a simple command like `/research domain customer-insights` can trigger:
 
-```markdown
-## Instructions
+- Multi-phase research workflows
+- Sub-agent delegation
+- Automatic file organization
+- Strategy synthesis
 
-1. Load strategy context:
-   - Read /brand/strategy/positioning/STRATEGY.md
-   - Read /brand/strategy/voice/twitter/EXTENSION.md
+**Result:** Complex workflows feel as simple as basic ones. Type a slash command, get sophisticated execution.
 
-2. Generate content following brand voice
-
-3. Save output to: /brand/content/twitter-posts/[DATE]@[TIME]-[slug]/CONTENT.md
-
-4. Ask user: "Does this align with our positioning? Should we proceed?"
-```
-
-**What's happening:**
-- Command loads from `/brand/strategy/` (strategy layer)
-- Command saves to `/brand/content/` (content layer)
-- Command enforces temporal execution pattern (date-stamped folder)
-- Command creates markdown audit trail (content references strategy)
-
-**Your commands ARE your AMA workflow enforcement.**
+For now, focus on commands as **quick, repeatable prompts**. The orchestration power comes later.
 
 ---
 

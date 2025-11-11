@@ -2,288 +2,321 @@
 
 **Course:** AMA Fundamentals
 **Class Number:** 7 of 9
-**Estimated Time:** 75 minutes
-**Prerequisites:** Class 5 (Commands), Class 6 (Sub-agents)
+**Estimated Time:** 30 minutes
+**Prerequisites:** Class 1 (LLM Fundamentals), Class 5 (Commands)
 
 ---
 
 ## Class Overview
 
-In Class 5, you learned about commands - reusable prompts that trigger specific workflows. In Class 6, you learned about sub-agents - specialized AI personas that handle domain-specific work. Now it's time to combine these concepts into something more powerful: **skills**.
+In Class 1, you learned about the context window problem - LLMs can't hold unlimited information. In Class 5, you learned commands solve this by storing prompts in files.
 
-**What you'll learn:**
-- What skills are and when to use them vs commands
-- How skills package complete workflows with context, data, and instructions
-- The anatomy of a skill (SKILL.md, /references/, /data/)
-- How to navigate and use existing skills effectively
-- Introduction to the agentic-orchestrating skill (the foundation for Classes 8-9)
+Now you'll learn about **skills** - organized folders that can package complete marketing workflows with reference materials, templates, and frameworks. Skills solve the context problem at scale while making your marketing work organized and repeatable.
 
-**Why this matters:**
-Skills are the "apps" of your AMA system. While commands are single prompts and sub-agents are specialized personas, skills are complete workflow packages that combine prompts, context, data, and specialized instructions into reusable tools. They're how you scale marketing operations from "one-off tasks" to "repeatable systems."
+### Learning Objectives
+
+By the end of this class, you'll understand:
+- What skills are and how they solve the context problem through progressive disclosure
+- How skills package marketing workflows into organized folders
+- When to use skills vs commands
+- How to navigate existing skills in your workspace
 
 ---
 
-## Learning Objectives
+## The Context Problem (Revisited)
 
-By the end of this class, you will:
+Remember from Class 1: LLMs have limited context windows. You can't load everything at once.
 
-1. **Understand** what skills are and when to use them
-2. **Navigate** skill structure (SKILL.md, /references/, /data/)
-3. **Distinguish** between skills and commands (workflows vs prompts)
-4. **Use** existing skills effectively in your workflows
-5. **Recognize** the agentic-orchestrating skill as the orchestration foundation
-6. **Know** when to invoke a skill vs create a custom command
+**The challenge for marketing architects:**
+
+Your marketing workflows need access to:
+- Research findings and insights
+- Brand strategy and positioning
+- Voice guidelines and messaging frameworks
+- Content templates and examples
+- Process methodologies and best practices
+
+**If you try to load all this context at once:** Context overflow. The LLM can't process it.
+
+**If you load nothing:** Generic outputs. No brand consistency.
+
+**Skills solve this through progressive disclosure.**
 
 ---
 
 ## What Are Skills?
 
-### The Simple Definition
+**Skills are organized folders** in `/.claude/skills/` that package complete marketing workflows with supporting materials.
 
-**Skills are packaged, reusable workflows stored in `/.claude/skills/`.**
-
-Think of them as specialized "apps" that extend Claude's capabilities with domain-specific knowledge, workflows, and tools.
-
-### Skills vs Commands: The Key Difference
-
-You already learned about commands in Class 5. Here's how skills differ:
-
-| Feature | Commands | Skills |
-|---------|----------|--------|
-| **Purpose** | Single prompt trigger | Complete workflow package |
-| **Structure** | One file (`.md`) | Multiple files + folders |
-| **Complexity** | Simple (1-2 steps) | Complex (multi-step workflows) |
-| **Context** | Minimal | Rich (references, data, examples) |
-| **When to use** | Repeated prompts | Repeated workflows |
-| **Example** | "Generate tweet" | "Full content creation workflow" |
-
-**Simple analogy:**
-- **Command** = A calculator app (does one thing, does it well)
-- **Skill** = Microsoft Excel (complete toolkit with formulas, templates, data)
-
-### Why This Matters for AMA
-
-In marketing, many workflows are complex:
-- **Research** requires methodology, templates, analysis frameworks
-- **Strategy synthesis** requires reference to multiple research sources, strategic frameworks, and synthesis patterns
-- **Content creation** requires brand voice, messaging, audience context, platform guidelines
-
-Commands can't hold all this context. Skills can.
-
----
-
-## When to Use Skills vs Commands
-
-### Use a Command When:
-- You have a simple, repeatable prompt
-- The workflow is 1-2 steps max
-- You don't need supporting data or reference materials
-- Examples: "/generate-tweet", "/summarize-research", "/check-grammar"
-
-### Use a Skill When:
-- The workflow requires multiple steps
-- You need supporting reference materials, templates, or data
-- The workflow requires specialized knowledge or frameworks
-- You want to package a complete methodology
-- Examples: Content creation workflows, research analysis, strategy synthesis
-
-### The Decision Tree
-
-```
-Do you need supporting context (templates, data, frameworks)?
-├─ No → Use a command
-└─ Yes → Use a skill
-    │
-    Does the workflow have 3+ distinct steps?
-    ├─ No → Consider a command (keep it simple)
-    └─ Yes → Use a skill
-```
-
----
-
-## Anatomy of a Skill
-
-Skills live in `/.claude/skills/` and follow a standard structure:
+### Basic Structure
 
 ```
 /.claude/skills/
 └── {skill-name}/
-    ├── SKILL.md          ← Main skill definition (required)
-    ├── /references/      ← Supporting context files (optional)
-    │   ├── guide-1.md
-    │   └── guide-2.md
-    └── /data/            ← Templates, examples, datasets (optional)
-        ├── template.md
-        └── examples.csv
+    ├── SKILL.md          ← Contains frontmatter + instructions
+    ├── /references/      ← Supporting context (frameworks, methodologies, guides)
+    ├── /data/            ← Templates, examples, datasets
+    └── /scripts/         ← Executable code (optional)
 ```
 
-### SKILL.md - The Entry Point
+**SKILL.md frontmatter** (required):
+```yaml
+---
+name: skill-name
+description: What this skill does and when Claude should use it (max 1024 chars)
+allowed-tools: Read, Grep, Glob  # Optional: restrict tools when skill is active
+---
+```
 
-`SKILL.md` is the main file that defines:
-1. **What the skill does** (purpose and capabilities)
-2. **When to use it** (scenarios and triggers)
-3. **How to use it** (instructions for the agent)
-4. **What resources are available** (references to /references/ and /data/)
+**How skill discovery works:**
+- Claude has all skill **descriptions** in its context (like MCP tool descriptions)
+- When you make a request, Claude autonomously decides which skill matches based on the description
+- Only THEN does Claude load the full SKILL.md file and supporting materials (progressive disclosure)
 
-**Think of SKILL.md as:**
-- An instruction manual for the AI agent
-- A workflow definition document
-- A reference guide to supporting materials
-
-### /references/ - Supporting Context
-
-The `/references/` folder contains supporting context that helps the agent execute the skill:
-- Methodologies and frameworks
-- Best practices and guidelines
-- Domain-specific knowledge
-- Step-by-step instructions for complex workflows
-
-**Progressive disclosure pattern:**
-- SKILL.md references specific files in `/references/`
-- Agent loads only what's needed for the current task
-- Keeps context window efficient while providing deep capabilities
-
-### /data/ - Templates and Examples
-
-The `/data/` folder contains:
-- Templates (markdown, forms, structures)
-- Examples (reference materials, case studies)
-- Datasets (CSV, JSON, structured data)
-
-**Example use cases:**
-- Content templates for consistent structure
-- Example outputs for tone/style reference
-- Data sets for analysis or synthesis
+**Think of it this way:**
+- Skill **description** = Always in Claude's context (helps Claude decide when to use it)
+- `SKILL.md` file = Loaded only when skill is invoked (progressive disclosure)
+- `/references/` = Loaded only when specific context is needed (progressive disclosure)
 
 ---
 
-## Real Example: The agentic-orchestrating Skill
+## How Skills Solve the Context Problem
 
-Let's look at the most important skill in AMA: **agentic-orchestrating**.
+Skills use **progressive disclosure** - load exactly what you need, when you need it.
 
-### Location
+### Without a Skill (Context Chaos)
+
+You try to conduct customer research:
+
 ```
-/.claude/skills/agentic-orchestrating/
-├── SKILL.md
+"Here's our research methodology [paste 10 pages]
+and our analysis framework [paste 5 pages]
+and past research examples [paste 15 pages]
+and our synthesis patterns [paste 8 pages]...
+now analyze this interview transcript."
+```
+
+**Result:** Context overflow. LLM overwhelmed. Poor output.
+
+### With a Skill (Progressive Disclosure)
+
+You make a request:
+
+```
+Research this new competitor <competitor name>
+```
+
+**What happens (progressive disclosure in action):**
+1. Claude checks skill descriptions in its context → finds `researching` skill matches (based on description)
+2. Claude invokes the `researching` skill → loads `SKILL.md` file
+3. Claude reads SKILL.md instructions → identifies it needs research methodology
+4. Claude loads `/workflows/competitor-analysis.md` (only this specific reference, not all files)
+5. Claude completes research following the methodology
+6. Claude produces output, having loaded only what was needed for this specific task
+
+**Result:** Efficient context usage. Professional output. Consistent methodology.
+
+**Key insight:** Skill description is always in context (like a tool description). SKILL.md and supporting files load only when needed.
+
+---
+
+## Why This Is Transformative for Marketing Architects
+
+Skills organize your marketing knowledge into **discoverable, reusable packages**.
+
+### Before Skills: Knowledge Scattered Everywhere
+
+Your team's marketing expertise is:
+- In Sarah's head (she knows how to analyze competitors)
+- In Marcus's Google Doc (he has the content template)
+- In old Slack threads (that one time someone figured out positioning synthesis)
+- Buried in chat history (prompts that worked 3 months ago)
+
+**Problems:**
+- No single source of truth
+- Knowledge isn't discoverable
+- Can't reuse workflows consistently
+- New team members struggle to learn "how we do things"
+
+### With Skills: Marketing Knowledge as Organized Packages
+
+```
+/.claude/skills/
+├── researching/
+│   ├── SKILL.md                      # How to conduct research
+│   └── /workflows/
+│       ├── methodology.md            # Research methodology
+│       ├── competitive-analysis.md   # How to analyze competitors
+│       └── customer-interviews.md    # How to extract insights
+├── synthesizing-strategy/
+│   ├── SKILL.md                      # How to create strategy
+│   └── /references/
+│       ├── positioning.md            # Positioning frameworks
+│       ├── messaging.md              # Messaging synthesis patterns
+│       └── voice.md                  # Voice development guide
+└── creating-content/
+    ├── SKILL.md                      # How to create content
+    └── /data/
+        ├── twitter-template.md       # Content templates
+        ├── blog-template.md
+        └── linkedin-template.md
+```
+
+**Benefits:**
+- ✅ All marketing workflows in one place
+- ✅ Organized by domain (research, strategy, content)
+- ✅ Discoverable (browse `/.claude/skills/`)
+- ✅ Reusable (invoke the same skill repeatedly)
+- ✅ Version-controlled (track evolution in Git)
+- ✅ Onboarding-friendly (new team members explore skill folders)
+
+**Your marketing playbook is now an organized file system, not tribal knowledge.**
+
+---
+
+## Skills vs Commands: When to Use Each
+
+You learned about commands in Class 5. Here's when to use each:
+
+### Use a Command When:
+- Simple, repeatable prompt (1-2 steps)
+- No supporting materials needed
+- Direct execution
+
+**Example:** `/format-tweet [path]` - Simple formatting, no complex context
+
+### Use a Skill When:
+- Complex workflow (3+ steps)
+- Needs methodology, frameworks, or templates
+- Requires specialized knowledge
+- Benefits from organized reference materials
+
+**Example:** Conducting competitive research - needs methodology, analysis frameworks, synthesis patterns
+
+### The Simple Rule
+
+**Command** = Quick trigger for simple tasks
+**Skill** = Organized package for complex workflows
+
+**For detailed documentation on commands vs skills, see:** [Claude Code Skills Docs](https://code.claude.com/docs/en/skills)
+
+### How Commands and Skills Work Together
+
+Commands can **trigger skills** as part of their workflow:
+
+**Example command** (`/.claude/commands/research/domain.md`):
+```markdown
+---
+argument-hint: [research-domain] [optional context]
+---
+# Research Domain
+
+## Instructions
+
+This command triggers the researching skill with proper context:
+
+1. Construct task description for the researching skill
+2. Include domain-specific context from user
+3. Invoke the researching skill to execute research workflow
+```
+
+**When you run:** `/research:domain customer-insights`
+- Command executes
+- Command invokes the `researching` skill
+- Skill loads its methodology and references progressively
+- Research workflow completes following skill patterns
+
+**Similarly, skills can reference sub-agents** in their instructions:
+
+**Example from SKILL.md:**
+```markdown
+## Instructions
+
+When conducting competitive research:
+1. Load competitive analysis methodology from /references/
+2. Delegate detailed analysis to the Analyst sub-agent
+3. Have Analyst follow the methodology framework
+4. Synthesize findings into structured output
+```
+
+**The hierarchy:**
+```
+User → Command → Skill → Sub-agent
+          ↓        ↓         ↓
+     Quick     Complex   Specialized
+     trigger   workflow  execution
+```
+
+**Result:** Commands provide ergonomic triggers, skills provide methodology, sub-agents provide specialized execution.
+
+---
+
+## Real Example: The `researching` Skill
+
+Let's look at how the `researching` skill packages marketing research workflows:
+
+### Structure
+
+```
+/.claude/skills/researching/
+├── SKILL.md                          # Entry point
 └── /references/
-    ├── planning.md
-    ├── implementation.md
-    ├── resuming.md
-    ├── delegation.md
-    ├── artifacts.md
-    └── progress-tracking.md
+    ├── competitive-analysis.md       # How to analyze competitors
+    ├── customer-insights.md          # How to extract customer insights
+    ├── category-landscape.md         # How to research market landscape
+    └── synthesis.md                  # How to synthesize findings
 ```
 
-### What It Does
+### How It Works
 
-The agentic-orchestrating skill defines **how to manage complex, multi-step workflows** in AMA. It's the foundation for everything you'll learn in Classes 8-9 about orchestration.
+**You make a request:**
+```
+Analyze competitor X's positioning and messaging strategy.
+```
 
-**Core capabilities:**
-1. **Planning** - How to create PLAN.md for complex work
-2. **Implementation** - How to execute plans with TODO.md tracking
-3. **Delegation** - When and how to delegate to sub-agents
-4. **Artifact Management** - How to organize outputs and supporting materials
-5. **Progress Tracking** - How to mark tasks complete and update status
-6. **Resuming** - How to pick up incomplete work
+**Progressive disclosure in action:**
+1. Claude sees "competitor" + "positioning" keywords
+2. Claude checks skill descriptions → `researching` skill description mentions competitive analysis
+3. Claude invokes skill → loads `SKILL.md` file
+4. Claude reads SKILL.md → identifies competitive analysis workflow is needed
+5. Claude loads `/references/competitive-analysis.md` (specific reference for this task)
+6. Claude follows the competitive analysis methodology
+7. Claude produces structured research following AMA patterns
 
-### Why It Matters
+**Without the skill:** You'd need to paste the competitive analysis methodology every time or hope the AI remembers.
 
-Without agentic-orchestrating, every agent would orchestrate work differently. This skill provides:
-- **Consistency** - All agents follow the same orchestration patterns
-- **Predictability** - You know what to expect from complex workflows
-- **Auditability** - Clear PLAN.md and TODO.md show exactly what happened
-- **Scalability** - Patterns work for simple and complex projects
-
-**You'll dive deep into this skill in Classes 8-9.**
+**With the skill:** Methodology is packaged, reusable, and consistently applied.
 
 ---
 
-## How Skills Work: The Invocation Pattern
+## The `agentic-orchestrating` Skill (Preview)
 
-### Invoking a Skill
+There's one skill that's different from the rest: `agentic-orchestrating`.
 
-Skills are invoked using the `Skill` tool:
+**What it does:** Teaches AI agents how to manage complex, multi-step workflows.
 
-```
-Use the "researching" skill to conduct competitive analysis.
-```
+**Why it matters:** Without it, every AI agent would orchestrate work differently. With it, all agents follow the same patterns:
+- Create PLAN.md before starting complex work
+- Track progress with TODO.md
+- Delegate to specialized sub-agents appropriately
+- Organize artifacts systematically
+- Make work visible and auditable
 
-When invoked:
-1. Agent loads SKILL.md as context
-2. Agent follows instructions defined in SKILL.md
-3. Agent loads referenced files from /references/ as needed
-4. Agent uses templates/data from /data/ as needed
-5. Agent executes the workflow
+**You'll learn this skill in depth in Classes 8-9** where we cover orchestration fundamentals and advanced patterns.
 
-### Progressive Loading
-
-Skills use **progressive disclosure** to manage context efficiently:
-
-```
-Agent reads: SKILL.md
-    ↓ references
-Agent loads: /references/planning.md (only when planning)
-    ↓ references
-Agent loads: /data/template.md (only when creating output)
-```
-
-This keeps context windows lean while providing deep capabilities.
+For now, just know: This skill ensures all marketing workflows are executed with the same systematic approach.
 
 ---
 
-## Example Skills in AMA
+## Navigating Skills in Your Workspace
 
-Let's look at common skills you might encounter:
+### Step 1: Discover Available Skills
 
-### 1. researching
-**Purpose:** Conduct structured research with proper methodology
-**When to use:** Any research workflow (competitive analysis, customer insights, market analysis)
-**Contains:**
-- Research methodologies
-- Analysis frameworks
-- Source evaluation criteria
-- Synthesis patterns
-
-### 2. synthesizing-strategy
-**Purpose:** Transform research into actionable strategy
-**When to use:** Creating or updating strategy documents
-**Contains:**
-- Synthesis frameworks
-- Strategy templates
-- Reference patterns for citing research
-- Validation criteria
-
-### 3. creating-content
-**Purpose:** Generate on-brand content guided by strategy
-**When to use:** Content creation workflows across channels
-**Contains:**
-- Content structure templates
-- Brand voice guidelines
-- Platform-specific best practices
-- Quality check criteria
-
-### 4. change-management
-**Purpose:** Track and communicate changes to strategy documents
-**When to use:** Updating STRATEGY.md or RESEARCH.md with new findings
-**Contains:**
-- CHANGELOG update patterns
-- Comparison methodologies
-- Communication templates
-
----
-
-## Navigating Skills: A Practical Guide
-
-### Step 1: Find Available Skills
-
-Skills are located in `/.claude/skills/`.
-
-**To discover skills:**
 ```bash
 ls .claude/skills/
 ```
 
-**You'll see:**
+You'll see your skill folders:
 ```
 agentic-orchestrating/
 researching/
@@ -294,430 +327,51 @@ change-management/
 
 ### Step 2: Read SKILL.md First
 
-Always start with SKILL.md to understand:
-- What the skill does
-- When to use it
-- What resources are available
+Always start with the entry point:
 
-**Example:**
 ```
 Read: .claude/skills/researching/SKILL.md
 ```
 
-### Step 3: Explore /references/ for Depth
+This tells you:
+- What the skill does
+- When to use it
+- What references are available
+- How to invoke it
 
-If you need deeper context, look at `/references/`:
+### Step 3: Explore /references/ for Methodology
 
-```
-.claude/skills/researching/
-└── /references/
-    ├── methodology.md       ← How to structure research
-    ├── source-evaluation.md ← How to assess sources
-    └── synthesis.md         ← How to synthesize findings
-```
-
-### Step 4: Check /data/ for Templates
-
-If the skill has templates or examples:
+If you need deeper understanding:
 
 ```
-.claude/skills/creating-content/
-└── /data/
-    ├── blog-template.md
-    ├── twitter-template.md
-    └── linkedin-template.md
+.claude/skills/researching/references/
+├── competitive-analysis.md    ← Read this if doing competitor research
+├── customer-insights.md       ← Read this if analyzing customer data
+└── synthesis.md               ← Read this if synthesizing findings
 ```
+
+**Progressive disclosure:** Only read what you need for your current task.
 
 ---
 
-## Skills vs Commands vs Sub-agents: The Complete Picture
-
-You've now learned three delegation mechanisms. Here's how they fit together:
-
-### Commands (Class 5)
-- **What:** Reusable prompts
-- **When:** Simple, repeated tasks
-- **Example:** `/generate-tweet "topic"`
-
-### Sub-agents (Class 6)
-- **What:** Specialized AI personas
-- **When:** Domain-specific expertise needed
-- **Example:** Analyst agent for research work
-
-### Skills (Class 7)
-- **What:** Packaged workflows with context
-- **When:** Complex, multi-step processes
-- **Example:** Full content creation workflow
-
-### How They Work Together
-
-```
-You → /research (Command)
-    ↓ invokes
-Skills: "researching" skill
-    ↓ delegates to
-Sub-agents: Analyst agent
-    ↓ follows
-Workflow: agentic-orchestrating skill patterns
-    ↓ produces
-Output: Research execution in /brand/research/{domain}/{timestamp}/
-```
-
-**Real workflow example:**
-1. You run `/research competitive-analysis`
-2. Command invokes "researching" skill
-3. Skill delegates to Analyst sub-agent
-4. Analyst follows agentic-orchestrating patterns (PLAN.md → TODO.md)
-5. Output: Structured research in temporal execution folder
-
-**All three work together.**
-
----
-
-## Common Skill Patterns
-
-### Pattern 1: Methodology Skills
-
-**Purpose:** Provide frameworks and methodologies for specialized work
-
-**Structure:**
-```
-/skill-name/
-├── SKILL.md (overview of methodology)
-└── /references/
-    ├── framework.md
-    ├── process.md
-    └── checklist.md
-```
-
-**Example:** researching, synthesizing-strategy
-
-### Pattern 2: Template Skills
-
-**Purpose:** Provide templates and examples for consistent outputs
-
-**Structure:**
-```
-/skill-name/
-├── SKILL.md (how to use templates)
-└── /data/
-    ├── template-1.md
-    ├── template-2.md
-    └── examples/
-```
-
-**Example:** creating-content, landing-page-conversion
-
-### Pattern 3: Orchestration Skills
-
-**Purpose:** Define how to coordinate complex, multi-step workflows
-
-**Structure:**
-```
-/skill-name/
-├── SKILL.md (orchestration overview)
-└── /references/
-    ├── planning.md
-    ├── execution.md
-    ├── delegation.md
-    └── tracking.md
-```
-
-**Example:** agentic-orchestrating (the primary orchestration skill)
-
----
-
-## The agentic-orchestrating Skill: A Preview
-
-This skill is so important it gets its own section. You'll spend Classes 8-9 mastering it.
-
-### What It Teaches Agents
-
-The agentic-orchestrating skill teaches every agent how to:
-
-1. **Plan before executing** (PLAN.md pattern)
-2. **Track progress transparently** (TODO.md pattern)
-3. **Break down complexity** (progressive task breakdown)
-4. **Delegate appropriately** (when to use sub-agents)
-5. **Manage artifacts** (where to put supporting materials)
-6. **Resume interrupted work** (pick up where you left off)
-
-### Why It's Essential
-
-Without this skill:
-- Every agent would orchestrate differently
-- Complex work would be chaotic
-- Progress would be invisible
-- Resuming work would be impossible
-
-With this skill:
-- Consistent patterns across all workflows
-- Transparent progress tracking
-- Clear artifacts and outputs
-- Predictable, auditable execution
-
-### Preview: PLAN.md and TODO.md
-
-**PLAN.md** = Your workflow blueprint
-- What you're building
-- Why you're building it
-- How you'll execute (phases, tasks, delegation)
-- What success looks like
-
-**TODO.md** = Your progress tracker
-- Tasks listed (one per line)
-- Current status (pending, in_progress, completed)
-- Real-time updates as work progresses
-
-**You'll learn this pattern in depth in Class 8.**
-
----
-
-## When to Create a Skill (vs Using Commands)
-
-### Don't Create a Skill If:
-- A command would work (keep it simple)
-- The workflow is used only once or twice
-- You don't have supporting materials (references/data)
-- The workflow is still experimental (use commands to iterate first)
-
-### Create a Skill If:
-- The workflow is used frequently across projects
-- You have substantial supporting context (templates, frameworks, examples)
-- Multiple people will use the workflow (skills are team-scalable)
-- The workflow has proven value and stability
-
-### The Skill Creation Journey
-
-```
-Ad-hoc prompt
-    ↓ (repeated use)
-Extract to Command
-    ↓ (add complexity)
-Add supporting context
-    ↓ (package everything)
-Create Skill
-```
-
-**Start simple. Evolve to skills only when necessary.**
-
----
-
-## Skills and the AMA Marketing Framework
-
-Skills operate at every layer of the AMA framework:
-
-### Research Layer
-**Skills used:**
-- `researching` - Structured research methodologies
-- `agentic-orchestrating` - Complex research executions
-
-**Output:** `/brand/research/{domain}/{timestamp}/`
-
-### Strategy Layer
-**Skills used:**
-- `synthesizing-strategy` - Research → strategy synthesis
-- `change-management` - Update STRATEGY.md with CHANGELOG
-- `agentic-orchestrating` - Complex strategy development
-
-**Output:** `/brand/strategy/{domain}/{timestamp}/`
-
-### Content Layer
-**Skills used:**
-- `creating-content` - Strategy-guided content creation
-- Platform-specific skills (e.g., `landing-page-conversion`)
-- `agentic-orchestrating` - Complex content workflows
-
-**Output:** `/brand/content/{type}/{timestamp-slug}/`
-
-### The Connection
-
-```
-Research skill
-    ↓ generates
-RESEARCH.md (index)
-    ↓ feeds into
-Strategy skill
-    ↓ generates
-STRATEGY.md (index)
-    ↓ guides
-Content skill
-    ↓ generates
-CONTENT.md (final output)
-```
-
-**Skills move work through the three-layer framework.**
-
----
-
-## Practical Examples
-
-### Example 1: Using the researching Skill
-
-**Scenario:** You need to conduct competitive analysis.
-
-**Without skill (ad-hoc):**
-```
-"Research our top 3 competitors and summarize their positioning."
-```
-
-**Result:** Inconsistent structure, no methodology, hard to compare with past research.
-
-**With skill:**
-```
-Use the "researching" skill to conduct competitive analysis on competitors X, Y, Z.
-```
-
-**Result:**
-- Structured methodology from skill
-- Consistent output format
-- Proper citations and references
-- Temporal execution folder created
-- PLAN.md and TODO.md for transparency
-- Output integrates with existing research index
-
-### Example 2: Using the synthesizing-strategy Skill
-
-**Scenario:** You need to update brand positioning based on new research.
-
-**Without skill:**
-```
-"Create a positioning strategy based on the latest competitive analysis."
-```
-
-**Result:** Strategy lacks references to research, no evolution tracking, no change management.
-
-**With skill:**
-```
-Use the "synthesizing-strategy" skill to update positioning based on research findings in /brand/research/competitive-analysis/RESEARCH.md.
-```
-
-**Result:**
-- Strategy references specific research findings (audit trail)
-- CHANGELOG.md tracks what changed and why
-- Proper comparison with existing STRATEGY.md
-- Clear markdown references for traceability
-- Follows AMA synthesis patterns
-
-### Example 3: When NOT to Use a Skill
-
-**Scenario:** You need to generate a single tweet.
-
-**Wrong approach:**
-```
-Use the "creating-content" skill to generate a tweet.
-```
-
-**Why wrong:** Overkill. Skills are for complex workflows, not one-off simple tasks.
-
-**Right approach:**
-```
-/generate-tweet "AI in marketing"
-```
-
-Or just ask directly:
-```
-Generate a tweet about AI in marketing using our brand voice.
-```
-
-**Rule:** Don't over-engineer. Use the simplest tool that works.
-
----
-
-## Common Pitfalls to Avoid
-
-### Pitfall 1: Using Skills for Simple Tasks
-**Problem:** Invoking a complex skill for a simple prompt
-**Solution:** Ask yourself: "Does this need workflow orchestration?" If no, use a command or direct prompt.
-
-### Pitfall 2: Ignoring Skill References
-**Problem:** Using a skill without reading SKILL.md or /references/
-**Solution:** Always read SKILL.md first to understand capabilities and patterns.
-
-### Pitfall 3: Creating Too Many Skills Too Soon
-**Problem:** Creating skills before patterns are proven
-**Solution:** Start with commands, evolve to skills only when patterns stabilize.
-
-### Pitfall 4: Not Following Skill Instructions
-**Problem:** Invoking a skill but ignoring its defined workflow
-**Solution:** Trust the skill. If it says "create PLAN.md first," do it.
-
-### Pitfall 5: Confusing Skills with Sub-agents
-**Problem:** Thinking skills are personas (they're not)
-**Solution:** Skills = workflows. Sub-agents = personas. They work together.
-
----
-
-## Knowledge Check
-
-Test your understanding:
-
-### Question 1: Skills vs Commands
-**Q:** You have a prompt you use weekly: "Generate a LinkedIn post about [topic] using our brand voice." Should this be a command or a skill?
-
-**A:** Command. It's simple, repeatable, and doesn't require supporting context or multi-step workflows.
-
----
-
-### Question 2: Skill Structure
-**Q:** You're looking at a skill and see:
-```
-/new-skill/
-├── SKILL.md
-├── /references/
-│   └── guide.md
-└── /data/
-    └── template.md
-```
-
-What should you read first to understand what this skill does?
-
-**A:** SKILL.md - it's the entry point that explains purpose, usage, and references to supporting materials.
-
----
-
-### Question 3: When to Invoke
-**Q:** You need to conduct a multi-phase research project with 5+ data sources and synthesis into strategy. Should you:
-- A) Write a long prompt
-- B) Create a custom command
-- C) Invoke a skill
-- D) Delegate to a sub-agent directly
-
-**A:** C - Invoke a skill. This is complex work requiring methodology, orchestration, and supporting context. The "researching" skill + "agentic-orchestrating" skill would handle this.
-
----
-
-### Question 4: The agentic-orchestrating Skill
-**Q:** What does the agentic-orchestrating skill teach agents to do?
-
-**A:** It teaches how to manage complex, multi-step workflows using PLAN.md, TODO.md, delegation, artifact management, and progress tracking patterns.
-
----
-
-### Question 5: Progressive Disclosure
-**Q:** Why do skills use /references/ folders instead of putting everything in SKILL.md?
-
-**A:** Progressive disclosure - agents load only what they need, when they need it. This keeps context windows efficient while providing deep capabilities when required.
-
----
-
-## Practical Exercise
-
-### Exercise: Explore a Skill
-
-**Goal:** Understand how to navigate and use an existing skill.
-
-**Steps:**
-1. Pick a skill: `/.claude/skills/agentic-orchestrating/`
-2. Read `SKILL.md` - understand what it does
-3. List files in `/references/` - see what supporting context exists
-4. Read one reference file (e.g., `planning.md`)
-5. Identify: When would you invoke this skill?
-
-**Expected outcome:**
-- You can describe what the skill does
-- You know what supporting materials are available
-- You understand when to use it vs a simple command
+## When NOT to Use Skills
+
+Don't over-engineer. Skills are powerful but not always necessary.
+
+### Skip Skills For:
+- ✅ Simple one-off questions ("What's AI marketing?")
+- ✅ Quick formatting tasks ("/format-tweet [path]")
+- ✅ Exploratory work where you're still figuring out the process
+- ✅ Tasks you'll only do once
+
+### Use Skills For:
+- ✅ Workflows you repeat regularly
+- ✅ Complex processes with multiple steps
+- ✅ Work requiring methodology or frameworks
+- ✅ Team collaboration (everyone uses same process)
+
+**The "Three Uses Rule" from Class 5 applies to skills too:**
+If you've done a complex workflow 3+ times, package it as a skill.
 
 ---
 
@@ -725,103 +379,62 @@ What should you read first to understand what this skill does?
 
 ### What You Learned
 
-1. **Skills are packaged workflows** - They combine prompts, context, data, and instructions into reusable tools
-2. **Skills solve complex problems** - When commands are too simple and sub-agents need guidance, skills provide the methodology
-3. **Skills have structure** - SKILL.md (entry point) + /references/ (context) + /data/ (templates/examples)
-4. **Progressive disclosure matters** - Skills load only what's needed, keeping context efficient
-5. **Skills enable consistency** - The agentic-orchestrating skill ensures all agents orchestrate work the same way
+1. **Skills solve the context problem** - Progressive disclosure loads only what's needed
+2. **Skills organize marketing knowledge** - Workflows packaged in discoverable folders
+3. **Skills enable consistency** - Team uses same methodology repeatedly
+4. **Skills work across AMA layers** - Research, strategy, and content workflows
+5. **Skills vs commands** - Complex workflows vs simple prompts
 
-### Skills in the AMA Ecosystem
+### How This Connects to Class 1
+
+**Class 1 problem:** LLMs have limited context windows. Can't load everything at once.
+
+**Skills solution:** Package all the context in organized folders. Load progressively as needed.
+
+**Result:** Access deep expertise without context overflow.
+
+### The Progressive Disclosure Pattern
 
 ```
-Commands → Skills → Orchestration
-   ↓         ↓           ↓
-Simple   Complex    Multi-agent
-prompts  workflows  coordination
+SKILL.md (entry point - small)
+    ↓ references
+/references/methodology.md (loaded when needed)
+    ↓ references
+/data/template.md (loaded when creating output)
 ```
 
-### The Hierarchy of Delegation
-
-```
-You
- ├─ Commands (simple prompts)
- ├─ Skills (packaged workflows)
- │   └─ Sub-agents (specialized personas)
- │       └─ Orchestration (complex coordination)
- └─ Direct prompts (ad-hoc work)
-```
-
-**Choose the right level for the job.**
+**Load what you need, when you need it. Nothing more.**
 
 ---
 
-## Connection to Previous Classes
+## Next Steps
 
-### Classes 1-2: The Foundation
-- **Class 1:** You learned about context windows and their limits
-- **Class 2:** You learned how files solve context segmentation
-- **Class 7:** Skills leverage files to package workflows with rich context while managing context windows efficiently
+### In Class 8: Agent Orchestration Fundamentals
 
-### Classes 3-4: The Organization
-- **Class 3:** You learned the three-layer AMA framework
-- **Class 4:** You learned Git for version control
-- **Class 7:** Skills operate within this structure and are versioned in Git
-
-### Classes 5-6: The Delegation
-- **Class 5:** You learned commands for simple prompts
-- **Class 6:** You learned sub-agents for specialization
-- **Class 7:** Skills package commands, guide sub-agents, and define workflows
-
----
-
-## Preview: Classes 8-9
-
-### Class 8: Agent Orchestration Fundamentals
-You'll dive deep into the agentic-orchestrating skill and learn:
+You'll learn the `agentic-orchestrating` skill in depth:
 - How to create PLAN.md for complex work
 - How to track progress with TODO.md
-- How to structure execution folders
 - When orchestration is needed vs overkill
+- How to structure execution folders
 
-### Class 9: Advanced Orchestration Patterns
-You'll master advanced patterns:
-- Wrapper commands that invoke skills
-- Multi-phase workflows with dynamic task generation
-- Feedback loops and validation stages
-- Custom workflows for your specific needs
+### In Class 9: Advanced Orchestration Patterns
 
-**The agentic-orchestrating skill is the foundation for both classes.**
+You'll master advanced workflow patterns:
+- Multi-phase workflows
+- Dynamic task generation
+- Feedback loops and validation
+- Custom orchestration for your needs
 
----
-
-## Success Criteria
-
-You've mastered Class 7 when you can:
-
-✓ **Explain** what skills are and how they differ from commands
-✓ **Navigate** skill structure (SKILL.md, /references/, /data/)
-✓ **Decide** when to use a skill vs a command vs a direct prompt
-✓ **Invoke** existing skills effectively in workflows
-✓ **Understand** the agentic-orchestrating skill as the orchestration foundation
-✓ **Recognize** how skills fit into the AMA ecosystem
+**The `agentic-orchestrating` skill is the foundation for both classes.**
 
 ---
 
 ## Additional Resources
 
-### In This Course
-- [Class 5: Claude Code Commands](/brand/content/courses/2025-11-11@13:37-ama-fundamentals-course/artifacts/02e-class-5-claude-code-commands.md) - Review commands for comparison
-- [Class 6: Agent Delegation & Sub-agents](/brand/content/courses/2025-11-11@13:37-ama-fundamentals-course/artifacts/02f-class-6-agent-delegation-sub-agents.md) - Review delegation patterns
+**Claude Code Documentation:**
+- [Skills Overview](https://code.claude.com/docs/en/skills) - Official documentation
+- [Creating Skills](https://code.claude.com/docs/en/skills#creating-skills) - How to build your own
 
-### In the AMA System
-- [/.claude/skills/agentic-orchestrating/SKILL.md](/.claude/skills/agentic-orchestrating/SKILL.md) - The core orchestration skill
-- [CLAUDE.md](/CLAUDE.md) - Complete system architecture reference
-
-### Next Steps
-- Move to Class 8 to learn orchestration fundamentals
-- Practice: Explore existing skills in your workspace
-- Experiment: Invoke a skill in a real workflow
-
----
-
-**Ready for orchestration? Class 8 teaches you the PLAN.md/TODO.md pattern.**
+**In Your Workspace:**
+- Browse: `/.claude/skills/` - Explore available skills
+- Read: `/.claude/skills/agentic-orchestrating/SKILL.md` - Core orchestration skill
