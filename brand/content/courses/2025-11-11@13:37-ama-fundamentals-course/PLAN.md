@@ -34,9 +34,9 @@ The course uses a progressive learning model:
 
 Define the complete course outline with learning objectives, prerequisites, and class sequence. This establishes the pedagogical foundation before creating content.
 
-**Agent:** general-purpose
-**Instructions:** Inline instructions below
-**Input Artifacts:**
+**Agent:** general-purpose  
+**Instructions:** Inline instructions below  
+**Input Artifacts:**  
 - `data/existing-ama-docs.md`
 - `data/target-audience.md`
 

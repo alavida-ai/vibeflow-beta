@@ -22,13 +22,6 @@ By the end of this class, you'll be able to:
 - Understand when to use commands vs skills (preview)
 - Recognize how commands solve the "forgotten prompt" problem
 
-### Prerequisites Check
-
-Before starting this class, you should:
-- ✅ Understand file systems and navigation (Class 2)
-- ✅ Know the AMA three-layer framework structure (Class 3)
-- ✅ Be comfortable with Git basics (Class 4)
-
 ### What You'll Build
 
 By the end of this class, you'll create:
@@ -45,9 +38,10 @@ By the end of this class, you'll create:
 **Without commands**, every time you want AI to perform a repeated task, you face these challenges:
 
 1. **Remembering complex prompts** - "What exactly did I ask for last time?"
-2. **Inconsistent results** - Slightly different wording produces different outputs
-3. **No team sharing** - Great prompts stay locked in chat history
-4. **Context loss** - When starting a new chat, you rebuild everything from scratch
+2. **Copy prompt from google doc** - annoying to copy paste everytime
+3. **Inconsistent results** - Slightly different wording produces different outputs
+4. **No team sharing** - Great prompts stay locked in chat history
+5. **Context loss** - When starting a new chat, you rebuild everything from scratch
 
 **Example scenario:**
 
@@ -70,7 +64,7 @@ This works once. But next time:
 **With a command**, you create a reusable trigger:
 
 ```
-/analyze-interview /brand/research/customer-insights/data/interview-2024-11-08.md
+/analyze-interview @brand/research/customer-insights/data/interview-2024-11-08.md
 ```
 
 The command file contains your perfected prompt, ensuring:
@@ -110,131 +104,50 @@ The **filename** becomes the **slash command trigger**:
 |----------|---------------|
 | `plan.md` | `/plan` |
 | `analyze-interview.md` | `/analyze-interview` |
-| `research/domain.md` | `/research domain` |
+| `research/domain.md` | `/research:domain` |
 
 **Note:** Subfolders create command namespaces. A file at `/.claude/commands/research/domain.md` is invoked with `/research domain`.
 
-### Real Example: The `/plan` Command
+### Real Example: The `/format-tweet` Command
 
-Let's examine the actual `/plan` command from AMA:
+Let's look at a simple marketing command:
 
 ```markdown
 ---
-argument-hint: Task description or path to task description file
+argument-hint: Path to tweet file to format
 ---
-# Plan
+# Format Tweet
 
 ## Purpose
 
-Create a structured execution plan for a workflow using orchestration principles.
+Clean up tweet formatting by removing m-dashes and hashtags, making it ready for manual posting.
 
 ## Variables
 
-TASK_INPUT: $ARGUMENTS
+TWEET_FILE: $ARGUMENTS
 
 ## Instructions
 
-- This task requires the `orchestration` skill to understand HOW to create effective plans
-- The `TASK_INPUT` may be a file path (read it) or direct text (use it as-is)
-- Use the orchestration skill to guide you to plan this task effectively
-- Create PLAN.md in the appropriate folder
-- Present the plan to the user and iterate based on feedback until approved
-- Inform user to run `/implement` when ready
+1. Read the tweet file at `TWEET_FILE`
+2. Remove all m-dashes (—) and hyphens (-)
+3. Remove all hashtags (anything starting with #)
+4. Preserve line breaks and other formatting
+5. Display the formatted tweet to the user
+6. Ask if they want to save the formatted version
 ```
 
 **What's happening here:**
 
 1. **Frontmatter** (`---` section) provides a hint shown when typing the command
 2. **Purpose** explains what the command does (documentation for humans)
-3. **Variables** capture arguments using `$ARGUMENTS`
+3. **Variables** capture the file path argument using `$ARGUMENTS`
 4. **Instructions** tell the AI exactly what to do, step by step
 
-When you type `/plan "Create customer research workflow"`, the AI:
-- Captures `"Create customer research workflow"` as `TASK_INPUT`
-- Follows the instructions in order
-- References the `orchestration` skill for guidance
-- Creates a PLAN.md file
-- Iterates with you until approved
-
----
-
-## Creating Your First Custom Command
-
-Let's create a simple command for analyzing competitor landing pages.
-
-### Step 1: Create the Command File
-
-Create a new file at:
-```
-/.claude/commands/analyze-competitor-landing-page.md
-```
-
-### Step 2: Write the Command
-
-```markdown
----
-argument-hint: URL of competitor landing page to analyze
----
-# Analyze Competitor Landing Page
-
-## Purpose
-
-Extract key positioning, messaging, and design elements from a competitor's landing page for competitive analysis.
-
-## Variables
-
-LANDING_PAGE_URL: $ARGUMENTS
-
-## Instructions
-
-1. **Scrape the landing page** using the firecrawl MCP tool:
-   - Use the URL provided in `LANDING_PAGE_URL`
-   - Extract markdown content
-
-2. **Analyze and extract:**
-   - Headline and primary value proposition
-   - Key benefits listed (bullet points or sections)
-   - Call-to-action (CTA) copy and placement
-   - Social proof elements (testimonials, logos, stats)
-   - Visual hierarchy and design patterns
-
-3. **Structure the output** as:
-   ```
-   ## [Company Name] Landing Page Analysis
-   **URL:** [URL]
-   **Analyzed:** [Date]
-
-   ### Value Proposition
-   [Primary headline and positioning]
-
-   ### Key Benefits
-   - [Benefit 1]
-   - [Benefit 2]
-
-   ### CTAs
-   - [CTA copy and context]
-
-   ### Social Proof
-   [Testimonials, logos, stats]
-
-   ### Design Patterns
-   [Notable layout/visual elements]
-   ```
-
-4. **Save the output** to `/brand/research/competitive-analysis/data/landing-pages/[company-name]-[date].md`
-
-5. **Ask the user** if they want to analyze another landing page or update the competitive analysis index
-```
-
-### Step 3: Use Your Command
-
-Now you can analyze any competitor landing page with:
-
-```
-/analyze-competitor-landing-page https://competitor.com
-```
-
-The AI will follow your instructions consistently every time.
+When you type `/format-tweet @brand/content/twitter-posts/2025-11-11@14:30-ai-tips/CONTENT.md`, the AI:
+- Reads the file at that path
+- Removes m-dashes and hashtags
+- Shows you the cleaned-up tweet
+- Asks if you want to save it
 
 ---
 
@@ -269,7 +182,7 @@ ADDITIONAL_INFO: $2
 
 **Usage:**
 ```
-/research domain customer-insights "Focus on B2B SaaS segment"
+/research:domain "customer-insights" "Focus on B2B SaaS segment"
 ```
 - `$1` = `customer-insights`
 - `$2` = `"Focus on B2B SaaS segment"`
@@ -443,52 +356,34 @@ Organize by marketing domain:
 ├── plan.md                          # Core orchestration
 ├── implement.md
 ├── research/                        # Research workflows
-│   ├── domain.md                    # /research domain
-│   ├── adhoc.md                     # /research adhoc
+│   ├── domain.md                    # /research:domain
+│   ├── adhoc.md                     # /research:adhoc
 │   └── x/
 │       └── analyze.md               # /research x analyze
 ├── strategy/                        # Strategy workflows
-│   ├── update-positioning.md        # /strategy update-positioning
-│   └── synthesize-research.md       # /strategy synthesize-research
+│   ├── update-positioning.md        # /strategy:update-positioning
+│   └── synthesize-research.md       # /strategy:synthesize-research
 ├── content/                         # Content workflows
-│   ├── twitter-thread.md            # /content twitter-thread
-│   ├── blog-post.md                 # /content blog-post
-│   └── linkedin-post.md             # /content linkedin-post
+│   ├── twitter-thread.md            # /content:twitter-thread
+│   ├── blog-post.md                 # /content:blog-post
+│   └── linkedin-post.md             # /content:linkedin-post
 └── changelog/                       # Change management
-    └── update.md                    # /changelog update
+    └── update.md                    # /changelog:update
 ```
 
 **Pros:** Clear organization, scales well
 **Cons:** Slightly longer command paths
 
-#### 3. Workflow-Based Structure
-
-Organize by complete workflows:
-
-```
-/.claude/commands/
-├── orchestration/
-│   ├── plan.md
-│   └── implement.md
-├── competitive-analysis/
-│   ├── quick-audit.md
-│   ├── landing-page.md
-│   └── pricing-comparison.md
-└── customer-research/
-    ├── interview-analysis.md
-    └── survey-synthesis.md
-```
-
-**Pros:** Groups related workflows together
-**Cons:** Can create overlapping categories
-
 ### Best Practices for Command Organization
 
 1. **Use consistent naming:** `kebab-case` for all command files
-2. **Create README files:** Add a `README.md` in command folders explaining their purpose
-3. **Document in CLAUDE.md:** List available commands in your CLAUDE.md file
-4. **Version control:** Track commands in Git so teams stay in sync
-5. **Add hints:** Always include clear `argument-hint` in frontmatter
+2. **Version control:** Track commands in Git so teams stay in sync
+3. **Add Frontmatter:**
+   - Always include clear `argument-hint` in frontmatter
+   - name
+   - description
+   - etc
+
 
 ---
 
