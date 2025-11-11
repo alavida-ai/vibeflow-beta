@@ -90,17 +90,19 @@ Markdown files (your marketing knowledge base)
 
 **Markdown files** are your persistent memory layer. They're human-readable, AI-readable, and version-controllable.
 
-#### Why This Matters for AMA
+#### Why This Matters
 
-Traditional marketing AI workflows rely on chat interfaces. When the conversation ends, so does the context. Every new session starts from zero.
+Traditional AI workflows rely on chat interfaces. When the conversation ends, so does the context. Every new session starts from zero.
 
-**With AMA:**
-- Your research findings persist in files
-- Your strategy documents accumulate over time
-- Your content references back to strategy (verifiable audit trails)
-- Agents load exactly what they need for each task (progressive disclosure)
+**With file-based workflows:**
+- Your work persists across sessions
+- Knowledge accumulates over time in organized files
+- Files can reference each other (verifiable connections)
+- Agents load exactly what they need (progressive disclosure)
 
-You're not just chatting with AI. You're building a marketing knowledge base that compounds over time.
+You're not just chatting with AI. You're building a knowledge base that compounds over time.
+
+*How this specifically applies to marketing workflows is covered in [Class 3: Marketing File Structure](02c-class-3-marketing-file-structure.md).*
 
 ---
 
@@ -371,16 +373,10 @@ Every conversation with Claude Code automatically loads `CLAUDE.md` into the con
 - System architecture overview
 - File structure conventions
 - Navigation heuristics
-- Core principles
+- Core principles and workflows
 - Instructions for how agents should behave
 
-**In AMA:**
-`CLAUDE.md` contains the complete Agent File Structure Guide. It teaches agents:
-- The three-layer framework (Research → Strategy → Content)
-- Temporal execution patterns
-- Markdown reference conventions
-- Progressive disclosure principles
-- Extension patterns
+*For an example of CLAUDE.md in practice, see how it's used in the AMA methodology in [Class 3: Marketing File Structure](02c-class-3-marketing-file-structure.md).*
 
 #### Why CLAUDE.md Solves Context Segmentation
 
@@ -490,61 +486,17 @@ Understanding tool sequences helps you:
 
 ---
 
-## Why This Matters for AMA
+## How This Applies to Marketing Workflows
 
-Let's connect everything back to the AMA methodology:
+The concepts in this class—files as persistent memory, markdown references, progressive disclosure, and CLAUDE.md—are foundational to any Claude Code workflow.
 
-### 1. Files Enable the Three-Layer Framework
+**In [Class 3: Marketing File Structure](02c-class-3-marketing-file-structure.md)**, you'll learn how to apply these file system concepts specifically to marketing work:
+- Organizing research, strategy, and content layers
+- Using temporal executions to track iteration over time
+- Creating audit trails from content back to research
+- Implementing the AMA methodology with these building blocks
 
-AMA organizes marketing work into three layers:
-```
-Research → Strategy → Content
-```
-
-**Without files:** These layers would live in separate chat sessions, making references impossible.
-
-**With files:** Strategy can reference research. Content can reference strategy. The entire chain is verifiable.
-
-### 2. Markdown References Create Audit Trails
-
-Every piece of content should trace back to:
-- Strategy (why this approach?)
-- Research (what evidence supports it?)
-- Data (where did the insight come from?)
-
-**Files + markdown links make this possible.**
-
-### 3. Progressive Disclosure Scales to Large Knowledge Bases
-
-As your marketing knowledge base grows, you can't load everything into context.
-
-**Progressive disclosure means:**
-- Load base strategy first
-- Load extensions only when needed
-- Follow references on demand
-
-**This pattern only works with files.**
-
-### 4. Temporal Executions Track Iteration
-
-Marketing evolves. Strategies change. Research accumulates.
-
-**Timestamped folders preserve history:**
-```
-/2025-10-15@10:00/  ← Earlier strategy iteration
-/2025-11-11@14:30/  ← Current strategy iteration
-```
-
-**You can compare executions over time to see what changed and why.**
-
-### 5. CLAUDE.md Makes Every Session Context-Aware
-
-Without CLAUDE.md, every conversation would start from zero. You'd re-explain structure, conventions, and workflows every time.
-
-**With CLAUDE.md:**
-- Every agent session loads your system architecture
-- Conventions are consistent across all work
-- You build once, reuse forever
+For now, focus on understanding **HOW file systems work with Claude Code**. Class 3 will show you **HOW to organize marketing files** using these patterns.
 
 ---
 

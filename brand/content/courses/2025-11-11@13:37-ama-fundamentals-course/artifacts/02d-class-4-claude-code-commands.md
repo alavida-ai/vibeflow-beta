@@ -1,9 +1,9 @@
 # Class 5: Claude Code Commands
 
-**Course:** AMA Fundamentals
-**Class Number:** 5 of 9
-**Estimated Time:** 75 minutes
-**Prerequisites:** Classes 2 (File System), 3 (AMA Structure), 4 (Git)
+**Course:** AMA Fundamentals  
+**Class Number:** 5 of 9  
+**Estimated Time:** 75 minutes  
+**Prerequisites:** Classes 2 (File System), 3 (AMA Structure), 4 (Git)  
 
 ---
 
