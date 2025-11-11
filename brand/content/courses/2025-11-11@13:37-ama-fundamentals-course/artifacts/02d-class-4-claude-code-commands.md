@@ -1,116 +1,94 @@
 # Class 5: Claude Code Commands
 
-**Course:** AMA Fundamentals  
-**Class Number:** 5 of 9  
-**Estimated Time:** 75 minutes  
-**Prerequisites:** Classes 2 (File System), 3 (AMA Structure), 4 (Git)  
+**Course:** AMA Fundamentals
+**Class Number:** 5 of 9
+**Estimated Time:** 45 minutes
+**Prerequisites:** Classes 2 (File System), 3 (AMA Structure), 4 (Git)
 
 ---
 
 ## Class Overview
 
-In this class, you'll learn how **commands** serve as the fundamental human-AI interface in AMA. Commands transform repetitive prompts into reusable workflows, making your AI interactions consistent, discoverable, and shareable with your team.
+Commands are your custom shortcuts that transform repetitive marketing workflows into simple slash commands. Instead of retyping complex prompts every time, you type `/analyze-competitor notion` and the AI knows exactly what to do.
 
-Think of commands as your custom "menu" of AI capabilities—instead of remembering complex prompts, you simply type `/research customer-insights` and the AI knows exactly what to do.
+**For marketing architects**, commands solve a critical problem: **your best marketing processes stay locked in your head or scattered across chat history.** Commands turn those processes into reusable, shareable, version-controlled workflows.
 
 ### Learning Objectives
 
 By the end of this class, you'll be able to:
-- Craft reusable prompts as custom slash commands
-- Create command files that follow AMA conventions
-- Organize commands for team discoverability
-- Understand when to use commands vs skills (preview)
-- Recognize how commands solve the "forgotten prompt" problem
-
-### What You'll Build
-
-By the end of this class, you'll create:
-1. A simple custom command for a marketing workflow
-2. A wrapper command that enhances an existing command
-3. A command organization structure for your team
+- Turn repetitive marketing prompts into reusable commands
+- Understand how commands fit into the AMA methodology
+- Organize commands for team collaboration
+- Know when to create a command vs use ad-hoc prompts
 
 ---
 
-## Why Commands Matter
+## The Problem: Marketing Process Chaos
 
-### The Problem: Prompt Fatigue
+Without commands, every marketing workflow looks like this:
 
-**Without commands**, every time you want AI to perform a repeated task, you face these challenges:
-
-1. **Remembering complex prompts** - "What exactly did I ask for last time?"
-2. **Copy prompt from google doc** - annoying to copy paste everytime
-3. **Inconsistent results** - Slightly different wording produces different outputs
-4. **No team sharing** - Great prompts stay locked in chat history
-5. **Context loss** - When starting a new chat, you rebuild everything from scratch
-
-**Example scenario:**
-
-You want to analyze customer interviews. Without commands, you might prompt:
+**You:** *Finds that perfect prompt from 3 weeks ago in Slack*
 
 ```
-"Read the interview transcript at /brand/research/customer-insights/data/interview-2024-11-08.md
-and extract key insights about pain points, desired outcomes, and emotional states.
-Structure the findings using our research format with clear evidence citations.
-Use markdown references to link claims back to specific quotes."
+"Read the interview transcript, extract pain points and desired outcomes,
+categorize by emotional intensity, reference specific quotes with line numbers,
+format as markdown with our research template..."
 ```
 
-This works once. But next time:
-- Will you remember the exact wording?
-- Will your teammate use the same structure?
-- Can you reuse this across different interviews?
+**You:** *Copy-pastes prompt, changes file path, hopes it works the same way*
 
-### The Solution: Commands as Reusable Interfaces
+**Result:**
+- ❌ Prompts get lost in chat history
+- ❌ Team members use different approaches for the same task
+- ❌ Quality varies based on who wrote the prompt
+- ❌ New team members don't know the "right way" to do things
+- ❌ Improvements to one prompt don't propagate to the team
 
-**With a command**, you create a reusable trigger:
-
-```
-/analyze-interview @brand/research/customer-insights/data/interview-2024-11-08.md
-```
-
-The command file contains your perfected prompt, ensuring:
-- ✅ Consistency across uses
-- ✅ Easy discoverability (just type `/` to see options)
-- ✅ Team collaboration (everyone uses the same workflow)
-- ✅ Version control (commands are files you can track in Git)
+**This is marketing process chaos.**
 
 ---
 
-## Anatomy of a Command
+## The Solution: Commands as Marketing Playbooks
 
-Commands in Claude Code are **markdown files** stored in `/.claude/commands/` that define what the AI should do when you type a slash command.
+Commands transform your marketing processes from "tribal knowledge" into executable playbooks:
 
-### Basic Command Structure
+```
+/research:extract-quotes /brand/research/customer-insights/data/interview-nov-8.md
+```
 
-Every command file contains two essential parts:
+**What just happened:**
+1. The AI loaded your perfected quote extraction process
+2. Followed your exact workflow (categorization, formatting, evidence standards)
+3. Produced consistent output following AMA structure
+4. Made your process discoverable (teammates just type `/` to see options)
+
+**This is marketing process excellence.**
+
+---
+
+## How Commands Work (The Basics)
+
+Commands are markdown files in `/.claude/commands/` that tell the AI what to do when you type a slash command.
+
+### Minimal Command Structure
 
 ```markdown
 ---
-argument-hint: Brief description of what arguments this command expects
+argument-hint: What arguments this command needs
 ---
 # Command Name
 
-## Purpose
-What this command does and when to use it
-
 ## Instructions
-Step-by-step instructions for the AI to execute
+1. Step-by-step what the AI should do
+2. Where to save outputs (following AMA structure)
+3. What to ask the user for approval
 ```
 
-### Command File Naming
+**That's it.** Simple instructions in a markdown file.
 
-The **filename** becomes the **slash command trigger**:
+### Real Example: `/format-tweet`
 
-| Filename | Slash Command |
-|----------|---------------|
-| `plan.md` | `/plan` |
-| `analyze-interview.md` | `/analyze-interview` |
-| `research/domain.md` | `/research:domain` |
-
-**Note:** Subfolders create command namespaces. A file at `/.claude/commands/research/domain.md` is invoked with `/research domain`.
-
-### Real Example: The `/format-tweet` Command
-
-Let's look at a simple marketing command:
+**File:** `/.claude/commands/format-tweet.md`
 
 ```markdown
 ---
@@ -136,6 +114,11 @@ TWEET_FILE: $ARGUMENTS
 6. Ask if they want to save the formatted version
 ```
 
+**Usage:**
+```
+/format-tweet /brand/content/twitter-posts/2025-11-11@14:30-ai-tips/CONTENT.md
+```
+
 **What's happening here:**
 
 1. **Frontmatter** (`---` section) provides a hint shown when typing the command
@@ -143,917 +126,261 @@ TWEET_FILE: $ARGUMENTS
 3. **Variables** capture the file path argument using `$ARGUMENTS`
 4. **Instructions** tell the AI exactly what to do, step by step
 
-When you type `/format-tweet @brand/content/twitter-posts/2025-11-11@14:30-ai-tips/CONTENT.md`, the AI:
+When you execute the command the AI:
 - Reads the file at that path
 - Removes m-dashes and hashtags
 - Shows you the cleaned-up tweet
 - Asks if you want to save it
 
----
-
-## Command Arguments: Flexible Inputs
-
-Commands can accept different types of arguments to make them more flexible.
-
-### Single Argument: `$ARGUMENTS`
-
-The simplest form—captures everything after the command:
-
-```markdown
-## Variables
-TASK_INPUT: $ARGUMENTS
-```
-
-**Usage:**
-```
-/plan "Create research workflow"
-```
-`TASK_INPUT` = `"Create research workflow"`
-
-### Positional Arguments: `$1`, `$2`, `$3`
-
-Capture multiple arguments by position:
-
-```markdown
-## Variables
-RESEARCH_DOMAIN: $1
-ADDITIONAL_INFO: $2
-```
-
-**Usage:**
-```
-/research:domain "customer-insights" "Focus on B2B SaaS segment"
-```
-- `$1` = `customer-insights`
-- `$2` = `"Focus on B2B SaaS segment"`
-
-### File Path Arguments
-
-Commands often receive file paths as inputs:
-
-```markdown
-## Variables
-RESEARCH_PATH: $ARGUMENTS
-
-## Instructions
-1. Read the file at `RESEARCH_PATH`
-2. Extract key findings
-3. [Continue processing...]
-```
-
-**Usage:**
-```
-/strategize /brand/research/customer-insights/2025-11-08@14:30/RESEARCH.md
-```
+**Why this matters for marketing:** You don't remember the exact formatting rules every time. The command does.
 
 ---
 
-## Wrapper Commands: Enhancing Existing Commands
+## Why This Is Transformative for Marketing Architects
 
-**Wrapper commands** are commands that call other commands with pre-configured context. They're incredibly powerful for creating domain-specific workflows.
+Commands solve 4 critical problems in marketing operations:
 
-### Why Wrapper Commands?
+### 1. Institutional Knowledge Becomes Executable Code
 
-Imagine you frequently need to create research plans for different domains. Without wrappers:
+**Before commands:**
+- Best practices live in people's heads
+- New team members ask "How do we usually do this?"
+- Quality varies by who's executing
+- Process improvements don't propagate
 
-```
-/plan "Create a research plan for customer-insights using the researching skill.
-       The execution folder should be in /brand/research/customer-insights/.
-       Focus on B2B SaaS buyers."
-```
-
-This is verbose and error-prone. With a wrapper:
-
-```
-/research domain customer-insights "Focus on B2B SaaS buyers"
-```
-
-Much cleaner!
-
-### Real Example: The `/research domain` Wrapper
-
-Let's examine the actual wrapper command from AMA:
-
-```markdown
----
-argument-hint: [research domain] [optional - add any additional information here]
----
-# Discovery Research
-
-## Purpose
-
-Shortcut command that wraps `/plan` to set up research planning with correct context.
-
-## Variables
-RESEARCH_DOMAIN: $1 (e.g., "customer-insights", "category-landscape")
-ADDITIONAL_INFO: $2 (optional - any extra context from user)
-BASE_DIR: `/brand/research/`
-
-## Instructions
-
-This is a **wrapper command** that constructs a task description for `/plan`. Follow these steps:
-
-1. **Construct TASK_DESCRIPTION** that tells the planner to:
-   - Use the `researching` skill
-   - Reference the workflow for `RESEARCH_DOMAIN` within that skill
-   - Create the plan in `BASE_DIR/RESEARCH_DOMAIN/` (e.g., `/brand/research/customer-insights/`)
-   - Incorporate any `ADDITIONAL_INFO` provided by the user
-
-2. **Pass to /plan** using:
-   ```
-   SlashCommand(`/plan "[TASK_DESCRIPTION]"`)
-   ```
-
-**Example TASK_DESCRIPTION format:**
-"Create a research plan for [RESEARCH_DOMAIN] using the researching skill and the [RESEARCH_DOMAIN] workflow. The execution folder (where the PLAN.md will be created) should be created in /brand/research/[RESEARCH_DOMAIN]/. [ADDITIONAL_INFO if provided]"
-
-**Note:** This command does NOT use the researching skill directly—it tells `/plan` to use it.
-```
-
-**How it works:**
-
-1. **User types:** `/research domain customer-insights "Focus on pain points"`
-2. **Wrapper captures:** `customer-insights` and `"Focus on pain points"`
-3. **Wrapper constructs:** A full task description for `/plan`
-4. **Wrapper invokes:** `/plan` with the constructed description
-5. **Result:** `/plan` executes with perfect context every time
-
-### Creating Your Own Wrapper Command
-
-Let's create a wrapper for competitive analysis workflows:
-
-**File:** `/.claude/commands/competitive-analysis/quick-audit.md`
-
-```markdown
----
-argument-hint: [competitor-name] [optional - specific focus area]
----
-# Quick Competitive Audit
-
-## Purpose
-
-Wrapper command that sets up a structured competitive audit using the /plan command with correct research context.
-
-## Variables
-COMPETITOR_NAME: $1
-FOCUS_AREA: $2 (optional - e.g., "messaging", "pricing", "features")
-
-## Instructions
-
-1. **Construct TASK_DESCRIPTION** that tells the planner to:
-   - Research the competitor's landing page, pricing page, and about page
-   - Extract positioning, messaging, and key differentiators
-   - If `FOCUS_AREA` is provided, pay special attention to that aspect
-   - Create the execution in `/brand/research/competitive-analysis/[COMPETITOR_NAME]/`
-   - Output findings to RESEARCH.md
-
-2. **Pass to /plan** using:
-   ```
-   SlashCommand(`/plan "[TASK_DESCRIPTION]"`)
-   ```
-
-**Example TASK_DESCRIPTION:**
-"Create a competitive audit plan for [COMPETITOR_NAME]. Research their landing page, pricing, and positioning. [If FOCUS_AREA: Focus especially on [FOCUS_AREA].] Create execution in /brand/research/competitive-analysis/[COMPETITOR_NAME]/ with findings in RESEARCH.md."
-```
-
-**Usage:**
-```
-/competitive-analysis quick-audit notion "messaging and positioning"
-```
-
-This invokes `/plan` with all the right context automatically.
-
----
-
-## Organizing Commands for Teams
-
-As you create more commands, organization becomes critical for discoverability.
-
-### Command Organization Patterns
-
-#### 1. Flat Structure (Simple)
-
-For small teams or simple workflows:
-
-```
-/.claude/commands/
-├── plan.md
-├── implement.md
-├── analyze-competitor.md
-├── create-content.md
-└── update-strategy.md
-```
-
-**Pros:** Easy to browse
-**Cons:** Gets messy with many commands
-
-#### 2. Domain-Based Structure (Recommended)
-
-Organize by marketing domain:
-
-```
-/.claude/commands/
-├── plan.md                          # Core orchestration
-├── implement.md
-├── research/                        # Research workflows
-│   ├── domain.md                    # /research:domain
-│   ├── adhoc.md                     # /research:adhoc
-│   └── x/
-│       └── analyze.md               # /research x analyze
-├── strategy/                        # Strategy workflows
-│   ├── update-positioning.md        # /strategy:update-positioning
-│   └── synthesize-research.md       # /strategy:synthesize-research
-├── content/                         # Content workflows
-│   ├── twitter-thread.md            # /content:twitter-thread
-│   ├── blog-post.md                 # /content:blog-post
-│   └── linkedin-post.md             # /content:linkedin-post
-└── changelog/                       # Change management
-    └── update.md                    # /changelog:update
-```
-
-**Pros:** Clear organization, scales well
-**Cons:** Slightly longer command paths
-
-### Best Practices for Command Organization
-
-1. **Use consistent naming:** `kebab-case` for all command files
-2. **Version control:** Track commands in Git so teams stay in sync
-3. **Add Frontmatter:**
-   - Always include clear `argument-hint` in frontmatter
-   - name
-   - description
-   - etc
-
-
----
-
-## Commands vs Ad-Hoc Prompts: When to Use Each
-
-Not every prompt needs to be a command. Here's when to use each:
-
-### Use Ad-Hoc Prompts When:
-
-- ✅ Exploring or experimenting with new ideas
-- ✅ One-off questions or clarifications
-- ✅ Rapidly iterating on a concept
-- ✅ The task is unique and won't repeat
+**With commands:**
+- Your marketing workflows are documented as code
+- Anyone can execute them consistently
+- Improvements to commands = improvements for everyone
+- New team members browse `/.claude/commands/` to learn workflows
 
 **Example:**
 ```
-"What are the top 3 trends in AI marketing for 2025?"
+/.claude/commands/
+├── research/
+│   ├── extract-quotes.md          # Everyone extracts quotes the same way
+│   ├── analyze-competitor.md       # Competitor analysis follows your framework
+│   └── synthesize-findings.md      # Research synthesis uses your structure
+├── content/
+│   ├── twitter-thread.md           # Thread creation follows brand voice
+│   └── blog-outline.md             # Blog outlines hit all messaging pillars
+└── strategy/
+    └── alignment-check.md          # Content aligns with positioning
 ```
 
-This is exploratory—no need for a command.
+**Your marketing playbook is now executable code in Git.**
+
+### 2. Team Consistency at Scale
+
+**Scenario:** Your team creates customer insight research every week.
+
+**Without a command:**
+- Sarah uses one extraction framework
+- Marcus uses a different one
+- New hire asks "What's the process?"
+- Results are inconsistent, hard to compare
+- No shared mental model
+
+**With a command (`/research extract-insights`):**
+- Everyone uses the same extraction framework
+- Results are comparable across time
+- Process improves in one place (the command file)
+- New hires run `/research extract-insights` and get it right first time
+- The command references your research methodology from files
+
+**Command file becomes the single source of truth.**
+
+### 4. Workflows Evolve Through Version Control
+
+Commands are files. Files go in Git. Git tracks evolution.
+
+**What this enables:**
+```bash
+# See how competitor analysis evolved
+git log /.claude/commands/research/analyze-competitor.md
+
+# Compare research workflow from 2 months ago vs now
+git diff HEAD~10 /.claude/commands/research/domain.md
+
+# Roll back to previous version if new approach isn't working
+git checkout HEAD~1 /.claude/commands/content/twitter-thread.md
+```
+
+**Why this matters:** Your marketing processes aren't static. They improve. Commands let you track that improvement over time and rollback when experiments fail.
+
+### 5. Commands Orchestrate the AMA Workflow
+
+Commands don't just execute tasks—they **enforce AMA structure**.
+
+**Example: Content creation command**
+
+```markdown
+## Instructions
+
+1. Load strategy context:
+   - Read /brand/strategy/positioning/STRATEGY.md
+   - Read /brand/strategy/voice/twitter/EXTENSION.md
+
+2. Generate content following brand voice
+
+3. Save output to: /brand/content/twitter-posts/[DATE]@[TIME]-[slug]/CONTENT.md
+
+4. Ask user: "Does this align with our positioning? Should we proceed?"
+```
+
+**What's happening:**
+- Command loads from `/brand/strategy/` (strategy layer)
+- Command saves to `/brand/content/` (content layer)
+- Command enforces temporal execution pattern (date-stamped folder)
+- Command creates markdown audit trail (content references strategy)
+
+**Your commands ARE your AMA workflow enforcement.**
+
+---
+
+## Command Organization: Discovery at Scale
+
+As you create more commands, organization becomes critical.
+
+### Domain-Based Structure (Recommended for AMA)
+
+```
+/.claude/commands/
+├── research/                        # Research workflows
+│   ├── domain.md                    # /research domain customer-insights
+│   ├── extract-quotes.md            # /research extract-quotes [path]
+│   └── synthesize.md                # /research synthesize [paths]
+├── strategy/                        # Strategy workflows
+│   ├── synthesize-research.md       # /strategy synthesize-research [domain]
+│   └── alignment-check.md           # /strategy alignment-check [type] [topic]
+├── content/                         # Content workflows
+│   ├── twitter-thread.md            # /content twitter-thread [source]
+│   ├── blog-outline.md              # /content blog-outline [topic]
+│   └── linkedin-post.md             # /content linkedin-post [source]
+└── changelog/                       # Change management
+    └── update.md                    # /changelog update [domain] [execution-path]
+```
+
+**This mirrors your `/brand/` structure.** Teammates know where to find workflows based on what they're trying to do.
+
+---
+
+## When to Create a Command: The Three-Uses Rule
+
+**Not every prompt needs to be a command.**
 
 ### Use Commands When:
 
-- ✅ You perform the same task repeatedly
-- ✅ The workflow has multiple steps
-- ✅ Your team needs to use the same process
-- ✅ You want consistent outputs
-- ✅ The prompt is complex enough to forget
+✅ You've done it 3+ times
+✅ The workflow has multiple steps
+✅ Your team needs consistency
+✅ The prompt is complex enough to forget
+✅ Output needs to follow AMA structure
 
-**Example:**
-```
-/analyze-competitor-landing-page https://competitor.com
-```
+**Example:** Analyzing competitor landing pages → Command (repeatable, multi-step, team uses it)
 
-This is repeatable and valuable to standardize.
+### Use Ad-Hoc Prompts When:
 
-### The "Three Uses Rule"
+✅ Exploring new ideas
+✅ One-off questions
+✅ Rapid iteration
+✅ Unique, non-repeatable task
 
-**If you've done something manually three times, make it a command.**
+**Example:** "What are AI marketing trends in 2025?" → Ad-hoc (exploratory, one-time)
 
-This ensures you're not prematurely optimizing, but also not wasting time on repetitive tasks.
-
----
-
-## Commands vs Skills: What's the Difference?
-
-You've learned about **commands** in this class. In Classes 7-9, you'll learn about **skills**. Here's a preview of how they differ:
-
-### Commands: Simple Triggers
-
-- **What they are:** Markdown files with instructions for the AI
-- **How they work:** Direct instructions executed by the AI
-- **Complexity:** Simple to moderate workflows
-- **Examples:** `/plan`, `/analyze-competitor`, `/create-content`
-
-**Think of commands as:** Individual tools in your toolbox
-
-### Skills: Packaged Workflows
-
-- **What they are:** Complete workflow packages with reference materials
-- **How they work:** Provide frameworks, patterns, and multi-phase orchestration
-- **Complexity:** Complex, multi-step workflows with delegation
-- **Examples:** `researching`, `synthesizing-strategy`, `agentic-orchestrating`
-
-**Think of skills as:** Pre-built machines that use multiple tools in a specific sequence
-
-### When to Use Each
-
-| Scenario | Use Command | Use Skill |
-|----------|-------------|-----------|
-| Analyze a landing page | ✅ | |
-| Generate a Twitter post | ✅ | |
-| Orchestrate multi-phase research with sub-agents | | ✅ |
-| Synthesize 10 research documents into strategy | | ✅ |
-| Update a single file | ✅ | |
-| Manage complex iterative workflows | | ✅ |
-
-**Simple rule:** Commands for direct tasks, skills for complex workflows.
+**The Three-Uses Rule: If you've done something manually three times, make it a command.**
 
 ---
 
-## Why This Matters for AMA
+## Commands vs Skills: A Preview
 
-Commands are foundational to the AMA methodology because they solve several LLM limitations:
+You'll learn about **skills** in Class 7. Here's how they differ from commands:
 
-### 1. Context Segmentation
+| Aspect | Commands | Skills |
+|--------|----------|--------|
+| Complexity | Simple, direct tasks | Complex, multi-phase workflows |
+| Structure | Markdown file with instructions | Package with references, workflows, patterns |
+| Examples | `/analyze-competitor`, `/extract-quotes` | `researching`, `synthesizing-strategy`, `agentic-orchestrating` |
+| When to Use | Direct, repeatable tasks | Workflows requiring orchestration, sub-agents, multiple phases |
 
-**Problem:** Each new chat starts fresh with no memory.
+**Simple rule:** Commands for tasks, skills for complex workflows.
 
-**Solution:** Commands encode your workflows in files. The AI reads the command file every time, ensuring consistency across sessions.
-
-### 2. Reusability at Scale
-
-**Problem:** Great prompts get lost in chat history.
-
-**Solution:** Commands are version-controlled files your whole team can use.
-
-### 3. Progressive Disclosure
-
-**Problem:** Loading too much context overwhelms the LLM.
-
-**Solution:** Commands load exactly what's needed, when needed. A command might reference a skill, which references specific documentation, creating efficient context usage.
-
-### 4. Institutional Knowledge
-
-**Problem:** Marketing processes live in people's heads.
-
-**Solution:** Commands document your workflows as executable code, creating a living playbook.
-
-### 5. Human-AI Orchestration
-
-**Problem:** Complex marketing workflows require multiple steps and decisions.
-
-**Solution:** Commands (like wrapper commands) orchestrate workflows by calling other commands, enabling sophisticated automation while keeping humans in the loop for approvals.
+In Classes 7-9, you'll learn how commands and skills work together to orchestrate sophisticated marketing workflows.
 
 ---
 
-## Practical Examples: Marketing Workflows
-
-Let's see commands in action for real marketing scenarios.
-
-### Example 1: Content Workflow Command
-
-**Scenario:** You regularly create Twitter threads from blog posts.
-
-**Without a command:**
-```
-"Read the blog post at /brand/content/blog-posts/2025-11-08@10:00-ai-marketing-trends/CONTENT.md,
-extract the key points, and structure them as a Twitter thread with 7-10 tweets.
-Each tweet should be under 280 characters. Start with a hook tweet,
-expand on key points in the middle tweets, and end with a CTA.
-Use our brand voice from /brand/strategy/voice/twitter/EXTENSION.md."
-```
-
-**With a command:**
-```
-/content twitter-thread /brand/content/blog-posts/2025-11-08@10:00-ai-marketing-trends/CONTENT.md
-```
-
-**The command file** (`/.claude/commands/content/twitter-thread.md`):
-
-```markdown
----
-argument-hint: Path to source content (blog post, strategy doc, etc.)
----
-# Twitter Thread Generator
-
-## Purpose
-
-Convert long-form content into an engaging Twitter thread following brand voice guidelines.
-
-## Variables
-
-SOURCE_CONTENT_PATH: $ARGUMENTS
-
-## Instructions
-
-1. **Load context:**
-   - Read the source content at `SOURCE_CONTENT_PATH`
-   - Load brand voice guidelines from `/brand/strategy/voice/twitter/EXTENSION.md`
-
-2. **Extract key points:**
-   - Identify the main argument or narrative
-   - Extract 5-7 supporting points
-   - Find memorable quotes or statistics
-
-3. **Structure the thread:**
-   - Tweet 1: Hook (problem or intriguing question)
-   - Tweets 2-8: Expand on key points (one point per tweet)
-   - Final tweet: CTA or summary with call-to-action
-
-4. **Format requirements:**
-   - Each tweet max 280 characters
-   - Use line breaks for readability
-   - Include relevant emojis if brand-appropriate
-   - Maintain consistent voice and tone
-
-5. **Output format:**
-   ```
-   ## Twitter Thread
-   **Source:** [Source content path]
-   **Generated:** [Date]
-
-   🧵 Thread:
-
-   1/ [Hook tweet]
-
-   2/ [Point 1]
-
-   3/ [Point 2]
-
-   [etc.]
-   ```
-
-6. **Save output** to `/brand/content/twitter-posts/[DATE]@[TIME]-[slug]/CONTENT.md`
-
-7. **Ask user** for feedback and iterate until approved
-```
-
-### Example 2: Research Synthesis Command
-
-**Scenario:** After completing research, you need to update the research index.
-
-**Command:** `/.claude/commands/research/update-index.md`
-
-```markdown
----
-argument-hint: Path to research execution folder
----
-# Update Research Index
-
-## Purpose
-
-Compare new research execution findings with existing research index, identify contradictions/additions, and propose updates.
-
-## Variables
-
-EXECUTION_PATH: $ARGUMENTS
-
-## Instructions
-
-1. **Determine the research domain:**
-   - Parse the `EXECUTION_PATH` to identify the domain
-   - Example: `/brand/research/customer-insights/2025-11-08@14:30/` → domain is `customer-insights`
-
-2. **Load both documents:**
-   - Read execution: `EXECUTION_PATH/RESEARCH.md`
-   - Read index: `/brand/research/[domain]/RESEARCH.md`
-
-3. **Compare and analyze:**
-   - Identify **new findings** not in the index
-   - Identify **contradictions** between execution and index
-   - Identify **validations** (execution confirms existing findings)
-   - Identify **nuances** (execution adds depth to existing findings)
-
-4. **Present findings to user:**
-   ```
-   ## Research Index Update Analysis
-
-   ### New Findings
-   - [Finding 1] - Found in [section] of execution
-
-   ### Contradictions
-   - [Current index says X] vs [New execution says Y]
-
-   ### Validations
-   - [Finding Z] confirmed with additional evidence
-
-   ### Recommended Updates
-   [Proposed changes to index with markdown references]
-   ```
-
-5. **Upon approval:**
-   - Update the index file
-   - Add entry to CHANGELOG.md
-   - Present summary of changes
-```
-
-**Usage:**
-```
-/research update-index /brand/research/customer-insights/2025-11-08@14:30/
-```
-
-### Example 3: Quick Strategy Check Command
-
-**Scenario:** Before creating content, verify it aligns with current strategy.
-
-**Command:** `/.claude/commands/strategy/alignment-check.md`
-
-```markdown
----
-argument-hint: [content-type] [topic]
----
-# Strategy Alignment Check
-
-## Purpose
-
-Quick check to ensure content idea aligns with current positioning, messaging, and voice strategy.
-
-## Variables
-
-CONTENT_TYPE: $1 (e.g., "blog-post", "twitter-thread", "linkedin-post")
-TOPIC: $2
-
-## Instructions
-
-1. **Load strategy context:**
-   - Read `/brand/strategy/positioning/STRATEGY.md`
-   - Read `/brand/strategy/messaging/STRATEGY.md`
-   - Read `/brand/strategy/voice/STRATEGY.md`
-   - If `CONTENT_TYPE` has an extension, read that too
-     (e.g., `/brand/strategy/voice/twitter/EXTENSION.md`)
-
-2. **Evaluate alignment:**
-   - Does `TOPIC` align with core positioning?
-   - Does it support key messaging pillars?
-   - Is it appropriate for the `CONTENT_TYPE` channel?
-
-3. **Provide quick assessment:**
-   ```
-   ## Alignment Check: [TOPIC]
-   **Content Type:** [CONTENT_TYPE]
-
-   ✅ / ⚠️ / ❌ Positioning Alignment
-   [Brief explanation]
-
-   ✅ / ⚠️ / ❌ Messaging Alignment
-   [Brief explanation]
-
-   ✅ / ⚠️ / ❌ Channel Fit
-   [Brief explanation]
-
-   ### Recommendation
-   [Go ahead / Adjust approach / Reconsider topic]
-
-   ### Suggested Angles (if adjustments needed)
-   - [Alternative angle 1]
-   - [Alternative angle 2]
-   ```
-
-4. **If alignment is good:**
-   - Offer to proceed with content creation
-   - Suggest relevant strategy sections to reference
-```
-
-**Usage:**
-```
-/strategy alignment-check twitter-thread "5 ways AI is changing marketing"
-```
-
----
-
-## Common Pitfalls to Avoid
+## Common Mistakes to Avoid
 
 ### 1. Over-Commanding
 
-**Problem:** Creating commands for everything, including one-off tasks.
-
-**Solution:** Use the "Three Uses Rule"—make it a command after the third time.
+❌ Creating commands for one-off tasks
+✅ Use the Three-Uses Rule
 
 ### 2. Vague Instructions
 
-**Problem:** Command instructions are too general.
-
-**Bad example:**
-```markdown
-## Instructions
-Analyze the content and make it better.
-```
-
-**Good example:**
-```markdown
-## Instructions
-1. Read the content at [path]
-2. Check for:
-   - Clarity (is the main point obvious?)
-   - Evidence (are claims supported?)
-   - Voice (does it match brand guidelines?)
-3. Provide specific suggestions with before/after examples
-```
+❌ "Analyze the content and make it better"
+✅ "Check for: clarity (main point obvious?), evidence (claims supported?), voice (matches brand guidelines?). Provide specific suggestions with before/after examples."
 
 ### 3. Missing Argument Hints
 
-**Problem:** Team members don't know what arguments to provide.
+❌ No frontmatter guidance
+✅ Always include: `argument-hint: What the user needs to provide`
 
-**Solution:** Always include clear `argument-hint` in frontmatter:
+### 4. Ignoring AMA Structure
 
-```markdown
----
-argument-hint: [competitor-name] [optional - focus area]
----
-```
+❌ Commands save outputs randomly
+✅ Commands specify AMA-compliant paths: `/brand/research/[domain]/data/`
 
-### 4. Commands That Don't Reference Structure
+### 5. No Approval Loops
 
-**Problem:** Commands generate outputs in random locations.
-
-**Solution:** Always specify output locations that follow AMA structure:
-
-```markdown
-5. **Save output** to `/brand/research/[domain]/data/[filename].md`
-```
-
-### 5. No User Interaction
-
-**Problem:** Commands execute blindly without feedback loops.
-
-**Solution:** Include checkpoints and approval steps:
-
-```markdown
-6. **Present findings to user** and ask:
-   - Does this look accurate?
-   - Should we proceed to update the index?
-   - Any adjustments needed?
-```
-
----
-
-## Knowledge Checks
-
-Test your understanding with these questions:
-
-### Question 1: Command Basics
-
-**Q:** What two components are required for every command file?
-
-<details>
-<summary>Answer</summary>
-
-1. **Frontmatter** with `argument-hint`
-2. **Instructions** section telling the AI what to do
-
-</details>
-
-### Question 2: Command Organization
-
-**Q:** If you create a command file at `/.claude/commands/research/competitive/landing-page.md`, what slash command do you use to invoke it?
-
-<details>
-<summary>Answer</summary>
-
-`/research competitive landing-page`
-
-Subfolder structure creates command namespaces.
-
-</details>
-
-### Question 3: Arguments
-
-**Q:** Given this command invocation:
-```
-/analyze-competitor notion "pricing and features"
-```
-
-How would you capture both arguments in your command file?
-
-<details>
-<summary>Answer</summary>
-
-```markdown
-## Variables
-COMPETITOR_NAME: $1
-FOCUS_AREA: $2
-```
-
-`$1` captures the first argument (`notion`)
-`$2` captures the second argument (`"pricing and features"`)
-
-</details>
-
-### Question 4: Wrapper Commands
-
-**Q:** What's the difference between a regular command and a wrapper command?
-
-<details>
-<summary>Answer</summary>
-
-- **Regular command:** Contains direct instructions for the AI to execute
-- **Wrapper command:** Constructs a task description and calls another command (like `/plan`) with that description
-
-Wrappers are useful for creating domain-specific shortcuts that invoke general-purpose commands with perfect context.
-
-</details>
-
-### Question 5: When to Command
-
-**Q:** Should you create a command for these scenarios? (Yes/No)
-
-1. Analyzing competitor landing pages (you do this weekly)
-2. Asking "What's the weather today?"
-3. Creating Twitter threads from blog posts (you do this after every blog)
-4. Exploring new content ideas in a brainstorm session
-
-<details>
-<summary>Answer</summary>
-
-1. **Yes** - Repeated task, consistent structure needed
-2. **No** - One-off question unrelated to marketing workflows
-3. **Yes** - Repeated workflow that benefits from consistency
-4. **No** - Exploratory work better done with ad-hoc prompts
-
-</details>
-
----
-
-## Hands-On Exercise: Create Your First Command
-
-Let's put everything together by creating a complete command for a marketing workflow.
-
-### Exercise: Customer Quote Extractor
-
-**Scenario:** Your team conducts customer interviews. You need a command that extracts memorable quotes from interview transcripts for use in marketing materials.
-
-### Step 1: Plan Your Command
-
-Before writing, answer these questions:
-
-1. **What will the command be called?** (filename)
-2. **What arguments does it need?** (path to transcript file)
-3. **What should it do?** (extract quotes, categorize them, format output)
-4. **Where should output be saved?** (follow AMA structure)
-
-### Step 2: Create the Command File
-
-**Location:** `/.claude/commands/research/extract-quotes.md`
-
-**Your task:** Write the complete command file following this structure:
-
-```markdown
----
-argument-hint: [Your hint here]
----
-# [Command name]
-
-## Purpose
-[What this command does]
-
-## Variables
-[Define your argument variables]
-
-## Instructions
-[Step-by-step instructions for the AI]
-```
-
-### Step 3: Test Your Command
-
-1. Create a sample interview transcript at:
-   `/brand/research/customer-insights/data/interviews/test-interview.md`
-
-2. Invoke your command:
-   ```
-   /research extract-quotes /brand/research/customer-insights/data/interviews/test-interview.md
-   ```
-
-3. Verify the output follows your instructions
-
-### Example Solution
-
-<details>
-<summary>Click to see example solution</summary>
-
-```markdown
----
-argument-hint: Path to interview transcript file
----
-# Extract Customer Quotes
-
-## Purpose
-
-Extract memorable, marketing-ready quotes from customer interview transcripts. Categorizes quotes by theme for easy discovery.
-
-## Variables
-
-TRANSCRIPT_PATH: $ARGUMENTS
-
-## Instructions
-
-1. **Read the transcript:**
-   - Load the file at `TRANSCRIPT_PATH`
-   - Identify the interviewee's name if available
-
-2. **Extract quotes that are:**
-   - Memorable and emotionally resonant
-   - Clear and self-contained (make sense without context)
-   - Relevant for marketing (paint points, outcomes, experiences)
-   - Under 2 sentences long
-
-3. **Categorize quotes by theme:**
-   - Pain Points & Frustrations
-   - Desired Outcomes & Goals
-   - Emotional States
-   - Product/Service Impact
-   - Other Insights
-
-4. **Format output:**
-   ```
-   ## Customer Quotes: [Interviewee Name]
-   **Source:** [TRANSCRIPT_PATH]
-   **Extracted:** [Date]
-
-   ### Pain Points & Frustrations
-   > "Quote here"
-   — [Context if needed]
-
-   > "Another quote"
-   — [Context if needed]
-
-   ### Desired Outcomes & Goals
-   [etc.]
-   ```
-
-5. **Save output** to the same directory as the transcript with filename:
-   `[original-filename]-quotes.md`
-
-6. **Present output to user** and ask:
-   - Are these the most impactful quotes?
-   - Should any be categorized differently?
-   - Should we add these to the research index?
-```
-
-</details>
+❌ Commands execute blindly
+✅ Include checkpoints: "Present findings and ask: Does this look accurate? Proceed?"
 
 ---
 
 ## Summary & Key Takeaways
 
-Congratulations! You've learned how commands serve as the fundamental human-AI interface in AMA.
+Commands are **marketing playbooks as executable code.**
 
 ### What You Learned
 
-1. **Commands solve prompt fatigue** - Reusable, consistent, shareable workflows
-2. **Command anatomy** - Frontmatter + Instructions in markdown files
-3. **Arguments** - `$ARGUMENTS`, `$1`, `$2` for flexible inputs
-4. **Wrapper commands** - Call other commands with pre-configured context
-5. **Organization** - Domain-based structure for discoverability
-6. **When to command** - The "Three Uses Rule" prevents over-optimization
-7. **Commands vs Skills** - Simple triggers vs packaged workflows
+1. **Commands solve process chaos** - Tribal knowledge → Executable workflows
+2. **Commands enable team scale** - Consistent execution across team members
+3. **Commands evolve in Git** - Track improvement, rollback experiments
+4. **Three-Uses Rule** - Make it a command after 3rd manual execution
 
-### How This Builds on Previous Classes
+### How This Transforms Marketing Operations
 
-- **Class 2 (File System):** Commands are files that reference other files
-- **Class 3 (AMA Structure):** Commands follow and enforce AMA structure
-- **Class 4 (Git):** Commands are version-controlled for team collaboration
+**Before commands:**
+- Marketing processes in people's heads
+- Inconsistent execution
+- New team members struggle to learn "the right way"
+- No process improvement tracking
 
-### Connection to AMA Principles
+**With commands:**
+- Marketing playbook in `/.claude/commands/`
+- Consistent execution via reusable triggers
+- New team members browse commands to learn workflows
+- Git tracks process evolution
 
-Commands embody several AMA core principles:
-
-- **Progressive Disclosure** - Commands load exactly what's needed
-- **Reusability** - Write once, use everywhere
-- **Verifiable** - Commands are files you can audit and improve
-- **Temporal** - Version control tracks command evolution
+**Commands are how you scale marketing excellence.**
 
 ---
 
-## Next Steps: Preview of Class 6
+## Practice Exercise
 
-In **Class 6: Agent Delegation & Sub-agents**, you'll learn:
+**Create your first command:**
 
-- When to delegate tasks vs execute directly
-- How sub-agents isolate context and specialize
-- Creating custom sub-agents for your marketing domains
-- The relationship between commands and delegation
+1. Identify a marketing task you've done 3+ times this month
+2. Write down the exact steps you follow
+3. Create a command file at `/.claude/commands/[category]/[task-name].md`
+4. Test it on real work
+5. Iterate based on results
 
-**Why this matters:** Commands often delegate to specialized agents. Understanding delegation will unlock more sophisticated workflows.
+**Start simple.** Even a basic command that saves 5 minutes of prompt-writing is valuable when you use it 20 times.
 
----
-
-## Additional Resources
-
-### Recommended Reading
-
-- [CLAUDE.md](/CLAUDE.md) - Section on "Agentic Framework" for command organization patterns
-- [/.claude/commands/](/. claude/commands/) - Browse existing commands in your workspace
-- Class 7 reference material (coming soon) for the deep dive on skills
-
-### Practice Projects
-
-1. **Create a command library:** Build 5 commands for your most common marketing tasks
-2. **Organize your commands:** Restructure your `/.claude/commands/` folder by domain
-3. **Write wrapper commands:** Create 2 wrapper commands that enhance `/plan` or other core commands
-4. **Document your commands:** Add a README.md to each command subfolder explaining what's available
-
-### Questions to Explore
-
-- What marketing tasks do I repeat most often?
-- Which prompts have I typed more than 3 times?
-- How can I make my team's workflows more consistent?
-- What wrapper commands would save my team the most time?
+**Your marketing processes should be code, not memory.**
 
 ---
 
-**You're now ready to create reusable workflows with commands. In Class 6, you'll learn how commands orchestrate work across specialized agents. See you there!**
+**You now understand how commands turn marketing processes into reusable workflows. In Class 6, you'll learn how commands orchestrate work across specialized agents. See you there!**

@@ -2,7 +2,6 @@
 
 **Course:** AMA Fundamentals  
 **Version:** 1.0  
-**Estimated Time:** 75 minutes  
 **Prerequisites:** Class 1 (LLM Fundamentals & The Context Problem)  
 
 ---
