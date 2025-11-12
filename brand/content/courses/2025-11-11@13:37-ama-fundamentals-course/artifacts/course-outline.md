@@ -64,26 +64,26 @@ This course follows a **problem → solution** progression:
 ### Class 1: ChatGPT and introducing MCP
 
 **Where they are currently at now**:
-- Using ChatGPT with a single chat window
-- Being afraid to move out of the chat window to lose, separation anxietyy from the chat window because it's your source of truth. 
+- Using ChatGPT / Claude or Gemini with a single chat window
+- Being afraid to move out of the chat window to lose, separation anxiety from the chat window because it's your source of truth. 
 - Noticed the chat window has grown
 
 **Problem**:
-- Lack of groundness, unable to reference real-world data
-- Friction pulling in real world data
-- Not sure where your data is coming from
+- Lack of groundness, unable to reference real-world data (groundness - AI doesn't have the knowledge it needs to )
+- Friction pulling in real world data (user has to copy paste info or drag files in )
+- Not sure where your data is coming from - LLM might just hallucinate stuff
 
 **Workaround**:
 - Copy paste (friction)
-- Chasing the best model
+- Chasing the best model thinking that a better model will somehow fix these issues
 
 **Solution**:
-- MCP brings context into your chat your which is hard to replicate and bring in. Reduces friction, and engages with real data. 
+- MCP brings context into your chat which is hard to replicate and bring in. Reduces friction, and engages with real data. 
 - Pull in context that represents sources of truth. Your information is now data-backed, use DataForSEO. 
 
 **Design attributes**:
-- Groundeness 
-- Friction
+- Groundeness (having the necessary knowledge / context to perform a task accurately)
+- Friction (the amount of effort the user has to put in)
 
 **Where they are by the end of this class**
 - Now they are using MCPs with their chat window to pull in real-world data, reducing friction and increasing groundness
@@ -123,13 +123,13 @@ This course follows a **problem → solution** progression:
 - Visibility
 
 **Where they are by the end of this class**
-- They are using Claude code, and have set up MCP in Claude code. generating and using markdown files as a persistent and evolving knowledge base. 
+- They are using an agent integrated into an IDE (cursor or claude code or open code), and have set up MCP in the IDE. generating and using markdown files as a persistent and evolving knowledge base shared between the human and the agent. 
 
 ---
 
 ### Class 3: Commands as your prompt management
 
-<!-- Again we need a problem here, maybe show the value of pulling everything into cursor? and using cursor to perform marketing tasks and pulling in context from other systems to perform work. This should be the natural evolution before diving into this architecture. It's not solving a problem just yet. --> 
+<!-- Again we need a problem here, maybe show the value of pulling everything into IDE (cursor/vs code)? and using IDE to perform marketing tasks and pulling in context from other systems to perform work. This should be the natural evolution before diving into this architecture. It's not solving a problem just yet. --> 
 
 
 **Where they are currently at now**:
@@ -151,13 +151,11 @@ This course follows a **problem → solution** progression:
 - Friction
 
 **Where they are by the end of this class**
-- They are using Claude code, with reusable commands that allow them to improve their system. They may also be creating and templating new commands over time, showing the first part of the system getting more powerful over time
+- They are using Claude code, with reusable commands that allow them to improve their system and become more efficient as the templatising effective prompts into commands. They may also be creating and templating new commands over time, showing the first part of the system getting more powerful over time
 
 ---
 
 ### Class 4: Sub-agents as context separation
-
-<!-- Should be last, as this is the holy grail of the system once it's working on a single system. The ability to distribute this work across other humans. --> 
 
 **Where they are currently at now**:
 - Lots of commands, creating their own prompt workflows to run workflows or phases, everything with a single agent in a single chat window
@@ -263,3 +261,7 @@ This course follows a **problem → solution** progression:
 
 **Where they are by the end of this class**
 - They are orchestrating entire workflows through domain driven commands that perform high quality brand aligned output
+
+
+---
+Git is a advanced concept that will be covered later on
