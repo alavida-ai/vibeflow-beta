@@ -25,24 +25,9 @@ By the end of this class, you'll be able to:
 
 ## The Problem: Marketing Process Chaos
 
-Without commands, every marketing workflow looks like this:
+Without commands, you're hunting for "that perfect prompt from 3 weeks ago" in Slack, copy-pasting it, changing file paths, hoping it works.
 
-**You:** *Finds that perfect prompt from 3 weeks ago in Slack*
-
-```
-"Read the interview transcript, extract pain points and desired outcomes,
-categorize by emotional intensity, reference specific quotes with line numbers,
-format as markdown with our research template..."
-```
-
-**You:** *Copy-pastes prompt, changes file path, hopes it works the same way*
-
-**Result:**
-- ❌ Prompts get lost in chat history
-- ❌ Team members use different approaches for the same task
-- ❌ Quality varies based on who wrote the prompt
-- ❌ New team members don't know the "right way" to do things
-- ❌ Improvements to one prompt don't propagate to the team
+**Result:** Prompts get lost. Team members use different approaches. Quality varies. New hires struggle. Improvements don't propagate.
 
 **This is marketing process chaos.**
 
@@ -164,23 +149,9 @@ research template with proper markdown references..."
 
 The command file contains your perfected workflow. You just trigger it.
 
-### 2. Repeatable Execution Across Your Team
+### 2. Team Consistency: Everyone Uses the Same Process
 
-**Scenario:** Your team creates customer insight research every week.
-
-**Without a command:**
-- Sarah uses one extraction framework
-- Marcus uses a different one
-- New hire asks "What's the process?"
-- Results are inconsistent, hard to compare
-- No shared mental model
-
-**With a command (`/research:extract-insights`):**
-- Everyone uses the same extraction framework
-- Results are comparable across time
-- Process improves in one place (the command file)
-- New hires run `/research:extract-insights` and get it right first time
-- The command references your research methodology from files
+When your team creates customer insights every week, commands ensure everyone follows the same framework. Results become comparable. Process improvements happen in one place (the command file). New hires get it right first time.
 
 **Example command library:**
 ```
@@ -196,36 +167,17 @@ The command file contains your perfected workflow. You just trigger it.
     └── alignment-check.md          # Content aligns with positioning
 ```
 
-**Your team's marketing playbook is now executable code.**
-
-### 3. Process Evolution in Version Control
-
-Commands are files. Files go in Git. Git tracks evolution.
-
-**What this enables:**
-```bash
-# See how competitor analysis evolved
-git log /.claude/commands/research/analyze-competitor.md
-
-# Compare research workflow from 2 months ago vs now
-git diff HEAD~10 /.claude/commands/research/domain.md
-
-# Roll back to previous version if new approach isn't working
-git checkout HEAD~1 /.claude/commands/content/twitter-thread.md
-```
-
-**Why this matters:** Your marketing processes aren't static. They improve. Commands let you track that improvement over time and rollback when experiments fail.
+**Your team's marketing playbook is now executable code.** And since commands are files in Git, you can track how your processes evolve over time.
 
 ### The Power Multiplier (Preview)
 
 Simple commands like `/format-tweet` execute direct instructions. But commands can also be **entry points to complex workflows**.
 
-Later in this course (Classes 7-9), you'll learn about **skills** and **orchestration patterns**. When you combine commands with these concepts, a simple command like `/research domain customer-insights` can trigger:
+Later in this course (Classes 7-9), you'll learn about **skills** and **orchestration patterns**. When you combine commands with these concepts, a simple command like `/research:domain customer-insights` can trigger:
 
 - Multi-phase research workflows
 - Sub-agent delegation
 - Automatic file organization
-- Strategy synthesis
 
 **Result:** Complex workflows feel as simple as basic ones. Type a slash command, get sophisticated execution.
 
@@ -242,18 +194,18 @@ As you create more commands, organization becomes critical.
 ```
 /.claude/commands/
 ├── research/                        # Research workflows
-│   ├── domain.md                    # /research domain customer-insights
-│   ├── extract-quotes.md            # /research extract-quotes [path]
-│   └── synthesize.md                # /research synthesize [paths]
+│   ├── domain.md                    # /research:domain [domain]
+│   ├── extract-quotes.md            # /research:extract-quotes [path]
+│   └── synthesize.md                # /research:synthesize [paths]
 ├── strategy/                        # Strategy workflows
-│   ├── synthesize-research.md       # /strategy synthesize-research [domain]
-│   └── alignment-check.md           # /strategy alignment-check [type] [topic]
+│   ├── synthesize-research.md       # /strategy:synthesize-research [domain]
+│   └── alignment-check.md           # /strategy:alignment-check [type] [topic]
 ├── content/                         # Content workflows
-│   ├── twitter-thread.md            # /content twitter-thread [source]
-│   ├── blog-outline.md              # /content blog-outline [topic]
-│   └── linkedin-post.md             # /content linkedin-post [source]
+│   ├── twitter-thread.md            # /content:twitter-thread [source]
+│   ├── blog-outline.md              # /content:blog-outline [topic]
+│   └── linkedin-post.md             # /content:linkedin-post [source]
 └── changelog/                       # Change management
-    └── update.md                    # /changelog update [domain] [execution-path]
+    └── update.md                    # /changelog:update [domain] [execution-path]
 ```
 
 **This mirrors your `/brand/` structure.** Teammates know where to find workflows based on what they're trying to do.
@@ -287,49 +239,87 @@ As you create more commands, organization becomes critical.
 
 ---
 
-## Commands vs Skills: A Preview
+## Writing Effective Commands: Patterns from the Field
 
-You'll learn about **skills** in Class 7. Here's how they differ from commands:
+Good commands follow clear structural patterns. Here's what makes commands maintainable and effective:
 
-| Aspect | Commands | Skills |
-|--------|----------|--------|
-| Complexity | Simple, direct tasks | Complex, multi-phase workflows |
-| Structure | Markdown file with instructions | Package with references, workflows, patterns |
-| Examples | `/analyze-competitor`, `/extract-quotes` | `researching`, `synthesizing-strategy`, `agentic-orchestrating` |
-| When to Use | Direct, repeatable tasks | Workflows requiring orchestration, sub-agents, multiple phases |
+### The Standard Command Structure
 
-**Simple rule:** Commands for tasks, skills for complex workflows.
-
-In Classes 7-9, you'll learn how commands and skills work together to orchestrate sophisticated marketing workflows.
-
+```markdown
 ---
+argument-hint: What arguments this command needs
+---
+# Command Name
 
-## Common Mistakes to Avoid
+## Purpose
 
-### 1. Over-Commanding
+One sentence explaining what this command does.
 
-❌ Creating commands for one-off tasks
-✅ Use the Three-Uses Rule
+## Variables
 
-### 2. Vague Instructions
+VARIABLE_NAME: $ARGUMENTS (or $1, $2 for specific arguments)
 
-❌ "Analyze the content and make it better"
-✅ "Check for: clarity (main point obvious?), evidence (claims supported?), voice (matches brand guidelines?). Provide specific suggestions with before/after examples."
+## Instructions
 
-### 3. Missing Argument Hints
+1. Clear, numbered steps
+2. Use **bold** for key actions
+3. Reference `code` for paths and technical terms
+4. Keep it concise - let skills handle complexity
+```
 
-❌ No frontmatter guidance
-✅ Always include: `argument-hint: What the user needs to provide`
+### Real Pattern: Wrapper Commands
 
-### 4. Ignoring AMA Structure
+Commands can be **entry points** that delegate to skills or other commands:
 
-❌ Commands save outputs randomly
-✅ Commands specify AMA-compliant paths: `/brand/research/[domain]/data/`
+```markdown
+## Instructions
 
-### 5. No Approval Loops
+This is a **wrapper command** that constructs a task description for `/plan`:
 
-❌ Commands execute blindly
-✅ Include checkpoints: "Present findings and ask: Does this look accurate? Proceed?"
+1. **Construct TASK_DESCRIPTION** that tells the planner to:
+   - Use the `researching` skill
+   - Reference the workflow for `RESEARCH_DOMAIN`
+   - Create the plan in `BASE_DIR/RESEARCH_DOMAIN/`
+
+2. **Pass to /plan** using:
+   ```
+   SlashCommand(`/plan "[TASK_DESCRIPTION]"`)
+   ```
+```
+
+### Key Techniques
+
+**Use frontmatter for discoverability:**
+```yaml
+---
+argument-hint: [research domain] [optional context]
+---
+```
+
+**Name variables clearly (UPPERCASE):**
+```markdown
+RESEARCH_DOMAIN: $1
+ADDITIONAL_INFO: $2
+BASE_DIR: `/research/`
+```
+
+**Structure with H2 sections:**
+- `## Purpose` - What it does
+- `## Variables` - What data it captures
+- `## Instructions` - How it executes
+
+**Keep instructions concise:**
+- Numbered steps for clarity
+- Bold key actions (`**Construct**`, `**Pass to**`)
+- Delegate complexity to skills (don't embed methodology in commands)
+
+**Show examples when patterns are complex:**
+```markdown
+**Example TASK_DESCRIPTION format:**
+"Create a research plan for [RESEARCH_DOMAIN] using the researching skill..."
+```
+
+**Result:** Commands become readable, maintainable entry points to workflows.
 
 ---
 
@@ -344,21 +334,7 @@ Commands are **marketing playbooks as executable code.**
 3. **Commands evolve in Git** - Track improvement, rollback experiments
 4. **Three-Uses Rule** - Make it a command after 3rd manual execution
 
-### How This Transforms Marketing Operations
-
-**Before commands:**
-- Marketing processes in people's heads
-- Inconsistent execution
-- New team members struggle to learn "the right way"
-- No process improvement tracking
-
-**With commands:**
-- Marketing playbook in `/.claude/commands/`
-- Consistent execution via reusable triggers
-- New team members browse commands to learn workflows
-- Git tracks process evolution
-
-**Commands are how you scale marketing excellence.**
+**Bottom line:** Commands transform your marketing processes from scattered tribal knowledge into organized, version-controlled code that your entire team can discover and use.
 
 ---
 
