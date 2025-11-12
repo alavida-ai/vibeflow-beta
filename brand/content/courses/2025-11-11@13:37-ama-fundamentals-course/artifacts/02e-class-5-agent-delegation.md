@@ -61,10 +61,10 @@ You're the manager on a marketing team. A stakeholder asks you to: "Research our
 
 **If you try to do everything yourself:**
 - Your context window fills with competitor data (research mode)
-- You've been provided with so many tool to execute the task you don't even know what each tool is or when to use the right tool
+- You've been provided with so many tools to execute the task you don't even know what each tool is or when to use the right one
 - Then strategic frameworks (strategy mode)
 - Then content examples and brand voice (content mode)
-- By the time you're writing thread #10, you've forgotten nuances from competitor #1
+- By the time you're writing threads, you've forgotten nuances from competitor data
 
 **This is exactly what happens to an AI agent without delegation.**
 
