@@ -55,16 +55,13 @@ By the end of this class, you'll have:
 
 ### The Problem: One Agent Can't Do Everything Well
 
-Imagine this scenario:
+Remember the marketing team analogy from the intro? When one person tries to handle research, strategy, and content creation:
 
-You're the manager on a marketing team. A stakeholder asks you to: "Research our top 3 competitors, synthesize a positioning strategy, and write 10 Twitter threads."
-
-**If you try to do everything yourself:**
-- Your context window fills with competitor data (research mode)
-- You've been provided with so many tools to execute the task you don't even know what each tool is or when to use the right one
-- Then strategic frameworks (strategy mode)
-- Then content examples and brand voice (content mode)
-- By the time you're writing threads, you've forgotten nuances from competitor data
+**What breaks down:**
+- Context fills with mixed information (research data, strategy frameworks, content examples)
+- Too many tools(softwares, analytics websites etc) create confusion and decision paralysis
+- Focus degrades switching between thinking modes
+- Earlier work interferes with later work (by the time you're creating content, research nuances are forgotten)
 
 **This is exactly what happens to an AI agent without delegation.**
 
@@ -82,9 +79,7 @@ Each agent:
 - Doesn't carry baggage from unrelated tasks
 - Has access to **only the tools they need** benefits:
    - Smaller context footprint (fewer tool definitions loaded)
-   - Less decision paralysis (fewer tools to choose from)
-   - Reduced confusion (only relevant tools available)
-   - Lower error rate (can't accidentally use wrong tool)
+   - Less decision paralysis and error rate (fewer tools to choose from)
 
 This focused tool access further reduces context degradation and improves output quality.
 
