@@ -30,3 +30,4 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: "/changelog/update"
+          claude_args: '--output-format stream-json --permission-mode bypassPermissions --verbose'

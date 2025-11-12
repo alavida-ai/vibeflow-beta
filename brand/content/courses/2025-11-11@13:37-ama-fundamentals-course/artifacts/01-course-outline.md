@@ -9,25 +9,46 @@
 
 ## Course Overview
 
+<!-- We should also call out very early who this course is for, and who it's not for. Tell the guys who aren't willing to put in the hours to fuck off. 
+ -->
+
 ### What You'll Learn
 
 This course teaches you how to leverage the Agentic Marketing Architecture (AMA) methodology to build scalable, verifiable marketing systems using Claude Code. You'll start with foundational LLM concepts, understand why traditional approaches fail at scale, and progressively learn how to build a file-based marketing system that addresses these limitations.
 
+<!-- This should be a banging video which shows the end state / outcome of a marketing architect leveraging their own AMA system to create highly impactful content. Everything else is then framed in the context of the marketer trying to achieve this cracked end state.
+Example:
+- Generating highly engaging copy for landing pages
+- Generating image assets that self optimise
+- Generating X-content and then scoring it according to their brand voice
+- Generating on-brand visual assets
+ -->
+
+> 🎥 **VIDEO: Course Overview Demo**
+> 
+> A demonstration showing the end state of a marketing architect leveraging their own AMA system to create highly impactful content.
+> 
+> **Estimated Duration:** 2-3 minutes
+
 **By the end of this course, you'll be able to:**
-- Understand how LLMs work and their fundamental limitations
-- Build organized, scalable marketing systems using file structures
-- Delegate work effectively to AI agents
-- Create reusable workflows and commands
-- Manage complex marketing projects with orchestration patterns
-- Version control your marketing strategy with Git
+- Leverage LLMs to their full potential by working around their limitations 
+- Design and implement self-optimising marketing systems
+- Delegate work effectively to curated AI agents
+- Manage and deploy your own marketing workflows
+- Become a 100x marketer by leveraging the skills that engineers use
+
+<!-- We need to call out the benchmarks that marketers care about when using AI systems. Probably similar to the agentic engineer. 
+ -->
 
 ### Learning Philosophy
 
 This course follows a **problem → solution** progression:
-1. **Identify the problem** - What breaks when marketing scales with AI?
+1. **Identify the problem** - What breaks when marketing scales with AI? 
 2. **Learn the foundation** - File systems, structure, version control
 3. **Build practical skills** - Commands, delegation, workflows
 4. **Master orchestration** - Complex multi-agent coordination
+
+<!-- I wonder if the best way to approach this is on an outcome basis. Trying to achieve X the normal way, implementing it in our system, and seeing the difference across benchmarks marketers care about. Allows us to introduce concepts better, with the competitive advantage they gain being the primary emphasis.  --> 
 
 ### Time Commitment
 
@@ -40,387 +61,205 @@ This course follows a **problem → solution** progression:
 
 ## Course Structure
 
-### Class 1: LLM Fundamentals & The Context Problem
+### Class 1: ChatGPT and introducing MCP
 
-**Learning Objectives:**
-- Understand what a context window is and why it matters
-- Identify the five components that fill a context window
-- Recognize context limitations (rot, segmentation, limits)
-- Understand how MCPs amplify the context problem
-- Frame the challenges that the rest of the course solves
+**Where they are currently at now**:
+- Using ChatGPT with a single chat window
+- Being afraid to move out of the chat window to lose, separation anxietyy from the chat window because it's your source of truth. 
+- Noticed the chat window has grown
+
+**Problem**:
+- Lack of groundness, unable to reference real-world data
+- Friction pulling in real world data
+- Not sure where your data is coming from
+
+**Workaround**:
+- Copy paste (friction)
+- Chasing the best model
+
+**Solution**:
+- MCP brings context into your chat your which is hard to replicate and bring in. Reduces friction, and engages with real data. 
+- Pull in context that represents sources of truth. Your information is now data-backed, use DataForSEO. 
+
+**Design attributes**:
+- Groundeness 
+- Friction
+
+**Where they are by the end of this class**
+- Now they are using MCPs with their chat window to pull in real-world data, reducing friction and increasing groundness
+
+<!-- We should definitely try and achieve something that shows the limitation and pain points of the current solutions which allow us to introduce the problem of the context window. And context is a first-class citizen in this system and any AI system.  i.e. trying to develop a brand strategy across a single context chat window in ChatGPT. VS on our system while calling out the benchmarks marketers care about. --> 
 
 **Key Concepts:**
-- Context window anatomy (system prompt, MCP tools, chat history, user prompt, output)
-- Context limits and degradation over long conversations
-- Context segmentation (chat isolation - no memory between sessions)
+- Model Hallucination 
 - Model Context Protocol (MCP) as external environment interaction
-- How tool definitions bloat context windows
+---
 
-**Prerequisites:** None
+### Class 2: Introducing the IDE
 
-**Estimated Time:** 60 minutes
+<!-- We need to call out that the file system, and subsequently the prompts, commands, agents, skills etc... now represents a marketers infrastructure. It's in their best interest to completely own this infrastructure as opposed to having it owned across different systems. In terms of a problem this can show the benefit of the file system over using fragmented prompts. Most people just use Notion. Call that out.  --> 
 
-**Success Metrics:**
-- Can explain what fills a context window
-- Can identify when context limits will become a problem
-- Understands why chat history alone isn't scalable for marketing
+
+**Where they are currently at now**:
+- Using ChatGPT with a single chat window, and pulling in context through MCP
+- Quickly losing groundedness as the context window is running out
+- Heavily invested in current chat window
+
+**Problem**:
+- Lack of scalability
+- Performance degradation
+
+**Workaround**:
+- Claude Projects
+- Summarise chats
+
+**Solution**:
+- Bring you into the IDE file system, introducing shared memory between human and AI with claude code
+
+**Design attributes**:
+- Groundeness 
+- Friction
+- Scalability 
+- Visibility
+
+**Where they are by the end of this class**
+- They are using Claude code, and have set up MCP in Claude code. generating and using markdown files as a persistent and evolving knowledge base. 
 
 ---
 
-### Class 2: The Integrated File System
+### Class 3: Commands as your prompt management
 
-**Learning Objectives:**
-- Understand how file systems address LLM context limitations
-- Use Markdown as the "marketing architect's programming language"
-- Navigate file structures effectively for AI consumption
-- Understand Claude Code's default MCP tools
-- Configure CLAUDE.md as persistent agent memory
+<!-- Again we need a problem here, maybe show the value of pulling everything into cursor? and using cursor to perform marketing tasks and pulling in context from other systems to perform work. This should be the natural evolution before diving into this architecture. It's not solving a problem just yet. --> 
 
-**Key Concepts:**
-- Claude Code + VS Code/Cursor as the solution to context problems
-- Markdown for human and AI readability
-- File names, paths, and references as navigation tools
-- Default MCP tools (Read, Write, Edit, Glob, Grep, Bash)
-- CLAUDE.md as persistent memory across chat sessions
-- Claude Code nuances (settings require relaunch, etc.)
 
-**Prerequisites:** Class 1 (understand the context problem being solved)
+**Where they are currently at now**:
+- Using Claude code, with MCPs, generating a lot of files in their root folders. Having to rewrite prompts from scratch now
 
-**Estimated Time:** 75 minutes
+**Problem**:
+- Lack of maintainability 
+- Friction due to the cold start problem
 
-**Success Metrics:**
-- Can create well-structured markdown files
-- Understands how files solve context segmentation
-- Can write file paths and references correctly
-- Knows when to restart Claude Code after config changes
+**Workaround**:
+- Saving prompts as markdown files 
+- Referencing entire folders for context without navigation
 
----
+**Solution**:
+- Introduce Claude Code commands, which allow for repeatable and reusable prompts. 
 
-### Class 3: Marketing File Structure (AMA Framework)
+**Design attributes**:
+- Maintainability
+- Friction
 
-**Learning Objectives:**
-- Organize marketing work into the three-layer framework
-- Use temporal executions for iteration tracking
-- Implement markdown references for progressive disclosure
-- Follow AMA naming conventions
-- Track evolution with CHANGELOG.md
-
-**Key Concepts:**
-- Three-layer framework: Research → Strategy → Content
-- Domain organization within each layer
-- Temporal execution pattern (`YYYY-MM-DD@HH:mm/`)
-- Index files vs execution folders
-- Markdown references for audit trails
-- File naming conventions (STRATEGY.md, RESEARCH.md, CONTENT.md)
-- CHANGELOG pattern for evolution tracking
-
-**Prerequisites:**
-- Class 1 (context problem)
-- Class 2 (file system basics)
-
-**Estimated Time:** 90 minutes
-
-**Success Metrics:**
-- Can organize marketing work into correct layers
-- Can create properly named temporal execution folders
-- Understands difference between index files and executions
-- Can trace claims through markdown references (content → strategy → research)
+**Where they are by the end of this class**
+- They are using Claude code, with reusable commands that allow them to improve their system. They may also be creating and templating new commands over time, showing the first part of the system getting more powerful over time
 
 ---
 
-### Class 4: Git Integration & Version Control
+### Class 4: Sub-agents as context separation
 
-**Learning Objectives:**
-- Understand why version control matters for marketing strategy
-- Use basic Git commands for marketing work
-- Create meaningful commits for strategy changes
-- Collaborate with Git branches (high-level)
+<!-- Should be last, as this is the holy grail of the system once it's working on a single system. The ability to distribute this work across other humans. --> 
 
-**Key Concepts:**
-- Git as a safety net for strategy experiments
-- Basic Git workflow (init, add, commit, push)
-- Commit messages for marketing context
-- Branching for strategy iterations
-- Collaboration patterns (high-level - not developer-focused)
-- Claude Code Git integration
+**Where they are currently at now**:
+- Lots of commands, creating their own prompt workflows to run workflows or phases, everything with a single agent in a single chat window
 
-**Prerequisites:**
-- Class 2 (file system)
-- Class 3 (AMA structure to version control)
+**Problem**:
+- Context windows are running out very quickly
+- Lack of visibility into your context window, what is cluttering the context window? 
+- Lack of specialisation or personalization in the ways tasks are carried out
 
-**Estimated Time:** 60 minutes
+**Workaround**:
+- Adding personality to the commands, 'you are a 10x copywriter' 
+- Outputting artifacts in the root folder to reference later
 
-**Success Metrics:**
-- Can create Git commits for strategy changes
-- Understands when to create a branch
-- Can recover previous versions of strategy
-- Comfortable with Git as a tool (not intimidated)
+**Solution**:
+- Introduce Sub-agents, to separate context sessions with personality that is aligned with your 'way of working', and introduce context window visbility / viewing what clutters it
 
-**Note:** This class is high-level and non-technical. Focus on practical value for marketers, not developer workflows.
+**Design attributes**:
+- Granularity / controlability (controlling how work is being done)
+- Scalability, how far you can take a single context window 
+
+**Where they are by the end of this class**
+- They are using commands to reference sub-agents in performing specific tasks within a workflow. Sub-agent prompts and commands are being generated and saved. 
 
 ---
 
-### Class 5: Claude Code Commands
+### Class 5: AMA architecture and claude.md
 
-**Learning Objectives:**
-- Craft reusable prompts as commands
-- Create custom slash commands for repeated workflows
-- Organize commands for team use
-- Understand when to use commands vs skills
+<!-- Allows us to introduce prompt engineering and the ability to reuse commands. Calls out modularity and reusability --> 
 
-**Key Concepts:**
-- Commands as the fundamental human-AI interface
-- Anatomy of a command (trigger + prompt)
-- Creating custom slash commands (/.claude/commands/)
-- Command naming and organization
-- When commands work better than ad-hoc prompts
-- Difference between commands and skills (preview)
+**Where they are currently at now**:
+- Lots of commands being run with specialised agents, the root folder is now being absolutely cluttered with no way to technically approach it. Commands reference MCPs, and agents
 
-**Prerequisites:**
-- Class 2 (file system)
-- Class 3 (AMA structure - commands often reference structure)
-- Class 4 (Git - for versioning commands)
+**Problem**:
+- Lack of consistency in navigating the file system 
+- A non-maintainable system, which struggles to scale as noise clutters the information hierarchy
 
-**Estimated Time:** 75 minutes
+**Workaround**:
+- Utilising folders
+- Ad-hoc naming conventions
+- FINAL_DRAFT.md NEW_FINAL_DRAFT.md
+- Loading in relevant context by referencing folders
 
-**Success Metrics:**
-- Can create a custom slash command
-- Understands when to extract prompts into commands
-- Can organize commands for discoverability
-- Knows the difference between commands and skills
+**Solution**:
+- Introduce Claude.md and the AMA framework for the information hierarchy of our system
 
----
+**Design attributes**:
+- Navigability
+- Scalability
+- Maintainability
 
-### Class 6: Agent Delegation & Sub-agents
-
-**Learning Objectives:**
-- Understand when to delegate vs execute directly
-- Create custom sub-agents for specialized work
-- Modify agent system prompts
-- Recognize what LLM limitations delegation solves
-
-**Key Concepts:**
-- Why delegation (context isolation, specialization)
-- Sub-agent architecture (/.claude/agents/)
-- Creating custom agents (Analyst, Strategist, Content Creator)
-- Modifying main agent system prompt
-- SessionStart hooks (defining agent identity - replaces deprecated output styles)
-- Hook patterns for system customization
-- When to delegate (specialized domains, isolated tasks)
-- Delegation patterns (clear inputs/outputs, stateless execution)
-
-**Prerequisites:**
-- Class 1 (context problem - delegation as solution)
-- Class 2 (file system for agent coordination)
-- Class 3 (AMA structure - what agents work on)
-
-**Estimated Time:** 90 minutes
-
-**Success Metrics:**
-- Can identify when delegation is appropriate
-- Can create a custom sub-agent
-- Understands how hooks customize behavior
-- Can modify agent system prompts safely
-- Links delegation back to context window management
+**Where they are by the end of this class**
+- They are using the AMA framework to manage their content, and managed information hierarchy 
 
 ---
 
-### Class 7: Claude Code Skills
+### Class 6: Claude skills as SOPs
 
-**Learning Objectives:**
-- Understand what skills are and when to use them
-- Use existing skills effectively
-- Navigate skill structure (SKILL.md, references/)
-- Introduction to the agentic-orchestrating skill
-- Recognize difference between skills and commands
+**Where they are currently at now**:
+- They are using a light version of the AMA framework, using commands and agents to create high-quality work
 
-**Key Concepts:**
-- Skills as packaged, reusable workflows
-- Anatomy of a skill (SKILL.md, /references/, /data/)
-- Using skills vs creating skills (use first, create later)
-- The agentic-orchestrating skill (preview for Classes 8-9)
-- Skills vs Commands (workflows vs prompts)
-- When to create a skill vs use a command
+**Problem**:
+- Complex workflows are not properly represented through commands, multi-stage workflows or general attributes are hard to encode in the system
+- Resources are hard to reference, may just drop examples into the root folder
 
-**Prerequisites:**
-- Class 5 (commands - for comparison)
-- Class 6 (sub-agents - skills often delegate)
+**Workaround**:
+- embedding knowledge of workflows into large command prompts
+- sub-agent prompts are manipulated to perform commands with examples
+- referencing files and ad-hoc workflows in the root folder
 
-**Estimated Time:** 75 minutes
+**Solution**:
+- Introduce Claude's skills to perform complex workflows
 
-**Success Metrics:**
-- Can invoke and use existing skills
-- Understands skill structure
-- Knows when to use a skill vs command
-- Familiar with agentic-orchestrating skill basics
+**Design attributes**:
+- Maintainable
+- Modularity
+- Powerful 
+
+**Where they are by the end of this class**
+- They are using the AMA framework to manage, along with skills and commands to perform complex powerful workflows in conjunction with MCPs
 
 ---
 
-### Class 8: Agent Orchestration Fundamentals
+### Class 7: Orchestration
 
-**Learning Objectives:**
-- Implement PLAN.md/TODO.md pattern
-- Know when orchestration is required (3+ steps, coordination)
-- Create execution folders with artifacts
-- Delegate to sub-agents within orchestrated workflows
-- Understand progressive task breakdown
+**Where they are currently at now**:
+- Utilising claude code skills, and the AMA framework, to perform high quality work
 
-**Key Concepts:**
-- The orchestration pattern (PLAN.md → approval → TODO.md → execution)
-- When to use orchestration (complexity threshold)
-- Execution folder structure
-- Artifact management
-- Progressive task breakdown (complex → manageable steps)
-- Delegation within orchestration
-- The agentic-orchestrating skill in practice
+**Problem**:
+- The system lacks reliability as it is not properly adhering to the principles outlined in the AMA framework
+- There is a high amount of overhead as you try and manage the system to function as expected
 
-**Prerequisites:**
-- Class 3 (AMA structure - where executions live)
-- Class 6 (sub-agents - orchestration delegates)
-- Class 7 (skills - orchestrating is a skill)
+**Workaround**:
+- You telling it which folders to create
+- Being very explicit, telling it to fix itself
 
-**Estimated Time:** 90 minutes
+**Solution**:
+- Introduce the plan-implement pattern, as well as the orchestration prompt and skill
 
-**Success Metrics:**
-- Can create a PLAN.md for complex work
-- Can track progress with TODO.md
-- Can structure execution folders correctly
-- Understands when orchestration is needed vs overkill
+**Design attributes**:
+- Visibility - Work to be done
+- Reliability
+- Managerial Overhead
 
-**Practical Exercise:** Walk through creating a research execution from start to finish.
-
----
-
-### Class 9: Advanced Orchestration Patterns
-
-**Learning Objectives:**
-- Create wrapper commands around orchestration
-- Build custom workflows within skills
-- Add feedback loops to workflows
-- Design multi-phase workflows
-- Master artifact management
-
-**Key Concepts:**
-- Wrapper commands (wrapping /plan for domain-specific workflows)
-- Creating workflows within skills
-- Feedback loops and iteration patterns
-- Multi-phase workflows (Stage 1 → Stage 2a, 2b, 2c...)
-- Artifact handoff patterns
-- Dynamic task generation (Stage 1 defines Stage 2 tasks)
-- Quality review and validation stages
-
-**Prerequisites:**
-- Class 5 (commands - for wrappers)
-- Class 7 (skills - for custom workflows)
-- Class 8 (orchestration fundamentals)
-
-**Estimated Time:** 90 minutes
-
-**Success Metrics:**
-- Can create a wrapper command for a domain workflow
-- Can design multi-phase workflows
-- Can add feedback loops to workflows
-- Understands when to use dynamic task generation
-
-**Practical Exercise:** Build a custom content workflow (research → strategy → content with validation).
-
----
-
-## Learning Progression Map
-
-```
-Class 1: The Problem
-    ↓ (What breaks at scale?)
-Class 2: The Foundation
-    ↓ (File systems solve context segmentation)
-Class 3: The Organization
-    ↓ (Structure prevents chaos)
-Class 4: The Safety Net
-    ↓ (Version control enables experimentation)
-Class 5: The Interface
-    ↓ (Commands make prompts reusable)
-Class 6: The Delegation
-    ↓ (Sub-agents isolate context + specialize)
-Class 7: The Workflows
-    ↓ (Skills package reusable patterns)
-Class 8: The Coordination
-    ↓ (Orchestration manages complexity)
-Class 9: The Mastery
-    ↓ (Custom workflows for your needs)
-```
-
----
-
-## Success Metrics by Level
-
-### Foundation (Classes 1-2)
-**You've succeeded when:**
-- You can explain why chat-based AI doesn't scale for marketing
-- You understand how files solve context problems
-- You're comfortable with Markdown and file paths
-
-### Organization (Classes 3-5)
-**You've succeeded when:**
-- You can organize work into the three-layer framework
-- You can create temporal execution folders
-- You use Git confidently (not fearfully)
-- You create custom commands for repeated tasks
-
-### Delegation (Class 6)
-**You've succeeded when:**
-- You know when to delegate vs execute
-- You can create custom sub-agents
-- You understand hooks and system customization
-
-### Workflows (Classes 7-9)
-**You've succeeded when:**
-- You can use and create skills
-- You implement orchestration for complex work
-- You design custom workflows for your domain
-- You think in systems, not one-off tasks
-
----
-
-## Course Completion Criteria
-
-**You've completed the course when you can:**
-
-1. **Explain the "why"** - Articulate why AMA exists and what problems it solves
-2. **Organize effectively** - Structure marketing work in the three-layer framework
-3. **Delegate appropriately** - Know when to use sub-agents vs execute directly
-4. **Orchestrate complexity** - Break down complex work into PLAN.md/TODO.md workflows
-5. **Build custom workflows** - Create your own skills and wrapper commands
-6. **Version control confidently** - Use Git as a tool for strategy iteration
-
-**Final Project (Optional):**
-Build a complete marketing workflow from scratch:
-- Research execution (with sub-agent delegation)
-- Strategy synthesis (with orchestration)
-- Content generation (with wrapper command)
-- All tracked in Git with proper AMA structure
-
----
-
-## Appendix: Class Dependencies
-
-| Class | Depends On | Why |
-|-------|------------|-----|
-| 1 | None | Foundation |
-| 2 | 1 | Solves problems from Class 1 |
-| 3 | 1, 2 | Needs file system basics |
-| 4 | 2, 3 | Needs structure to version control |
-| 5 | 2, 3, 4 | Commands reference structure & files |
-| 6 | 1, 2, 3 | Delegation solves context, uses structure |
-| 7 | 5, 6 | Skills build on commands & agents |
-| 8 | 3, 6, 7 | Orchestration uses structure, delegation, skills |
-| 9 | 5, 7, 8 | Advanced patterns combine everything |
-
----
-
-## Notes for Instructors
-
-1. **Problem-solution framing** - Class 1 frames problems, subsequent classes solve them
-2. **Progressive complexity** - Each class builds exactly one layer of capability
-3. **Practical focus** - Classes 8-9 are very hands-on (balance theory with practice)
-4. **Non-technical audience** - Git and technical concepts kept high-level
-5. **Repetition with depth** - Core concepts (context, files, delegation) appear multiple times at increasing depth
+**Where they are by the end of this class**
+- They are orchestrating entire workflows through domain driven commands that perform high quality brand aligned output
