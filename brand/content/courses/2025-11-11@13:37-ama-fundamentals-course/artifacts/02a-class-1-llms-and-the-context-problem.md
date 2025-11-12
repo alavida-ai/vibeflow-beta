@@ -93,14 +93,15 @@ recommendations, you always reference research and explain your reasoning.
 
 ---
 
-### Component 2: MCP Tool Definitions (The AI's "Capabilities")
+### Component 2: Tool Definitions (The AI's "Capabilities")
 
 **What it is:** Descriptions of every tool the AI can use (read files, search web, access databases, etc.).
 
-The Model Context Protocol (MCP) allows AI to interact with your environment—reading files, searching the web, accessing databases, etc. But every tool you give the AI requires a detailed definition that consumes context space.
+Every tool requires a detailed definition that consumes context space.
 
-<make this a collapsible>
-**Example tool definition:**
+<details>
+<summary><strong>Example tool definition (click to expand)</strong></summary>
+
 ```json
 {
   "name": "read_file",
@@ -114,18 +115,13 @@ The Model Context Protocol (MCP) allows AI to interact with your environment—r
   }
 }
 ```
+</details>
 
 **Typical size per tool:** 100-500 tokens
 
-**Problem at scale:**
-- 5 default tools (Read, Write, Edit, Glob, Grep, Bash): ~1,000 tokens
-- Add Notion MCP (20 tools): +4,000 tokens
-- Add Slack MCP (15 tools): +3,000 tokens
-- Add web scraper (8 tools): +2,000 tokens
+**Why this matters:** Claude Code comes with 10+ default tools. Add Notion, Slack, web scrapers, and you're consuming 10,000+ tokens just defining capabilities before conversation begins.
 
-**Total: 10,000 tokens consumed defining capabilities before conversation begins.**
-
-More tools = less space for strategy and content.
+**We'll explore how this amplifies the context problem in a dedicated section below.**
 
 ---
 
@@ -260,54 +256,80 @@ Now that you understand what fills a context window, let's explore the three spe
 **What happens:**
 - Errors: "Context length exceeded"
 - Incomplete/incoherent responses
-- AI removes earlier conversation parts
 - Tool calls fail (no space to return results)
 
-<Add here what happens if the AI chat app remvoves previous messagesd>
+**Note on advanced chat apps:** Some AI chat applications automatically remove earlier messages when you approach the context limit. This keeps the conversation running but creates a new problem: the AI loses access to earlier context and strategy decisions, essentially creating "context rot" automatically. The conversation continues, but quality degrades as early context disappears.
 
 ---
 
-## How MCPs Amplify the Context Problem
+## Understanding MCPs and Their Context Impact
 
-### What is MCP?
+### What is MCP (Model Context Protocol)?
 
-MCP (Model Context Protocol) gives AI "hands" to interact with external systems—read/write files, search web, access databases, query APIs, run commands, use Notion/Slack/GitHub.
+MCP gives AI "hands" to interact with external systems:
+- **File operations** - Read, write, edit files
+- **Web access** - Search, scrape, fetch content
+- **Database queries** - Access structured data
+- **API integrations** - Notion, Slack, GitHub, etc.
+- **Terminal commands** - Run bash scripts and automation
 
-**Sounds amazing. But every tool consumes context.**
+**This is incredibly powerful.** It transforms AI from a chatbot into an agent that can actually do work in your environment.
 
-### The MCP Context Trade-off
+**But there's a hidden cost: every tool consumes context space.**
 
-Every MCP tool requires a definition (how to use it, parameters, examples, return types).
+---
 
-**Example: Notion MCP with 20 tools**
-- `notion-search`, `notion-fetch`, `notion-create-pages`, `notion-update-page`, etc.
+### How MCPs Amplify the Context Problem
+
+Remember Component 2 from earlier? Every tool requires a detailed definition (how to use it, parameters, examples, return types). Each tool definition consumes 100-500 tokens.
+
+**The problem scales quickly:**
+
+**Example: Adding Notion MCP**
+- Notion provides 20+ tools: `notion-search`, `notion-fetch`, `notion-create-pages`, `notion-update-page`, etc.
 - Each tool: 200-400 tokens
-- **Total: 4,000-8,000 tokens before you even use Notion**
+- **Total: 4,000-8,000 tokens consumed before you even use Notion once**
 
 ### The Cascading Effect
 
-**"Tool-rich" environment:**
-- Default tools (Read, Write, Edit, Glob, Grep, Bash): ~1,000 tokens
-- Notion MCP (20 tools): +5,000 tokens
-- Slack MCP (15 tools): +3,000 tokens
-- Perplexity MCP (8 tools): +2,000 tokens
-- Firecrawl MCP (12 tools): +3,000 tokens
+Here's what happens when you build a "tool-rich" environment:
+
+- Default Claude Code tools (Read, Write, Edit, Glob, Grep, Bash): ~1,000 tokens
+- Add Notion MCP (20 tools): +5,000 tokens
+- Add Slack MCP (15 tools): +3,000 tokens
+- Add Perplexity MCP (8 tools): +2,000 tokens
+- Add Firecrawl MCP (12 tools): +3,000 tokens
 
 **TOTAL: 14,000 tokens (10,500 words) consumed just defining capabilities.**
 
-**The trade-off:** More tools = more power, but less space for strategy and faster context limits.
+Before you've asked a single question or generated any content.
 
-### Why This Matters for AMA
+**The trade-off:**
+- More tools = More capabilities = More powerful AI
+- More tools = Less space for strategy, research, conversation
+- More tools = Hit context limits faster
 
-**AMA uses a selective approach:**
+### The Double Cost: Tool Definitions AND Tool Usage
 
-**Core MCPs (always loaded):** File system tools + Bash
+We've focused on tool definitions consuming context. But there's a second cost: **every tool call consumes tokens twice.**
 
-**Domain-specific MCPs (load when needed):** Notion, web scraping, social APIs
+**When you use a tool:**
+1. **The tool call consumes tokens** - The AI must specify which tool, what parameters, what to do
+2. **The tool result consumes tokens** - The response (file contents, API data, search results) gets added to context
 
-**The principle: Load what you need, when you need it.**
+**Example: Reading a strategy file**
+- Tool call: `Read file: /brand/strategy/positioning/STRATEGY.md` (~50 tokens)
+- Tool result: The entire file contents (~3,000 tokens)
+- **Total: 3,050 tokens consumed for one file read**
 
-This is why AMA uses a **file-based system** (strategy in markdown) rather than heavy MCP reliance.
+**A few tool calls rapidly bloat context:**
+- Read positioning strategy: 3,000 tokens
+- Read voice guidelines: 2,500 tokens
+- Read messaging framework: 3,500 tokens
+- Search for past content: 4,000 tokens
+- Fetch competitor data from API: 5,000 tokens
+
+**Total: 18,000 tokens consumed from just 5 tool calls.**
 
 ---
 
@@ -378,13 +400,3 @@ You now understand the fundamental limitation shaping AI-assisted marketing: **t
 2. **Five components compete for space** - System prompt, MCP tools, chat history, user prompt, output
 3. **Three ways context breaks** - Rot (degradation), segmentation (no memory), limits (hard ceiling)
 4. **MCPs amplify the problem** - More tools = more power, less space for strategy
-
-### Why This Matters
-
-Every demo you see online—magical AI writing perfect content—works great in isolation. But when you try to scale to multiple content types, maintain consistent brand voice, build on accumulated strategy, collaborate across teams, and iterate over time...
-
-**Traditional chat-based approaches fall apart.**
-
-Not because AI isn't capable. Because **the context window is the bottleneck**, and most approaches don't account for it.
-
-AMA does. Every pattern you'll learn exists to work within—and around—context limitations.
