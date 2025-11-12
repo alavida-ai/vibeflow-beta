@@ -119,7 +119,7 @@ You learned about commands in Class 5. Here's the quick comparison:
 
 ### The Simple Rule
 
-**Command** = Quick trigger for simple tasks
+**Command** = Quick trigger for simple tasks  
 **Skill** = Organized package for complex workflows
 
 **Use a command when:** Simple formatting, quick transformations, straightforward execution
@@ -179,7 +179,6 @@ Don't over-engineer. Skills are powerful but not always necessary.
 - ✅ Workflows you repeat regularly
 - ✅ Complex processes with multiple steps
 - ✅ Work requiring methodology or frameworks
-- ✅ Team collaboration (everyone uses same process)
 
 **The "Three Uses Rule" from Class 5 applies to skills too:**
 If you've done a complex workflow 3+ times, package it as a skill.
