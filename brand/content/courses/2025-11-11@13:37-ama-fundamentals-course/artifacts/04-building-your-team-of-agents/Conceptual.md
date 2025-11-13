@@ -192,71 +192,23 @@ Your main agent (Operations Manager) still handles your conversation and execute
 You: /research-competitor-landscape
 
 Main agent: "I'll delegate this to my Analyst sub-agent"
-→ Analyst sub-agent: [Fresh context, deep analysis of all 5 competitors]
-→ Saves findings to /brand/research/
+→ Analyst sub-agent:
+  - Gets fresh 200K context window
+  - Loads only what's needed for research
+  - Deep dive on all 5 competitors
+  - Writes comprehensive report
+  - Returns summary to main agent (2K tokens)
 
 Main agent: "Analysis complete. Here's what we found..."
 ```
 
-**The key insight:** Your main agent doesn't consume its context window on heavy analysis. It prompts the task to a sub-agent with a fresh context window.
+**What this solves:**
 
----
+- **Problem 1 (Context Running Out):** Sub-agent has fresh context to complete the full workflow.
+- **Problem 2 (Spreading Thin):** Sub-agent focuses entirely on one task, can go deep.
+- **Main agent preservation:** Main agent's context window clean. Tasks specific MCP tools and analysis done on subagent context windows.
 
-### How Sub-agents Solve the Problems
-
-**Problem 1: Context Windows Running Out**
-
-Without sub-agents:
-```
-Main agent does everything:
-- Scrapes 5 competitor sites (15K tokens of data)
-- Analyzes positioning patterns (10K tokens)
-- Synthesizes findings (8K tokens)
-- Writes report (5K tokens)
-Total: 38K tokens consumed, context nearly full
-
-Result: Hits limit before finishing
-```
-
-With sub-agents:
-```
-Main agent delegates:
-→ Sub-agent gets fresh 200K context window
-→ Deep dive on all 5 competitors (full analysis possible)
-→ Writes comprehensive report
-→ Returns summary to main agent (2K tokens)
-
-Main agent context used: 2K tokens (just the summary)
-Result: Main agent stays light, sub-agent goes deep
-```
-
-✅ **Main agent context preserved, workflows can complete**
-
----
-
-**Problem 2: Context Overload (Spreading Too Thin)**
-
-Without sub-agents:
-```
-Main agent (conserving context):
-"Let me quickly check each competitor..."
-[Skims homepages, shallow observations]
-"Here's a brief summary..."
-
-Quality: Surface level, misses nuance, generic insights
-```
-
-With sub-agents:
-```
-Sub-agent (fresh context, no constraints):
-"I'll thoroughly analyze each competitor..."
-[Deep dive: messaging, positioning, pricing, audience, differentiation]
-"Here's a comprehensive analysis with patterns identified..."
-
-Quality: Deep insights, pattern recognition, actionable findings
-```
-
-✅ **Surface-level analysis → Deep, comprehensive analysis**
+✅ **Workflows that complete + deep analysis on each task**
 
 ---
 
@@ -266,7 +218,7 @@ Sub-agents don't just offload work—they're also **specialized** for their task
 
 **Why specialization matters:**
 
-**1. Limited, focused MCP tools**
+**1. Focused MCP toolset**
 ```
 Main agent (generalist):
 Tools: [Firecrawl, Perplexity, Brave, Notion, Slack, Gmail, Drive, ...]
@@ -277,20 +229,16 @@ Tools: [Firecrawl, Perplexity, Grep, Read, Write]
 Benefit: 5 tool definitions (3K tokens) - cleaner initial context
 ```
 
-**2. Avoids analysis paralysis**
-```
-Main agent: "Should I use Firecrawl? Or Perplexity? Or Brave Search? Or..."
-→ Wastes tokens on tool selection reasoning
+**Result:**
+- **Smaller initial contex footprint** - Loads only relevant tool definitions
+- **Reduced error rate** - Fewer tool options means less confusion, right tool chosen
+- **Less noise from tool calls** - Fewer tools = cleaner context (less clutter from tool calling)
 
-Analyst: "I have 5 research tools. Firecrawl for scraping, Perplexity for analysis."
-→ Clear choices, focused execution
-```
-
-**3. Custom system prompts with identity/mindset**
+**2. Custom system prompts with identity/mindset**
 ```
 Analyst sub-agent:
 "You are a Research Analyst. You conduct objective, thorough research.
-Focus on patterns, evidence, and data-backed insights."
+Focus on patterns, evidence, and data-backed insights"
 
 Strategist sub-agent:
 "You are a Brand Strategist. You synthesize research into frameworks.
@@ -383,181 +331,60 @@ You: /write-twitter-thread
 ```
 
 **The difference:**
-- ⏱️ **Speed:** No context degradation across phases
-- 🎯 **Quality:** Each agent specialized, no contamination
+- ⏱️ **Speed:** 
+   - Reducesd context degradation = reduced slowness 
+   - can run multiple analysts in parallel (e.g. analysis on separate competitors in parallel)
+- 🎯 **Quality:** Each agent specialized, no contamination and less context degradation across phases
 - 👁️ **Clarity:** You know which agent has what context
-- 🔄 **Scalability:** Can run multiple analysts in parallel
+- 🔄 **Scalability:** you can do more tasks with your agents
+- **Control:** You can define how to approach specifics in more detail
 
 ---
 
-## Part 5: Design Attributes - Before and After
+## Part 5: What Changed
 
-### Attribute 1: Scalability (Improved ✅)
+Sub-agents solve two new problems while maintaining what you already gained:
 
-**Definition:** Does performance maintain as work complexity increases?
-
-| Commands Only (Class 3 End) | Commands + Sub-agents (Class 4) |
-|-----------------------------|--------------------------------|
-| ❌ Complex workflows fill context | ✅ Each phase gets fresh context |
-| ❌ 50+ messages = slow | ✅ Each agent starts fresh |
-| ❌ One agent does everything | ✅ Specialized agents per task |
-
-**Improvement:** Context-bound → Context-isolated per task type
+| Design Attribute | Class 3 End | Class 4 with Sub-agents |
+|-----------------|-------------|-------------------------|
+| Groundedness | ✅ High | ✅ Stays high |
+| Friction | ✅ Low | ✅ Stays low |
+| Scalability | ❌ Context fills with complex workflows | ✅ **Improved** (fresh context per task) |
+| Maintainability | ✅ High | ✅ Stays high |
+| Control | ❌ Low | ✅ **NEW - Solved** (specialized agents) |
 
 ---
 
-### Attribute 2: Granularity / Controllability (NEW - Solved ✅)
-
-**Definition:** How much control do you have over HOW work gets done?
-
-| Commands Only (Class 3 End) | Commands + Sub-agents (Class 4) |
-|-----------------------------|--------------------------------|
-| ❌ One agent personality for all work | ✅ Specialized agent per work type |
-| ❌ Generic "do research" | ✅ Research analyst with specific focus |
-| ❌ Can't control thinking mode | ✅ Each agent has distinct mode |
-
-**Improvement:** Generic execution → Specialized, controllable execution
-
----
-
-### Maintained Attributes
-
-| Design Attribute | Status |
-|-----------------|--------|
-| Groundedness | ✅ Stays high (MCP still works) |
-| Friction | ✅ Stays low (commands still fast) |
-| Visibility | ✅ Enhanced (now see agent separation) |
-| Maintainability | ✅ Stays high (commands + agents both as code) |
-
----
-
-## Part 6: Where You Are At the End of This Class
-
-### Your New Capabilities
-
-You're now using commands that delegate to specialized sub-agents:
-
-**✅ Context separation per task type**
-- Research gets fresh analyst context
-- Strategy gets fresh strategist context
-- Content gets fresh creator context
-
-**✅ Specialized thinking modes**
-- Analyst: Objective, data-focused
-- Strategist: Synthesis, frameworks
-- Content Creator: Creative, brand voice
-
-**✅ Clear visibility into context**
-- Know which agent has what context
-- No mysterious context bloat
-- Predictable performance
-
-**✅ Compounding system**
-- Week 1: 3 commands, 2 agents
-- Week 10: 20 commands, 5 specialized agents
-- Each addition makes system more capable
-
-### What You've Unlocked
+## Part 6: Where You Are Now
 
 **The shift:**
 ```
-Before: One agent does everything (context fills, quality degrades)
-After: Specialized agents get fresh context (fast, focused, high quality)
+Before: One agent does everything (context fills, spreads thin)
+After:  Commands delegate to specialists (deep work, fresh context)
 ```
 
-**Your workflow changes:**
-- From "run command with one agent" → "command delegates to right specialist"
-- From context contamination → context isolation
-- From generic execution → specialized expertise
+Your system now has:
+- Commands that delegate to specialized sub-agents
+- Fresh context per subtask
+- Focused tools per agent (less noise, faster execution)
+- Specialized thinking modes (each agent has distinct expertise)
 
-### What's Still Missing
-
-You have specialized agents and reusable commands, but:
+**But you still have:**
 - ❌ Files scattered everywhere (no consistent structure)
 - ❌ Hard to navigate as system grows
 - ❌ No clear information hierarchy
 
-**Next step:** Class 5 introduces the AMA framework - the information architecture that makes everything navigable and scalable.
+**Next:** Class 5 introduces the AMA framework for information architecture.
 
 ---
 
-## Summary & Key Takeaways
+## Summary
 
-### The Journey So Far
+**What you learned:**
+- **Context separation:** Sub-agents get fresh context, enabling deep work on each task
+- **Specialization:** Different agents for different work (Analyst, Strategist, Content Creator)
+- **The compounding effect:** Each agent makes your system more capable
 
-**Where you started (Class 3 end):**
-- Commands eliminate repetitive prompts
-- Everything executed by one agent
-- Context fills with mixed concerns
+**Key pattern:** Complex multi-step workflows? Delegate to specialized sub-agents.
 
-**Where you are now (Class 4):**
-- Commands delegate to specialized sub-agents
-- Each task type gets fresh context
-- Specialized thinking modes
-
-**What improved:**
-| Design Attribute | Before | After |
-|-----------------|--------|-------|
-| Scalability | ❌ Context fills across phases | ✅ Fresh context per phase |
-| Granularity | ❌ Generic agent for all work | ✅ Specialized agents per type |
-| Visibility | ✅ Good | ✅ Enhanced (see agent separation) |
-
-### Key Concepts
-
-**1. Context Separation**
-- Each sub-agent gets fresh context window
-- No contamination between task types
-- Specialization beats generalization
-
-**2. Sub-agent Architecture**
-- Defined in `/.claude/agents/`
-- Clear identity, responsibilities, constraints
-- Integrated with commands
-
-**3. When to Delegate**
-- Multi-phase workflows (research → strategy → content)
-- Specialized expertise needed (research vs creative)
-- Context contamination risk (mixed concerns)
-
-**4. The Compounding Effect**
-- More agents = more specialization
-- More specialization = higher quality
-- System grows in capability over time
-
-### What's Next
-
-Class 5 addresses organization and navigation:
-- ❌ Where do files go?
-- ❌ How to navigate growing system?
-- ❌ How to ensure consistency?
-
-**The solution:** AMA framework and CLAUDE.md for information architecture
-
-**You'll learn:**
-- Three-layer structure (research → strategy → content)
-- Progressive disclosure patterns
-- How agents navigate your system automatically
-
----
-
-## Practice Exercise
-
-**Try this after completing Class 4:**
-
-1. **Create a simple sub-agent**
-   - Create `/.claude/agents/analyst.md`
-   - Define identity: Research specialist
-   - Set responsibilities: Competitor analysis
-   - Set constraints: No strategy, no content
-
-2. **Update a command to delegate**
-   - Pick your `/analyze-competitor` command (or similar)
-   - Add delegation to Analyst agent
-   - Test: Does the agent maintain research focus?
-
-3. **Compare before/after**
-   - Run workflow with main agent (no delegation)
-   - Run same workflow with sub-agent delegation
-   - Measure: Quality, speed, context clarity
-
-**The goal:** Experience how sub-agents provide context isolation and specialization before moving to the architectural patterns in Class 5.
+**Next class:** AMA framework for organizing your growing system
