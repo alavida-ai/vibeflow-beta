@@ -1,9 +1,9 @@
 # Class 6: Skills as Standard Operating Procedures
 
-**Course:** AMA Fundamentals
-**Class Number:** 6 of 7
-**Estimated Time:** 60 minutes
-**Prerequisites:** Class 1 (MCP), Class 2 (IDE & Files), Class 3 (Commands), Class 4 (Sub-agents), Class 5 (AMA Architecture)
+**Course:** AMA Fundamentals  
+**Class Number:** 6 of 7  
+**Estimated Time:** 60 minutes  
+**Prerequisites:** Class 1 (MCP), Class 2 (IDE & Files), Class 3 (Commands), Class 4 (Sub-agents), Class 5 (AMA Architecture)  
 
 ---
 
@@ -13,7 +13,7 @@ You've built an impressive system: MCP for data, commands for workflows, sub-age
 
 **Your most valuable workflows need more than step-by-step instructions.** Competitive analysis needs research frameworks. Strategy synthesis needs positioning models. Content creation needs brand examples. You're either cramming everything into massive command prompts (hard to maintain) or scattering reference materials across random files (hard to find).
 
-**This class introduces skills—organized folders that package complex workflows with methodology, frameworks, and reference materials that agents load progressively.**
+**This class introduces skills. Organized folders that package complex workflows with methodology, frameworks, and reference materials that agents load progressively.**
 
 ### Learning Objectives
 
