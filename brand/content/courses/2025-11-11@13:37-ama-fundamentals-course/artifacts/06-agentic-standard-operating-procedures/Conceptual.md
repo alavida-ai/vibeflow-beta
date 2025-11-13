@@ -9,29 +9,25 @@
 
 ## Class Overview
 
-You've built a sophisticated system: MCP for data access, commands for workflows, sub-agents for specialization, and the AMA framework for organization. **But there's a scaling problem.**
+You've built an impressive system: MCP for data, commands for workflows, sub-agents for specialization, and the AMA framework for organization. Your commands are working. Your agents are shipping. But now you're maintaining 400-line command files with duplicated methodology.
 
-**Your most valuable workflows require methodology, frameworks, and reference materials.** Competitive analysis needs research frameworks. Strategy synthesis needs positioning models. Content creation needs brand examples.
+**Your most valuable workflows need more than step-by-step instructions.** Competitive analysis needs research frameworks. Strategy synthesis needs positioning models. Content creation needs brand examples. You're either cramming everything into massive command prompts (hard to maintain) or scattering reference materials across random files (hard to find).
 
-Right now, these complex workflows are either:
-- Crammed into massive command prompts (hard to maintain)
-- Referenced from scattered files (hard to organize)
-- Re-explained every time (defeats the purpose of commands)
-
-**This class is about packaging complex workflows as skills** - organized collections of methodology, frameworks, and reference materials that agents load progressively.
-
-By the end of this class, you'll understand:
-- Why complex workflows can't fit cleanly in single command files
-- How skills package methodology as organized, discoverable folders
-- When to use skills vs commands
-- How progressive disclosure makes skills context-efficient
+**This class introduces skills—organized folders that package complex workflows with methodology, frameworks, and reference materials that agents load progressively.**
 
 ### Learning Objectives
 
-- Recognize when commands become too complex to maintain
-- Understand how skills organize methodology into discoverable folders
-- Know when to use skills vs commands vs ad-hoc prompts
-- Navigate skill structures in your workspace
+By the end of this class, you will:
+
+1. **Identify the problems:** Why complex workflows break the command pattern: massive files, duplicated methodology, scattered resources
+2. **Understand the solution:**
+    - How skills organize methodology into discoverable folder structures
+    - How progressive disclosure loads only what's needed, when needed
+    - When to use skills vs commands
+3. **Recognize the improvement:**
+    - Maintainable (update methodology once, not in 5 command files)
+    - Modular (reusable frameworks across workflows)
+    - Discoverable (browse `/.claude/skills/` to find methodologies)
 
 ---
 
