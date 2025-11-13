@@ -4,7 +4,7 @@
 
 Conduct a comprehensive conversion optimization and brand alignment analysis of the Alavida.ai landing page to identify:
 1. Conversion weaknesses based on evidence-based best practices
-2. Brand misalignment issues compared to Vibeflow's brand strategy
+2. Brand misalignment issues compared to Agonda's brand strategy
 3. Actionable improvement recommendations
 4. Complete copy extraction for reference
 
@@ -38,7 +38,7 @@ Brand strategy documents to compare against:
 
 ### Phase 1: Brand Strategy Context Loading
 **Agent:** Analyst Agent
-**Objective:** Load and synthesize Vibeflow's brand strategy for comparison
+**Objective:** Load and synthesize Agonda's brand strategy for comparison
 
 **Tasks:**
 1. Read all brand strategy index files (STRATEGY.md from each domain)
@@ -80,7 +80,7 @@ Brand strategy documents to compare against:
 
 ### Phase 3: Brand Alignment Analysis
 **Agent:** Analyst Agent
-**Objective:** Identify misalignments between landing page and Vibeflow brand strategy
+**Objective:** Identify misalignments between landing page and Agonda brand strategy
 
 **Tasks:**
 1. Compare landing page messaging to brand positioning

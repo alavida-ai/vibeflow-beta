@@ -39,7 +39,7 @@ Through a systematic positioning workshop on October 16, 2025, we formalized pos
 ### 1. Benefit Ladder
 
 **Functional Benefit:**
-Run your entire marketing operation from Claude Code—with IDE-based workflows, version-controlled brand systems, and owned infrastructure powered by the vibeflow framework.
+Run your entire marketing operation from Claude Code—with IDE-based workflows, version-controlled brand systems, and owned infrastructure powered by the agonda framework.
 
 **Emotional Benefit:**
 **Empowered** through mastery of complexity that creates competitive advantage. While others chase "easy buttons," you build proprietary systems they can't copy.
@@ -148,7 +148,7 @@ This strategic trade-off:
 **Application to Marketing Architecture:**
 - ✅ Target current state: "Marketing strategists using AI tools daily"
 - ✅ Articulate pain: "Aren't seeing efficiency gains expected"
-- ✅ Offer methodology: "Marketing Architecture framework + vibeflow"
+- ✅ Offer methodology: "Marketing Architecture framework + agonda"
 - ⏳ Identity emerges: People become "Marketing Architects" through practice
 - ⏳ Formalize: Community, education, thought leadership
 
@@ -190,7 +190,7 @@ We created **Marketing Architecture**—a new practice of building and owning yo
 
 Instead of another SaaS tool that creates dependency, we onboard you onto **Claude Code**—where you run your entire marketing operation from an IDE, with version-controlled brand systems, multi-model workflows, and infrastructure you fully own.
 
-The **vibeflow framework** gives you the methodology. Our tooling accelerates your setup. But the system you build? That's yours. It improves with every use. It becomes proprietary to you.
+The **agonda framework** gives you the methodology. Our tooling accelerates your setup. But the system you build? That's yours. It improves with every use. It becomes proprietary to you.
 
 This isn't about making things easier—it's about making *you* more capable. You're not renting convenience. You're building competitive moat.
 

@@ -1,4 +1,4 @@
-# Vibeflow Voice Strategy
+# Agonda Voice Strategy
 
 **Synthesized:** 2025-10-29  
 **Status:** Current
@@ -7,7 +7,7 @@
 
 ## Voice Overview
 
-Vibeflow speaks as a technical peer who respects audience intelligence. We're direct, evidence-based, and unapologetically focused on craft over convenience. Our voice reflects sophisticated practitioners who [value ownership over convenience and quality over speed](/research/customer-insights/RESEARCH.md), see AI as leverage (not replacement), and understand that [infrastructure independence equals business independence](/research/brand-story-interview/RESEARCH.md).
+Agonda speaks as a technical peer who respects audience intelligence. We're direct, evidence-based, and unapologetically focused on craft over convenience. Our voice reflects sophisticated practitioners who [value ownership over convenience and quality over speed](/research/customer-insights/RESEARCH.md), see AI as leverage (not replacement), and understand that [infrastructure independence equals business independence](/research/brand-story-interview/RESEARCH.md).
 
 We don't soften uncomfortable truths or hedge bold claims. Where [competitors use patronizing language that insults sophisticated users](/research/customer-insights/RESEARCH.md), we embrace intellectual rigor. Where others promise effortless automation, we acknowledge the grind because [better foundational work means better outcomes](/research/customer-insights/RESEARCH.md).
 
@@ -92,9 +92,9 @@ Speak as architects to architects, emphasizing [workflow design, infrastructure 
 
 Professional but conversational. [Modern tech/creator brands favor 70-85% casual](/research/voice-benchmarking/2025-10-28@18:04/RESEARCH.md). We use contractions, second-person address, occasional sentence fragments for emphasis.
 
-- More formal: "Vibeflow enables practitioners to..."
-- Our sweet spot: "Vibeflow lets you build marketing systems..."
-- Too casual: "Vibeflow helps you crush AI marketing!"
+- More formal: "Agonda enables practitioners to..."
+- Our sweet spot: "Agonda lets you build marketing systems..."
+- Too casual: "Agonda helps you crush AI marketing!"
 
 ---
 
@@ -184,7 +184,7 @@ Direct, clear, transparent—no marketing mystification. [Straightforward direct
 [Vary sentence length strategically](/research/voice-benchmarking/2025-10-28@18:04/RESEARCH.md)—short for impact (3-10 words), medium for flow (11-20 words), occasional fragments for emphasis.
 
 **Example:**
-> "Most AI marketing tools promise to replace you. That's extraction, not empowerment. Vibeflow takes a different approach—we give sophisticated practitioners infrastructure to architect their own systems. Your competitors use autopilot. You use co-pilot. That's the difference."
+> "Most AI marketing tools promise to replace you. That's extraction, not empowerment. Agonda takes a different approach—we give sophisticated practitioners infrastructure to architect their own systems. Your competitors use autopilot. You use co-pilot. That's the difference."
 
 ---
 
@@ -193,7 +193,7 @@ Direct, clear, transparent—no marketing mystification. [Straightforward direct
 Address audience directly (you) while maintaining brand voice (we). Avoid third-person institutional distance.
 
 - ✅ "You own your infrastructure. We provide the foundation."
-- ❌ "Vibeflow enables users to maintain infrastructure ownership."
+- ❌ "Agonda enables users to maintain infrastructure ownership."
 
 ---
 

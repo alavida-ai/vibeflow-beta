@@ -37,7 +37,7 @@ Every hour invested in building systems returns exponentially. Every subscriptio
 
 **Supporting Points:**
 1. [The Productivity Paradox is real](/research/customer-insights/RESEARCH.md)—marketers are 10-20x more productive with AI yet working more hours than before. Convenience tools shift work, they don't eliminate it. Systematic infrastructure creates actual leverage.
-2. ["Working ON the business, not IN it"](/research/customer-insights/RESEARCH.md) requires foundational systems that improve with each use. The vibeflow framework gives you reusable workflows that get smarter every time you run them.
+2. ["Working ON the business, not IN it"](/research/customer-insights/RESEARCH.md) requires foundational systems that improve with each use. The agonda framework gives you reusable workflows that get smarter every time you run them.
 3. [Complexity creates competitive advantage when most marketers choose ease](/strategy/positioning/STRATEGY.md)—the learning curve is a moat. While competitors chase "easy buttons," you build proprietary methods they can't replicate.
 4. [Skills + infrastructure = defensible differentiation](/strategy/positioning/STRATEGY.md) in an age when everyone has access to the same AI models. Your competitive edge isn't the model—it's the system you design around it.
 
@@ -88,7 +88,7 @@ Stop orchestrating between disconnected tools. Start designing integrated workfl
 **Supporting Points:**
 1. [Tool fragmentation creates orchestration overhead](/research/customer-insights/RESEARCH.md)—even with AI, marketers spend hours copy-pasting between platforms, manually triggering workflows, and fighting context loss. Integrated environments eliminate busywork.
 2. [Compress weeks of strategic work into hours](/research/customer-insights/RESEARCH.md) by running sophisticated workflows (brand fundamentals, competitive analysis, multi-model research) systematically. Templates + multi-model orchestration + version control = systematic leverage.
-3. The vibeflow framework provides proven workflow templates for brand strategy, audience research, competitive analysis, and content creation—giving you the architecture without starting from scratch.
+3. The agonda framework provides proven workflow templates for brand strategy, audience research, competitive analysis, and content creation—giving you the architecture without starting from scratch.
 4. [Your workflows improve with every use](/strategy/messaging/2025-10-28@11:02/artifacts/01-value-propositions.md)—unlike SaaS tools where you're limited by vendor roadmaps, your owned workflows evolve based on your learnings and become increasingly tailored to your business.
 
 **Customer Language Foundation:**

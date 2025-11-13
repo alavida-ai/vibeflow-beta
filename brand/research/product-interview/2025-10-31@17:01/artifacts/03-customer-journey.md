@@ -32,7 +32,7 @@
 > "Our onboarding includes onboarding calls where we get them set up with the system and run some onboarding workflows to understand the system and give them that aha moment."
 
 **Current Flow:**
-1. **Onboarding call** with Vibeflow team
+1. **Onboarding call** with Agonda team
 2. **System setup** guided by team
 3. **Example workflows** run together
 4. **"Aha moment"** delivered through demonstration
@@ -51,11 +51,11 @@
 > "Clone a repo"
 
 **Future State:**
-> "We would like to also simplify this through our CLI tool like create-vibeflow-app"
+> "We would like to also simplify this through our CLI tool like create-agonda-app"
 
 **Ideal Flow:**
 ```bash
-npx create-vibeflow-app my-brand
+npx create-agonda-app my-brand
 ```
 
 **Proposed Onboarding Sequence:**
@@ -64,7 +64,7 @@ npx create-vibeflow-app my-brand
 **Step-by-Step Future Flow:**
 
 1. **CLI Setup**
-   - Run `create-vibeflow-app`
+   - Run `create-agonda-app`
    - Initialize repository structure
    - Configure Claude Code integration
 
@@ -115,7 +115,7 @@ npx create-vibeflow-app my-brand
 ### Future CLI Automation
 **Goal:** Abstract complexity without hiding capability
 
-**create-vibeflow-app Features:**
+**create-agonda-app Features:**
 - Scaffold repository structure
 - Initialize Git
 - Configure Claude Code
@@ -468,7 +468,7 @@ npx create-vibeflow-app my-brand
 ## Customer Journey Summary
 
 ### Phase 1: Discovery
-- Find Vibeflow through community Slack channels
+- Find Agonda through community Slack channels
 - Recognize need for systematic marketing operations
 - Resonate with "Marketing Architect" identity
 - Reach out or get referred
@@ -544,7 +544,7 @@ npx create-vibeflow-app my-brand
 - Small community (early stage)
 
 ### Solutions In Progress
-- CLI tool (`create-vibeflow-app`)
+- CLI tool (`create-agonda-app`)
 - Expanded documentation
 - Educational content (video, written)
 - Community building

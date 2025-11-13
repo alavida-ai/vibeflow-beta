@@ -10,7 +10,7 @@
 
 ## Research Objective
 
-Conduct a structured interview to deeply understand Vibeflow's product architecture, business model, and operational mechanics. This research will inform the creation of a product strategy document that complements existing brand strategy.
+Conduct a structured interview to deeply understand Agonda's product architecture, business model, and operational mechanics. This research will inform the creation of a product strategy document that complements existing brand strategy.
 
 **Gap Being Filled:**
 While we have comprehensive brand strategy (positioning, messaging, voice, audience), we lack detailed product-level documentation covering technical architecture, business model, customer journey, and product differentiation mechanics.
@@ -23,9 +23,9 @@ While we have comprehensive brand strategy (positioning, messaging, voice, audie
 **Artifact:** `01-product-overview.md`
 
 **Questions:**
-- What is Vibeflow at the product level? (components, layers, deliverables)
+- What is Agonda at the product level? (components, layers, deliverables)
 - How does it technically deliver the "Marketing Architecture" vision?
-- What does someone get when they "use Vibeflow"?
+- What does someone get when they "use Agonda"?
 - Core technical stack and infrastructure approach
 - How does it differ from traditional SaaS products technically?
 
@@ -43,7 +43,7 @@ While we have comprehensive brand strategy (positioning, messaging, voice, audie
 - Customer acquisition and sales process
 - How does business model reinforce brand differentiation?
 
-**Success Criteria:** Complete understanding of how Vibeflow makes money while maintaining "own your stack" positioning.
+**Success Criteria:** Complete understanding of how Agonda makes money while maintaining "own your stack" positioning.
 
 ---
 

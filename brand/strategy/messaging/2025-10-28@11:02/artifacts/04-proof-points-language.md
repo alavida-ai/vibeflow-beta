@@ -86,7 +86,7 @@ Supporting our messaging claims with evidence:
 **Proof:**
 - **Orchestration pain:** "Copy and pasting it, pasting it to my browser... focus on certain aspects, copy and paste, focus it... This is when I started to realize, I think a lot of the pain points are purely usability." - William (/research/customer-insights/RESEARCH.md)
 - **Time fragmentation:** Even with AI productivity gains, marketers spend "hours copy-pasting between platforms, manually triggering workflows, and fighting context loss" (/strategy/messaging/2025-10-28_11:02/artifacts/02-message-architecture.md)
-- **Transformation:** "Eliminating copy-paste busywork through integrated environment" as functional change after adopting Vibeflow (/research/customer-insights/RESEARCH.md)
+- **Transformation:** "Eliminating copy-paste busywork through integrated environment" as functional change after adopting Agonda (/research/customer-insights/RESEARCH.md)
 - **Competitive differentiation:** 60% of competitors position on "1000+ integrations" or "unified platform" but treat integration as feature collection; 0% position on systematic workflow design (/research/category-landscape/RESEARCH.md)
 
 **Source:** [Customer insights research](/research/customer-insights/RESEARCH.md), [Message architecture](/strategy/messaging/2025-10-28_11:02/artifacts/02-message-architecture.md), [Category landscape research](/research/category-landscape/RESEARCH.md)

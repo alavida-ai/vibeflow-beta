@@ -109,7 +109,7 @@ Strategic differentiation validated by [category landscape research](/research/c
 
 **Elevator Pitch:**
 
-Alavida is a Marketing Architecture platform that enables marketing strategists and agency owners to build and own their AI infrastructure—not rent tools they'll outgrow. Through Claude Code and the vibeflow framework, you design systematic workflows that become strategic assets, creating competitive advantage through competency rather than convenience.
+Alavida is a Marketing Architecture platform that enables marketing strategists and agency owners to build and own their AI infrastructure—not rent tools they'll outgrow. Through Claude Code and the agonda framework, you design systematic workflows that become strategic assets, creating competitive advantage through competency rather than convenience.
 
 **Why:** Operationalizes [Marketing Architecture positioning](/strategy/positioning/STRATEGY.md), expresses transformation from ["working IN the business" to working ON it](/research/customer-insights/RESEARCH.md), differentiates from [85% promising "easy buttons"](/research/category-landscape/RESEARCH.md) by positioning on competency—signaling we serve [ambitious 5-10% of marketing strategists](/strategy/positioning/STRATEGY.md).
 

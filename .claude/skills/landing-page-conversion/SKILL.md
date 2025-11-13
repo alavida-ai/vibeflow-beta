@@ -13,7 +13,7 @@ This skill provides evidence-based guidance for creating, and analysing high-con
 - Apply proven conversion principles (6.6% average → 30%+ high-performing)
 - Generate brand-aligned landing page copy following systematic workflow
 - Reference comprehensive best practices guide covering structure, copy, design, and technical optimization
-- Align landing page elements with Vibeflow's brand strategy and voice
+- Align landing page elements with Agonda's brand strategy and voice
 
 ## When to Use This Skill
 

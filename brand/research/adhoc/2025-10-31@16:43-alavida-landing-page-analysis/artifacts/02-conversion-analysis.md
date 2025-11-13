@@ -137,7 +137,7 @@ This appears to be a navigation menu with links to:
 - ❌ No demo videos or product walkthroughs
 
 **What's missing:**
-- Screenshot: Cursor IDE with vibeflow framework running
+- Screenshot: Cursor IDE with agonda framework running
 - Workflow diagram: How "Marketing Architecture" works visually
 - Before/after: SaaS chaos vs. owned system (visual comparison)
 - Process visualization: How the 3-phase process actually looks
@@ -405,7 +405,7 @@ This is the single biggest conversion killer. Visitors cannot:
 - Build confidence in solution
 
 **Required additions:**
-1. Cursor IDE screenshot with vibeflow running
+1. Cursor IDE screenshot with agonda running
 2. Workflow diagram: SaaS chaos → Owned system
 3. Before/after comparison (visual)
 4. 60-second demo video showing "Marketing Architecture" in action

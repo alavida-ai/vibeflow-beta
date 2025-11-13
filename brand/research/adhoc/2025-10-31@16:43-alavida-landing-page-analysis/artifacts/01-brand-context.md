@@ -1,8 +1,8 @@
-# Brand Context: Vibeflow Strategy Baseline
+# Brand Context: Agonda Strategy Baseline
 
 **Purpose:** Establish the baseline for evaluating Alavida.ai landing page brand alignment
 
-**Sources:** Vibeflow brand strategy documents (current approved state)
+**Sources:** Agonda brand strategy documents (current approved state)
 
 ---
 
@@ -10,10 +10,10 @@
 
 ### Marketing Architecture Category (Unclaimed White Space)
 
-Vibeflow positions in the completely unclaimed "**Marketing Architecture**" category—a practice of building and owning marketing AI infrastructure rather than renting SaaS tools.
+Agonda positions in the completely unclaimed "**Marketing Architecture**" category—a practice of building and owning marketing AI infrastructure rather than renting SaaS tools.
 
 **Core positioning statement:**
-> For marketing strategists and agency owners who are trapped in reactive tool-chasing, subscription dependency, and fragmented workflows—Alavida is a Marketing Architecture platform that enables you to build and own your marketing AI infrastructure through Claude Code, creating competency and competitive advantage through the vibeflow framework. Unlike marketing automation SaaS tools that create dependency through convenience, we empower you to become a Marketing Architect who designs owned systems rather than renting tools.
+> For marketing strategists and agency owners who are trapped in reactive tool-chasing, subscription dependency, and fragmented workflows—Alavida is a Marketing Architecture platform that enables you to build and own your marketing AI infrastructure through Claude Code, creating competency and competitive advantage through the agonda framework. Unlike marketing automation SaaS tools that create dependency through convenience, we empower you to become a Marketing Architect who designs owned systems rather than renting tools.
 
 **Competitive white space validation:**
 - 0% of competitors use "architect," "architecture," or "engineer" terminology
@@ -170,7 +170,7 @@ Vibeflow positions in the completely unclaimed "**Marketing Architecture**" cate
 - "Marketing Architecture" / "Marketing Architect" terminology
 - "Own your infrastructure" / "Build vs. rent" framing
 - Explicitly targeting "marketing strategists and agency owners" (NOT "all marketers")
-- Claude Code and vibeflow framework specificity
+- Claude Code and agonda framework specificity
 
 **2. Voice Characteristics**
 - Technically credible: Docker, MCP, multi-model workflows

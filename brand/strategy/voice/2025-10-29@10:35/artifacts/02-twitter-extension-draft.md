@@ -1,4 +1,4 @@
-# Vibeflow Voice Extension: Twitter/X
+# Agonda Voice Extension: Twitter/X
 
 **Extension Domain:** Twitter/X Platform Voice
 **Extends:** [Universal Voice Strategy](/strategy/voice/STRATEGY.md)
@@ -9,11 +9,11 @@
 
 ## Platform Context
 
-Twitter/X represents a unique strategic opportunity for Vibeflow: a technically sophisticated audience where [conversation equals algorithmic leverage](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md). The platform is undergoing a fundamental transformation—from heuristic-based ranking to [Grok AI-powered recommendations launching November-December 2025](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md)—that rewards genuine quality over engagement-baiting.
+Twitter/X represents a unique strategic opportunity for Agonda: a technically sophisticated audience where [conversation equals algorithmic leverage](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md). The platform is undergoing a fundamental transformation—from heuristic-based ranking to [Grok AI-powered recommendations launching November-December 2025](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md)—that rewards genuine quality over engagement-baiting.
 
-This extension adapts Vibeflow's universal voice principles to Twitter's constraints and opportunities while optimizing for algorithmic visibility without compromising brand authenticity.
+This extension adapts Agonda's universal voice principles to Twitter's constraints and opportunities while optimizing for algorithmic visibility without compromising brand authenticity.
 
-**Why Twitter matters for Vibeflow:**
+**Why Twitter matters for Agonda:**
 - Our target audience (Marketing Architects, technical practitioners) is highly active on the platform
 - [Reply engagement is weighted 75x more than likes](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md)—perfect alignment with our intellectually provocative, conversation-starting voice
 - [Small account visibility will improve with Grok AI](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md)—content evaluated on merit, not follower count
@@ -704,7 +704,7 @@ Own your stack. Own your destiny."
 
 **Strategy:** The more Twitter/X moves toward AI quality evaluation, the better our voice performs.
 
-**Why Vibeflow Voice Wins with Grok:**
+**Why Agonda Voice Wins with Grok:**
 
 | Voice Attribute | Grok AI Advantage |
 |-----------------|-------------------|
@@ -743,7 +743,7 @@ Own your stack. Own your destiny."
 **Leverage coming changes:**
 - [Quality evaluation over engagement metrics](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md) → Evidence-based voice wins
 - [Small account visibility](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md) → Content merit matters more than followers
-- [Conversational customization](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md) → Users can request "more content like Vibeflow"
+- [Conversational customization](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md) → Users can request "more content like Agonda"
 - [Interest-based communities](/research/twitter-algorithm/2025-10-25@17:23/RESEARCH.md) → Niche positioning advantage
 
 **Strategic advantages:**
@@ -811,7 +811,7 @@ Before publishing Twitter content, verify:
 
 ### Example 1: Product Announcement (Single Tweet)
 
-> Vibeflow now integrates Firecrawl for web research and Perplexity for AI verification.
+> Agonda now integrates Firecrawl for web research and Perplexity for AI verification.
 >
 > Every research claim: sourced, cited, defensible.
 > Every strategy document: evidence-based, not hope-based.

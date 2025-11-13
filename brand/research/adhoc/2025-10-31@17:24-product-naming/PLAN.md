@@ -8,7 +8,7 @@
 
 ## Objective
 
-Generate strategic name candidates for the Agentic Marketing Architecture product (currently "vibeflow"—placeholder name that's taken and no longer suitable).
+Generate strategic name candidates for the Agentic Marketing Architecture product (currently "agonda"—placeholder name that's taken and no longer suitable).
 
 **Success Criteria:**
 - 15-25 name candidates across 4-5 distinct naming strategies
@@ -29,7 +29,7 @@ Generate strategic name candidates for the Agentic Marketing Architecture produc
 
 ### Current Placeholder
 
-**"Vibeflow"** - No longer viable (taken, doesn't fit strategic positioning)
+**"Agonda"** - No longer viable (taken, doesn't fit strategic positioning)
 
 ### Naming Requirements
 
@@ -120,7 +120,7 @@ For each strategy, define:
 - Strategic rationale (why this approach fits the brand)
 - Naming principles (what makes a good name in this category)
 - Example patterns to explore
-- How it differentiates from "vibeflow" and competitor names
+- How it differentiates from "agonda" and competitor names
 
 **Output Artifact:** `artifacts/02-naming-strategies.md`
 
@@ -337,7 +337,7 @@ Synthesize research into clear recommendation:
 3. **Implementation Considerations**
    - Trademark filing strategy
    - Domain acquisition steps
-   - Brand transition plan (from "vibeflow")
+   - Brand transition plan (from "agonda")
    - International considerations
 
 4. **Alternative Candidates** (if top 3 aren't viable)
@@ -394,7 +394,7 @@ All artifacts stored in `/brand/research/adhoc/2025-10-31@17:24-product-naming/a
 2. ✅ All candidates evaluated against brand strategy (positioning, pillars, voice)
 3. ✅ Top candidates checked for domain/trademark feasibility
 4. ✅ Clear top 3 recommendations with strategic rationale
-5. ✅ Implementation guidance provided for transition from "vibeflow"
+5. ✅ Implementation guidance provided for transition from "agonda"
 6. ✅ Names honor Alavida's Spanish-American roots while supporting Marketing Architecture positioning
 7. ✅ At least 1 recommended name feels authentically differentiated from competitor naming patterns
 
