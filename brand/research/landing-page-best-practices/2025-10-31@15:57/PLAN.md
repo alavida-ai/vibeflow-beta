@@ -5,7 +5,7 @@
 
 ## Objective
 
-Synthesize research from three authoritative sources (Unbounce, Mailchimp) to create a comprehensive, evidence-based guide on high-converting landing page design and best practices. This research will inform future landing page creation for Vibeflow's marketing campaigns.
+Synthesize research from three authoritative sources (Unbounce, Mailchimp) to create a comprehensive, evidence-based guide on high-converting landing page design and best practices. This research will inform future landing page creation for Agonda's marketing campaigns.
 
 ## Approach
 
@@ -14,7 +14,7 @@ Synthesize research from three authoritative sources (Unbounce, Mailchimp) to cr
 3. **Synthesize unique insights** - Highlight differentiated or counterintuitive findings
 4. **Create actionable framework** - Structure as reference guide for landing page creation
 
-This research follows the **unopinionated factual gathering** principle of the research domain—documenting what the industry experts say works, not yet prescribing what Vibeflow should do.
+This research follows the **unopinionated factual gathering** principle of the research domain—documenting what the industry experts say works, not yet prescribing what Agonda should do.
 
 ## Input Data
 
@@ -98,7 +98,7 @@ For each insight:
 - Which source provided it
 - Supporting evidence or examples
 - Why it's differentiated or counterintuitive
-- Potential applicability to Vibeflow
+- Potential applicability to Agonda
 
 ---
 

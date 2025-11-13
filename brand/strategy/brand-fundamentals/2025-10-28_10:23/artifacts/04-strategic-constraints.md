@@ -248,7 +248,7 @@ When creating marketing content: Does it avoid "easy" language, demonstrate owne
 
 When considering partnerships: Do they share our values of empowerment over ease, ownership over lock-in, augmentation over replacement, depth over accessibility, quality over scale?
 
-**If an opportunity requires violating these constraints to succeed, it's not the right opportunity—no matter how profitable or popular.** These boundaries protect the strategic territory that makes Vibeflow defensible. They're not limitations; they're the edges of our moat.
+**If an opportunity requires violating these constraints to succeed, it's not the right opportunity—no matter how profitable or popular.** These boundaries protect the strategic territory that makes Agonda defensible. They're not limitations; they're the edges of our moat.
 
 The moment we compromise on "never say easy," we become indistinguishable from [85% of competitors](/research/category-landscape/RESEARCH.md). The moment we create lock-in, we lose the [100% differentiated business model positioning](/research/category-landscape/RESEARCH.md). The moment we position AI as replacement, we undermine our [core augmentation philosophy](/research/brand-story-interview/RESEARCH.md). The moment we target "everyone," we dilute the [niche premium brand](/research/category-landscape/RESEARCH.md). The moment we produce slop, we destroy credibility on our [existential purpose](/research/brand-story-interview/RESEARCH.md).
 

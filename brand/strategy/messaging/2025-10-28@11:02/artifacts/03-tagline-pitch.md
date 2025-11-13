@@ -33,11 +33,11 @@
 
 ### Primary Pitch
 
-**Alavida is a Marketing Architecture platform that enables marketing strategists and agency owners to build and own their AI infrastructure—not rent tools they'll outgrow. Through Claude Code and the vibeflow framework, you design systematic workflows that become strategic assets, creating competitive advantage through competency rather than convenience.**
+**Alavida is a Marketing Architecture platform that enables marketing strategists and agency owners to build and own their AI infrastructure—not rent tools they'll outgrow. Through Claude Code and the agonda framework, you design systematic workflows that become strategic assets, creating competitive advantage through competency rather than convenience.**
 
 **Structure breakdown:**
 - **Who we are:** Marketing Architecture platform (category definition + differentiation)
-- **What we do:** Enable building and owning AI infrastructure through Claude Code and vibeflow framework
+- **What we do:** Enable building and owning AI infrastructure through Claude Code and agonda framework
 - **Why it matters:** Creates competitive advantage through competency (strategic outcome customers seek)
 
 **Why this works:**
@@ -48,7 +48,7 @@ It captures the complete transformation our customers seek. William's journey de
 
 The pitch differentiates sharply from the [85% of competitors who promise "easy buttons"](/research/category-landscape/RESEARCH.md) ("in seconds," "no coding required"). By positioning on "competency rather than convenience," we signal that we serve the ambitious minority—the [5-10% of marketing strategists who recognize that renting convenience creates dependency](/strategy/positioning/STRATEGY.md), while building capability creates competitive advantage.
 
-The specific mention of Claude Code and vibeflow framework makes our claim concrete and defensible. Competitors can't easily copy this positioning because their [SaaS business models prevent them from claiming ownership](/research/category-landscape/RESEARCH.md), and their ease-focused branding prevents them from celebrating complexity as a moat.
+The specific mention of Claude Code and agonda framework makes our claim concrete and defensible. Competitors can't easily copy this positioning because their [SaaS business models prevent them from claiming ownership](/research/category-landscape/RESEARCH.md), and their ease-focused branding prevents them from celebrating complexity as a moat.
 
 ---
 
@@ -66,7 +66,7 @@ The specific mention of Claude Code and vibeflow framework makes our claim concr
 
 **Alternative 2: Identity-Transformation Framing**
 
-*Alavida transforms marketing strategists from overwhelmed tool users into Marketing Architects. Through Claude Code and our vibeflow framework, you design owned AI infrastructure—systematic workflows that become strategic assets competitors can't replicate. Own your systems. Build your competency. Win the AI age.*
+*Alavida transforms marketing strategists from overwhelmed tool users into Marketing Architects. Through Claude Code and our agonda framework, you design owned AI infrastructure—systematic workflows that become strategic assets competitors can't replicate. Own your systems. Build your competency. Win the AI age.*
 
 **Why this works:**
 - Emphasizes [identity transformation](/strategy/positioning/STRATEGY.md) at the heart of positioning
@@ -114,7 +114,7 @@ The **primary pitch** should be used in:
 2. **Category:** "Marketing Architecture" (category ownership)
 3. **Ownership positioning:** "build and own" vs. "rent" (philosophical differentiator)
 4. **Outcome:** "competitive advantage" (strategic aspiration)
-5. **Method:** Claude Code + vibeflow framework (concrete proof)
+5. **Method:** Claude Code + agonda framework (concrete proof)
 
 ### Adaptation Guidelines
 

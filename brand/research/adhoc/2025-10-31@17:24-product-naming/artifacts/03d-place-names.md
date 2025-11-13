@@ -108,7 +108,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Place-name vs. process metaphor (location vs. flow)
 - Spanish vs. English (cultural specificity vs. generic)
 - Architectural permanence vs. ethereal movement (market structure vs. vibe)
@@ -268,7 +268,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Strategic territory vs. organic flow (architected vs. natural)
 - Spanish sophistication vs. English accessibility (exclusive vs. inclusive)
 - Four syllables vs. two syllables (substantial vs. light)
@@ -441,7 +441,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Branded territory vs. organic flow (ownership vs. process)
 - Spanish vs. English (cultural specificity vs. generic)
 - Precision/definition vs. ethereal energy (marked vs. vibe)
@@ -621,7 +621,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Intentional design vs. organic flow (architecture vs. emergence)
 - Spanish sophistication vs. English accessibility
 - Design rigor vs. energetic movement (structure vs. vibe)
@@ -794,7 +794,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Strategic campaign territory vs. organic flow (cultivated vs. emergent)
 - Spanish vs. English (cultural specificity vs. generic)
 - Long-term cultivation vs. moment-to-moment flow (patience vs. immediacy)

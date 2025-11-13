@@ -71,7 +71,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Technical/systematic vs. organic/ethereal
 - Synthesis (combining) vs. flow (movement)
 - Methodology suffix vs. process metaphor
@@ -237,7 +237,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Resonance (impact/amplification) vs. flow (process/movement)
 - Marketing outcome focus vs. workflow metaphor
 - Romance language elegance vs. English compound
@@ -403,7 +403,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Cognition (intelligence/understanding) vs. flow (process/movement)
 - AI/systems terminology vs. organic metaphor
 - Technical vs. ethereal
@@ -572,7 +572,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Orchestration (coordination/systems) vs. flow (process/movement)
 - Technical systems metaphor vs. organic energy metaphor
 - Complexity/mastery vs. accessibility
@@ -740,7 +740,7 @@
 
 ### Differentiation Analysis
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Narrative (storytelling/content) vs. flow (process/workflow)
 - Output-focused vs. process-focused
 - Literary vs. energetic

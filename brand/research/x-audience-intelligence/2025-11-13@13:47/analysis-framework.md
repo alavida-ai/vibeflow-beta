@@ -187,7 +187,7 @@ Contrarian positioning | High | Moderate | Medium | Clear appetite for takes
 
 ## 6. VIBEFLOW DIFFERENTIATION ANALYSIS
 
-Given vibeflow's positioning, assess where unique territory exists:
+Given agonda's positioning, assess where unique territory exists:
 
 ```
 VIBEFLOW POSITIONING | @BORINGMARKETER COVERAGE | OPPORTUNITY
@@ -213,27 +213,27 @@ KEY FINDINGS:
 
 1. HIGHEST-ENGAGEMENT CONTENT TYPES
    [List content types that consistently drive saves/engagement]
-   Implication for vibeflow: [What should we create?]
+   Implication for agonda: [What should we create?]
 
 2. DOMINANT PAIN POINTS
    [List top 3-5 pain points audience cares about]
-   Implication for vibeflow: [Which resonate with our positioning?]
+   Implication for agonda: [Which resonate with our positioning?]
 
 3. VALUE GAPS / UNDERSERVED NARRATIVES
    [List 3-5 gaps where demand exceeds supply]
-   Implication for vibeflow: [Which gaps can we own?]
+   Implication for agonda: [Which gaps can we own?]
 
 4. VOICE/TONE OBSERVATIONS
    [What works in this space, what doesn't]
-   Implication for vibeflow: [How should we adjust our voice?]
+   Implication for agonda: [How should we adjust our voice?]
 
 5. DIFFERENTIATION OPPORTUNITIES
-   [Where can vibeflow claim unique territory]
-   Implication for vibeflow: [What should be our unique angles?]
+   [Where can agonda claim unique territory]
+   Implication for agonda: [What should be our unique angles?]
 
 6. AUDIENCE PSYCHOLOGY
    [What makes this audience tick]
-   Implication for vibeflow: [How do we attract and retain them?]
+   Implication for agonda: [How do we attract and retain them?]
 ```
 
 ---
@@ -245,7 +245,7 @@ KEY FINDINGS:
 3. **Extract Pain Points:** Build inventory of pain points by engagement
 4. **Analyze Voice:** Complete tone/voice analysis
 5. **Identify Gaps:** Find high-engagement, low-frequency topics
-6. **Assess Differentiation:** Map vibeflow positioning to gaps
+6. **Assess Differentiation:** Map agonda positioning to gaps
 7. **Synthesize:** Write findings in RESEARCH.md
 
 ---
@@ -256,6 +256,6 @@ KEY FINDINGS:
 - [ ] Top 10 pain points identified with engagement data
 - [ ] 5+ value gaps identified with evidence
 - [ ] Voice characteristics documented
-- [ ] Vibeflow differentiation opportunities mapped
+- [ ] Agonda differentiation opportunities mapped
 - [ ] Evidence trail clear (insight → supporting data)
 - [ ] Ready for strategy synthesis phase

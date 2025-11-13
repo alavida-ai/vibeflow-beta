@@ -14,7 +14,7 @@
 
 **Why differentiated:** Counter to the 85% of competitors who lead with "easy" and "effortless" positioning. Suggests that deliberately accepting complexity creates competitive advantage.
 
-**Applicability to Vibeflow:** Directly aligns with brand pillar "Capability Over Convenience." This validates our positioning that complexity you control beats simplicity you rent.
+**Applicability to Agonda:** Directly aligns with brand pillar "Capability Over Convenience." This validates our positioning that complexity you control beats simplicity you rent.
 
 ### Multi-Step Forms Reduce Friction
 **Source:** [Unbounce Best Practices](https://unbounce.com/landing-page-articles/landing-page-best-practices/)
@@ -148,30 +148,30 @@
 
 ---
 
-## 5. Application to Vibeflow
+## 5. Application to Agonda
 
 ### Direct Alignment Opportunities
 
 **1. Complexity as Moat**
-- Vibeflow pillar: "Capability Over Convenience"
+- Agonda pillar: "Capability Over Convenience"
 - Research validation: "The learning curve is the moat"
 - Application: Don't apologize for Claude Code's technical requirements—position as competitive advantage
 
 **2. Benefits Over Features**
 - Universal consensus (all 3 sources)
-- Vibeflow opportunity: Emphasize transformation outcomes ("Become Marketing Architect") over technical features (MCP integrations, Docker deployment)
+- Agonda opportunity: Emphasize transformation outcomes ("Become Marketing Architect") over technical features (MCP integrations, Docker deployment)
 
 **3. Mobile-First Separate Experiences**
 - 83% of traffic is mobile
-- Vibeflow consideration: Desktop landing pages can showcase technical depth; mobile versions focus on value proposition and social proof
+- Agonda consideration: Desktop landing pages can showcase technical depth; mobile versions focus on value proposition and social proof
 
 **4. Progressive Disclosure for Complex Offerings**
 - ClaimCompass model: Short CTA upfront, education below
-- Vibeflow application: Marketing Architecture is complex/unfamiliar—provide fast-track for sophisticated users, education for skeptics
+- Agonda application: Marketing Architecture is complex/unfamiliar—provide fast-track for sophisticated users, education for skeptics
 
 **5. Time-Based Campaigns**
 - MyTutor's exam results day targeting
-- Vibeflow opportunity: Launch campaigns tied to AI announcements, Claude updates, or marketing event cycles (campaign season, end-of-quarter)
+- Agonda opportunity: Launch campaigns tied to AI announcements, Claude updates, or marketing event cycles (campaign season, end-of-quarter)
 
 ### Strategic Considerations
 
@@ -182,12 +182,12 @@
 
 **Emphasize Ownership Benefits:**
 - Forms asking for significant information can build credibility when offer value matches
-- Vibeflow: Infrastructure ownership is high-value offer—detailed onboarding forms may actually signal seriousness
+- Agonda: Infrastructure ownership is high-value offer—detailed onboarding forms may actually signal seriousness
 
 **Video Impact:**
 - 80% conversion increase potential
-- Vibeflow opportunity: Technical demos showing Claude Code workflows, customer success stories, architecture explanations
+- Agonda opportunity: Technical demos showing Claude Code workflows, customer success stories, architecture explanations
 
 **Social Proof with Authenticity:**
 - All 3 sources emphasize real names, photos, context
-- Vibeflow: Feature William's transformation story with full details (not anonymous "Marketing Strategist")
+- Agonda: Feature William's transformation story with full details (not anonymous "Marketing Strategist")

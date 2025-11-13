@@ -62,7 +62,7 @@ validated: true
 
 ---
 
-### Pain Points (Before Alavida/Vibeflow)
+### Pain Points (Before Alavida/Agonda)
 
 #### 1. The Productivity Paradox
 > "I'm spending still the same amount of time on a computer, if not more than before. And I thought this was supposed to make everything easier. It's just 10, maybe 15, 20, whatever times my output."
@@ -146,7 +146,7 @@ The conversion wasn't feature-based - it was **philosophical alignment**. Willia
 
 ---
 
-### Transformation (After Alavida/Vibeflow)
+### Transformation (After Alavida/Agonda)
 
 **Functional Change:**
 - Compressing weeks of strategic work (brand fundamentals, comp analysis) into hours
@@ -207,7 +207,7 @@ William coined "**vibe marketing**" to describe his human-in-loop approach - thi
 
 ---
 
-### Pain Points (Before Alavida/Vibeflow)
+### Pain Points (Before Alavida/Agonda)
 
 #### 1. Scaling Bottleneck
 
@@ -266,7 +266,7 @@ For Thomas, the "aha" is less philosophical and more **practical proof**:
 
 ---
 
-### Transformation (After Alavida/Vibeflow)
+### Transformation (After Alavida/Agonda)
 
 **Functional Change:**
 - Onboarding new clients in days instead of weeks
@@ -521,13 +521,13 @@ Transformation isn't *skill-based* - it's **identity-based**. They already have 
 - Value learning but experience grinding fatigue
 
 **Implication:**
-Vibeflow must deliver:
+Agonda must deliver:
 - **Sophistication** (systems building)
 - **Pragmatism** (actual time savings)
 - **Philosophy** (ownership alignment)
 - **Craft** (quality maintenance)
 
-Most competitors optimize for 1-2. Vibeflow must deliver all 4.
+Most competitors optimize for 1-2. Agonda must deliver all 4.
 
 ---
 
@@ -546,7 +546,7 @@ Firecrawl + Perplexity positioned as verification layers that make lying structu
 
 **Insight:** William's conversion was **philosophical**, not feature-based
 
-He chose Vibeflow because it aligned with *who he wants to be*:
+He chose Agonda because it aligned with *who he wants to be*:
 - Builder (not renter)
 - Architect (not tactician)
 - Owner (not subscriber)

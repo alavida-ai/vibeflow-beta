@@ -27,7 +27,7 @@
 **Competitive Moat:**
 - Identity-based positioning is **defensible**
 - Competitors sell tools/features (can be copied)
-- Vibeflow sells transformation (requires authentic product truth)
+- Agonda sells transformation (requires authentic product truth)
 - Can't fake "become a Marketing Architect" without real framework
 
 ---
@@ -324,7 +324,7 @@
 
 ---
 
-### Where Vibeflow is Unassailable
+### Where Agonda is Unassailable
 
 **1. Identity Ownership**
 - We coined "Marketing Architect"
@@ -358,7 +358,7 @@
 - Not a tool (can be copied)
 - Not a platform (can be competed with)
 - Identity category + ecosystem + community
-- **Marketing Architect = Vibeflow**
+- **Marketing Architect = Agonda**
 
 **Competitive Moats:**
 - Category ownership (brand space)

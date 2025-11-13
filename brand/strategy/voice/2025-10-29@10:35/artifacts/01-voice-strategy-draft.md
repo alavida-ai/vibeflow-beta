@@ -1,4 +1,4 @@
-# Vibeflow Voice Strategy
+# Agonda Voice Strategy
 
 **Strategy Domain:** Voice & Tone
 **Synthesized:** 2025-10-29
@@ -8,11 +8,11 @@
 
 ## Voice Overview
 
-Vibeflow speaks with the confidence of an experienced systems builder—direct, technically credible, and unapologetically focused on craft over convenience. Our voice reflects the mindset of our audience: sophisticated practitioners who [value ownership over convenience and quality over speed](/research/customer-insights/RESEARCH.md), who see AI as leverage rather than replacement, and who understand that [infrastructure independence equals business independence](/research/brand-story-interview/RESEARCH.md).
+Agonda speaks with the confidence of an experienced systems builder—direct, technically credible, and unapologetically focused on craft over convenience. Our voice reflects the mindset of our audience: sophisticated practitioners who [value ownership over convenience and quality over speed](/research/customer-insights/RESEARCH.md), who see AI as leverage rather than replacement, and who understand that [infrastructure independence equals business independence](/research/brand-story-interview/RESEARCH.md).
 
 We communicate like a technical peer who respects our audience's intelligence and challenges them to think deeper. Where [competitors use agreeable, patronizing language that insults sophisticated users](/research/customer-insights/RESEARCH.md), we embrace intellectual rigor and critical thinking. Where others promise effortless automation, we acknowledge the grind of foundational work because we know that [better foundational work means better outcomes](/research/customer-insights/RESEARCH.md). We don't soften uncomfortable truths or hedge bold claims—we state what we know with evidence-based conviction.
 
-Our voice embodies the [human-in-loop philosophy at our core](/research/brand-story-interview/RESEARCH.md). We speak as architect to architect, builder to builder, craftsperson to craftsperson. Every sentence reinforces that Vibeflow is built by practitioners who understand the [productivity paradox of working more hours despite 10-20x AI-augmented output](/research/customer-insights/RESEARCH.md), who have experienced the [trust issues from hallucination trauma](/research/customer-insights/RESEARCH.md), and who chose to build infrastructure that solves real problems rather than create marketing illusions.
+Our voice embodies the [human-in-loop philosophy at our core](/research/brand-story-interview/RESEARCH.md). We speak as architect to architect, builder to builder, craftsperson to craftsperson. Every sentence reinforces that Agonda is built by practitioners who understand the [productivity paradox of working more hours despite 10-20x AI-augmented output](/research/customer-insights/RESEARCH.md), who have experienced the [trust issues from hallucination trauma](/research/customer-insights/RESEARCH.md), and who chose to build infrastructure that solves real problems rather than create marketing illusions.
 
 ---
 
@@ -135,9 +135,9 @@ Our tone positioning reflects [modern tech/creator standards for casual formalit
 - Occasional sentence fragments for emphasis
 
 **Spectrum examples:**
-- More formal: "Vibeflow enables practitioners to..."
-- Our sweet spot: "Vibeflow lets you build marketing systems..."
-- Too casual: "Vibeflow helps you crush AI marketing!"
+- More formal: "Agonda enables practitioners to..."
+- Our sweet spot: "Agonda lets you build marketing systems..."
+- Too casual: "Agonda helps you crush AI marketing!"
 
 ---
 
@@ -221,8 +221,8 @@ These mechanics apply across all channels and contexts, establishing consistency
 **Application:**
 - ✅ "You own your infrastructure"
 - ❌ "Your infrastructure is owned by you"
-- ✅ "Vibeflow integrates Perplexity for verification"
-- ❌ "Perplexity is integrated by Vibeflow"
+- ✅ "Agonda integrates Perplexity for verification"
+- ❌ "Perplexity is integrated by Agonda"
 
 **Why it matters:** Passive voice implies lack of agency—contradicting our empowerment philosophy.
 
@@ -301,7 +301,7 @@ These mechanics apply across all channels and contexts, establishing consistency
 - Explain why it matters
 
 **Example:**
-> "Marketing strategists report working the same hours despite 10-20x AI-augmented output (customer research, Oct 2025). The bottleneck isn't AI capability—it's orchestration overhead. Vibeflow eliminates copy-paste busywork through integrated workflow environments."
+> "Marketing strategists report working the same hours despite 10-20x AI-augmented output (customer research, Oct 2025). The bottleneck isn't AI capability—it's orchestration overhead. Agonda eliminates copy-paste busywork through integrated workflow environments."
 
 ---
 
@@ -316,12 +316,12 @@ These mechanics apply across all channels and contexts, establishing consistency
 - Fragments (permitted): Emphasis, rhythm, dramatic effect
 
 **Example paragraph:**
-> "Most AI marketing tools promise to replace you. That's extraction, not empowerment. Vibeflow takes a different approach—we give sophisticated practitioners infrastructure to architect their own systems. You maintain control, own your data, and build competitive advantages through proprietary workflows. Your competitors use autopilot. You use co-pilot. That's the difference."
+> "Most AI marketing tools promise to replace you. That's extraction, not empowerment. Agonda takes a different approach—we give sophisticated practitioners infrastructure to architect their own systems. You maintain control, own your data, and build competitive advantages through proprietary workflows. Your competitors use autopilot. You use co-pilot. That's the difference."
 
 **Analysis:**
 - Short (6-8 words): "That's extraction, not empowerment." | "Your competitors use autopilot." | "That's the difference."
 - Medium (11-18 words): "Most AI marketing tools promise to replace you." | "You use co-pilot."
-- Long (20-25 words): "Vibeflow takes a different approach—we give sophisticated practitioners infrastructure to architect their own systems." | "You maintain control, own your data, and build competitive advantages through proprietary workflows."
+- Long (20-25 words): "Agonda takes a different approach—we give sophisticated practitioners infrastructure to architect their own systems." | "You maintain control, own your data, and build competitive advantages through proprietary workflows."
 
 ---
 
@@ -331,13 +331,13 @@ These mechanics apply across all channels and contexts, establishing consistency
 
 **Application:**
 - ✅ "You own your infrastructure. We provide the foundation."
-- ❌ "Vibeflow enables users to maintain infrastructure ownership."
+- ❌ "Agonda enables users to maintain infrastructure ownership."
 - ✅ "Your judgment is your competitive advantage."
 - ❌ "Marketing architects benefit from maintaining human oversight."
 
 **When to use first person:**
 - Stating brand positions: "We believe AI should enhance humans, not replace them"
-- Explaining approach: "We built Vibeflow for the ambitious 5-10%"
+- Explaining approach: "We built Agonda for the ambitious 5-10%"
 - Making commitments: "We never compromise on ownership"
 
 **When to use second person:**
@@ -349,7 +349,7 @@ These mechanics apply across all channels and contexts, establishing consistency
 
 ## Distinctive Elements
 
-These recurring patterns make Vibeflow voice immediately recognizable across contexts.
+These recurring patterns make Agonda voice immediately recognizable across contexts.
 
 ### 1. Ownership Language Patterns
 
@@ -391,7 +391,7 @@ These recurring patterns make Vibeflow voice immediately recognizable across con
 **Recurring structure:**
 - Industry narrative: "[Most vendors promise X]"
 - Our truth: "That's [Y negative consequence], not [Z real value]"
-- Our alternative: "Vibeflow does [contrarian approach]"
+- Our alternative: "Agonda does [contrarian approach]"
 
 **Examples:**
 - "The AI industry promises to replace you. That's extraction, not innovation."
@@ -449,7 +449,7 @@ These recurring patterns make Vibeflow voice immediately recognizable across con
 > "The AI marketing industry has a narrative: AI will replace marketers. That's not disruption—that's extraction dressed as innovation. The real opportunity isn't automating marketers out of existence. It's empowering them to architect systems competitors can't replicate."
 
 **Evidence-Based Authority:**
-> "Marketing strategists report working the same hours despite 10-20x AI-augmented output (customer research, Oct 2025). The bottleneck isn't AI capability—it's orchestration overhead. Vibeflow eliminates the copy-paste busywork through integrated workflow environments."
+> "Marketing strategists report working the same hours despite 10-20x AI-augmented output (customer research, Oct 2025). The bottleneck isn't AI capability—it's orchestration overhead. Agonda eliminates the copy-paste busywork through integrated workflow environments."
 
 **Systems Builder:**
 > "You're not learning a tool—you're building marketing infrastructure. Every workflow you design compounds. Every system you architect creates competitive advantage. Better foundational work, better systems, better outcomes."

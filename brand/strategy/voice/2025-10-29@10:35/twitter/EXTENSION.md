@@ -1,4 +1,4 @@
-# Vibeflow Voice Extension: Twitter/X
+# Agonda Voice Extension: Twitter/X
 
 **Extends:** [Universal Voice Strategy](../STRATEGY.md)  
 **Synthesized:** 2025-10-29  

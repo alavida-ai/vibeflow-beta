@@ -5,7 +5,7 @@
 
 ## Objective
 
-Synthesize comprehensive voice strategy for vibeflow brand by integrating research findings from voice benchmarking, brand fundamentals, and customer insights, then create a Twitter-specific extension that aligns voice guidelines with X algorithm optimization (based on September-October 2025 algorithm updates).
+Synthesize comprehensive voice strategy for agonda brand by integrating research findings from voice benchmarking, brand fundamentals, and customer insights, then create a Twitter-specific extension that aligns voice guidelines with X algorithm optimization (based on September-October 2025 algorithm updates).
 
 ## Approach
 
@@ -44,14 +44,14 @@ Consolidate voice benchmarking research and brand fundamentals into comprehensiv
 
 **Task Details:**
 
-You are synthesizing voice strategy for vibeflow based on research findings. Create a comprehensive voice strategy document that follows this structure:
+You are synthesizing voice strategy for agonda based on research findings. Create a comprehensive voice strategy document that follows this structure:
 
 **Structure:**
 1. **Voice Overview** - Core voice identity in 2-3 paragraphs
 2. **Voice Attributes** - 3-5 defining characteristics with descriptions and examples
 3. **Tone Positioning** - Spectrum positioning (casual/formal, humorous/serious, irreverent/respectful, straightforward/subtle)
 4. **Universal Voice Principles** - Core mechanics that apply across all channels (active voice, sentence structure, vocabulary choices, etc.)
-5. **Distinctive Elements** - Recurring patterns that make vibeflow voice recognizable
+5. **Distinctive Elements** - Recurring patterns that make agonda voice recognizable
 6. **What We Sound Like / What We Don't Sound Like** - Concrete examples
 
 **Requirements:**

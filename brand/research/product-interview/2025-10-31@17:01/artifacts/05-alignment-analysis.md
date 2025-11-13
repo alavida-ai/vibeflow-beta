@@ -152,7 +152,7 @@
 - **HubSpot:** "Effortlessly simple"
 - **Jasper:** "Accessible to every marketer"
 - **Copy.ai:** "Anyone can use"
-- **Vibeflow:** "Become a Marketing Architect" (implicit: requires work)
+- **Agonda:** "Become a Marketing Architect" (implicit: requires work)
 
 ---
 
@@ -514,7 +514,7 @@
 **Current Reality:**
 - Requires onboarding calls
 - Manual repo setup
-- CLI tool planned (create-vibeflow-app)
+- CLI tool planned (create-agonda-app)
 
 **Gap:** Scalability barrier
 

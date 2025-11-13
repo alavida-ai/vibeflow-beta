@@ -86,14 +86,14 @@ Add 2-3 customer testimonials with:
 - Photo (builds authenticity)
 
 **Example format:**
-> **"Vibeflow compressed 3 weeks of brand strategy work into 4 hours—and the quality was better than hiring an agency."**
+> **"Agonda compressed 3 weeks of brand strategy work into 4 hours—and the quality was better than hiring an agency."**
 >
 > *— William Chen, Founder @ TechStartupX*
 
 **Strategic Win (1-2 weeks):**
 Create comprehensive case study:
 - Before state: SaaS chaos, subscription fatigue, manual orchestration
-- Process: How they used Vibeflow's 3-phase transformation
+- Process: How they used Agonda's 3-phase transformation
 - After state: Owned infrastructure, time savings, cost reduction
 - Quantified results: "$11K/month saved on subscriptions, 20 hours/week freed up"
 
@@ -124,7 +124,7 @@ Create comprehensive case study:
 **Quick Win (1 week):**
 Add **3 strategic screenshots:**
 
-1. **Cursor IDE with Vibeflow running** (hero section)
+1. **Cursor IDE with Agonda running** (hero section)
    - Annotated screenshot showing: File structure, MCP integration, workflow execution
    - Caption: "Your entire marketing operation from a single IDE—version-controlled, locally-run, permanently yours"
 
@@ -184,7 +184,7 @@ This single phrase undermines the entire brand strategy:
 **Option 2:** Replace with honest capability framing
 - "Designed for marketing strategists with command line comfort"
 - "Setup requires Docker knowledge—we provide comprehensive onboarding"
-- "If you're comfortable with developer tools, you'll master Vibeflow"
+- "If you're comfortable with developer tools, you'll master Agonda"
 
 **Strategic Rationale:**
 The "no coding required" objection handler solves the wrong problem:
@@ -285,7 +285,7 @@ If an agency builds your system for you, do you truly own it? This creates funda
 The **"Own Your Stack, Own Your Destiny"** pillar is your most defensible competitive moat (100% of competitors use agency/SaaS models). Don't dilute it with agency positioning.
 
 **Clarification:** You can offer **services** (education, onboarding, consulting) without being an **agency** (done-for-you). Position as:
-- **Platform:** The infrastructure (Cursor + vibeflow framework)
+- **Platform:** The infrastructure (Cursor + agonda framework)
 - **Education:** The knowledge transfer (Marketing Architect training)
 - **Support:** Onboarding and guidance (strategic consulting)
 

@@ -193,9 +193,9 @@
 
 ---
 
-## Differentiation Opportunities for Vibeflow
+## Differentiation Opportunities for Agonda
 
-### Where @boringmarketer Is Strong (and vibeflow should match)
+### Where @boringmarketer Is Strong (and agonda should match)
 - Specificity and numbers
 - Tactical frameworks
 - Systems thinking
@@ -203,26 +203,26 @@
 - DIY/ownership mindset
 - Community building
 
-### Where Vibeflow Could Own Unique Territory
+### Where Agonda Could Own Unique Territory
 
 1. **Infrastructure as Strategic Asset** (not just tool consolidation)
-   - @boringmarketer focuses on efficiency; vibeflow can focus on OWNERSHIP
+   - @boringmarketer focuses on efficiency; agonda can focus on OWNERSHIP
    - "Your prompts are your codebase" vs. "use fewer tools"
 
 2. **Quality Over Volume** (anti-AI-slop positioning)
-   - @boringmarketer mostly efficiency-focused; vibeflow emphasizes CRAFT
-   - "Vibe marketing" is about feel; vibeflow is about systems + quality
+   - @boringmarketer mostly efficiency-focused; agonda emphasizes CRAFT
+   - "Vibe marketing" is about feel; agonda is about systems + quality
 
 3. **Marketing Architect Identity** (vs. "vibe marketer")
    - More professional, systems-thinking orientation
    - Infrastructure + philosophy positioning
 
 4. **Empowerment Over Convenience** (explicit philosophy)
-   - @boringmarketer assumes DIY; vibeflow teaches WHY ownership matters
+   - @boringmarketer assumes DIY; agonda teaches WHY ownership matters
    - Deeper strategic positioning
 
 5. **Anti-SaaS Lock-in** (explicit stance)
-   - @boringmarketer mentions it passingly; vibeflow could own this narrative
+   - @boringmarketer mentions it passingly; agonda could own this narrative
    - "Own your stack, own your destiny" vs. implied preference
 
 ---
@@ -231,6 +231,6 @@
 
 **Phase 2 Data:** Continue scraping more tweets to validate patterns (150-tweet target)
 
-**Phase 3:** Complete content segmentation, pain point inventory, and vibeflow differentiation mapping
+**Phase 3:** Complete content segmentation, pain point inventory, and agonda differentiation mapping
 
-**Phase 4:** Synthesize into RESEARCH.md with strategic implications for vibeflow X strategy
+**Phase 4:** Synthesize into RESEARCH.md with strategic implications for agonda X strategy

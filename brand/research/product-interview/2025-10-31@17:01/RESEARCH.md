@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-Vibeflow is fundamentally misunderstood if viewed as a traditional SaaS product. It is a **framework monetization play** analogous to Vercel/Next.js: an open, free marketing framework (Agentic Marketing Architecture) with a usage-based tool ecosystem (Alavida platform).
+Agonda is fundamentally misunderstood if viewed as a traditional SaaS product. It is a **framework monetization play** analogous to Vercel/Next.js: an open, free marketing framework (Agentic Marketing Architecture) with a usage-based tool ecosystem (Alavida platform).
 
 **The Product Model:**
 - **Framework (Free):** Agentic Marketing Architecture—methodology for building marketing operations in Claude Code
@@ -44,7 +44,7 @@ Vibeflow is fundamentally misunderstood if viewed as a traditional SaaS product.
 **Interview Structure:** 5-phase discovery interview with founder
 
 **Phases:**
-1. **Product Overview & Architecture** - What is Vibeflow technically?
+1. **Product Overview & Architecture** - What is Agonda technically?
 2. **Business Model & Monetization** - How does it make money?
 3. **Customer Experience & Journey** - What's the lived experience?
 4. **Differentiation Mechanics** - What creates competitive defensibility?
@@ -270,7 +270,7 @@ Vibeflow is fundamentally misunderstood if viewed as a traditional SaaS product.
 
 ## Product Definition
 
-### What Vibeflow Is
+### What Agonda Is
 
 **Primary Product:**
 **Agentic Marketing Architecture (AMA)** - An open framework for building marketing operations in Claude Code using file-based architecture, AI agent orchestration, and "marketing as code" methodology.
@@ -286,7 +286,7 @@ Vibeflow is fundamentally misunderstood if viewed as a traditional SaaS product.
 
 ---
 
-### What Vibeflow Is Not
+### What Agonda Is Not
 
 - ❌ Traditional SaaS marketing automation platform
 - ❌ Closed, proprietary system
@@ -367,7 +367,7 @@ Marketing agency owners who:
 
 **2. Onboarding** (White-glove today, CLI-driven future)
 - Currently: Onboarding call with team, guided setup
-- Future: `create-vibeflow-app` CLI tool
+- Future: `create-agonda-app` CLI tool
 - Experience "aha moment" through example workflows
 - Brand strategy interview (guided development)
 
@@ -551,10 +551,10 @@ Marketing agency owners who:
 ---
 
 **Priority 3: Onboarding Automation**
-> "We would like to also simplify this through our CLI tool like create-vibeflow-app."
+> "We would like to also simplify this through our CLI tool like create-agonda-app."
 
 **Actions:**
-- Develop `create-vibeflow-app` CLI
+- Develop `create-agonda-app` CLI
 - Automate repo scaffolding
 - Integrate Alavida account creation
 - Maintain educational onboarding (not just technical)
@@ -689,7 +689,7 @@ Marketing agency owners who:
 
 ## Conclusion
 
-Vibeflow is not a SaaS product—it's a category creation play. The framework (Agentic Marketing Architecture) is the product, transformation ("become a Marketing Architect") is the value proposition, and ecosystem tools (Alavida platform) are the monetization layer.
+Agonda is not a SaaS product—it's a category creation play. The framework (Agentic Marketing Architecture) is the product, transformation ("become a Marketing Architect") is the value proposition, and ecosystem tools (Alavida platform) are the monetization layer.
 
 Product-brand alignment is exceptionally strong (96%). The framework delivers on core brand promise today: ownership, capability building, human augmentation, quality at scale. Ecosystem features (registry, community, multiple tools) are aspirational but achievable and strategically sound.
 
@@ -697,4 +697,4 @@ Primary strategic moat is category ownership: marketingarchitect.ai domain, "Mar
 
 Success depends on patience (framework monetization lags adoption), customer obsession (daily usage validates model), and content-first marketing (builds authority and discovery). The component registry will be catalytic—enabling network effects and exponential ecosystem value growth.
 
-**Vibeflow is building the Next.js of marketing operations. The Vercel analogy holds.**
+**Agonda is building the Next.js of marketing operations. The Vercel analogy holds.**

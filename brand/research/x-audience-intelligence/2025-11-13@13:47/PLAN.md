@@ -14,15 +14,15 @@ Understand what resonates with marketing strategists and agency owners by analyz
 - Content formats and narratives that drive engagement
 - Value gaps and underserved needs
 - Tone/voice characteristics that resonate
-- Contrasts with vibeflow positioning (where are opportunities?)
+- Contrasts with agonda positioning (where are opportunities?)
 
 ## Research Questions
 
 1. **Audience Psychology:** What pain points does the audience engage with most? (Subscription fatigue? Tool fragmentation? AI slop? Skill stagnation?)
 2. **Content Patterns:** What content formats drive engagement? (Threads? Short takes? Data/frameworks? Contrarian positions?)
 3. **Narrative Gaps:** What narratives are underrepresented or completely absent in this space?
-4. **Voice Resonance:** How does the account's tone compare to vibeflow's intended voice? What works, what doesn't?
-5. **Strategic Differentiation:** Where can vibeflow occupy unique territory that @boringmarketer doesn't claim?
+4. **Voice Resonance:** How does the account's tone compare to agonda's intended voice? What works, what doesn't?
+5. **Strategic Differentiation:** Where can agonda occupy unique territory that @boringmarketer doesn't claim?
 
 ## Analysis Scope
 
@@ -37,7 +37,7 @@ Understand what resonates with marketing strategists and agency owners by analyz
 2. **Audience Pain Point Inventory** - Direct quotes from top tweets + engagement signals
 3. **Content Framework Mapping** - Reusable structures that drive engagement
 4. **Value Gap Identification** - Underserved needs and narrative opportunities
-5. **Vibeflow Positioning Contrast** - How vibeflow can differentiate in this space
+5. **Agonda Positioning Contrast** - How agonda can differentiate in this space
 
 ## Methodology
 
@@ -56,7 +56,7 @@ Understand what resonates with marketing strategists and agency owners by analyz
 - Identify value gaps (high-demand, low-supply narratives)
 - Extract principles (not tactics) that drive engagement
 - Note tone/voice characteristics
-- Define where vibeflow can occupy unique positioning
+- Define where agonda can occupy unique positioning
 
 **Phase 4: Research Synthesis**
 - Synthesize findings into RESEARCH.md
@@ -71,7 +71,7 @@ Understand what resonates with marketing strategists and agency owners by analyz
 - [ ] Discovered 3-5 strategic value gaps/narrative opportunities
 - [ ] Clear evidence trail from insights to supporting engagement data
 - [ ] Actionable intelligence for strategy synthesis phase
-- [ ] Vibeflow differentiation opportunities identified
+- [ ] Agonda differentiation opportunities identified
 
 ## Research Confidence Level
 

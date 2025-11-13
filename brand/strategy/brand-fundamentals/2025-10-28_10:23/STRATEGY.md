@@ -9,7 +9,7 @@ validated: true
 
 ## Executive Summary
 
-Vibeflow exists to transform marketers from obsolete tacticians into Marketing Architects—designers and owners of the agentic AI systems that will define competitive advantage in the AI age. While the industry races toward "easy buttons" that create dependency, we build frameworks that create capability. Where competitors optimize for convenience and subscription lock-in, we empower ownership and architectural mastery.
+Agonda exists to transform marketers from obsolete tacticians into Marketing Architects—designers and owners of the agentic AI systems that will define competitive advantage in the AI age. While the industry races toward "easy buttons" that create dependency, we build frameworks that create capability. Where competitors optimize for convenience and subscription lock-in, we empower ownership and architectural mastery.
 
 Our strategic positioning occupies three territories of massive competitive white space: capability over convenience (vs. 85% of competitors who lead with "ease"), ownership over subscription (vs. 100% who use rental models), and augmentation over replacement (vs. competitors who position AI as workforce replacement). We explicitly serve the ambitious 5-10% of marketers who value deferred gains over quick wins—people who see learning as competitive advantage, not burden.
 

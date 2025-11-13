@@ -739,13 +739,13 @@ All claims are supported by inline URL citations to original sources.
 
 ## Strategic Application
 
-### For Vibeflow Landing Pages
+### For Agonda Landing Pages
 
 **Direct alignment opportunities:**
 
 1. **Complexity as Competitive Moat**
    - Research validates: ["The learning curve is the moat"](https://unbounce.com/landing-page-articles/landing-page-best-practices/)
-   - Vibeflow positioning: Don't apologize for Claude Code's technical requirements
+   - Agonda positioning: Don't apologize for Claude Code's technical requirements
    - Application: Position complexity as competitive advantage, not barrier
 
 2. **Benefits Over Features (Universal)**
@@ -775,7 +775,7 @@ All claims are supported by inline URL citations to original sources.
 
 ### Universal Requirements Checklist
 
-For any Vibeflow landing page:
+For any Agonda landing page:
 - [ ] Single focused conversion goal
 - [ ] Benefits-oriented headline
 - [ ] Clear, descriptive CTA above the fold

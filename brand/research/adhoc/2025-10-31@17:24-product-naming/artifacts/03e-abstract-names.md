@@ -56,7 +56,7 @@
 - Occupies premium/intellectual territory (unclaimed)
 - Sounds like infrastructure, not software
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Structural connection vs. organic flow
 - Latin precision vs. English metaphor
 - Architectural vs. ethereal
@@ -147,7 +147,7 @@
 - Material/substance metaphor (unclaimed in AI marketing)
 - Greek sophistication vs. English simplicity
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Hardened material vs. flowing energy
 - Strategic precision vs. intuitive vibe
 - Engineered substance vs. natural phenomenon
@@ -245,7 +245,7 @@
 - Tectonic/foundational metaphor (completely unused)
 - Fusion of Greek precision + Romance elegance
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Tectonic foundation vs. flowing energy
 - Architectural craft vs. organic vibe
 - Greek/Romance sophistication vs. English accessibility
@@ -340,7 +340,7 @@
 - Transformation/evolution metaphor (unclaimed)
 - Classical sophistication (completely unused in AI marketing)
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Transformation vs. flow state
 - Latin precision vs. English metaphor
 - Deliberate turning vs. organic movement
@@ -439,7 +439,7 @@
 - Arc metaphor (growth trajectory + structural element)
 - Sophisticated invention (not playful or cute)
 
-**vs. vibeflow:**
+**vs. agonda:**
 - Structured arc vs. organic flow
 - Mathematical precision vs. intuitive energy
 - Architectural form vs. natural phenomenon
@@ -563,7 +563,7 @@
    - Survey 10-15 marketing strategists (target persona)
    - Show names without context: first impressions
    - Show names with tagline: comprehension and appeal
-   - Compare against "vibeflow" as baseline
+   - Compare against "agonda" as baseline
 
 ### Decision Framework
 
