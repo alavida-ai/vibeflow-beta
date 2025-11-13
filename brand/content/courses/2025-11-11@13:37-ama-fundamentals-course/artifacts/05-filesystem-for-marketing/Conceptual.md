@@ -159,13 +159,13 @@ Create folders like `/content/`, `/research/`, `/strategy/`, `/drafts/` based on
 
 ---
 
-## Part 4: The Solution - AMA Framework + CLAUDE.md
+## Part 4: The Solution - Agonda Framework + CLAUDE.md
 
-### What is the AMA Framework?
+### What is the Agonda Framework?
 
-The **Agentic Marketing Architecture (AMA)** is a structured approach to organizing marketing work that mirrors how marketing actually flows: from research to strategy to content.
+Agonda is an **Agentic Marketing framework**, a structured approach to organizing marketing work that mirrors how marketing actually flows: from research to strategy to content.
 
-**AMA consists of two frameworks:**
+**Agonda consists of two frameworks:**
 
 1. **Agentic Framework** (`/.claude/`) - Defines the AI system: agents, commands, and skills (next lesson)
 2. **Marketing Framework** (`/brand/`) - Organizes marketing work: research → strategy → content
@@ -272,9 +272,9 @@ A configurable area of concern. You decide what domains make sense for your work
 
 ---
 
-### How Domains Evolve Over Time
+### How Domains Files Evolve Over Time
 
-AMA tracks how your marketing knowledge evolves through **temporal executions + index pattern**.
+Agonda tracks how your marketing knowledge evolves through **temporal executions + index pattern**.
 
 **The pattern:**
 - **Index file** (at domain root) - Current approved state, single source of truth
@@ -291,20 +291,14 @@ AMA tracks how your marketing knowledge evolves through **temporal executions + 
 ├── RESEARCH.md                    ← INDEX: Current approved findings
 ├── CHANGELOG.md                   ← Evolution tracking
 ├── /2025-11-01@10:00/             ← Past execution
-│   ├── PLAN.md
-│   ├── TODO.md
-│   ├── RESEARCH.md                ← What we found then
-│   └── /artifacts/
+│   └── RESEARCH.md                ← What we found then
 └── /2025-11-13@14:30/             ← Latest execution
-    ├── PLAN.md
-    ├── TODO.md
-    ├── RESEARCH.md                ← New findings (not yet in index)
-    └── /artifacts/
+    └── RESEARCH.md                ← New findings (not yet in index)
 ```
 
 **Date-stamp formats:**
 - `YYYY-MM-DD@HH:mm` - Research/strategy domains
-- `YYYY-MM-DD@HH:mm-slug` - Content types, adhoc research
+- `YYYY-MM-DD@HH:mm-slug-title` - Content types, adhoc research
 
 **Workflow:**
 1. Execution generates new findings
@@ -314,76 +308,38 @@ AMA tracks how your marketing knowledge evolves through **temporal executions + 
 
 ---
 
-### Markdown References: The Audit Trail
+### Markdown References Create Audit Trails
 
-Markdown references create **verifiable chains of evidence** from content → strategy → research → data.
+You learned markdown references in Class 2. In Agonda, they serve a specific purpose: **creating verifiable chains of evidence** through the three layers.
 
-**Format:**
-```markdown
-[descriptive text](/path/to/file.md)
+**The audit trail:**
 ```
-
-**Always use relative paths from workspace root:**
-- ✅ `/brand/research/customer-insights/RESEARCH.md`
-- ❌ `/Users/name/project/brand/research/customer-insights/RESEARCH.md`
-
-**How it creates audit trails:**
-
-Strategy references research:
-```markdown
-# Voice Strategy
-
-We are empathetic because customers are
-[drowning in complex AI tools](/brand/research/customer-insights/RESEARCH.md).
-```
-
-Content references strategy:
-```markdown
-# Twitter Thread: AI Overwhelm
-
-**Strategy:**
-- [Voice](/brand/strategy/voice/STRATEGY.md)
-- [Messaging](/brand/strategy/messaging/STRATEGY.md)
-```
-
-**The complete chain:**
-```
-Twitter thread about AI overwhelm (CONTENT.md)
-    ↓ generated with
-Voice strategy - empathetic tone (STRATEGY.md)
+Content (Twitter post about simplicity)
+    ↓ created with
+Strategy (voice guidelines - empathetic tone)
     ↓ references
-Customer insights - AI overwhelm theme (RESEARCH.md)
-    ↓ analyzed from
-Interview transcripts (raw data)
+Research (customer pain points - overwhelmed by complexity)
+    ↓ references
+Data (e.g. interview transcripts, website etc)
 ```
 
-**Every link is clickable. Every claim is verifiable.**
+Every claim traces back to evidence. Every strategic decision cites research. Every piece of content is created with strategy in context.
+
+**Why this matters:** Defensible strategy, verifiable content, transparent reasoning.
 
 ---
 
-### CLAUDE.md: Your System Documentation
+### CLAUDE.md Documents the System
 
-**What is CLAUDE.md?**
-A file at your project root that documents your entire Agonda system architecture.
+You learned about CLAUDE.md in Class 2. In Agonda, it serves a specific purpose: **documenting the framework so agents follow conventions automatically**.
 
-This allows your agent to know that it is operating within the Agonda framework and obey the rules - CAN YOU REWWRITE THIS PART
+CLAUDE.md contains the Agonda methodology, file structure patterns, and navigation heuristics. When agents read it at the start of each session, they know:
+- Where to create files (`/brand/research/{domain}/{timestamp}/`)
+- How to name them (kebab-case, temporal format)
+- How to reference them (markdown links)
+- Which layer information belongs in (research vs strategy vs content)
 
-**What it contains:**
-- Agonda methodology overview (both frameworks)
-- File structure patterns
-- Naming conventions
-- Navigation heuristics
-- Core principles
-
-**Why it matters:**
-- **For you:** Reference guide when you forget patterns
-- **For AI agents:** They read CLAUDE.md to understand your system
-- **For teams:** Onboarding documentation
-- **For consistency:** Single source of truth about how your system works
-
-**CLAUDE.md is like the README for your marketing infrastructure.**
-
-Agents read it automatically and follow its patterns. When you follow Agonda conventions, agents know exactly where to create files, how to name them, and how to reference them.
+**Why this matters:** Consistent structure without re-explaining every session.
 
 ---
 
@@ -395,8 +351,8 @@ Agonda framework solves file organization while maintaining what you already gai
 |-----------------|-------------|----------------------------|
 | Groundedness | ✅ High | ✅ Stays high |
 | Friction | ✅ Low | ✅ Stays low |
-| Scalability | ✅ Context separation | ✅ Stays good + file scaling |
-| Maintainability | ✅ Reusable prompts | ✅ Stays good + file consistency |
+| Scalability | ❌ Cluttered files | ✅ file consistency|
+| Maintainability | ❌ No structure from a marketing perspective | marketing-aligned structure |
 | Navigability | ❌ File chaos | ✅ **NEW - Solved** (clear structure) |
 
 ---
