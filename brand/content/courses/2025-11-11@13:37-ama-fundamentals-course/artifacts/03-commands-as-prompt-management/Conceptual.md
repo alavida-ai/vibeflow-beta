@@ -254,6 +254,47 @@ TWEET_FILE: $ARGUMENTS
 
 ---
 
+### When to Create a Command (The Three-Uses Rule)
+
+**Create a command when:**
+- You've done it 3+ times
+- The workflow has multiple steps
+- Your team needs consistency
+
+**Use ad-hoc prompts when:**
+- Exploring new ideas
+- One-off questions
+- Unique, non-repeatable tasks
+
+**The rule:** If you've done something manually three times, make it a command.
+
+---
+
+### Organizing Commands for Discovery
+
+Commands should mirror your `/brand/` structure:
+
+```
+/.claude/commands/
+├── research/          # Mirrors /brand/research/
+├── strategy/          # Mirrors /brand/strategy/
+└── content/           # Mirrors /brand/content/
+```
+
+**Why:** Teammates know where to look. Type `/research:` to see all research commands.
+
+---
+
+### Commands Grow with Your System
+
+Right now, commands are simple shortcuts. But commands can also be **entry points to complex workflows**.
+
+Later in this course (Classes 4-7), you'll combine commands with sub-agents, skills, and orchestration. A simple command like `/research:domain customer-insights` can trigger multi-phase workflows with specialized agents.
+
+**For now:** Focus on commands as reusable prompts. The orchestration power comes later.
+
+---
+
 ## Part 5: What Changed
 
 Commands solve two new problems while maintaining what you already gained:
