@@ -13,28 +13,13 @@ Welcome to the first class of the AMA Fundamentals Course. You're here because y
 
 **This class is about understanding where you are right now, what's broken, and the first step toward fixing it.**
 
-By the end of this class, you'll understand:
-- Why chat-only AI creates friction and unreliable outputs
-- What "groundedness" means and why it matters
-- How Model Context Protocol (MCP) solves the data access problem
-- The first benchmark improvements you'll see in your AI-assisted marketing work
-
-### What You'll Learn
+### Learning Objectives
 
 By the end of this class, you will:
 
-1. **Recognize where you are now** - The ChatGPT/Claude single-window experience
-2. **Identify the core problems** - Lack of groundedness, high friction, hallucination risk
-3. **Understand common workarounds** - And why they don't solve the real problem
-4. **Learn the solution** - How MCP connects AI to real-world data
-5. **See measurable improvements** - Groundedness and friction as design attributes
-
-### Learning Objectives
-
-- Can explain what "groundedness" means
-- Can identify when AI lacks necessary context
-- Understands how MCP reduces friction
-- Knows when outputs are data-backed vs hallucinated
+1. **Identify the problems** - Why chat-only AI has high friction, low groundedness, and hallucination risk
+2. **Understand the solution** - How MCP gives AI access to real-world data
+3. **Recognize the improvement** - When outputs are data-backed vs guessed, and how friction drops
 
 ---
 
@@ -484,24 +469,3 @@ Class 2 addresses the remaining problems:
 - How IDE + Claude Code work together
 - Markdown as your "programming language"
 - CLAUDE.md as persistent agent memory
-
-## Practice Exercise
-
-**Try this after completing Class 1:**
-
-1. **Identify an MCP tool for your work**
-   - Pick one: Firecrawl (web scraping), Perplexity (research), Notion (docs)
-   - Install and configure it
-
-2. **Do a before/after comparison**
-   - Task: Analyze 3 competitors
-   - Before: Time yourself manually gathering data
-   - After: Time yourself with MCP automating data fetch
-   - Measure: Time saved, completeness, accuracy
-
-3. **Track your design attributes**
-   - Groundedness: Can you cite sources? Is data current?
-   - Friction: How much manual work was required?
-   - Quality: How complete is the analysis?
-
-**The goal:** Experience the measurable improvement MCP provides before moving to the next class.
